@@ -8,7 +8,11 @@
         "12.3": "Rate Laws"
       },
       "snapshotScope": "captured textbook section",
-      "edition": "Chemistry 2e; exact publication hash"
+      "edition": "Chemistry 2e; exact publication hash",
+      "scope": [
+        "12.3"
+      ],
+      "scopeNote": "Source-accounting scope is the captured fragment-bearing sections; depth denominator still includes every declared heading in this snapshot. It does not claim whole-section formalization."
     },
     {
       "document": "en.txt",
@@ -17,7 +21,11 @@
         "12.4": "Integrated Rate Laws"
       },
       "snapshotScope": "captured textbook section",
-      "edition": "Chemistry 2e; exact publication hash"
+      "edition": "Chemistry 2e; exact publication hash",
+      "scope": [
+        "12.4"
+      ],
+      "scopeNote": "Source-accounting scope is the captured fragment-bearing sections; depth denominator still includes every declared heading in this snapshot. It does not claim whole-section formalization."
     },
     {
       "document": "12.5.txt",
@@ -26,7 +34,11 @@
         "12.5": "Collision Theory"
       },
       "snapshotScope": "captured textbook section",
-      "edition": "Chemistry 2e; exact publication hash"
+      "edition": "Chemistry 2e; exact publication hash",
+      "scope": [
+        "12.5"
+      ],
+      "scopeNote": "Source-accounting scope is the captured fragment-bearing sections; depth denominator still includes every declared heading in this snapshot. It does not claim whole-section formalization."
     }
   ]
 }

@@ -31,7 +31,12 @@
     "executableUnits": 18,
     "measurementRegressions": 30,
     "publicRegressions": 6,
-    "technicalDependencies": "not_measured"
+    "technicalDependencies": "not_measured",
+    "sourceAccounting": {
+      "status": "passed",
+      "snapshots": 18,
+      "scope": "addressed common article_accounting; no corpus scan"
+    }
   },
   "linux": {
     "status": "passed",
