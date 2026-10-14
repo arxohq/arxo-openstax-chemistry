@@ -1,0 +1,16 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:1a3f6f91c640368443119e72307d0bb81e10c35ea56f7876844b25f1cfa08479",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:ab56f02febf8bab577d40386c0da19d4e7ba3861ef184bf70044170e8732d76c",
+    "name": "calc.reaction_kinetics",
+    "namespace": "urn:law:calc:reaction-kinetics",
+    "sourceHash": "sha256:3bb9183e0422cf26449fbc0e9c89fd2394df75d9371e6a11b9d9ef262fdd5ba6",
+    "version": "0.1.0"
+  },
+  "semanticLayer": "L1"
+}

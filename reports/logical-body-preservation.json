@@ -1,0 +1,54 @@
+[
+  {
+    "spec": "openstax.chemistry_acids@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_atomic@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_bonding@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_coordination@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_electro@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_equilibrium@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_gases@0.1.1",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_solutions@0.1.1",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_stoichiometry@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "openstax.chemistry_thermo@0.1.1",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "units.si@0.1.0",
+    "logicalNodesUnchanged": true
+  },
+  {
+    "spec": "calc.reaction_kinetics@0.1.0",
+    "logicalNodesUnchanged": true
+  }
+]

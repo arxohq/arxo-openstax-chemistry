@@ -1,0 +1,136 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:ed2d6e590fc8e3353efbdacac9fe6ef5494447d67935fb0a0bf8e79b43085f19",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-atomic#f0",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "aufbau-model"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-atomic#row_claims"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-atomic"
+    },
+    {
+      "contentHash": "sha256:f4733c8b6f536f910c786c1bfab8745eb2b81ae0d21df48c32bc2b3f97bfd045",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-atomic#f1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "build configurations in order of atomic number following the orbital energy order"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-atomic#row_formula"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-atomic"
+    },
+    {
+      "contentHash": "sha256:92fe4c029c9eb3016024d2a846f9bb46f07e30578ac6fde85d2a8a8fbe81bc9d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-atomic#f2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "model"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-atomic#row_layer"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-atomic"
+    },
+    {
+      "contentHash": "sha256:39602f2e68347adbcfe2d83096c373886ec5a96f65c412ce48499a561c459e12",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-atomic#f3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "calc.atomic_structure config"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-atomic#row_checker"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-atomic"
+    },
+    {
+      "contentHash": "sha256:96ac0cd4ee702c92d33812e45e073b677dc528cfac3febddb3cb8823c512786d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-atomic#f4",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "section/6.4#aufbau-principle"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-atomic#row_fragment"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-atomic"
+    }
+  ],
+  "context": {},
+  "options": {}
+}

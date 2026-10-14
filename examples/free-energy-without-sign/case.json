@@ -1,0 +1,30 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:e83bfba717134ceb6c634e8dd3c307b559498328f5480b7031a140c392862224",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-thermo#h04-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:thermo:sys",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-thermo#system_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-thermo"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

@@ -1,0 +1,10 @@
+{
+  "assertions": [],
+  "context": {
+    "decisionTime": "2026-10-01T12:00:00Z",
+    "knowledgeTime": "2026-10-01T12:00:00Z",
+    "legalTime": "2026-10-01",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

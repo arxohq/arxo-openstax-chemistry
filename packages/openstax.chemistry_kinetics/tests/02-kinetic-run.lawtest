@@ -1,0 +1,244 @@
+language "law.core" version "0.2";
+package openstax.chemistry_kinetics version "0.1.1";
+namespace "urn:openstax:clir:chemistry-kinetics";
+
+// §12.4, ПЕРВЫЙ ПОРЯДОК: c₀ = 1 моль/л, k = 0.1 1/с, t = 10 с.
+// c = e^−1 = 0.367879441171 -> 0.367879 моль/л (точн. 6).
+test "urn:query:os-run-01-first-order-concentration" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r01-calc": run_calculation(entity_ref("urn:case:chem:kin:run1"), entity_ref("urn:case:chem:kin:run1-calc")) { origin case_input; }
+        assert "r01-n": run_order(entity_ref("urn:case:chem:kin:run1"), 1) { origin case_input; }
+        assert "r01-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run1"), 1, 1) { origin case_input; }
+        assert "r01-k": run_rate_constant(entity_ref("urn:case:chem:kin:run1"), 1, 10) { origin case_input; }
+        assert "r01-t": run_elapsed(entity_ref("urn:case:chem:kin:run1"), 10, 1) { origin case_input; }
+        assert "r01-p": run_precision(entity_ref("urn:case:chem:kin:run1"), 6) { origin case_input; }
+    }
+    evaluate truth(run_concentration(entity_ref("urn:case:chem:kin:run1"), 0.367879 mol_per_l));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunConcentration);
+}
+
+// §12.4, ПОЛУПРЕВРАЩЕНИЕ ПЕРВОГО ПОРЯДКА: t½ = ln2/k = 6.931471805599 -> 6.931472 с.
+test "urn:query:os-run-02-first-order-half-life" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r02-calc": run_calculation(entity_ref("urn:case:chem:kin:run1"), entity_ref("urn:case:chem:kin:run1-calc")) { origin case_input; }
+        assert "r02-n": run_order(entity_ref("urn:case:chem:kin:run1"), 1) { origin case_input; }
+        assert "r02-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run1"), 1, 1) { origin case_input; }
+        assert "r02-k": run_rate_constant(entity_ref("urn:case:chem:kin:run1"), 1, 10) { origin case_input; }
+        assert "r02-p": run_precision(entity_ref("urn:case:chem:kin:run1"), 6) { origin case_input; }
+    }
+    evaluate truth(run_half_life(entity_ref("urn:case:chem:kin:run1"), 6.931472 s));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunHalfLife);
+}
+
+// §12.4, ОБРАТНЫЙ ВОПРОС: цель 1/2 моль/л при тех же c₀ и k —
+// t = ln2/0.1 = 6.931472 с.
+test "urn:query:os-run-03-first-order-time-to-target" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r03-calc": run_calculation(entity_ref("urn:case:chem:kin:run1"), entity_ref("urn:case:chem:kin:run1-calc")) { origin case_input; }
+        assert "r03-n": run_order(entity_ref("urn:case:chem:kin:run1"), 1) { origin case_input; }
+        assert "r03-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run1"), 1, 1) { origin case_input; }
+        assert "r03-k": run_rate_constant(entity_ref("urn:case:chem:kin:run1"), 1, 10) { origin case_input; }
+        assert "r03-q": run_target_concentration(entity_ref("urn:case:chem:kin:run1"), 1, 2) { origin case_input; }
+        assert "r03-p": run_precision(entity_ref("urn:case:chem:kin:run1"), 6) { origin case_input; }
+    }
+    evaluate truth(run_time_to_target(entity_ref("urn:case:chem:kin:run1"), 6.931472 s));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunTimeToTarget);
+}
+
+// §12.4, НУЛЕВОЙ ПОРЯДОК: c₀ = 1, k = 0.1, t = 5: c = 1 − 0.5 = 0.5 моль/л.
+test "urn:query:os-run-04-zero-order-concentration" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r04-calc": run_calculation(entity_ref("urn:case:chem:kin:run0"), entity_ref("urn:case:chem:kin:run0-calc")) { origin case_input; }
+        assert "r04-n": run_order(entity_ref("urn:case:chem:kin:run0"), 0) { origin case_input; }
+        assert "r04-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run0"), 1, 1) { origin case_input; }
+        assert "r04-k": run_rate_constant(entity_ref("urn:case:chem:kin:run0"), 1, 10) { origin case_input; }
+        assert "r04-t": run_elapsed(entity_ref("urn:case:chem:kin:run0"), 5, 1) { origin case_input; }
+        assert "r04-p": run_precision(entity_ref("urn:case:chem:kin:run0"), 6) { origin case_input; }
+    }
+    evaluate truth(run_concentration(entity_ref("urn:case:chem:kin:run0"), 0.5 mol_per_l));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunConcentration);
+}
+
+// §12.4, ИСТОЩЕНИЕ: тот же нулевой порядок при t = 20 — kt = 2 ≥ c₀:
+// концентрации нет, а не ноль формулой.
+test "urn:query:os-run-05-zero-order-depleted" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r05-calc": run_calculation(entity_ref("urn:case:chem:kin:run0"), entity_ref("urn:case:chem:kin:run0-calc")) { origin case_input; }
+        assert "r05-n": run_order(entity_ref("urn:case:chem:kin:run0"), 0) { origin case_input; }
+        assert "r05-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run0"), 1, 1) { origin case_input; }
+        assert "r05-k": run_rate_constant(entity_ref("urn:case:chem:kin:run0"), 1, 10) { origin case_input; }
+        assert "r05-t": run_elapsed(entity_ref("urn:case:chem:kin:run0"), 20, 1) { origin case_input; }
+        assert "r05-p": run_precision(entity_ref("urn:case:chem:kin:run0"), 6) { origin case_input; }
+    }
+    evaluate truth(run_depleted(entity_ref("urn:case:chem:kin:run0")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunDepleted);
+}
+
+// §12.4, ВТОРОЙ ПОРЯДОК: c₀ = 1, k = 1/4, t = 4: c = 1/(1 + 1) = 0.5 моль/л;
+// t½ = 1/(kc₀) = 4 с.
+test "urn:query:os-run-06-second-order-concentration" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r06-calc": run_calculation(entity_ref("urn:case:chem:kin:run2"), entity_ref("urn:case:chem:kin:run2-calc")) { origin case_input; }
+        assert "r06-n": run_order(entity_ref("urn:case:chem:kin:run2"), 2) { origin case_input; }
+        assert "r06-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run2"), 1, 1) { origin case_input; }
+        assert "r06-k": run_rate_constant(entity_ref("urn:case:chem:kin:run2"), 1, 4) { origin case_input; }
+        assert "r06-t": run_elapsed(entity_ref("urn:case:chem:kin:run2"), 4, 1) { origin case_input; }
+        assert "r06-p": run_precision(entity_ref("urn:case:chem:kin:run2"), 6) { origin case_input; }
+    }
+    evaluate truth(run_concentration(entity_ref("urn:case:chem:kin:run2"), 0.5 mol_per_l));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunConcentration);
+}
+
+test "urn:query:os-run-07-second-order-half-life" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r07-calc": run_calculation(entity_ref("urn:case:chem:kin:run2"), entity_ref("urn:case:chem:kin:run2-calc")) { origin case_input; }
+        assert "r07-n": run_order(entity_ref("urn:case:chem:kin:run2"), 2) { origin case_input; }
+        assert "r07-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run2"), 1, 1) { origin case_input; }
+        assert "r07-k": run_rate_constant(entity_ref("urn:case:chem:kin:run2"), 1, 4) { origin case_input; }
+        assert "r07-p": run_precision(entity_ref("urn:case:chem:kin:run2"), 6) { origin case_input; }
+    }
+    evaluate truth(run_half_life(entity_ref("urn:case:chem:kin:run2"), 4 s));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunHalfLife);
+}
+
+// §12.4, НЕПОДДЕРЖАННАЯ МОДЕЛЬ: порядок 3 — закрытой формы нет.
+test "urn:query:os-run-08-unsupported-order" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r08-calc": run_calculation(entity_ref("urn:case:chem:kin:run3"), entity_ref("urn:case:chem:kin:run3-calc")) { origin case_input; }
+        assert "r08-n": run_order(entity_ref("urn:case:chem:kin:run3"), 3) { origin case_input; }
+        assert "r08-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:run3"), 1, 1) { origin case_input; }
+        assert "r08-k": run_rate_constant(entity_ref("urn:case:chem:kin:run3"), 1, 10) { origin case_input; }
+        assert "r08-t": run_elapsed(entity_ref("urn:case:chem:kin:run3"), 10, 1) { origin case_input; }
+        assert "r08-p": run_precision(entity_ref("urn:case:chem:kin:run3"), 6) { origin case_input; }
+    }
+    evaluate truth(run_unsupported_order(entity_ref("urn:case:chem:kin:run3")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunUnsupportedOrder);
+}
+
+// §12.4, НЕДОСТИЖИМОСТЬ: цель 1 моль/л выше начальной 1/2 — спад её не достигнет.
+test "urn:query:os-run-09-target-above-initial" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r09-calc": run_calculation(entity_ref("urn:case:chem:kin:runhi"), entity_ref("urn:case:chem:kin:runhi-calc")) { origin case_input; }
+        assert "r09-n": run_order(entity_ref("urn:case:chem:kin:runhi"), 1) { origin case_input; }
+        assert "r09-c0": run_initial_concentration(entity_ref("urn:case:chem:kin:runhi"), 1, 2) { origin case_input; }
+        assert "r09-k": run_rate_constant(entity_ref("urn:case:chem:kin:runhi"), 1, 10) { origin case_input; }
+        assert "r09-q": run_target_concentration(entity_ref("urn:case:chem:kin:runhi"), 1, 1) { origin case_input; }
+        assert "r09-p": run_precision(entity_ref("urn:case:chem:kin:runhi"), 6) { origin case_input; }
+    }
+    evaluate truth(run_target_above_initial(entity_ref("urn:case:chem:kin:runhi")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunTargetAboveInitial);
+}
+
+// §12.6, АРРЕНИУС: Ea = 50000 Дж/моль, R = 8.314, T₁ = 300 К, T₂ = 310 К.
+// k₂/k₁ = exp(−Ea/R·(1/T₂ − 1/T₁)) = 1.909156545112 -> 1.909157.
+test "urn:query:os-run-10-arrhenius-ratio" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r10-calc": run_calculation(entity_ref("urn:case:chem:kin:arr"), entity_ref("urn:case:chem:kin:arr-calc")) { origin case_input; }
+        assert "r10-ea": run_activation_energy(entity_ref("urn:case:chem:kin:arr"), 50000, 1) { origin case_input; }
+        assert "r10-r": run_gas_constant(entity_ref("urn:case:chem:kin:arr"), 8314, 1000) { origin case_input; }
+        assert "r10-t": run_temperature_pair(entity_ref("urn:case:chem:kin:arr"), 300, 1, 310, 1) { origin case_input; }
+        assert "r10-p": run_precision(entity_ref("urn:case:chem:kin:arr"), 6) { origin case_input; }
+    }
+    evaluate truth(run_arrhenius_ratio(entity_ref("urn:case:chem:kin:arr"), 1.909157));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunArrheniusRatio);
+}
+
+// §12.6, ОТКАЗ БЕЗ Ea: температуры запрошены, энергии нет — перенос отклонён вслух.
+test "urn:query:os-run-11-transfer-refused" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "r11-calc": run_calculation(entity_ref("urn:case:chem:kin:arrno"), entity_ref("urn:case:chem:kin:arrno-calc")) { origin case_input; }
+        assert "r11-noea": run_no_activation_energy(entity_ref("urn:case:chem:kin:arrno")) { origin case_input; }
+        assert "r11-t": run_temperature_pair(entity_ref("urn:case:chem:kin:arrno"), 300, 1, 310, 1) { origin case_input; }
+    }
+    evaluate truth(run_transfer_refused(entity_ref("urn:case:chem:kin:arrno")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(RunTransferRefused);
+}

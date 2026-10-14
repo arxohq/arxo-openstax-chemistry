@@ -1,0 +1,173 @@
+language "law.core" version "0.2";
+package openstax.chemistry_acids version "0.1.0";
+namespace "urn:openstax:clir:chemistry-acids";
+
+// Сцены §14.7: точки кривой титрования и различие эквивалентности и
+// конечной точки. Молчание дела — NEITHER, а не отрицание.
+
+// Сильная кислота + сильное основание: в эквивалентности нейтрально.
+test "urn:query:openstax-chem-titration-01-strong-neutral" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t01-q": titration_in_question(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t01-1": strong_acid_strong_base(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t01-2": titration_temperature_presented(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t01-3": fixed_conditions_presented(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+    }
+    evaluate truth(neutral_at_equivalence(entity_ref("urn:case:chem:titration:hcl-naoh")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(StrongStrongNeutralAtEquivalence);
+}
+
+// Слабая кислота + сильное основание: в эквивалентности основно.
+test "urn:query:openstax-chem-titration-02-weak-basic" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t02-q": titration_in_question(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t02-1": weak_acid_strong_base(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t02-2": titration_temperature_presented(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t02-3": fixed_conditions_presented(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+    }
+    evaluate truth(basic_at_equivalence(entity_ref("urn:case:chem:titration:hoac-naoh")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(WeakAcidBasicAtEquivalence);
+}
+
+// Половина эквивалентности слабой кислоты: pH = pKa.
+test "urn:query:openstax-chem-titration-03-half-pka" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t03-q": titration_in_question(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t03-1": weak_acid_strong_base(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t03-2": half_equivalence_point(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t03-3": titration_temperature_presented(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t03-4": fixed_conditions_presented(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+    }
+    evaluate truth(ph_equals_pka_at_half_equivalence(entity_ref("urn:case:chem:titration:hoac-naoh")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(HalfEquivalencePhEqualsPka);
+}
+
+// Сильной системе основной эквивалентности нет: молчание, не отрицание.
+test "urn:query:openstax-chem-titration-04-strong-not-basic" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t04-q": titration_in_question(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t04-1": strong_acid_strong_base(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+    }
+    evaluate truth(basic_at_equivalence(entity_ref("urn:case:chem:titration:hcl-naoh")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Без предъявленной системы выводов нет.
+test "urn:query:openstax-chem-titration-05-missing-system" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t05-q": titration_in_question(entity_ref("urn:case:chem:titration:unknown")) { origin case_input; }
+    }
+    evaluate truth(neutral_at_equivalence(entity_ref("urn:case:chem:titration:unknown")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Кривая отслеживает pH у любого предъявленного титрования.
+test "urn:query:openstax-chem-titration-06-curve" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t06-q": titration_in_question(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+    }
+    evaluate truth(titration_curve_monitors_ph(entity_ref("urn:case:chem:titration:hoac-naoh")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TitrationCurveMonitorsPh);
+}
+
+// Без предъявленной температуры вывод со значением pH закрыт (14.2:
+// граница pH = 7 стоит только при 25 °C).
+test "urn:query:openstax-chem-titration-08-no-temperature" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t08-q": titration_in_question(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t08-1": strong_acid_strong_base(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+        assert "t08-2": fixed_conditions_presented(entity_ref("urn:case:chem:titration:hcl-naoh")) { origin case_input; }
+    }
+    evaluate truth(neutral_at_equivalence(entity_ref("urn:case:chem:titration:hcl-naoh")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Без предъявленных фиксированных условий pH = pKa не выводится.
+test "urn:query:openstax-chem-titration-09-no-fixed-conditions" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t09-q": titration_in_question(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t09-1": weak_acid_strong_base(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t09-2": half_equivalence_point(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t09-3": titration_temperature_presented(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+    }
+    evaluate truth(ph_equals_pka_at_half_equivalence(entity_ref("urn:case:chem:titration:hoac-naoh")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Конечная точка индикатора — оценка, отличная от эквивалентности.
+test "urn:query:openstax-chem-titration-07-endpoint" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "t07-q": titration_in_question(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+        assert "t07-1": indicator_used(entity_ref("urn:case:chem:titration:hoac-naoh")) { origin case_input; }
+    }
+    evaluate truth(endpoint_estimated_by_indicator(entity_ref("urn:case:chem:titration:hoac-naoh")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(EndpointEstimatedByIndicator);
+}

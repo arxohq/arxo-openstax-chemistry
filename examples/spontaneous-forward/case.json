@@ -1,0 +1,87 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:8c2a1fa1831ccde597d13114dcbdae8e4cd0fc14ba313877a22916504bfe45a4",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-thermo#h02-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:thermo:sys",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-thermo#system_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-thermo"
+    },
+    {
+      "contentHash": "sha256:f3801087d92acf8d818b411d253fd1532ee1d0f7421d64d9d61e88aae6fca650",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-thermo#h02-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:thermo:sys",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-thermo#negative_gibbs_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-thermo"
+    },
+    {
+      "contentHash": "sha256:0b8da181dc9522a1d3613668eeb6d4ee288eddb27b61b112bee39ceb017cd299",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-thermo#h02-2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:thermo:sys",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-thermo"
+    },
+    {
+      "contentHash": "sha256:a55e6467d72adc1e17bf7be81b3caa61b26b733857c54c20e14f1ca8f98ad172",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-thermo#h02-3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:thermo:sys",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-thermo#standard_state_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-thermo"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

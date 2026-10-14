@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:openstax:clir:chemistry-stoichiometry#Mass",
+        "kind": "const_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-stoichiometry#yield_expressed_as"
+  },
+  "queryId": "urn:openstax:clir:chemistry-stoichiometry#test/OS-CHEM-STOICH-01-YIELD-MAY-BE-A-MASS/query/0"
+}

@@ -1,0 +1,86 @@
+// Аррениус: k(T₂)/k(T₁) при заданной Ea; отказ без Ea.
+//
+// ОТНОШЕНИЕ, А НЕ ПЕРЕНОС КОНСТАНТЫ. Пакет считает k(T₂)/k(T₁) =
+// exp(−Ea/R·(1/T₂ − 1/T₁)) и не умножает его на k(T₁) сам: k при T₂ —
+// вывод дела из двух предъявленных чисел, а не скрытая третья голова.
+// Показатель собирается целыми из пар Ea, R, T₁, T₂ (деления
+// Rational/Rational §58 не даёт), затем `math::exp` §259.2.
+//
+// БЕЗ Ea ПЕРЕНОСА НЕТ. Отсутствие энергии предметный слой предъявляет
+// фактом `activation_energy_missing` (инвентарь данных — его дело);
+// просьба о переносе при нём получает `temperature_transfer_refused`,
+// а не экстраполяцию и не молчание.
+
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+use self::{
+    Calculation,
+    given_output_precision,
+};
+
+pub relation given_activation_energy(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная энергия активации Ea в Дж/моль, дробью числитель/знаменатель";
+    label en unofficial "presented activation energy Ea in J/mol, as numerator/denominator";
+}
+
+pub relation activation_energy_missing(c: Calculation) kind empirical {
+    label ru unofficial "предметный слой заявляет: энергии активации у дела нет";
+    label en unofficial "the subject layer states: the case has no activation energy";
+}
+
+pub relation given_gas_constant(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная газовая постоянная R в Дж/(моль·К), дробью (дело подаёт значение источника, а не пакет)";
+    label en unofficial "presented gas constant R in J/(mol·K), as a fraction (the case supplies the source value, not this package)";
+}
+
+pub relation given_temperature_pair(c: Calculation, t1_num: Integer, t1_den: Integer, t2_num: Integer, t2_den: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная пара температур T₁, T₂ в К, дробями (перенос k(T₁) → k(T₂))";
+    label en unofficial "presented temperature pair T₁, T₂ in K, as fractions (transfer of k(T₁) → k(T₂))";
+}
+
+pub relation arrhenius_ratio_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы k(T₂)/k(T₁) (безразмерные)";
+    label en unofficial "unrounded k(T₂)/k(T₁) bounds (dimensionless)";
+}
+
+pub relation arrhenius_ratio_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "k(T₂)/k(T₁), округлённое до объявленной точности, — терминальная голова";
+    label en unofficial "k(T₂)/k(T₁) rounded to the declared precision — a terminal head";
+}
+
+pub relation temperature_transfer_refused(c: Calculation) kind institutional {
+    label ru unofficial "просьба о переносе по T без энергии активации: именованный отказ, а не экстраполяция";
+    label en unofficial "temperature-transfer request with no activation energy: a named refusal, not an extrapolation";
+}
+
+rule ArrheniusRatio(c: Calculation, en: Integer, ed: Integer, rn: Integer, rd: Integer, a: Integer, b: Integer, d: Integer, c2: Integer) strict {
+    label ru unofficial "Аррениус: экспонента −Ea/R·(1/T₂−1/T₁), показатель — целыми из четырёх пар";
+    label en unofficial "Arrhenius: exponential of −Ea/R·(1/T₂−1/T₁), exponent from four pairs as integers";
+    when given_activation_energy(c, en, ed)
+        and given_gas_constant(c, rn, rd)
+        and given_temperature_pair(c, a, b, c2, d)
+        and ed > 0 and en > 0 and rd > 0 and rn > 0
+        and b > 0 and a > 0 and d > 0 and c2 > 0;
+    then arrhenius_ratio_bounds(c,
+        math::exp((0 - en * rd * (d * a - b * c2)) / (ed * rn * c2 * a), "p16/0.1"));
+}
+
+rule ArrheniusRatioRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление отношения — как у концентрации, сходимость не гарантируется молча";
+    label en unofficial "rounding the ratio — like the concentration, convergence is never silent";
+    when arrhenius_ratio_bounds(c, x) and given_output_precision(c, p);
+    then arrhenius_ratio_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule TemperatureTransferRefused(c: Calculation, a: Integer, b: Integer, d: Integer, c2: Integer) strict {
+    label ru unofficial "температуры запрошены, энергии нет — перенос отклонён вслух";
+    label en unofficial "temperatures requested, energy absent — the transfer is refused aloud";
+    when activation_energy_missing(c)
+        and given_temperature_pair(c, a, b, c2, d);
+    then temperature_transfer_refused(c);
+}

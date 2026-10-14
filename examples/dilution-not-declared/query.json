@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:sol:brine",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-solutions#amount_conserved_on_dilution"
+  },
+  "queryId": "urn:openstax:clir:chemistry-solutions#test/urn%3Aquery%3Aos-sol-04-no-dilution/query/0"
+}

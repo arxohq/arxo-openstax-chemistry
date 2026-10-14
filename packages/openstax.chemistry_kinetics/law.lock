@@ -1,0 +1,55 @@
+{
+  "dependencyEdges": [
+    {
+      "features": [],
+      "from": "openstax.chemistry_kinetics",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "calc.reaction_kinetics"
+    },
+    {
+      "features": [],
+      "from": "openstax.chemistry_kinetics",
+      "requested": "0.1.0",
+      "resolved": "0.1.0",
+      "to": "units.si"
+    }
+  ],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [
+    {
+      "artifactHash": "sha256:ab56f02febf8bab577d40386c0da19d4e7ba3861ef184bf70044170e8732d76c",
+      "features": [
+        "core-executable"
+      ],
+      "name": "calc.reaction_kinetics",
+      "namespace": "urn:law:calc:reaction-kinetics",
+      "registryId": "law-dsl-dev",
+      "resolverUri": "registry://law-dsl-dev/calc.reaction_kinetics/0.1.0",
+      "sourceHash": "sha256:3bb9183e0422cf26449fbc0e9c89fd2394df75d9371e6a11b9d9ef262fdd5ba6",
+      "version": "0.1.0"
+    },
+    {
+      "artifactHash": "sha256:66c0e7b54e87269674eb01b97eb54b5d7570427424a5edf2066f7deffc34a601",
+      "features": [
+        "core-executable"
+      ],
+      "name": "units.si",
+      "namespace": "urn:law:units:si",
+      "registryId": "law-dsl-dev",
+      "resolverUri": "registry://law-dsl-dev/units.si/0.1.0",
+      "sourceHash": "sha256:8c1171418932715c7d39a5d9c75454c1bfa6abf5ba17cfe7a9363a7ce7fe25ec",
+      "version": "0.1.0"
+    }
+  ],
+  "resolutionHash": "sha256:776fa40e810a68e575cce58f00be8e8b873a14edbb3e77760a47141863f9ef49",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:6c85b3f1b9195c8b96d64c1abfcd81255b619cc83f9ac30dd838e6a3331d43bb",
+    "name": "openstax.chemistry_kinetics",
+    "namespace": "urn:openstax:clir:chemistry-kinetics",
+    "sourceHash": "sha256:ea4a7295d6b8ade193451a0b50785ee13f76f66ddbe12a675766fd6f42fadbb6",
+    "version": "0.1.1"
+  }
+}

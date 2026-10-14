@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:kin:run3",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-kinetics#run_unsupported_order"
+  },
+  "queryId": "urn:openstax:clir:chemistry-kinetics#test/urn%3Aquery%3Aos-run-08-unsupported-order/query/0"
+}

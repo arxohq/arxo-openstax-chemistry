@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:titration:hoac-naoh",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-acids#ph_equals_pka_at_half_equivalence"
+  },
+  "queryId": "urn:openstax:clir:chemistry-acids#test/urn%3Aquery%3Aopenstax-chem-titration-03-half-pka/query/0"
+}

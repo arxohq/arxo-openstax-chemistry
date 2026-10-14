@@ -1,0 +1,33 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_equilibrium"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-equilibrium"
+
+# Каталожная метадата (DECISION-0051). НЕ семантика: в CLIR не понижается.
+# Байты §§13.2/13.4 закреплены (sources/chemistry-2e/en.txt + manifest.json,
+# фрагменты — порождённым sources.law); лицензия книги — CC BY-NC-SA 4.0
+# (см. шапку sources.law). Та же пометка, что у соседа chemistry-acids.
+[metadata]
+act = "openstax-chemistry-equilibrium"
+title = "OpenStax Chemistry 2e, гл. 13 (равновесие): направление сдвига по Q/K и ворота ICE-подхода"
+primarySource = "OPENSTAX_CHEMISTRY_2E"
+jurisdiction = "none"
+instrument = "treatise"
+sourceFidelity = "pinned_unofficial_copy"
+issuer = "OpenStax, Rice University"
+legalStatus = "doctrine"
+# verifiedAgainstSource: текст каждого фрагмента вырезан ИЗ закреплённых байтов
+# генератором `sync_openstax_equilibrium_fragments.py` и сверен §194 (LDC-E5202)
+# на каждой сборке; границы срезов сверяются дословно по обеим сторонам.
+verifiedAgainstSource = true
+
+[[tests]]
+family = "openstax_chemistry_equilibrium"
+suites = ["tests/chemistry-equilibrium.lawtest"]
+world = ["openstax.chemistry_equilibrium"]
+
+[authoring]
+local_imports = "explicit"

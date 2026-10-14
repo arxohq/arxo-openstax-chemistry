@@ -1,0 +1,90 @@
+// ПОРОЖДЕНО corpus/tools/sources/sync/sync_openstax_equilibrium_fragments.py
+// из закреплённых байтов sources/chemistry-2e/en.txt —
+// руками не правится (инвариант 2 CLAUDE.md); сверка без записи — `--check`.
+//
+// ЛИЦЕНЗИЯ ОГРАНИЧИТЕЛЬНАЯ, И ЭТО НАЗВАНО ЗДЕСЬ. Chemistry 2e — CC BY-NC-SA
+// 4.0: некоммерческое использование и share-alike, не CC BY. Тот же учебник
+// и та же пометка, что у `org/openstax/chemistry-acids`.
+//
+// ЧТО ЗАКРЕПЛЕНО. Два раздела (13.2, 13.4) одним файлом; фрагментами
+// вырезаны четыре абзаца, несущих УЧЕБНОЕ ОСНОВАНИЕ того, что корпус уже
+// исполняет: закон действующих масс (K постоянно при данной T), сравнение
+// Q/K как предсказатель направления и ICE-подход к равновесному составу.
+
+language "law.core" version "0.2";
+package openstax.chemistry_equilibrium version "0.1.0";
+namespace "urn:openstax:clir:chemistry-equilibrium";
+
+source OPENSTAX_CHEMISTRY_2E {
+    // `treatise` — учебник, не акт. Юрисдикция `none`: у
+    // естественнонаучного изложения правопорядка нет.
+    kind treatise;
+    jurisdiction "none";
+    number "OpenStax Chemistry 2e (2019), chapter 13";
+    label en official "Chemistry 2e";
+}
+
+edition OS_CHEM2E_EN of OPENSTAX_CHEMISTRY_2E {
+    label en official "OpenStax Chemistry 2e, English edition (CC BY-NC-SA 4.0)";
+    language en;
+    officiality official;
+    adopted @2019-02-14;
+    in_force [@2019-02-14, infinity);
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+// --- Публикация: два раздела одним закрепляемым файлом ------------------
+//
+// §194 сверяет фрагмент с байтами ОДНОЙ публикации редакции, поэтому
+// разделы склеены в один файл в порядке книги. Собственные адреса
+// разделов (slug страницы, uuid раздела, отдельный хэш) не теряются:
+// они лежат рядом в `sources/chemistry-2e/manifest.json`.
+//
+// Разделы и их uuid: 13.2 6fc48d99-000f-479e-9ea2-9527d41ffcb8, 13.4 353391e0-9913-4452-9f83-38f57233275a
+publication OS_CHEM2E_TEXT of OS_CHEM2E_EN {
+    media_type "text/plain; charset=utf-8";
+    uri "https://openstax.org/books/chemistry-2e/pages/";
+    retrieved_at @2026-09-28T00:00:00Z;
+    content_hash "sha256:75960d4de233ceb3bbc081d0d3d5930149c60878f1517916fe08c15ee09a3276";
+    local_path "sources/chemistry-2e/en.txt";
+}
+
+// --- Фрагменты ----------------------------------------------------------
+//
+// Все `pub` (§24): на них ставят якоря правила пакета.
+
+// 13.2: закон действующих масс — при данной температуре Q в равновесии постоянно
+pub fragment OS_13_2_MASS_ACTION in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "13.2/mass-action";
+    label ru unofficial "13.2: закон действующих масс — при данной температуре Q в равновесии постоянно";
+    text en official """Comparison of the data plots in Figure 13.5 shows that both experimental scenarios resulted in the same value for the equilibrium constant. This is a general observation for all equilibrium systems, known as the law of mass action: At a given temperature, the reaction quotient for a system at equilibrium is constant.""";
+    content_hash "sha256:f4dad0ceed6cd966f76fe18932bf871c1e6918d08d98bbc43c49fbc121c403f3";
+}
+
+// 13.2: сравнение Q и K предсказывает направление реакции
+pub fragment OS_13_2_QK_PREDICTION in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "13.2/qk-prediction";
+    label ru unofficial "13.2: сравнение Q и K предсказывает направление реакции";
+    text en official """The equilibrium constant for a reaction can be used to predict the behavior of mixtures containing its reactants and/or products. As demonstrated by the sulfur dioxide oxidation process described above, a chemical reaction will proceed in whatever direction is necessary to achieve equilibrium. Comparing Q to K for an equilibrium system of interest allows prediction of what reaction (forward or reverse), if any, will occur.""";
+    content_hash "sha256:8b1151bff7f0805c92e721d72fc02fed461ffd36b980bf55ac4aa5f0168ded14";
+}
+
+// 13.2: Q < K — нетто-прямая реакция, Q > K — нетто-обратная
+pub fragment OS_13_2_FORWARD_REVERSE in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "13.2/forward-reverse";
+    label ru unofficial "13.2: Q < K — нетто-прямая реакция, Q > K — нетто-обратная";
+    text en official """The bar charts in Figure 13.6 represent changes in reactant and product concentrations for three different reaction mixtures. The reaction quotients for mixtures 1 and 3 are initially lesser than the reaction’s equilibrium constant, so each of these mixtures will experience a net forward reaction to achieve equilibrium. The reaction quotient for mixture 2 is initially greater than the equilibrium constant, so this mixture will proceed in the reverse direction until equilibrium is established.""";
+    content_hash "sha256:3f78fde9f566349795b1e38e4e6bc923db6ec1bccc9e3156f0cc7fb3d426a333";
+}
+
+// 13.4: ICE-подход — начальные количества, изменения, равновесный состав
+pub fragment OS_13_4_ICE in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "13.4/ice";
+    label ru unofficial "13.4: ICE-подход — начальные количества, изменения, равновесный состав";
+    text en official """The equilibrium constant for a reaction is calculated from the equilibrium concentrations (or pressures) of its reactants and products. If these concentrations are known, the calculation simply involves their substitution into the K expression, as was illustrated by Example 13.2. A slightly more challenging example is provided next, in which the reaction stoichiometry is used to derive equilibrium concentrations from the information provided. The basic strategy of this computation is helpful for many types of equilibrium computations and relies on the use of terms for the reactant and product concentrations initially present, for how they change as the reaction proceeds, and for what they are when the system reaches equilibrium. The acronym ICE is commonly used to refer to this mathematical approach, and the concentrations terms are usually gathered in a tabular format called an ICE table.""";
+    content_hash "sha256:9318389bd3243f80e13b4368e3a536a04fef7d855205162d17816f70190e5c34";
+}

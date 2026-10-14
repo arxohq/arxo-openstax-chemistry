@@ -1,0 +1,13 @@
+{
+  "book_base": "https://openstax.org/books/chemistry-2e/pages/",
+  "bytes": 28570,
+  "license_page_strings": [
+    "CC BY"
+  ],
+  "locator": "19.2",
+  "sha256": "d33ed2a3f328924c01ca20dfc56c48459ddeb9bad7e6844783807fbf06534dff",
+  "slug": "19-2-coordination-chemistry-of-transition-metals",
+  "title": "Coordination Chemistry of Transition Metals",
+  "url": "https://openstax.org/books/chemistry-2e/pages/19-2-coordination-chemistry-of-transition-metals",
+  "uuid": "21374116-b20b-4092-8a9d-0a89dfc7920e"
+}

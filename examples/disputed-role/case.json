@@ -1,0 +1,68 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:ba02a674d358d83a1a703fcfa64bfd6811d093a35acc7064f22ebef25937d33e",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#k22-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:h2o",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#donates_proton"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:4877dc19f932839ae52f2a877e85354fe52472bc6606235939187ab3c0a129eb",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#k22-yes",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:h2o",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#accepts_proton"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:87bff6f0fc18173f1a6f24e556eb06d0d99614995def0a304a686f6bdcbffe6a",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#k22-no",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:h2o",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "negative",
+        "predicate": "urn:openstax:clir:chemistry-acids#accepts_proton"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-06T12:00:00Z",
+    "knowledgeTime": "2026-09-06T12:00:00Z",
+    "legalTime": "2026-09-06",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

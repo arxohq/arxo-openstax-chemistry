@@ -1,0 +1,723 @@
+[
+  {
+    "name": "water-amphiprotic",
+    "spec": "openstax.chemistry_acids@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_acids/tests/openstax-chemistry-acids.lawtest",
+    "sourceTest": "urn:query:openstax-chem-acids-01-water-amphiprotic",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-acids#AmphiproticDonatesAndAccepts"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:f38c7be187e311505ee448feb67681de3d1f92373d5d19f2400c5e19375f5441"
+  },
+  {
+    "name": "unrecorded-role",
+    "spec": "openstax.chemistry_acids@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_acids/tests/openstax-chemistry-acids.lawtest",
+    "sourceTest": "urn:query:openstax-chem-acids-18-book-water-donation-unrecorded",
+    "offset": 17,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:a13a7edb9cfe9291f5040491bfb3a4c0648dfa004a8baab3ad6dce696cbd4805"
+  },
+  {
+    "name": "disputed-role",
+    "spec": "openstax.chemistry_acids@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_acids/tests/openstax-chemistry-acids.lawtest",
+    "sourceTest": "urn:query:openstax-chem-acids-22-book-water-acceptance-disputed-neither",
+    "offset": 21,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:d632e0a079f819a08ab864117db321af21f5bd3c7146297c1aaf8e9bd005011a"
+  },
+  {
+    "name": "titration-half-equivalence",
+    "spec": "openstax.chemistry_acids@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_acids/tests/openstax-chemistry-titration.lawtest",
+    "sourceTest": "urn:query:openstax-chem-titration-03-half-pka",
+    "offset": 2,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-acids#HalfEquivalencePhEqualsPka"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:7ec7f192a004695e41b9cccbdc2520dde4ac96ab509aca9074a738a46ccba99a"
+  },
+  {
+    "name": "aufbau-model",
+    "spec": "openstax.chemistry_atomic@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_atomic/tests/03-aufbau-model-ok.lawtest",
+    "sourceTest": "aufbau-model model entry is covered",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-atomic#AufbauCovered"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:d8c165046dbd483e96bd2cc6215e12c80114dbf9a62b81f2241ad5213703e123"
+  },
+  {
+    "name": "layer-mismatch",
+    "spec": "openstax.chemistry_atomic@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_atomic/tests/05-layer-mismatch.lawtest",
+    "sourceTest": "aufbau-model entry with a wrong layer is a layer mismatch",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-atomic#AufbauLayerMismatch"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:5b3e267e1f012b0fd9807dd2dac5ae402e7d83b7c09e21f852e2cabb27fc1763"
+  },
+  {
+    "name": "lewis-symbol",
+    "spec": "openstax.chemistry_bonding@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_bonding/tests/02-lewis-symbol-ok.lawtest",
+    "sourceTest": "lewis-symbol definition entry is covered",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-bonding#LewisSymbolCovered"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:67588bb6c9e0c02137c4e2f8e9db5e00125326d2cfffa7cdad83f3dbacec31dc"
+  },
+  {
+    "name": "octet-model",
+    "spec": "openstax.chemistry_bonding@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_bonding/tests/03-octet-model-ok.lawtest",
+    "sourceTest": "octet-model model entry is covered",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-bonding#OctetCovered"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:7e2f620c96d38c8eddcc61a35dfae88ba3d09dc4d2fcee12fbcd08f66bc43f56"
+  },
+  {
+    "name": "coordination-sphere",
+    "spec": "openstax.chemistry_coordination@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_coordination/tests/03-coord-sphere-ok.lawtest",
+    "sourceTest": "coord-sphere definition entry is covered",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-coordination#SphereCovered"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:867eeefe470fd318634f619d259ee6926436342ac85ff69177a096808c7fb9e4"
+  },
+  {
+    "name": "checker-pending",
+    "spec": "openstax.chemistry_coordination@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_coordination/tests/06-checker-pending.lawtest",
+    "sourceTest": "coord-numbers entry is source-anchored but checker-pending",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-coordination#CoordNumbersCheckerPending"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:26da695b0c99275a041954c281bd56111d14ce36984a4e9032ad59ac311d5be8"
+  },
+  {
+    "name": "zinc-copper-cell",
+    "spec": "openstax.chemistry_electro@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_electro/tests/chemistry-electro.lawtest",
+    "sourceTest": "urn:query:os-electro-04-zn-cu-positive",
+    "offset": 3,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-electro#StandardCellPositive"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:5067dee84c81f3a87f6eec97a915549a306f2f4a3c917c7b74013062c11bd67e"
+  },
+  {
+    "name": "reversed-cell",
+    "spec": "openstax.chemistry_electro@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_electro/tests/chemistry-electro.lawtest",
+    "sourceTest": "urn:query:os-electro-05-reversed",
+    "offset": 4,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:eecf7c77bae610e7141a17c5c430ed750828617b9ba926a4397f038dc7769fdd"
+  },
+  {
+    "name": "tampered-potential",
+    "spec": "openstax.chemistry_electro@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_electro/tests/02-record-adapter.lawtest",
+    "sourceTest": "urn:query:elrec-02-tampered-neither",
+    "offset": 1,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:c8336a001229a9e5c4339ac034ad874b8e9ff6a00c52fb574b9b6fe1b9a20cbb"
+  },
+  {
+    "name": "forward-shift",
+    "spec": "openstax.chemistry_equilibrium@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_equilibrium/tests/chemistry-equilibrium.lawtest",
+    "sourceTest": "urn:query:os-eq-01-forward",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-equilibrium#ShiftsTowardProducts"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:640c4f55fcf36b848d5d65e3ed3a6ab26cb8137f72f9fba7844e4ecaa216ea51"
+  },
+  {
+    "name": "ice-without-temperature",
+    "spec": "openstax.chemistry_equilibrium@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_equilibrium/tests/chemistry-equilibrium.lawtest",
+    "sourceTest": "urn:query:os-eq-05-no-temperature",
+    "offset": 4,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:780d431bd8635d7280a1a0b998a0c4b94f08b4014c961befb1ac7c495c5358a7"
+  },
+  {
+    "name": "ideal-gas-licensed",
+    "spec": "openstax.chemistry_gases@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_gases/tests/chemistry-gases.lawtest",
+    "sourceTest": "urn:query:os-gas-01-ideal",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-gases#IdealGasModelLicensed"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:308c2461cd5d88c70b4642a331ba2961425a9b6688c1a79c73eb16c45130a26e"
+  },
+  {
+    "name": "gas-without-temperature",
+    "spec": "openstax.chemistry_gases@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_gases/tests/chemistry-gases.lawtest",
+    "sourceTest": "urn:query:os-gas-02-no-temperature",
+    "offset": 1,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:cd2c0f6c108335daabfff24f030d671abe501eeb910c2c8fd068f068057471f2"
+  },
+  {
+    "name": "first-order-concentration",
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_kinetics/tests/02-kinetic-run.lawtest",
+    "sourceTest": "urn:query:os-run-01-first-order-concentration",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "result_kind",
+        "op": "eq",
+        "value": "PROPOSITION"
+      },
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-kinetics#RunConcentration"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:8afd8d8b8faba22bcaf34da4c7c905514862c4ecb9fa375f169e9cca4a85293f"
+  },
+  {
+    "name": "first-order-half-life",
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_kinetics/tests/02-kinetic-run.lawtest",
+    "sourceTest": "urn:query:os-run-02-first-order-half-life",
+    "offset": 1,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-kinetics#RunHalfLife"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:60eac5d8468da4b0eee667ebbde304763bad0b5ac4975d78bfe290071d40957e"
+  },
+  {
+    "name": "unsupported-order",
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_kinetics/tests/02-kinetic-run.lawtest",
+    "sourceTest": "urn:query:os-run-08-unsupported-order",
+    "offset": 7,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-kinetics#RunUnsupportedOrder"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:85c4c693ebd8cbe3abd4aed01543fe418ab2cbd704414517af7db9d8ecfd1560"
+  },
+  {
+    "name": "arrhenius-ratio",
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_kinetics/tests/02-kinetic-run.lawtest",
+    "sourceTest": "urn:query:os-run-10-arrhenius-ratio",
+    "offset": 9,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-kinetics#RunArrheniusRatio"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:a9886fece45400e439246d4a95b0d9f227b735c8a14c1c474187afb6a9d298c3"
+  },
+  {
+    "name": "arrhenius-refused",
+    "spec": "openstax.chemistry_kinetics@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_kinetics/tests/02-kinetic-run.lawtest",
+    "sourceTest": "urn:query:os-run-11-transfer-refused",
+    "offset": 10,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-kinetics#RunTransferRefused"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:163f1bd0160cc7ccfc1bf3dd80f841f7a2b1094686fa945272e5d7b8ae4f3af6"
+  },
+  {
+    "name": "dilution-conserves-amount",
+    "spec": "openstax.chemistry_solutions@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_solutions/tests/chemistry-solutions.lawtest",
+    "sourceTest": "urn:query:os-sol-02-dilution",
+    "offset": 1,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-solutions#AmountConservedOnDilution"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:1991c567a7402623caabcc55c423eb8ae780d4fc42ac7a3e98110abb2f13790a"
+  },
+  {
+    "name": "dilution-not-declared",
+    "spec": "openstax.chemistry_solutions@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_solutions/tests/chemistry-solutions.lawtest",
+    "sourceTest": "urn:query:os-sol-04-no-dilution",
+    "offset": 3,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:cd3be56be0a6b3acf0cdedec3ebd9196580f6c5754ef607f3c530a5bc701e753"
+  },
+  {
+    "name": "yield-as-mass",
+    "spec": "openstax.chemistry_stoichiometry@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_stoichiometry/tests/openstax-chemistry-stoichiometry.lawtest",
+    "sourceTest": "OS-CHEM-STOICH-01-YIELD-MAY-BE-A-MASS",
+    "offset": 0,
+    "expectations": [
+      {
+        "field": "result_kind",
+        "op": "eq",
+        "value": "PROPOSITION"
+      },
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-stoichiometry#YieldExpressedAsMass"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:cb79ed672d94f9af824d3f00bc9c7623392e7676e351666b192c7c0ca905929d"
+  },
+  {
+    "name": "yield-without-basis",
+    "spec": "openstax.chemistry_stoichiometry@0.1.0",
+    "sourceSuite": "packages/openstax.chemistry_stoichiometry/tests/openstax-chemistry-stoichiometry.lawtest",
+    "sourceTest": "OS-CHEM-STOICH-03-YIELD-NEEDS-BASIS",
+    "offset": 2,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:047e828954ea7063c861136f83cbef0ea6fba10135807409650ff9da62416041"
+  },
+  {
+    "name": "spontaneous-forward",
+    "spec": "openstax.chemistry_thermo@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_thermo/tests/chemistry-thermo.lawtest",
+    "sourceTest": "urn:query:os-thermo-02-spontaneous",
+    "offset": 1,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "TRUE_ONLY"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      },
+      {
+        "negated": false,
+        "observation": "applied",
+        "value": "urn:openstax:clir:chemistry-thermo#SpontaneousForward"
+      }
+    ],
+    "truth": "TRUE_ONLY",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:56500db6e5297bb74a646f5520b9522f28f5c6094c90ca759fd59418eab2a0e6"
+  },
+  {
+    "name": "free-energy-without-sign",
+    "spec": "openstax.chemistry_thermo@0.1.1",
+    "sourceSuite": "packages/openstax.chemistry_thermo/tests/chemistry-thermo.lawtest",
+    "sourceTest": "urn:query:os-thermo-04-no-sign",
+    "offset": 3,
+    "expectations": [
+      {
+        "field": "truth_status",
+        "op": "eq",
+        "value": "NEITHER"
+      },
+      {
+        "field": "evaluation_status",
+        "op": "eq",
+        "value": "COMPUTED"
+      }
+    ],
+    "truth": "NEITHER",
+    "evaluation": "COMPUTED",
+    "resultHash": "sha256:e8a80af7611d292d4ff3e5dbc0bf54793ab6744056fe436009b34b28851b785c"
+  }
+]

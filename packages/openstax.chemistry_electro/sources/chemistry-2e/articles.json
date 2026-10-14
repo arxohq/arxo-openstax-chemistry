@@ -1,0 +1,15 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "17-3-potentials.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "17.3": "Electrode and Cell Potentials, Table 17.1"
+      },
+      "snapshotScope": "curated table excerpt only; not complete section 17.3",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "retained excerpt source-section marker"
+    }
+  ]
+}

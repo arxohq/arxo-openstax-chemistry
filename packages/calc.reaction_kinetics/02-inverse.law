@@ -1,0 +1,180 @@
+// Обратный вопрос (время достижения цели) и полупревращение.
+//
+// Цель предъявляется делом; достижимость — гардом, а не знаком:
+// цель выше начальной (порядки 0–2 монотонно не возрастают) — именованный
+// исход `target_above_initial`, неположительная цель для порядков 1–2 —
+// `invalid_target` (логарифм и деление на ноль не вызываются).
+// Совпадение цели с начальной — `level_at_start` (формула даёт ему ноль:
+// ln 1 = 0, отдельная нулевая голова не заводится — тот же приём, что у
+// `calc.first_order_dynamics`).
+
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+use self::{
+    Calculation,
+    given_initial_concentration,
+    given_order,
+    given_output_precision,
+    given_rate_constant,
+};
+
+pub relation given_target_concentration(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "целевая концентрация в моль/л, дробью числитель/знаменатель";
+    label en unofficial "target concentration in mol/l, as numerator/denominator";
+}
+
+pub relation time_bounds(c: Calculation, t: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы времени достижения цели в секундах";
+    label en unofficial "unrounded bounds of the target-reaching time in seconds";
+}
+
+pub relation time_value(c: Calculation, t: Decimal) kind institutional {
+    label ru unofficial "время достижения цели, округлённое до объявленной точности, — терминальная голова";
+    label en unofficial "target-reaching time rounded to the declared precision — a terminal head";
+}
+
+pub relation half_life_bounds(c: Calculation, t: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы t½ в секундах";
+    label en unofficial "unrounded half-life bounds in seconds";
+}
+
+pub relation half_life_value(c: Calculation, t: Decimal) kind institutional {
+    label ru unofficial "t½, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "half-life rounded to the declared precision — a terminal head";
+}
+
+pub relation target_above_initial(c: Calculation) kind institutional {
+    label ru unofficial "цель выше начальной: монотонный спад её не достигнет в будущем";
+    label en unofficial "target above the initial level: monotone decay will not reach it in the future";
+}
+
+pub relation invalid_target(c: Calculation) kind institutional {
+    label ru unofficial "целевая концентрация неположительна там, где формула требует положительной";
+    label en unofficial "target concentration is not positive where the formula needs a positive one";
+}
+
+pub relation level_at_start(c: Calculation) kind institutional {
+    label ru unofficial "цель совпадает с начальной: достигнута уже в начальный момент";
+    label en unofficial "target equals the initial level: already reached at the initial moment";
+}
+
+// --- Общие гарды цели ---------------------------------------------------------
+
+rule TargetAboveInitial(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer) strict {
+    label ru unofficial "цель выше начальной крест-накрест — недостижима спадом";
+    label en unofficial "cross-multiplied target above initial is unreachable by decay";
+    when given_initial_concentration(c, an, ad) and given_target_concentration(c, qn, qd)
+        and ad > 0 and qd > 0 and qn * ad > an * qd;
+    then target_above_initial(c);
+}
+
+rule LevelAtStart(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer) strict {
+    label ru unofficial "цель равна начальной крест-накрест — достигнута в начале; формула времени даёт ей ноль";
+    label en unofficial "cross-multiplied target equals initial — reached at the start; the time formula gives it zero";
+    when given_initial_concentration(c, an, ad) and given_target_concentration(c, qn, qd)
+        and ad > 0 and qd > 0 and qn * ad == an * qd;
+    then level_at_start(c);
+}
+
+// --- n = 0: t = (c₀ − c)/k --------------------------------------------------------
+
+rule TimeZeroOrder(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer, kn: Integer, kd: Integer) strict {
+    label ru unofficial "нулевой порядок: время — разность концентраций к скорости, точной дробью";
+    label en unofficial "zero order: time is the concentration difference over the rate, as an exact fraction";
+    when given_order(c, 0)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_target_concentration(c, qn, qd) and qd > 0 and qn >= 0
+        and qn * ad <= an * qd;
+    then time_bounds(c, bounds::exact(((an * qd - qn * ad) * kd) / (ad * qd * kn), 1));
+}
+
+rule HalfLifeZeroOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer) strict {
+    label ru unofficial "нулевой порядок: t½ = c₀/2k точной дробью";
+    label en unofficial "zero order: half-life t½ = c₀/2k as an exact fraction";
+    when given_order(c, 0)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0;
+    then half_life_bounds(c, bounds::exact((an * kd) / (ad * 2 * kn), 1));
+}
+
+// --- n = 1: t = ln(c₀/c)/k; t½ = ln 2/k ------------------------------------------
+
+rule InvalidTargetFirstOrder(c: Calculation, qn: Integer, qd: Integer) strict {
+    label ru unofficial "первый порядок с неположительной целью: логарифм не вызывается";
+    label en unofficial "first order with a nonpositive target: the logarithm is not invoked";
+    when given_order(c, 1)
+        and given_target_concentration(c, qn, qd) and qd > 0 and qn <= 0;
+    then invalid_target(c);
+}
+
+rule TimeFirstOrder(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer, kn: Integer, kd: Integer) strict {
+    label ru unofficial "первый порядок: время — логарифм отношения к скорости";
+    label en unofficial "first order: time is the log-ratio over the rate";
+    when given_order(c, 1)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_target_concentration(c, qn, qd) and qd > 0 and qn > 0
+        and qn * ad <= an * qd;
+    then time_bounds(c,
+        bounds::scale(math::ln((an * qd) / (ad * qn), "p16/0.1"), kd / kn, 1));
+}
+
+rule HalfLifeFirstOrder(c: Calculation, kn: Integer, kd: Integer) strict {
+    label ru unofficial "первый порядок: t½ = ln 2/k сертифицированными границами";
+    label en unofficial "first order: half-life t½ = ln 2/k in certified bounds";
+    when given_order(c, 1)
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0;
+    then half_life_bounds(c,
+        bounds::scale(math::ln(2 / 1, "p16/0.1"), kd / kn, 1));
+}
+
+// --- n = 2: t = (1/c − 1/c₀)/k; t½ = 1/(kc₀) --------------------------------------
+
+rule InvalidTargetSecondOrder(c: Calculation, qn: Integer, qd: Integer) strict {
+    label ru unofficial "второй порядок с неположительной целью: деление на ноль не вызывается";
+    label en unofficial "second order with a nonpositive target: division by zero is not invoked";
+    when given_order(c, 2)
+        and given_target_concentration(c, qn, qd) and qd > 0 and qn <= 0;
+    then invalid_target(c);
+}
+
+rule TimeSecondOrder(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer, kn: Integer, kd: Integer) strict {
+    label ru unofficial "второй порядок: время — разность обратных концентраций к скорости, точной дробью";
+    label en unofficial "second order: time is the reciprocal difference over the rate, as an exact fraction";
+    when given_order(c, 2)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_target_concentration(c, qn, qd) and qd > 0 and qn > 0
+        and qn * ad <= an * qd;
+    then time_bounds(c,
+        bounds::exact(((an * qd - qn * ad) * kd) / (qn * an * kn), 1));
+}
+
+rule HalfLifeSecondOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer) strict {
+    label ru unofficial "второй порядок: t½ = 1/(kc₀) точной дробью";
+    label en unofficial "second order: half-life t½ = 1/(kc₀) as an exact fraction";
+    when given_order(c, 2)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0;
+    then half_life_bounds(c, bounds::exact((kd * ad) / (kn * an), 1));
+}
+
+// --- Округление -----------------------------------------------------------------
+
+rule TimeRounded(c: Calculation, t: Bounds, p: Integer) strict {
+    label ru unofficial "округление времени — как у концентрации, сходимость не гарантируется молча";
+    label en unofficial "rounding the time — like the concentration, convergence is never silent";
+    when time_bounds(c, t) and given_output_precision(c, p);
+    then time_value(c, bounds::round(t, p, "HALF_UP"));
+}
+
+rule HalfLifeRounded(c: Calculation, t: Bounds, p: Integer) strict {
+    label ru unofficial "округление t½ — как у концентрации, сходимость не гарантируется молча";
+    label en unofficial "rounding the half-life — like the concentration, convergence is never silent";
+    when half_life_bounds(c, t) and given_output_precision(c, p);
+    then half_life_value(c, bounds::round(t, p, "HALF_UP"));
+}

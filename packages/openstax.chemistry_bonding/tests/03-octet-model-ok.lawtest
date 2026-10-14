@@ -1,0 +1,17 @@
+language "law.core" version "0.2";
+package openstax.chemistry_bonding version "0.1.0";
+namespace "urn:openstax:clir:chemistry-bonding";
+
+test "octet-model model entry is covered" {
+ given {
+  assert "f0": row_claims(entity_ref("urn:openstax:matrix:m03"), "octet-model") { origin case_input; }
+  assert "f1": row_formula(entity_ref("urn:openstax:matrix:m03"), "number of bonds predicted from electrons needed to reach an octet") { origin case_input; }
+  assert "f2": row_layer(entity_ref("urn:openstax:matrix:m03"), "model") { origin case_input; }
+  assert "f3": row_checker(entity_ref("urn:openstax:matrix:m03"), "calc.lewis_structures octet-check") { origin case_input; }
+  assert "f4": row_fragment(entity_ref("urn:openstax:matrix:m03"), "section/7.3#octet-prediction") { origin case_input; }
+ }
+ evaluate truth(claim_covered(entity_ref("urn:openstax:matrix:m03")));
+ expect truth_status == TRUE_ONLY;
+ expect evaluation_status == COMPUTED;
+ expect applied(OctetCovered);
+}

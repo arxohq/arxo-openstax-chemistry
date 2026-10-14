@@ -1,0 +1,110 @@
+language "law.core" version "0.2";
+package openstax.chemistry_equilibrium version "0.1.0";
+namespace "urn:openstax:clir:chemistry-equilibrium";
+
+test "urn:query:os-eq-01-forward" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e01-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e01-1": quotient_below_constant(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e01-2": reaction_temperature_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e01-3": standard_state_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(shifts_toward_products(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ShiftsTowardProducts);
+}
+
+test "urn:query:os-eq-02-backward" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e02-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e02-1": quotient_above_constant(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e02-2": reaction_temperature_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e02-3": standard_state_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(shifts_toward_reactants(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ShiftsTowardReactants);
+}
+
+test "urn:query:os-eq-03-no-comparison" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e03-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(shifts_toward_products(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:os-eq-04-ice" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e04-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e04-1": mass_balances_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(equilibrium_composition_computable(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(EquilibriumCompositionComputable);
+}
+
+// Без предъявленной температуры сравнение Q/K не читается: K определена
+// при данной T (закон действующих масс, 13.2).
+test "urn:query:os-eq-05-no-temperature" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e05-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e05-1": quotient_below_constant(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e05-2": standard_state_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(shifts_toward_products(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Без предъявленного стандартного состояния сравнение Q/K не читается.
+test "urn:query:os-eq-06-no-standard-state" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e06-q": reaction_in_question(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e06-1": quotient_above_constant(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+        assert "e06-2": reaction_temperature_presented(entity_ref("urn:case:chem:eq:haber")) { origin case_input; }
+    }
+    evaluate truth(shifts_toward_reactants(entity_ref("urn:case:chem:eq:haber")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

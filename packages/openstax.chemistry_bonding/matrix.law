@@ -1,0 +1,112 @@
+language "law.core" version "0.2";
+package openstax.chemistry_bonding version "0.1.0";
+namespace "urn:openstax:clir:chemistry-bonding";
+
+// Источниковый срез B23.09: три строки §7.3 (символ Льюиса — определение, октет — модель, одинарная связь — наблюдение) с привязкой к `calc.lewis_structures`. Наблюдение, определение и учебная
+// модель размечены отдельно (B23.09); каждая строка привязана к точному
+// фрагменту и к вычислительному соседу `calc.lewis_structures`.
+// Литералы правил — сам срез; тесты предъявляют верные/неверные строки.
+
+use self::{
+    F_LEWIS_SYM,
+    F_OCTET,
+    F_SINGLE_BOND,
+};
+
+@source(F_LEWIS_SYM)
+pub entity MatrixRow {
+    label en official "claimed source-slice entry under test";
+    label ru unofficial "проверяемая строка источникового среза";
+}
+
+@source(F_LEWIS_SYM)
+pub relation row_claims(r: MatrixRow { label ru unofficial "r"; }, rule_id: Text { label ru unofficial "идентификатор утверждения учебника"; }) kind empirical {
+    label en official "row claims to cover a textbook statement";
+    label ru unofficial "строка заявляет покрытие утверждения учебника";
+}
+
+@source(F_LEWIS_SYM)
+pub relation row_formula(r: MatrixRow { label ru unofficial "r"; }, formula: Text { label ru unofficial "формулировка"; }) kind empirical {
+    label en official "statement text as presented";
+    label ru unofficial "предъявленная формулировка утверждения";
+}
+
+@source(F_LEWIS_SYM)
+pub relation row_layer(r: MatrixRow { label ru unofficial "r"; }, layer: Text { label ru unofficial "слой"; }) kind empirical {
+    label en official "observation/definition/model layer as presented";
+    label ru unofficial "предъявленный слой: наблюдение/определение/модель";
+}
+
+@source(F_LEWIS_SYM)
+pub relation row_checker(r: MatrixRow { label ru unofficial "r"; }, checker: Text { label ru unofficial "проверяющий"; }) kind empirical {
+    label en official "checker linkage as presented";
+    label ru unofficial "предъявленная привязка к проверяющему";
+}
+
+@source(F_LEWIS_SYM)
+pub relation row_fragment(r: MatrixRow { label ru unofficial "r"; }, fragment_locator: Text { label ru unofficial "фрагмент"; }) kind empirical {
+    label en official "source fragment locator as presented";
+    label ru unofficial "предъявленный локатор фрагмента источника";
+}
+
+@source(F_LEWIS_SYM)
+pub relation claim_covered(r: MatrixRow { label ru unofficial "r"; }) kind derived {
+    label en official "slice entry is layered and source-anchored";
+    label ru unofficial "строка среза размечена по слоям и привязана к источнику";
+}
+
+@source(F_LEWIS_SYM)
+pub relation matrix_gap(r: MatrixRow { label ru unofficial "r"; }, reason: Text { label ru unofficial "причина"; }) kind derived {
+    label en official "slice entry defect with a named reason";
+    label ru unofficial "дефект строки среза с именованной причиной";
+}
+
+// B23.09 acceptance: неразмеченная строка (без слоя) покрытием не является.
+
+
+@source(F_LEWIS_SYM)
+rule LewisSymbolCovered(r: MatrixRow) strict {
+    label en official "lewis symbol definition entry is covered";
+    label ru unofficial "строка-определение символа Льюиса покрыта";
+    when row_claims(r, "lewis-symbol")
+        and row_formula(r, "Lewis symbol is the elemental symbol with one dot per valence electron")
+        and row_layer(r, "definition")
+        and row_checker(r, "calc.lewis_structures valence-count")
+        and row_fragment(r, "section/7.3#lewis-symbols");
+    then claim_covered(r);
+}
+
+
+@source(F_OCTET)
+rule OctetCovered(r: MatrixRow) strict {
+    label en official "octet model entry is covered";
+    label ru unofficial "строка-модель октета покрыта";
+    when row_claims(r, "octet-model")
+        and row_formula(r, "number of bonds predicted from electrons needed to reach an octet")
+        and row_layer(r, "model")
+        and row_checker(r, "calc.lewis_structures octet-check")
+        and row_fragment(r, "section/7.3#octet-prediction");
+    then claim_covered(r);
+}
+
+
+@source(F_SINGLE_BOND)
+rule SingleBondCovered(r: MatrixRow) strict {
+    label en official "single bond observation entry is covered";
+    label ru unofficial "строка-наблюдение одинарной связи покрыта";
+    when row_claims(r, "single-bond")
+        and row_formula(r, "a single shared pair is a single bond; each Cl sees eight valence electrons")
+        and row_layer(r, "observation")
+        and row_checker(r, "calc.lewis_structures bond-order")
+        and row_fragment(r, "section/7.3#single-bond");
+    then claim_covered(r);
+}
+
+
+@source(F_OCTET)
+rule OctetLayerMismatch(r: MatrixRow, v: Text) strict {
+    label en official "octet-model entry with a wrong layer is a named gap";
+    label ru unofficial "строка octet-model с неверным слоем — именованный зазор";
+    when row_claims(r, "octet-model") and row_layer(r, v) and v != "model";
+    then matrix_gap(r, "LAYER_MISMATCH");
+}

@@ -1,0 +1,25 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_solutions"
+version = "0.1.1"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-solutions"
+
+# Каталожная метадата (DECISION-0051). НЕ семантика: в CLIR не понижается.
+# Своих закреплённых байтов у пакета нет (авторский парафраз с точными
+# ссылками на §11.1; определения концентраций — у владельца гл. 3), поэтому
+# выводимых полей нет, как у `chem.acid_strength`. Лицензия книги —
+# CC BY-NC-SA 4.0 (см. шапку 01-solutions.law).
+[metadata]
+title = "OpenStax Chemistry 2e, гл. 11 (растворы): ворота моделей растворения, разведения и идеального разбавленного профиля"
+legalStatus = "doctrine"
+
+# Сценарии пакета: единственный источник фактов, вопросов и ожиданий.
+[[tests]]
+family = "openstax_chemistry_solutions"
+suites = ["tests/chemistry-solutions.lawtest"]
+world = ["openstax.chemistry_solutions"]
+
+[authoring]
+local_imports = "explicit"

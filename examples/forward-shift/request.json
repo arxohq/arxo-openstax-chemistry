@@ -1,0 +1,906 @@
+{
+  "ir": {
+    "artifactHash": "sha256:6ee57ad9dc27cb31ce5d93a86046f60ecce919c9b1933c252c407ce7c26af530",
+    "features": [
+      "core-executable"
+    ],
+    "imports": [],
+    "metadata": {
+      "localSources": {
+        "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_TEXT": "sources/chemistry-2e/en.txt"
+      }
+    },
+    "nodes": [
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_4_ICE"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#mass_balances_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:3a2d6b52a48e55c8202acf5c8af0a378b5a707067806141054f6c1efcfb3977a",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#equilibrium_composition_computable"
+        },
+        "id": "urn:openstax:clir:chemistry-equilibrium#EquilibriumCompositionComputable",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "initial amounts and balances: ICE composition (13.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "начальные количества и балансы: состав считается ICE (13.4)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:fd70862310e1d8472e5cba5c629d12f56d2923fa4d2565e24134e5f438c5ea26",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OPENSTAX_CHEMISTRY_2E",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "Chemistry 2e"
+          }
+        ],
+        "number": "OpenStax Chemistry 2e (2019), chapter 13",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "sourceKind": "urn:openstax:clir:chemistry-equilibrium#treatise"
+      },
+      {
+        "contentHash": "sha256:3f1f4474f02ce2311c07460aa8a7b79c462317ca9a514bdb4c1baec208af530c",
+        "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_13_2_FORWARD_REVERSE",
+        "kind": "fragment",
+        "labels": [
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "13.2: Q < K — нетто-прямая реакция, Q > K — нетто-обратная"
+          }
+        ],
+        "locator": "13.2/forward-reverse",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "texts": [
+          {
+            "contentHash": "sha256:3f78fde9f566349795b1e38e4e6bc923db6ec1bccc9e3156f0cc7fb3d426a333",
+            "language": "en",
+            "status": "official",
+            "text": "The bar charts in Figure 13.6 represent changes in reactant and product concentrations for three different reaction mixtures. The reaction quotients for mixtures 1 and 3 are initially lesser than the reaction’s equilibrium constant, so each of these mixtures will experience a net forward reaction to achieve equilibrium. The reaction quotient for mixture 2 is initially greater than the equilibrium constant, so this mixture will proceed in the reverse direction until equilibrium is established."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:e9259c1978ae4c8e1a9082d284a485d076e312f67417f9c1faae6dbcef536ae2",
+        "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_13_2_MASS_ACTION",
+        "kind": "fragment",
+        "labels": [
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "13.2: закон действующих масс — при данной температуре Q в равновесии постоянно"
+          }
+        ],
+        "locator": "13.2/mass-action",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "texts": [
+          {
+            "contentHash": "sha256:f4dad0ceed6cd966f76fe18932bf871c1e6918d08d98bbc43c49fbc121c403f3",
+            "language": "en",
+            "status": "official",
+            "text": "Comparison of the data plots in Figure 13.5 shows that both experimental scenarios resulted in the same value for the equilibrium constant. This is a general observation for all equilibrium systems, known as the law of mass action: At a given temperature, the reaction quotient for a system at equilibrium is constant."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:75dd1cd9eea0321f8ae30e187a6302cb37959b056b99f81cc3117dda2c1f221a",
+        "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_13_2_QK_PREDICTION",
+        "kind": "fragment",
+        "labels": [
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "13.2: сравнение Q и K предсказывает направление реакции"
+          }
+        ],
+        "locator": "13.2/qk-prediction",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "texts": [
+          {
+            "contentHash": "sha256:8b1151bff7f0805c92e721d72fc02fed461ffd36b980bf55ac4aa5f0168ded14",
+            "language": "en",
+            "status": "official",
+            "text": "The equilibrium constant for a reaction can be used to predict the behavior of mixtures containing its reactants and/or products. As demonstrated by the sulfur dioxide oxidation process described above, a chemical reaction will proceed in whatever direction is necessary to achieve equilibrium. Comparing Q to K for an equilibrium system of interest allows prediction of what reaction (forward or reverse), if any, will occur."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:6667eaec42521ab6935452be64f3e82849af050872e9a3e1387af52931e109df",
+        "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_13_4_ICE",
+        "kind": "fragment",
+        "labels": [
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "13.4: ICE-подход — начальные количества, изменения, равновесный состав"
+          }
+        ],
+        "locator": "13.4/ice",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "texts": [
+          {
+            "contentHash": "sha256:9318389bd3243f80e13b4368e3a536a04fef7d855205162d17816f70190e5c34",
+            "language": "en",
+            "status": "official",
+            "text": "The equilibrium constant for a reaction is calculated from the equilibrium concentrations (or pressures) of its reactants and products. If these concentrations are known, the calculation simply involves their substitution into the K expression, as was illustrated by Example 13.2. A slightly more challenging example is provided next, in which the reaction stoichiometry is used to derive equilibrium concentrations from the information provided. The basic strategy of this computation is helpful for many types of equilibrium computations and relies on the use of terms for the reactant and product concentrations initially present, for how they change as the reaction proceeds, and for what they are when the system reaches equilibrium. The acronym ICE is commonly used to refer to this mathematical approach, and the concentrations terms are usually gathered in a tabular format called an ICE table."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:2ebda0cbe05adfa5d816949061ee44f4a07aa04e76945ae047543f77649cbac2",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "kind": "source_edition",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e, English edition (CC BY-NC-SA 4.0)"
+          }
+        ],
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "work": "urn:openstax:clir:chemistry-equilibrium#OPENSTAX_CHEMISTRY_2E"
+      },
+      {
+        "contentHash": "sha256:1b3234ce401fb52607a016e945c52157ab9a070531a0fdfcd534cebcbb19976e",
+        "documentHash": "sha256:75960d4de233ceb3bbc081d0d3d5930149c60878f1517916fe08c15ee09a3276",
+        "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+        "id": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "retrievedAt": "2026-09-28T00:00:00Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/"
+      },
+      {
+        "contentHash": "sha256:0b3b2e45fb2999e93d43047c10af3c87dd77a37bb1a06e7aa3ff9caa739e6432",
+        "id": "urn:openstax:clir:chemistry-equilibrium#Reaction",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "reversible reaction presented by the case"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "обратимая реакция, предъявленная делом"
+          }
+        ],
+        "name": "Reaction",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_MASS_ACTION",
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_QK_PREDICTION",
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_FORWARD_REVERSE"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:13c5c62810c750ba32ff6bf11ac7cb4dded90a35ca6837dea66acd8cdaab91cb",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_products"
+        },
+        "id": "urn:openstax:clir:chemistry-equilibrium#ShiftsTowardProducts",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "Q < K at stated T and standard state: shift toward products (13.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "Q < K при T и стандартном состоянии: сдвиг к продуктам (13.2)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_MASS_ACTION",
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_QK_PREDICTION",
+          "urn:openstax:clir:chemistry-equilibrium#OS_13_2_FORWARD_REVERSE"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#quotient_above_constant"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:2f5d48fba9aa541d68db0fd5b714921f95702613cc05a6d271eb4bed5c63f3a5",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_reactants"
+        },
+        "id": "urn:openstax:clir:chemistry-equilibrium#ShiftsTowardReactants",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "Q > K at stated T and standard state: shift toward reactants (13.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "Q > K при T и стандартном состоянии: сдвиг к реагентам (13.2)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:b4e4ab2374c5b2ebd46635ac0b3f00050a94854061f500416916ac1baa3ff813",
+        "id": "urn:openstax:clir:chemistry-equilibrium#equilibrium_composition_computable",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "equilibrium composition is computed by the ICE approach (13.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "равновесный состав считается ICE-подходом (13.4)"
+          }
+        ],
+        "name": "equilibrium_composition_computable",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#equilibrium_composition_computable/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:be52a58ab8a7a23fbdd2e6d755643fcf001a498a71549068d2b123adccf462c0",
+        "id": "urn:openstax:clir:chemistry-equilibrium#mass_balances_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents initial amounts and balances (ICE input)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило начальные количества и балансы (вход ICE)"
+          }
+        ],
+        "name": "mass_balances_presented",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#mass_balances_presented/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:86b0d023f3cbbdab23f4ebe6fee767b6fb0189a485b5becd4396e3c585cf4116",
+        "id": "urn:openstax:clir:chemistry-equilibrium#quotient_above_constant",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the comparison Q > K"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило сравнение Q > K"
+          }
+        ],
+        "name": "quotient_above_constant",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#quotient_above_constant/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:6c3912c25c7affb03b62444d72f255c09a41b75ab30b28558bdc91775cb527e1",
+        "id": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the comparison Q < K"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило сравнение Q < K"
+          }
+        ],
+        "name": "quotient_below_constant",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:2e3848a98daf74b8fcc5e10464dd45a1318c583f6cbc7d854d2a5360be236a78",
+        "id": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the reaction is presented by the case as the subject of the question"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "реакция предъявлена делом как предмет вопроса"
+          }
+        ],
+        "name": "reaction_in_question",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:bfb69e044629cd64ac3fa4da0e079cd867951249a50e39971019f1b58e628e75",
+        "id": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the reaction temperature (the K basis)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило температуру реакции (базис K)"
+          }
+        ],
+        "name": "reaction_temperature_presented",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:723656743db109bd0212ed7f8746a4943131586214f72c2f0faaa47474246851",
+        "id": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_products",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "shift toward products (Q < K, 13.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "сдвиг к продуктам (Q < K, 13.2)"
+          }
+        ],
+        "name": "shifts_toward_products",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_products/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:57d1497bc9820afa7488e032e63e4f9a47a9e5984307bf9eedd4143d0dd655b2",
+        "id": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_reactants",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "shift toward reactants (Q > K, 13.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "сдвиг к реагентам (Q > K, 13.2)"
+          }
+        ],
+        "name": "shifts_toward_reactants",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_reactants/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:5b4dff8b9250dfd95b6898229cc6ada04acd3b0c8913ca869ad29d87ebb5a8da",
+        "id": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the standard state (the K basis)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило стандартное состояние (базис K)"
+          }
+        ],
+        "name": "standard_state_presented",
+        "package": "urn:openstax:clir:chemistry-equilibrium",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-equilibrium#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      }
+    ],
+    "package": {
+      "name": "openstax.chemistry_equilibrium",
+      "namespace": "urn:openstax:clir:chemistry-equilibrium",
+      "semanticHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "version": "0.1.0"
+    },
+    "schemaVersion": "law.core.ir/0.7",
+    "semanticHash": "sha256:6fb7f5a37f0c79ffe8f33f5c9c9fe9f26636a21cea7d2799eff6c0a2272de3bc",
+    "semanticVersion": "0.2.11",
+    "strata": [],
+    "theoryHash": "sha256:d9c745bf2fc43c9b9fa6d0d0ef84e86bcd7bc98d35573ba916fa77af400c6663"
+  },
+  "case": {
+    "assertions": [
+      {
+        "contentHash": "sha256:c38363a1877c4f6aa9f68c4e0bd5e7aa252a1a612af5f4f1e3c8bdbb7c4f8854",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-equilibrium#e01-q",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:eq:haber",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-equilibrium"
+      },
+      {
+        "contentHash": "sha256:0b236b3b6b7a256a7a0af9589ebba52b6a4611da868241de4efa6a0a58ac5f28",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-equilibrium#e01-1",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:eq:haber",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-equilibrium"
+      },
+      {
+        "contentHash": "sha256:21d5bafa56d564b2141f6c2e59193689717a5be24f23d3f8ecc82a59513253f4",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-equilibrium#e01-2",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:eq:haber",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-equilibrium"
+      },
+      {
+        "contentHash": "sha256:63bbd24ec351bddddc6219c94547d287a6ed216d1959a9211310444751b541e2",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-equilibrium#e01-3",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:eq:haber",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-equilibrium"
+      }
+    ],
+    "context": {
+      "decisionTime": "2026-09-27T12:00:00Z",
+      "knowledgeTime": "2026-09-27T12:00:00Z",
+      "legalTime": "2026-09-27",
+      "timezone": "UTC"
+    },
+    "options": {}
+  },
+  "query": {
+    "kind": "truth",
+    "literal": {
+      "args": [
+        {
+          "id": "urn:case:chem:eq:haber",
+          "kind": "entity_ref"
+        }
+      ],
+      "kind": "literal",
+      "polarity": "positive",
+      "predicate": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_products"
+    },
+    "queryId": "urn:openstax:clir:chemistry-equilibrium#test/urn%3Aquery%3Aos-eq-01-forward/query/0"
+  },
+  "schemaVersion": "law.core.evaluation-request/0.2",
+  "semanticVersion": "0.2.11"
+}

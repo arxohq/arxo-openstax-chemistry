@@ -1,0 +1,30 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:3c81b8554c3910108ee5467248aaf0395da570a64aa9b4ee8ce3265dacaf1048",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-solutions#s04-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:sol:brine",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-solutions#solution_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-solutions"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

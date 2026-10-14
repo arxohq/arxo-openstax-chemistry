@@ -1,0 +1,173 @@
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+// Networks with c0 = 1 mol/l, k1 = 0.1 1/s, k2 = 0.2 1/s, t = 10 s.
+// Independent oracles (python3 math):
+//   consecutive: c_A = e^-1 = 0.3679; c_B = e^-1 - e^-2 = 0.2325;
+//     c_C = 1 - c_A - c_B = 0.3996 (precision 4)
+//   equal rates (k1 = k2 = 0.1): c_B = 0.1*10*e^-1 = 0.3679
+//   parallel (k1+k2 = 0.3): c_A = e^-3 = 0.0498;
+//     y_B = (0.1/0.3)*(1 - e^-3) = 0.3167; y_C = 0.6335
+//   catalyst (Ea = 50000, Ea_cat = 40000, R = 8.314, T = 300):
+//     speedup = exp(10000/2494.2) = 55.1083... -> 55.11 (precision 2)
+//   fit (order 1, k = 0.1, t = 10, obs 0.37): residual = 0.0021 (precision 4)
+
+test "urn:query:calc-kin-n01-consecutive-ok" {
+    given {
+        assert "n01-c": given_initial_concentration(entity_ref("urn:case:kin:net1"), 1, 1) { origin case_input; }
+        assert "n01-k1": given_first_rate(entity_ref("urn:case:kin:net1"), 1, 10) { origin case_input; }
+        assert "n01-k2": given_second_rate(entity_ref("urn:case:kin:net1"), 2, 10) { origin case_input; }
+        assert "n01-t": given_elapsed(entity_ref("urn:case:kin:net1"), 10, 1) { origin case_input; }
+        assert "n01-p": given_output_precision(entity_ref("urn:case:kin:net1"), 4) { origin case_input; }
+    }
+    evaluate truth(consecutive_b_value(entity_ref("urn:case:kin:net1"), 0.2325));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConsecutiveBRounded);
+    evaluate truth(consecutive_c_value(entity_ref("urn:case:kin:net1"), 0.3996));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConsecutiveCRounded);
+}
+
+test "urn:query:calc-kin-n02-consecutive-equal-rates" {
+    given {
+        assert "n02-c": given_initial_concentration(entity_ref("urn:case:kin:net2"), 1, 1) { origin case_input; }
+        assert "n02-k1": given_first_rate(entity_ref("urn:case:kin:net2"), 1, 10) { origin case_input; }
+        assert "n02-k2": given_second_rate(entity_ref("urn:case:kin:net2"), 1, 10) { origin case_input; }
+        assert "n02-t": given_elapsed(entity_ref("urn:case:kin:net2"), 10, 1) { origin case_input; }
+        assert "n02-p": given_output_precision(entity_ref("urn:case:kin:net2"), 4) { origin case_input; }
+    }
+    evaluate truth(degenerate_equal_rates(entity_ref("urn:case:kin:net2")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(DegenerateEqualRates);
+    evaluate truth(consecutive_b_equal_rates_value(entity_ref("urn:case:kin:net2"), 0.3679));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConsecutiveBEqualRatesRounded);
+    evaluate truth(consecutive_b_value(entity_ref("urn:case:kin:net2"), 0.2325));
+    expect truth_status == NEITHER;
+}
+
+test "urn:query:calc-kin-n03-parallel-ok" {
+    given {
+        assert "n03-c": given_initial_concentration(entity_ref("urn:case:kin:net3"), 1, 1) { origin case_input; }
+        assert "n03-k1": given_first_rate(entity_ref("urn:case:kin:net3"), 1, 10) { origin case_input; }
+        assert "n03-k2": given_second_rate(entity_ref("urn:case:kin:net3"), 2, 10) { origin case_input; }
+        assert "n03-t": given_elapsed(entity_ref("urn:case:kin:net3"), 10, 1) { origin case_input; }
+        assert "n03-p": given_output_precision(entity_ref("urn:case:kin:net3"), 4) { origin case_input; }
+    }
+    evaluate truth(parallel_a_value(entity_ref("urn:case:kin:net3"), 0.0498));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ParallelARounded);
+    evaluate truth(parallel_branch_b_value(entity_ref("urn:case:kin:net3"), 0.3167));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ParallelBranchBRounded);
+    evaluate truth(parallel_branch_c_value(entity_ref("urn:case:kin:net3"), 0.6335));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ParallelBranchCRounded);
+}
+
+test "urn:query:calc-kin-n09-consecutive-k2-below" {
+    given {
+        assert "n09-c": given_initial_concentration(entity_ref("urn:case:kin:net9"), 1, 1) { origin case_input; }
+        assert "n09-k1": given_first_rate(entity_ref("urn:case:kin:net9"), 2, 10) { origin case_input; }
+        assert "n09-k2": given_second_rate(entity_ref("urn:case:kin:net9"), 1, 10) { origin case_input; }
+        assert "n09-t": given_elapsed(entity_ref("urn:case:kin:net9"), 10, 1) { origin case_input; }
+        assert "n09-p": given_output_precision(entity_ref("urn:case:kin:net9"), 4) { origin case_input; }
+    }
+    evaluate truth(consecutive_b_value(entity_ref("urn:case:kin:net9"), 0.4651));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConsecutiveBRounded);
+}
+
+test "urn:query:calc-kin-n04-catalyst-ok" {
+    given {
+        assert "n04-e": given_activation_energy(entity_ref("urn:case:kin:cat1"), 50000, 1) { origin case_input; }
+        assert "n04-ec": given_catalyzed_activation_energy(entity_ref("urn:case:kin:cat1"), 40000, 1) { origin case_input; }
+        assert "n04-r": given_gas_constant(entity_ref("urn:case:kin:cat1"), 8314, 1000) { origin case_input; }
+        assert "n04-t": given_catalyst_temperature(entity_ref("urn:case:kin:cat1"), 300, 1) { origin case_input; }
+        assert "n04-p": given_output_precision(entity_ref("urn:case:kin:cat1"), 2) { origin case_input; }
+    }
+    evaluate truth(catalyst_lowers_barrier(entity_ref("urn:case:kin:cat1")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(CatalystLowersBarrier);
+    evaluate truth(catalyst_speedup_value(entity_ref("urn:case:kin:cat1"), 55.11));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(CatalystSpeedupRounded);
+}
+
+test "urn:query:calc-kin-n05-catalyst-no-advantage" {
+    given {
+        assert "n05-e": given_activation_energy(entity_ref("urn:case:kin:cat2"), 50000, 1) { origin case_input; }
+        assert "n05-ec": given_catalyzed_activation_energy(entity_ref("urn:case:kin:cat2"), 50000, 1) { origin case_input; }
+        assert "n05-r": given_gas_constant(entity_ref("urn:case:kin:cat2"), 8314, 1000) { origin case_input; }
+        assert "n05-t": given_catalyst_temperature(entity_ref("urn:case:kin:cat2"), 300, 1) { origin case_input; }
+    }
+    evaluate truth(catalyst_no_advantage(entity_ref("urn:case:kin:cat2")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(CatalystNoAdvantage);
+    evaluate truth(catalyst_lowers_barrier(entity_ref("urn:case:kin:cat2")));
+    expect truth_status == NEITHER;
+}
+
+test "urn:query:calc-kin-n06-fit-ok-with-caveat" {
+    given {
+        assert "n06-o": given_order(entity_ref("urn:case:kin:fit1"), 1) { origin case_input; }
+        assert "n06-c": given_initial_concentration(entity_ref("urn:case:kin:fit1"), 1, 1) { origin case_input; }
+        assert "n06-k": given_rate_constant(entity_ref("urn:case:kin:fit1"), 1, 10) { origin case_input; }
+        assert "n06-t": given_elapsed(entity_ref("urn:case:kin:fit1"), 10, 1) { origin case_input; }
+        assert "n06-q": given_observed_concentration(entity_ref("urn:case:kin:fit1"), 37, 100) { origin case_input; }
+        assert "n06-p": given_output_precision(entity_ref("urn:case:kin:fit1"), 4) { origin case_input; }
+    }
+    evaluate truth(fit_residual_value(entity_ref("urn:case:kin:fit1"), 0.0021));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(FitResidualRounded);
+    evaluate truth(fit_not_mechanism_proof(entity_ref("urn:case:kin:fit1")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(FitCaveat);
+}
+
+test "urn:query:calc-kin-n07-fit-observation-above-initial" {
+    given {
+        assert "n07-o": given_order(entity_ref("urn:case:kin:fit2"), 1) { origin case_input; }
+        assert "n07-c": given_initial_concentration(entity_ref("urn:case:kin:fit2"), 1, 1) { origin case_input; }
+        assert "n07-k": given_rate_constant(entity_ref("urn:case:kin:fit2"), 1, 10) { origin case_input; }
+        assert "n07-t": given_elapsed(entity_ref("urn:case:kin:fit2"), 10, 1) { origin case_input; }
+        assert "n07-q": given_observed_concentration(entity_ref("urn:case:kin:fit2"), 2, 1) { origin case_input; }
+        assert "n07-p": given_output_precision(entity_ref("urn:case:kin:fit2"), 4) { origin case_input; }
+    }
+    evaluate truth(observation_above_initial(entity_ref("urn:case:kin:fit2")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ObservationAboveInitial);
+    evaluate truth(fit_residual_value(entity_ref("urn:case:kin:fit2"), 0.0021));
+    expect truth_status == NEITHER;
+}
+
+test "urn:query:calc-kin-n08-invalid-catalyst-input" {
+    given {
+        assert "n08-e": given_activation_energy(entity_ref("urn:case:kin:cat3"), 50000, 1) { origin case_input; }
+        assert "n08-ec": given_catalyzed_activation_energy(entity_ref("urn:case:kin:cat3"), 0, 1) { origin case_input; }
+        assert "n08-r": given_gas_constant(entity_ref("urn:case:kin:cat3"), 8314, 1000) { origin case_input; }
+        assert "n08-t": given_catalyst_temperature(entity_ref("urn:case:kin:cat3"), 300, 1) { origin case_input; }
+        assert "n08-p": given_output_precision(entity_ref("urn:case:kin:cat3"), 2) { origin case_input; }
+    }
+    evaluate truth(invalid_catalyst_input(entity_ref("urn:case:kin:cat3")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(InvalidCatalystEnergy);
+    evaluate truth(catalyst_speedup_value(entity_ref("urn:case:kin:cat3"), 55.11));
+    expect truth_status == NEITHER;
+}

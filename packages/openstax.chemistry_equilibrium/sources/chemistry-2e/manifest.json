@@ -1,0 +1,19 @@
+{
+  "base": "https://openstax.org/books/chemistry-2e/pages/",
+  "book": "OpenStax Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": {
+    "13.2": {
+      "sha256": "3e2b522cbc41356921ac6775a7ee9dad6abf455bfd3307b68b26ed4551818e5c",
+      "slug": "13-2-equilibrium-constants",
+      "title": "Equilibrium Constants",
+      "uuid": "6fc48d99-000f-479e-9ea2-9527d41ffcb8"
+    },
+    "13.4": {
+      "sha256": "5313c45248f0fc6aa46536aaa64155802a0c8db337fbacdc481bdc32f4cd4844",
+      "slug": "13-4-equilibrium-calculations",
+      "title": "Equilibrium Calculations",
+      "uuid": "353391e0-9913-4452-9f83-38f57233275a"
+    }
+  }
+}

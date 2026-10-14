@@ -1,0 +1,18 @@
+// Source pin added for this consumer revision. Original reasoning bodies
+// and authored fixture expectations remain unchanged. Text excerpts retain
+// CC BY-NC-SA 4.0; extracted mathematical notation is not silently repaired.
+language "law.core" version "0.2";
+package openstax.chemistry_gases version "0.1.1";
+namespace "urn:openstax:clir:chemistry-gases";
+
+source S_9_2_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 9.2"; label en official "OpenStax Chemistry 2e section 9.2"; }
+edition S_9_2_EN of S_9_2_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_9_2_TEXT of S_9_2_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"; retrieved_at @2026-10-14T10:29:02Z; content_hash "sha256:8911482700b51081c047882a9c7880050d171c4e3931b2d65cf7e25def737a48"; local_path "sources/chemistry-2e/9.2.txt"; }
+
+source S_9_3_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 9.3"; label en official "OpenStax Chemistry 2e section 9.3"; }
+edition S_9_3_EN of S_9_3_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_9_3_TEXT of S_9_3_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"; retrieved_at @2026-10-14T10:29:03Z; content_hash "sha256:43c54e72b072ae4466933599ed74bdd7aee332463b68a7f15029d0498397c489"; local_path "sources/chemistry-2e/9.3.txt"; }
+
+pub fragment PIN_IDEAL_GAS in S_9_2_EN { kind paragraph; locator "section/9.2#ideal_gas"; text en official """Gases whose properties of P, V, and T are accurately described by the ideal gas law (or the other gas laws) are said to exhibit ideal behavior or to approximate the traits of an ideal gas. An ideal gas is a hypothetical construct that may be used along with kinetic molecular theory to effectively explain the gas laws as will be described in a later module of this chapter. Although all the calculations presented in this module assume ideal behavior, this assumption is only reasonable for gases under conditions of relatively low pressure and high temperature. In the final module of this chapter, a modified gas law will be introduced that accounts for the non-ideal behavior observed for many gases at relatively high pressures and low temperatures."""; content_hash "sha256:651ffa9a904d68e7b614daf73f77237cfe2afeaf5c5533fbcde410068a75264b"; }
+
+pub fragment PIN_GAS_STOICHIOMETRY in S_9_3_EN { kind paragraph; locator "section/9.3#gas_stoichiometry"; text en official """As described in an earlier chapter of this text, we can turn to chemical stoichiometry for answers to many of the questions that ask “How much?” The essential property involved in such use of stoichiometry is the amount of substance, typically measured in moles (n). For gases, molar amount can be derived from convenient experimental measurements of pressure, temperature, and volume. Therefore, these measurements are useful in assessing the stoichiometry of pure gases, gas mixtures, and chemical reactions involving gases. This section will not introduce any new material or ideas, but will provide examples of applications and ways to integrate concepts already discussed."""; content_hash "sha256:5767da7fa3d80a79c0dd6584642caef25ba192bc61f9327fe5b21fbfac039129"; }

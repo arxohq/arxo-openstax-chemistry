@@ -1,0 +1,149 @@
+// Титрование по §14.7 Chemistry 2e: словарь точек кривой.
+//
+// ЧТО ЭТОТ ПАКЕТ УТВЕРЖДАЕТ, А ЧТО НЕТ. Положения учебника о том, ГДЕ на
+// кривой титрования какая среда и что показывает индикатор. Численного pH
+// здесь нет: pH точек считает вычислитель `calc.titration` (P5) на пинах
+// пакета `chem.ionization_constants`; здесь — якоря, на которые встанут
+// его прочтения. Точка эквивалентности (стехиометрия) и конечная точка
+// индикатора (оценка по окраске) — РАЗНЫЕ понятия: правило их не смешивает.
+
+language "law.core" version "0.2";
+package openstax.chemistry_acids version "0.1.0";
+namespace "urn:openstax:clir:chemistry-acids";
+
+use self::{
+    OS_14_2_NEUTRAL_BOUNDARY,
+    OS_14_2_PKW,
+    OS_14_7_CURVE,
+    OS_14_7_ENDPOINT,
+    OS_14_7_HALF_EQUIV,
+    OS_14_7_STRONG_EQUIV,
+    OS_14_7_WEAK_EQUIV,
+};
+
+pub entity Titration {
+    label ru unofficial "кислотно-основное титрование";
+    label en unofficial "acid-base titration";
+}
+
+// --- Предмет дела --------------------------------------------------------
+
+pub relation titration_in_question(t: Titration) kind empirical {
+    label ru unofficial "титрование предъявлено делом как предмет вопроса";
+    label en unofficial "the titration is presented by the case as the subject of the question";
+}
+
+pub relation strong_acid_strong_base(t: Titration) kind empirical {
+    label ru unofficial "система: сильная кислота и сильное основание";
+    label en unofficial "the system is a strong acid with a strong base";
+}
+
+pub relation weak_acid_strong_base(t: Titration) kind empirical {
+    label ru unofficial "система: слабая одноосновная кислота и сильное основание";
+    label en unofficial "the system is a weak monoprotic acid with a strong base";
+}
+
+pub relation half_equivalence_point(t: Titration) kind empirical {
+    label ru unofficial "дело находится в половине стехиометрического объёма титранта";
+    label en unofficial "the case is at one-half the stoichiometric titrant volume";
+}
+
+pub relation indicator_used(t: Titration) kind empirical {
+    label ru unofficial "конечная точка определяется индикатором";
+    label en unofficial "the end point is detected with an indicator";
+}
+
+// pH точки эквивалентности зависит от T и ионной силы (14.2: граница pH = 7
+// стоит только при 25 °C): выводы со значением pH читаются лишь при
+// предъявленных температуре и фиксированных условиях (базис констант
+// chem.ionization_constants).
+pub relation titration_temperature_presented(t: Titration) kind empirical {
+    label ru unofficial "дело предъявило температуру титрования";
+    label en unofficial "the case presents the titration temperature";
+}
+
+pub relation fixed_conditions_presented(t: Titration) kind empirical {
+    label ru unofficial "дело предъявило фиксированные условия (T и ионная сила — базис констант)";
+    label en unofficial "the case presents fixed conditions (T and ionic strength — the constants basis)";
+}
+
+// --- Выводы §14.7 ----------------------------------------------------------
+
+pub relation titration_curve_monitors_ph(t: Titration) kind institutional {
+    label ru unofficial "кривая титрования отслеживает pH как функцию добавленного титранта";
+    label en unofficial "the titration curve tracks pH against added titrant";
+}
+
+pub relation neutral_at_equivalence(t: Titration) kind institutional {
+    label ru unofficial "в точке эквивалентности раствор нейтрален (pH = 7.00)";
+    label en unofficial "the solution is neutral at the equivalence point (pH = 7.00)";
+}
+
+pub relation basic_at_equivalence(t: Titration) kind institutional {
+    label ru unofficial "в точке эквивалентности раствор основной (pH заметно выше 7)";
+    label en unofficial "the solution is basic at the equivalence point (pH well above 7)";
+}
+
+pub relation ph_equals_pka_at_half_equivalence(t: Titration) kind institutional {
+    label ru unofficial "в половине эквивалентного объёма pH = pKa слабой кислоты";
+    label en unofficial "at half-equivalence pH = pKa of the weak acid";
+}
+
+pub relation endpoint_estimated_by_indicator(t: Titration) kind institutional {
+    label ru unofficial "конечная точка индикатора — оценка объёма по смене окраски";
+    label en unofficial "the indicator end point estimates the volume by color change";
+}
+
+@source(OS_14_7_CURVE)
+pub rule TitrationCurveMonitorsPh(
+    t: Titration,
+) strict {
+    label ru unofficial "кривая кислотно-основного титрования отслеживает pH (14.7)";
+    label en unofficial "the acid-base titration curve tracks pH (14.7)";
+    when titration_in_question(t);
+    then titration_curve_monitors_ph(t);
+}
+
+@source(OS_14_7_STRONG_EQUIV)
+@source(OS_14_2_PKW)
+@source(OS_14_2_NEUTRAL_BOUNDARY)
+pub rule StrongStrongNeutralAtEquivalence(
+    t: Titration,
+) strict {
+    label ru unofficial "сильная кислота и сильное основание: в эквивалентности нейтрально при T и фиксированных условиях (14.7, 14.2)";
+    label en unofficial "strong acid with strong base: neutral at equivalence at stated T and fixed conditions (14.7, 14.2)";
+    when titration_in_question(t) and strong_acid_strong_base(t) and titration_temperature_presented(t) and fixed_conditions_presented(t);
+    then neutral_at_equivalence(t);
+}
+
+@source(OS_14_7_WEAK_EQUIV)
+@source(OS_14_2_NEUTRAL_BOUNDARY)
+pub rule WeakAcidBasicAtEquivalence(
+    t: Titration,
+) strict {
+    label ru unofficial "слабая кислота и сильное основание: в эквивалентности основно при T и фиксированных условиях (14.7, 14.2)";
+    label en unofficial "weak acid with strong base: basic at equivalence at stated T and fixed conditions (14.7, 14.2)";
+    when titration_in_question(t) and weak_acid_strong_base(t) and titration_temperature_presented(t) and fixed_conditions_presented(t);
+    then basic_at_equivalence(t);
+}
+
+@source(OS_14_7_HALF_EQUIV)
+@source(OS_14_2_NEUTRAL_BOUNDARY)
+pub rule HalfEquivalencePhEqualsPka(
+    t: Titration,
+) strict {
+    label ru unofficial "половина эквивалентности слабой кислоты: pH = pKa при T и фиксированных условиях (14.7, 14.2)";
+    label en unofficial "weak-acid half-equivalence: pH = pKa at stated T and fixed conditions (14.7, 14.2)";
+    when titration_in_question(t) and weak_acid_strong_base(t) and half_equivalence_point(t) and titration_temperature_presented(t) and fixed_conditions_presented(t);
+    then ph_equals_pka_at_half_equivalence(t);
+}
+
+@source(OS_14_7_ENDPOINT)
+pub rule EndpointEstimatedByIndicator(
+    t: Titration,
+) strict {
+    label ru unofficial "конечная точка — оценка индикатором, а не сама эквивалентность (14.7)";
+    label en unofficial "the end point is an indicator estimate, not equivalence itself (14.7)";
+    when titration_in_question(t) and indicator_used(t);
+    then endpoint_estimated_by_indicator(t);
+}

@@ -1,0 +1,110 @@
+language "law.core" version "0.2";
+package openstax.chemistry_thermo version "0.1.1";
+namespace "urn:openstax:clir:chemistry-thermo";
+
+test "urn:query:os-thermo-01-hess" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h01-q": reaction_in_question(entity_ref("urn:case:chem:thermo:ch4")) { origin case_input; }
+        assert "h01-1": formation_data_complete(entity_ref("urn:case:chem:thermo:ch4")) { origin case_input; }
+    }
+    evaluate truth(hess_path_independent(entity_ref("urn:case:chem:thermo:ch4")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(HessPathIndependent);
+}
+
+test "urn:query:os-thermo-02-spontaneous" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h02-q": system_in_question(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h02-1": negative_gibbs_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h02-2": system_temperature_pressure_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h02-3": standard_state_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+    }
+    evaluate truth(spontaneous_forward(entity_ref("urn:case:chem:thermo:sys")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(SpontaneousForward);
+}
+
+test "urn:query:os-thermo-03-nonspontaneous" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h03-q": system_in_question(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h03-1": positive_gibbs_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h03-2": system_temperature_pressure_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h03-3": standard_state_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+    }
+    evaluate truth(nonspontaneous_forward(entity_ref("urn:case:chem:thermo:sys")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(NonspontaneousForward);
+}
+
+// Без знака ΔG самопроизвольность не выводится.
+test "urn:query:os-thermo-04-no-sign" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h04-q": system_in_question(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+    }
+    evaluate truth(spontaneous_forward(entity_ref("urn:case:chem:thermo:sys")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Знак ΔG без предъявленных T, p вывод не даёт (16.4: «при T, p»).
+test "urn:query:os-thermo-05-sign-no-tp" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h05-q": system_in_question(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h05-1": negative_gibbs_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h05-2": standard_state_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+    }
+    evaluate truth(spontaneous_forward(entity_ref("urn:case:chem:thermo:sys")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+// Знак ΔG без предъявленного стандартного состояния вывод не даёт.
+test "urn:query:os-thermo-06-sign-no-standard-state" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "h06-q": system_in_question(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h06-1": positive_gibbs_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+        assert "h06-2": system_temperature_pressure_presented(entity_ref("urn:case:chem:thermo:sys")) { origin case_input; }
+    }
+    evaluate truth(nonspontaneous_forward(entity_ref("urn:case:chem:thermo:sys")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

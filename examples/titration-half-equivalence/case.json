@@ -1,0 +1,106 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:fa203b1e52d361c905293c40b54d2a10aea366b7bb8e7f111e238cf4087a9b47",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#t03-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:titration:hoac-naoh",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#titration_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:040f72a4704977966c1f9bbc93bb45246d595c5ad8f9457821355b5908c1e0a5",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#t03-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:titration:hoac-naoh",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#weak_acid_strong_base"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:9ea81a2a32547f9e2c61dcc135638d38a3f60bb85c4bc3baefea597295a665fc",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#t03-2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:titration:hoac-naoh",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#half_equivalence_point"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:6c8d84a5888df73d9f6e0b3fd60283cdad22f62901dfbc8fcd1cb81ad741df78",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#t03-3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:titration:hoac-naoh",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#titration_temperature_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    },
+    {
+      "contentHash": "sha256:6093ccc221ca324bccbc0817589a4c2f1fb670e3f0fd839b6e686368f8472f05",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#t03-4",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:titration:hoac-naoh",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#fixed_conditions_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

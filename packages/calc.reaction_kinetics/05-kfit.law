@@ -1,0 +1,67 @@
+// Двухточечная подгонка k первого порядка (wave-4): k = ln(c0/c_obs)/t.
+//
+// ЗАМОК СНЯТ РЕПОЗИТОРИЕМ, А НЕ B01.03. Логарифм — интринсик `math::ln`
+// §259.2 над Rational-отношением: тот же приём уже применяют
+// `TimeFirstOrder`/`HalfLifeFirstOrder` этого пакета, `calc.acid_base`,
+// `calc.electrochemistry` и `calc.first_order_dynamics` (обратное время).
+// B01.03 (`runtime.special_functions`: normal/erf/gamma/Bessel) логарифма
+// не содержит и воротами подгонки никогда не был; запись аудита о
+// блокировке исправлена здесь делом, а не оговоркой.
+// ПОРЯДОК — ВХОДНАЯ МОДЕЛЬ. Правило действует только при `given_order 1`;
+// иной порядок оставляет подгонку молчанием. Наблюдение не ниже начальной
+// даёт неположительный k и в формулу не входит: выше начальной — готовый
+// отказ `observation_above_initial`, равенство — молчание (ноль не
+// предъявляется за измеренную константу). Неположительное наблюдение или
+// неположительное время — молчание: логарифм и деление не вызываются.
+// ОГОВОРКА О МЕХАНИЗМЕ ПРИЛАГАЕТСЯ. Выведенный k встаёт рядом с
+// `fit_not_mechanism_proof`: согласие подгонки механизм не доказывает.
+
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+use self::{
+    Calculation,
+    fit_not_mechanism_proof,
+    given_elapsed,
+    given_initial_concentration,
+    given_observed_concentration,
+    given_order,
+    given_output_precision,
+};
+
+pub relation kin_derived_k_bounds(c: Calculation, k: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы подогнанной константы k = ln(c0/c_obs)/t, 1/с";
+    label en unofficial "unrounded bounds of the fitted constant k = ln(c0/c_obs)/t, 1/s";
+}
+
+pub relation kin_derived_k_value(c: Calculation, k: Decimal) kind institutional {
+    label ru unofficial "подогнанная константа k, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "fitted constant k rounded to the declared precision — a terminal head";
+}
+
+rule KinDerivedK(c: Calculation, an: Integer, ad: Integer, on: Integer, od: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "первый порядок: k — логарифм отношения начальной к наблюдённой на время";
+    label en unofficial "first order: k is the log of initial over observed over the elapsed time";
+    when given_order(c, 1)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_observed_concentration(c, on, od) and od > 0 and on > 0
+        and on * ad < an * od
+        and given_elapsed(c, tn, td) and td > 0 and tn > 0;
+    then kin_derived_k_bounds(c,
+        bounds::div(math::ln((an * od) / (ad * on), "p16/0.1"), bounds::exact(tn / td, 1)));
+}
+
+rule KinDerivedKRounded(c: Calculation, b: Bounds, p: Integer) strict {
+    label ru unofficial "округление подогнанной константы — как у времени, сходимость не гарантируется молча";
+    label en unofficial "rounding the fitted constant — like the time, convergence is never silent";
+    when kin_derived_k_bounds(c, b) and given_output_precision(c, p);
+    then kin_derived_k_value(c, bounds::round(b, p, "HALF_UP"));
+}
+
+rule KinFitCaveat(c: Calculation, b: Bounds) strict {
+    label ru unofficial "всякая выведенная константа встаёт рядом с оговоркой о механизме";
+    label en unofficial "every derived constant stands beside the mechanism caveat";
+    when kin_derived_k_bounds(c, b);
+    then fit_not_mechanism_proof(c);
+}

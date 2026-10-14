@@ -1,0 +1,41 @@
+{
+  "format": "arxo.openstax-chemistry-verification/1",
+  "date": "2026-10-14",
+  "cli": "0.2.5",
+  "nodeLocal": "20.20.2",
+  "lowering": {
+    "checked": 13,
+    "passed": 13,
+    "ruleBodiesPreserved": true
+  },
+  "linkedWorlds": {
+    "checked": 13,
+    "passed": 13
+  },
+  "selectedScenarios": {
+    "passed": 81,
+    "status": "passed",
+    "scope": "explicit suites in targeted-package-checks.json; remaining declared suites not executed"
+  },
+  "readerExamples": {
+    "checked": 28,
+    "canonicalReplay": "passed: exact documents and result hashes for 28 examples, twice from clean export",
+    "evaluationSourceAnchors": "empty arrays observed; direct propagation not accepted as passed",
+    "nativeUnfold": "source locators and quotes resolved",
+    "readerWorldAdmission": "passed: native unfold of all eleven worlds"
+  },
+  "depth": {
+    "modelsMeasured": 11,
+    "sourceSnapshots": 18,
+    "sectionSnapshotDenominator": 31,
+    "executableUnits": 18,
+    "measurementRegressions": 30,
+    "publicRegressions": 6,
+    "technicalDependencies": "not_measured"
+  },
+  "linux": "pending public CI",
+  "published": false,
+  "releaseVerified": false,
+  "corpus": "not_checked",
+  "cleanConsumer": "passed: public-only inputs and npm CLI"
+}

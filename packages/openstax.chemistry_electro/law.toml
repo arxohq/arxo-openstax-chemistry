@@ -1,0 +1,33 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_electro"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-electro"
+
+# Каталожная метадата (DECISION-0051; docs/PACKAGE-METADATA.ru.md). НЕ семантика.
+[metadata]
+act = "openstax-chemistry-electro"
+title = "OpenStax Chemistry 2e, гл. 17 (электрохимия): выдержка таблицы 17.1 стандартных потенциалов (Zn/Cu/SHE) и знак стандартной ЭДС"
+primarySource = "OPENSTAX_CHEM2E_ELECTRO"
+# jurisdiction: у естественнонаучного изложения правопорядка нет.
+jurisdiction = "none"
+instrument = "data_table"
+# sourceFidelity: curated-выдержка строк таблицы из HTML §17.3 (у книги нет
+# версионного API); каждая строка машинно сверена с живым извлечением.
+sourceFidelity = "pinned_unofficial_copy"
+issuer = "OpenStax, Rice University"
+legalStatus = "doctrine"
+# verifiedAgainstSource: строки вырезаны из извлечения страницы и сверяются
+# §194 (LDC-E5202); дрейф ловит --check фетчера.
+verifiedAgainstSource = true
+
+# Сценарии пакета: единственный источник фактов, вопросов и ожиданий.
+[[tests]]
+family = "openstax_chemistry_electro"
+suites = ["tests/chemistry-electro.lawtest", "tests/02-record-adapter.lawtest"]
+world = ["openstax.chemistry_electro"]
+
+[authoring]
+local_imports = "explicit"

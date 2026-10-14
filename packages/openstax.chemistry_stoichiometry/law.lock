@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:24f1925aab4e01e4509c1ceafea5778f7f3fc77cc4da15d3bd6af0bc2ed17ada",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:9784fc51e66c8b0e6b588478787e4e43634d36eb03c05cafa9399ab081c2be53",
+    "name": "openstax.chemistry_stoichiometry",
+    "namespace": "urn:openstax:clir:chemistry-stoichiometry",
+    "sourceHash": "sha256:1e50fd575e919f034a93836323ef9e26af2e41f3bd0d78d06bc5b28a49089f61",
+    "version": "0.1.0"
+  }
+}

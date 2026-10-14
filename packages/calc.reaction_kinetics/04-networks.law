@@ -1,0 +1,426 @@
+// Reaction networks with presented rate constants: consecutive A→B→C,
+// parallel A→B/A→C (all first-order), a presented catalytic model, and a
+// presented-fit residual check.
+//
+// WHAT THIS FILE ADDS. Two presented first-order constants k1, k2 plus the
+// usual c0 and t derive closed forms: consecutive c_A and the intermediate
+// c_B (general k1≠k2 form plus the k1=k2 special form), c_C by mass balance;
+// parallel c_A with exact branching yields. A presented catalyst (Ea_cat
+// below the presented Ea_uncat) derives the Arrhenius speedup at one
+// presented T. A presented observation at the presented t derives the
+// residual bounds against the order-1 prediction — and the caveat head
+// beside it: agreement never proves the mechanism (catalog acceptance).
+//
+// WHAT IT DOES NOT DO. No order is inferred: k1/k2 are first-order by
+// contract, the fit order comes in as the input model. No optimizer lives
+// here: fitting is the case presenting (t, c_obs, k) and the package
+// checking containment aloud, not searching. No numerical integrator:
+// closed forms only, as in the package header.
+
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+use self::{
+    Calculation,
+    concentration_bounds,
+    given_activation_energy,
+    given_elapsed,
+    given_gas_constant,
+    given_initial_concentration,
+    given_order,
+    given_output_precision,
+};
+
+// --- Input: presented network constants, catalyst, observation ----------------
+
+pub relation given_first_rate(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная константа k1 сети (первый порядок, 1/с), дробью";
+    label en unofficial "presented network constant k1 (first order, 1/s), as a fraction";
+}
+
+pub relation given_second_rate(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная константа k2 сети (первый порядок, 1/с), дробью";
+    label en unofficial "presented network constant k2 (first order, 1/s), as a fraction";
+}
+
+pub relation given_catalyzed_activation_energy(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная энергия активации каталитического пути Ea_cat в Дж/моль, дробью";
+    label en unofficial "presented catalyzed-path activation energy Ea_cat in J/mol, as a fraction";
+}
+
+pub relation given_catalyst_temperature(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленная температура сравнения катализатора T в К, дробью";
+    label en unofficial "presented catalyst-comparison temperature T in K, as a fraction";
+}
+
+pub relation given_observed_concentration(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "предъявленное наблюдение c_obs в моль/л при предъявленном сдвиге времени, дробью";
+    label en unofficial "presented observation c_obs in mol/l at the presented time shift, as a fraction";
+}
+
+// --- Consecutive A→B→C --------------------------------------------------------
+
+pub relation consecutive_a_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы c_A(t) = c0·exp(−k1·t) в моль/л";
+    label en unofficial "unrounded c_A(t) = c0·exp(−k1·t) bounds in mol/l";
+}
+
+pub relation consecutive_b_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы промежуточного c_B(t) при k1 ≠ k2 в моль/л";
+    label en unofficial "unrounded intermediate c_B(t) bounds at k1 ≠ k2 in mol/l";
+}
+
+pub relation consecutive_b_equal_rates_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы промежуточного c_B(t) = c0·k·t·exp(−k·t) при k1 = k2";
+    label en unofficial "unrounded intermediate c_B(t) = c0·k·t·exp(−k·t) bounds at k1 = k2";
+}
+
+pub relation consecutive_c_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы c_C(t) балансом масс при k1 ≠ k2 в моль/л";
+    label en unofficial "unrounded c_C(t) mass-balance bounds at k1 ≠ k2 in mol/l";
+}
+
+pub relation consecutive_b_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "c_B(t) при k1 ≠ k2, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "c_B(t) at k1 ≠ k2 rounded to the declared precision — a terminal head";
+}
+
+pub relation consecutive_c_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "c_C(t) при k1 ≠ k2, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "c_C(t) at k1 ≠ k2 rounded to the declared precision — a terminal head";
+}
+
+pub relation consecutive_b_equal_rates_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "c_B(t) при k1 = k2, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "c_B(t) at k1 = k2 rounded to the declared precision — a terminal head";
+}
+
+pub relation degenerate_equal_rates(c: Calculation) kind institutional {
+    label ru unofficial "k1 = k2: общая форма c_B неприменима (деление на ноль не вызывается), действует особая форма";
+    label en unofficial "k1 = k2: the general c_B form is inapplicable (no division by zero is invoked), the special form applies";
+}
+
+rule ConsecutiveA(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "последовательная: A спадает первым порядком с k1";
+    label en unofficial "consecutive: A decays first-order with k1";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0;
+    then consecutive_a_bounds(c,
+        bounds::mul(bounds::exact(an / ad, 1),
+            math::exp((0 - k1n * tn) / (k1d * td), "p16/0.1")));
+}
+
+rule ConsecutiveBK2Above(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "последовательная: промежуточный B общей формой при k2 выше k1";
+    label en unofficial "consecutive: the intermediate B in general form at k2 above k1";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0
+        and k2n * k1d > k1n * k2d;
+    then consecutive_b_bounds(c,
+        bounds::mul(bounds::exact((an * k1n * k2d) / (ad * (k2n * k1d - k1n * k2d)), 1),
+            bounds::sub(math::exp((0 - k1n * tn) / (k1d * td), "p16/0.1"),
+                math::exp((0 - k2n * tn) / (k2d * td), "p16/0.1"))));
+}
+
+rule ConsecutiveBK2Below(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "последовательная: промежуточный B общей формой при k2 ниже k1 (оба сомножителя меняют знак)";
+    label en unofficial "consecutive: the intermediate B in general form at k2 below k1 (both factors change sign)";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0
+        and k2n * k1d < k1n * k2d;
+    then consecutive_b_bounds(c,
+        bounds::mul(bounds::exact((an * k1n * k2d) / (ad * (k2n * k1d - k1n * k2d)), 1),
+            bounds::sub(math::exp((0 - k1n * tn) / (k1d * td), "p16/0.1"),
+                math::exp((0 - k2n * tn) / (k2d * td), "p16/0.1"))));
+}
+
+rule ConsecutiveBEqualRates(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "последовательная: промежуточный B особой формой c0·k·t·exp(−k·t) при k1 = k2";
+    label en unofficial "consecutive: the intermediate B in the special form c0·k·t·exp(−k·t) at k1 = k2";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0
+        and k2n * k1d == k1n * k2d;
+    then consecutive_b_equal_rates_bounds(c,
+        bounds::mul(bounds::exact((an * k1n * tn) / (ad * k1d * td), 1),
+            math::exp((0 - k1n * tn) / (k1d * td), "p16/0.1")));
+}
+
+rule DegenerateEqualRates(c: Calculation, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer) strict {
+    label ru unofficial "равенство констант названо вырождением общей формы вслух";
+    label en unofficial "equal constants are named as a general-form degeneracy aloud";
+    when given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and k2n * k1d == k1n * k2d;
+    then degenerate_equal_rates(c);
+}
+
+rule ConsecutiveC(c: Calculation, an: Integer, ad: Integer, a: Bounds, b: Bounds) strict {
+    label ru unofficial "последовательная: C — остаток баланса c0 − c_A − c_B при k1 ≠ k2";
+    label en unofficial "consecutive: C is the balance remainder c0 − c_A − c_B at k1 ≠ k2";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and consecutive_a_bounds(c, a) and consecutive_b_bounds(c, b);
+    then consecutive_c_bounds(c,
+        bounds::sub(bounds::sub(bounds::exact(an / ad, 1), a), b));
+}
+
+rule ConsecutiveBRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление c_B — как у концентрации, сходимость не гарантируется молча";
+    label en unofficial "rounding c_B — like the concentration, convergence is never silent";
+    when consecutive_b_bounds(c, x) and given_output_precision(c, p);
+    then consecutive_b_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule ConsecutiveCRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление c_C — как у концентрации, сходимость не гарантируется молча";
+    label en unofficial "rounding c_C — like the concentration, convergence is never silent";
+    when consecutive_c_bounds(c, x) and given_output_precision(c, p);
+    then consecutive_c_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule ConsecutiveBEqualRatesRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление c_B особой формы — как у концентрации";
+    label en unofficial "rounding the special-form c_B — like the concentration";
+    when consecutive_b_equal_rates_bounds(c, x) and given_output_precision(c, p);
+    then consecutive_b_equal_rates_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+// --- Parallel A→B / A→C -------------------------------------------------------
+
+pub relation parallel_a_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы c_A(t) = c0·exp(−(k1+k2)·t) в моль/л";
+    label en unofficial "unrounded c_A(t) = c0·exp(−(k1+k2)·t) bounds in mol/l";
+}
+
+pub relation parallel_branch_b_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы выхода ветви B долей k1/(k1+k2) в моль/л";
+    label en unofficial "unrounded branch-B yield bounds at the k1/(k1+k2) share in mol/l";
+}
+
+pub relation parallel_branch_c_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы выхода ветви C долей k2/(k1+k2) в моль/л";
+    label en unofficial "unrounded branch-C yield bounds at the k2/(k1+k2) share in mol/l";
+}
+
+pub relation parallel_a_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "c_A(t) параллельной сети, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "parallel-network c_A(t) rounded to the declared precision — a terminal head";
+}
+
+pub relation parallel_branch_b_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "выход ветви B, округлённый до объявленной точности, — терминальная голова";
+    label en unofficial "branch-B yield rounded to the declared precision — a terminal head";
+}
+
+pub relation parallel_branch_c_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "выход ветви C, округлённый до объявленной точности, — терминальная голова";
+    label en unofficial "branch-C yield rounded to the declared precision — a terminal head";
+}
+
+rule ParallelA(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "параллельная: A спадает суммой констант";
+    label en unofficial "parallel: A decays with the summed constants";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0;
+    then parallel_a_bounds(c,
+        bounds::mul(bounds::exact(an / ad, 1),
+            math::exp((0 - tn * (k1n * k2d + k2n * k1d)) / (td * k1d * k2d), "p16/0.1")));
+}
+
+rule ParallelBranchB(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, a: Bounds) strict {
+    label ru unofficial "параллельная: выход B — доля k1/(k1+k2) от прореагировавшего";
+    label en unofficial "parallel: the B yield is the k1/(k1+k2) share of the converted amount";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and parallel_a_bounds(c, a);
+    then parallel_branch_b_bounds(c,
+        bounds::mul(bounds::exact((an * k1n * k2d) / (ad * (k1n * k2d + k2n * k1d)), 1),
+            bounds::sub(bounds::exact(1 / 1, 1), a)));
+}
+
+rule ParallelBranchC(c: Calculation, an: Integer, ad: Integer, k1n: Integer, k1d: Integer, k2n: Integer, k2d: Integer, a: Bounds) strict {
+    label ru unofficial "параллельная: выход C — доля k2/(k1+k2) от прореагировавшего";
+    label en unofficial "parallel: the C yield is the k2/(k1+k2) share of the converted amount";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_first_rate(c, k1n, k1d) and k1d > 0 and k1n > 0
+        and given_second_rate(c, k2n, k2d) and k2d > 0 and k2n > 0
+        and parallel_a_bounds(c, a);
+    then parallel_branch_c_bounds(c,
+        bounds::mul(bounds::exact((an * k2n * k1d) / (ad * (k1n * k2d + k2n * k1d)), 1),
+            bounds::sub(bounds::exact(1 / 1, 1), a)));
+}
+
+rule ParallelARounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление c_A параллельной сети — как у концентрации";
+    label en unofficial "rounding the parallel-network c_A — like the concentration";
+    when parallel_a_bounds(c, x) and given_output_precision(c, p);
+    then parallel_a_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule ParallelBranchBRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление выхода B — как у концентрации";
+    label en unofficial "rounding the B yield — like the concentration";
+    when parallel_branch_b_bounds(c, x) and given_output_precision(c, p);
+    then parallel_branch_b_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule ParallelBranchCRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление выхода C — как у концентрации";
+    label en unofficial "rounding the C yield — like the concentration";
+    when parallel_branch_c_bounds(c, x) and given_output_precision(c, p);
+    then parallel_branch_c_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+// --- Presented catalytic model ------------------------------------------------
+
+pub relation catalyst_speedup_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы ускорения k_cat/k_uncat = exp((Ea−Ea_cat)/RT) (безразмерные)";
+    label en unofficial "unrounded speedup k_cat/k_uncat = exp((Ea−Ea_cat)/RT) bounds (dimensionless)";
+}
+
+pub relation catalyst_speedup_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "ускорение катализатора, округлённое до объявленной точности, — терминальная голова";
+    label en unofficial "catalyst speedup rounded to the declared precision — a terminal head";
+}
+
+pub relation catalyst_lowers_barrier(c: Calculation) kind institutional {
+    label ru unofficial "предъявленный катализатор снижает барьер: Ea_cat ниже Ea крест-накрест";
+    label en unofficial "the presented catalyst lowers the barrier: cross-multiplied Ea_cat is below Ea";
+}
+
+pub relation catalyst_no_advantage(c: Calculation) kind institutional {
+    label ru unofficial "предъявленный катализатор барьер не снижает: ускорения нет, причина названа";
+    label en unofficial "the presented catalyst does not lower the barrier: no speedup, the reason is named";
+}
+
+pub relation invalid_catalyst_input(c: Calculation) kind institutional {
+    label ru unofficial "вход катализатора не задаёт положительной энергии или температуры";
+    label en unofficial "catalyst input names no positive energy or temperature";
+}
+
+rule CatalystSpeedup(c: Calculation, en: Integer, ed: Integer, cn: Integer, cd: Integer, rn: Integer, rd: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "катализ: экспонента выигрыша барьера целыми из пяти пар";
+    label en unofficial "catalysis: the barrier-gain exponential from five pairs as integers";
+    when given_activation_energy(c, en, ed)
+        and given_catalyzed_activation_energy(c, cn, cd)
+        and given_gas_constant(c, rn, rd)
+        and given_catalyst_temperature(c, tn, td)
+        and ed > 0 and en > 0 and cd > 0 and cn > 0
+        and rd > 0 and rn > 0 and td > 0 and tn > 0;
+    then catalyst_speedup_bounds(c,
+        math::exp(((en * cd - cn * ed) * rd * td) / (ed * cd * rn * tn), "p16/0.1"));
+}
+
+rule CatalystSpeedupRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление ускорения — как у концентрации";
+    label en unofficial "rounding the speedup — like the concentration";
+    when catalyst_speedup_bounds(c, x) and given_output_precision(c, p);
+    then catalyst_speedup_value(c, bounds::round(x, p, "HALF_UP"));
+}
+
+rule CatalystLowersBarrier(c: Calculation, en: Integer, ed: Integer, cn: Integer, cd: Integer) strict {
+    label ru unofficial "Ea_cat ниже Ea крест-накрест — барьер снижен";
+    label en unofficial "cross-multiplied Ea_cat is below Ea — the barrier is lowered";
+    when given_activation_energy(c, en, ed) and given_catalyzed_activation_energy(c, cn, cd)
+        and ed > 0 and cd > 0 and cn * ed < en * cd;
+    then catalyst_lowers_barrier(c);
+}
+
+rule CatalystNoAdvantage(c: Calculation, en: Integer, ed: Integer, cn: Integer, cd: Integer) strict {
+    label ru unofficial "Ea_cat не ниже Ea крест-накрест — ускорения нет";
+    label en unofficial "cross-multiplied Ea_cat is not below Ea — no speedup";
+    when given_activation_energy(c, en, ed) and given_catalyzed_activation_energy(c, cn, cd)
+        and ed > 0 and cd > 0 and cn * ed >= en * cd;
+    then catalyst_no_advantage(c);
+}
+
+rule InvalidCatalystEnergy(c: Calculation, cn: Integer, cd: Integer) strict {
+    label ru unofficial "неположительная Ea_cat при положительном знаменателе — именованный отказ";
+    label en unofficial "a nonpositive Ea_cat with a positive denominator is a named refusal";
+    when given_catalyzed_activation_energy(c, cn, cd) and cd > 0 and cn <= 0;
+    then invalid_catalyst_input(c);
+}
+
+rule InvalidCatalystEnergyDenominator(c: Calculation, cn: Integer, cd: Integer) strict {
+    label ru unofficial "неположительный знаменатель Ea_cat — энергия не задана";
+    label en unofficial "a nonpositive Ea_cat denominator names no energy";
+    when given_catalyzed_activation_energy(c, cn, cd) and cd <= 0;
+    then invalid_catalyst_input(c);
+}
+
+rule InvalidCatalystTemperature(c: Calculation, tn: Integer, td: Integer) strict {
+    label ru unofficial "неположительная температура сравнения — вне области";
+    label en unofficial "a nonpositive comparison temperature is outside the domain";
+    when given_catalyst_temperature(c, tn, td) and td > 0 and tn <= 0;
+    then invalid_catalyst_input(c);
+}
+
+// --- Presented-fit residual (order 1) plus the mechanism caveat ---------------
+
+pub relation fit_residual_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы невязки c_obs − c_pred(t) первого порядка в моль/л";
+    label en unofficial "unrounded first-order residual c_obs − c_pred(t) bounds in mol/l";
+}
+
+pub relation fit_residual_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "невязка подгонки, округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "fit residual rounded to the declared precision — a terminal head";
+}
+
+pub relation fit_not_mechanism_proof(c: Calculation) kind institutional {
+    label ru unofficial "согласие подгонки механизм не доказывает: закон скорости остаётся входной моделью";
+    label en unofficial "fit agreement never proves the mechanism: the rate law stays an input model";
+}
+
+pub relation observation_above_initial(c: Calculation) kind institutional {
+    label ru unofficial "наблюдение выше начальной: монотонный спад его не объясняет";
+    label en unofficial "observation above the initial level: monotone decay does not explain it";
+}
+
+rule ObservationAboveInitial(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer) strict {
+    label ru unofficial "наблюдение выше начальной крест-накрест — подгонке нечего проверять";
+    label en unofficial "cross-multiplied observation above initial leaves the fit nothing to check";
+    when given_initial_concentration(c, an, ad) and given_observed_concentration(c, qn, qd)
+        and ad > 0 and qd > 0 and qn * ad > an * qd;
+    then observation_above_initial(c);
+}
+
+rule FitResidualFirstOrder(c: Calculation, an: Integer, ad: Integer, qn: Integer, qd: Integer, pred: Bounds) strict {
+    label ru unofficial "подгонка первого порядка: невязка наблюдения против предсказания модели";
+    label en unofficial "first-order fit: the observation residual against the model prediction";
+    when given_order(c, 1)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_observed_concentration(c, qn, qd) and qd > 0 and qn > 0
+        and qn * ad <= an * qd
+        and concentration_bounds(c, pred);
+    then fit_residual_bounds(c, bounds::sub(bounds::exact(qn / qd, 1), pred));
+}
+
+rule FitCaveat(c: Calculation, x: Bounds) strict {
+    label ru unofficial "всякая выведенная невязка встаёт рядом с оговоркой о механизме";
+    label en unofficial "every derived residual stands beside the mechanism caveat";
+    when fit_residual_bounds(c, x);
+    then fit_not_mechanism_proof(c);
+}
+
+rule FitResidualRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление невязки — как у концентрации";
+    label en unofficial "rounding the residual — like the concentration";
+    when fit_residual_bounds(c, x) and given_output_precision(c, p);
+    then fit_residual_value(c, bounds::round(x, p, "HALF_UP"));
+}

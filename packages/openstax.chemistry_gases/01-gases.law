@@ -1,0 +1,78 @@
+// Идеальный газ и газовая стехиометрия по гл. 9 Chemistry 2e.
+//
+// ОСНОВАНИЕ. Авторское изложение (парафраз), не перепечатка: точные ссылки —
+// §9.2 «Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law»
+// (https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law,
+// проверено 200 2026-09-26) и §9.3 «Stoichiometry of Gaseous Substances,
+// Mixtures, and Reactions»
+// (https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions,
+// проверено 200 2026-09-26). Лицензия книги — CC BY-NC-SA 4.0 (см. шапку
+// пакета chemistry-solutions о пометке).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Ворота модели: абсолютная температура обязательна,
+// сухой образец — условие дела P2 (сбор над водой без p(H2O) поправки не
+// получает), связь количества газа со стехиометрией — через предъявленные
+// коэффициенты, не через предсказание продуктов.
+
+language "law.core" version "0.2";
+package openstax.chemistry_gases version "0.1.1";
+namespace "urn:openstax:clir:chemistry-gases";
+
+use self::{
+    PIN_GAS_STOICHIOMETRY,
+    PIN_IDEAL_GAS,
+};
+
+pub entity GasSample {
+    label ru unofficial "образец газа, предъявленный делом";
+    label en unofficial "gas sample presented by the case";
+}
+
+pub relation gas_sample_in_question(s: GasSample) kind empirical {
+    label ru unofficial "образец газа предъявлен делом как предмет вопроса";
+    label en unofficial "the gas sample is presented by the case as the subject of the question";
+}
+
+pub relation absolute_temperature_presented(s: GasSample) kind empirical {
+    label ru unofficial "дело предъявило абсолютную температуру образца";
+    label en unofficial "the case presents the sample absolute temperature";
+}
+
+pub relation dry_sample_presented(s: GasSample) kind empirical {
+    label ru unofficial "дело предъявило сухой газ (без поправки на пары воды)";
+    label en unofficial "the case presents a dry gas (no vapor correction)";
+}
+
+pub relation ideal_gas_model_licensed(s: GasSample) kind institutional {
+    label ru unofficial "модель идеального газа открыта (pV = nRT, 9.2)";
+    label en unofficial "the ideal gas model is licensed (pV = nRT, 9.2)";
+}
+
+pub relation amount_links_to_gas_volume(s: GasSample) kind institutional {
+    label ru unofficial "количество газообразного продукта связано со стехиометрией (9.3)";
+    label en unofficial "gaseous product amount links to stoichiometry (9.3)";
+}
+
+// §9.2: закон идеального газа связывает p, V, n и T; температура —
+// абсолютная (в расчёт поступает K; владелец перехода °C — существующий).
+@source(PIN_IDEAL_GAS)
+pub rule IdealGasModelLicensed(
+    s: GasSample,
+) strict {
+    label ru unofficial "образец с абсолютной T: модель идеального газа открыта (9.2)";
+    label en unofficial "sample with absolute T: ideal gas model licensed (9.2)";
+    when gas_sample_in_question(s) and absolute_temperature_presented(s);
+    then ideal_gas_model_licensed(s);
+}
+
+// §9.3: стехиометрия газообразных веществ — через предъявленные реагенты,
+// продукты и коэффициенты; выход считает calc.stoichiometry.
+@source(PIN_GAS_STOICHIOMETRY)
+pub rule AmountLinksToGasVolume(
+    s: GasSample,
+) strict {
+    label ru unofficial "сухой образец: количество связано со стехиометрией (9.3)";
+    label en unofficial "dry sample: amount links to stoichiometry (9.3)";
+    when gas_sample_in_question(s) and dry_sample_presented(s);
+    then amount_links_to_gas_volume(s);
+}

@@ -1,0 +1,34 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:2a010fdef89077eb4b30f544e7822236216df0affe795a962c257b80bb6c630c",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-electro#e04-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#CopperHalfCell",
+            "kind": "const_ref"
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#ZincHalfCell",
+            "kind": "const_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-electro#galvanic_cell_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-electro"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

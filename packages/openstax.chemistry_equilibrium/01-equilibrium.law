@@ -1,0 +1,114 @@
+// Равновесие по гл. 13 Chemistry 2e: направление сдвига и состав.
+//
+// ОСНОВАНИЕ. Авторское изложение (парафраз), не перепечатка: точные ссылки —
+// §13.2 «Equilibrium Constants»
+// (https://openstax.org/books/chemistry-2e/pages/13-2-equilibrium-constants,
+// проверено 200 2026-09-26) и §13.4 «Equilibrium Calculations»
+// (https://openstax.org/books/chemistry-2e/pages/13-4-equilibrium-calculations,
+// проверено 200 2026-09-26). Лицензия книги — CC BY-NC-SA 4.0 (см. шапку
+// пакета chemistry-solutions о пометке).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Качественное направление (Q<K — к продуктам,
+// Q>K — к реагентам) по предъявленному сравнению и ворота ICE-подхода
+// §13.4. Чисел Q/K здесь нет: их считает calc.equilibrium_1d (P3).
+
+language "law.core" version "0.2";
+package openstax.chemistry_equilibrium version "0.1.0";
+namespace "urn:openstax:clir:chemistry-equilibrium";
+
+use self::{
+    OS_13_2_FORWARD_REVERSE,
+    OS_13_2_MASS_ACTION,
+    OS_13_2_QK_PREDICTION,
+    OS_13_4_ICE,
+};
+
+pub entity Reaction {
+    label ru unofficial "обратимая реакция, предъявленная делом";
+    label en unofficial "reversible reaction presented by the case";
+}
+
+pub relation reaction_in_question(r: Reaction) kind empirical {
+    label ru unofficial "реакция предъявлена делом как предмет вопроса";
+    label en unofficial "the reaction is presented by the case as the subject of the question";
+}
+
+pub relation quotient_below_constant(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило сравнение Q < K";
+    label en unofficial "the case presents the comparison Q < K";
+}
+
+pub relation quotient_above_constant(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило сравнение Q > K";
+    label en unofficial "the case presents the comparison Q > K";
+}
+
+pub relation mass_balances_presented(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило начальные количества и балансы (вход ICE)";
+    label en unofficial "the case presents initial amounts and balances (ICE input)";
+}
+
+// K определена при данной температуре и в данном стандартном состоянии
+// (закон действующих масс, 13.2): сравнение Q/K читается только вместе
+// с предъявленными T и базисом стандартного состояния.
+pub relation reaction_temperature_presented(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило температуру реакции (базис K)";
+    label en unofficial "the case presents the reaction temperature (the K basis)";
+}
+
+pub relation standard_state_presented(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило стандартное состояние (базис K)";
+    label en unofficial "the case presents the standard state (the K basis)";
+}
+
+pub relation shifts_toward_products(r: Reaction) kind institutional {
+    label ru unofficial "сдвиг к продуктам (Q < K, 13.2)";
+    label en unofficial "shift toward products (Q < K, 13.2)";
+}
+
+pub relation shifts_toward_reactants(r: Reaction) kind institutional {
+    label ru unofficial "сдвиг к реагентам (Q > K, 13.2)";
+    label en unofficial "shift toward reactants (Q > K, 13.2)";
+}
+
+pub relation equilibrium_composition_computable(r: Reaction) kind institutional {
+    label ru unofficial "равновесный состав считается ICE-подходом (13.4)";
+    label en unofficial "equilibrium composition is computed by the ICE approach (13.4)";
+}
+
+// §13.2: сравнение Q и K предсказывает направление установления равновесия —
+// при предъявленных T и стандартном состоянии, в которых определена K.
+@source(OS_13_2_MASS_ACTION)
+@source(OS_13_2_QK_PREDICTION)
+@source(OS_13_2_FORWARD_REVERSE)
+pub rule ShiftsTowardProducts(
+    r: Reaction,
+) strict {
+    label ru unofficial "Q < K при T и стандартном состоянии: сдвиг к продуктам (13.2)";
+    label en unofficial "Q < K at stated T and standard state: shift toward products (13.2)";
+    when reaction_in_question(r) and quotient_below_constant(r) and reaction_temperature_presented(r) and standard_state_presented(r);
+    then shifts_toward_products(r);
+}
+
+@source(OS_13_2_MASS_ACTION)
+@source(OS_13_2_QK_PREDICTION)
+@source(OS_13_2_FORWARD_REVERSE)
+pub rule ShiftsTowardReactants(
+    r: Reaction,
+) strict {
+    label ru unofficial "Q > K при T и стандартном состоянии: сдвиг к реагентам (13.2)";
+    label en unofficial "Q > K at stated T and standard state: shift toward reactants (13.2)";
+    when reaction_in_question(r) and quotient_above_constant(r) and reaction_temperature_presented(r) and standard_state_presented(r);
+    then shifts_toward_reactants(r);
+}
+
+// §13.4: равновесный состав — из начальных количеств через балансы (ICE).
+@source(OS_13_4_ICE)
+pub rule EquilibriumCompositionComputable(
+    r: Reaction,
+) strict {
+    label ru unofficial "начальные количества и балансы: состав считается ICE (13.4)";
+    label en unofficial "initial amounts and balances: ICE composition (13.4)";
+    when reaction_in_question(r) and mass_balances_presented(r);
+    then equilibrium_composition_computable(r);
+}

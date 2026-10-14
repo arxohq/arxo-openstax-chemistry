@@ -1,0 +1,136 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:a50d9b7e36f3b0613e014b5be8b0530221a620e3f51a34ebb69d30bec5ae3430",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f0",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m02",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "lewis-symbol"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:9215b7aa38fbf82fed8a077eae178fbd4e0249a12898b3d1f295c3df24e8cb3d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m02",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "Lewis symbol is the elemental symbol with one dot per valence electron"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:a7331c6490a3576537e50cf9e535f8ab391b3b8938e0623b37c92ef948811ecf",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m02",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "definition"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:0fb6da946b5085a4c5eb9184096fc72c2bd2dafe953f7901784d2c1dc9d5e654",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m02",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "calc.lewis_structures valence-count"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:f4c13fc0bd6e1228dc22b7344a8c858166876596d9b3151889ac00dba6e4ef08",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f4",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m02",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "section/7.3#lewis-symbols"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    }
+  ],
+  "context": {},
+  "options": {}
+}

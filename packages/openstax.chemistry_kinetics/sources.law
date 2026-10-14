@@ -1,0 +1,21 @@
+language "law.core" version "0.2";
+package openstax.chemistry_kinetics version "0.1.1";
+namespace "urn:openstax:clir:chemistry-kinetics";
+
+source S_12_3_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 12.3"; label en official "OpenStax Chemistry 2e section 12.3"; }
+edition S_12_3_EN of S_12_3_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_12_3_TEXT of S_12_3_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/12-3-rate-laws"; retrieved_at @2026-10-14T10:36:07Z; content_hash "sha256:e3dbf5ff80f1aab2719400708ec69d16e88d7279218aadb97f86d65ae414a8eb"; local_path "sources/chemistry-2e/12.3.txt"; }
+
+source S_12_4_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 12.4"; label en official "OpenStax Chemistry 2e section 12.4"; }
+edition S_12_4_EN of S_12_4_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_12_4_TEXT of S_12_4_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws"; retrieved_at @2026-10-14T10:36:08Z; content_hash "sha256:8e2846483c6d27e5364e5bde9cd87d6984bb0e5810d699edce37651e00c158df"; local_path "sources/chemistry-2e/en.txt"; }
+
+source S_12_5_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 12.5"; label en official "OpenStax Chemistry 2e section 12.5"; }
+edition S_12_5_EN of S_12_5_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_12_5_TEXT of S_12_5_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory"; retrieved_at @2026-10-14T10:36:08Z; content_hash "sha256:cb5ae1ab7022e52b3792963bd76fdad0176b4c0acaee59e08a7645127f0363d2"; local_path "sources/chemistry-2e/12.5.txt"; }
+
+pub fragment PIN_RATE_LAW in S_12_3_EN { kind paragraph; locator "section/12.3#rate_law"; text en official """Use rate and concentration data to identify reaction orders and derive rate laws"""; content_hash "sha256:3841d8ae504d05eaada0a67fac120a2c65c3de67048ff01b797e45c205eb9012"; }
+
+pub fragment PIN_INTEGRATED_RATE in S_12_4_EN { kind paragraph; locator "section/12.4#integrated_rate"; text en official """Using calculus, the differential rate law for a chemical reaction can be integrated with respect to time to give an equation that relates the amount of reactant or product present in a reaction mixture to the elapsed time of the reaction. This process can either be very straightforward or very complex, depending on the complexity of the differential rate law. For purposes of discussion, we will focus on the resulting integrated rate laws for first-, second-, and zero-order reactions."""; content_hash "sha256:c32021c9d87325230d29b82823824d633e111a0387407ef0e7e6335586640c39"; }
+
+pub fragment PIN_ARRHENIUS in S_12_5_EN { kind paragraph; locator "section/12.5#arrhenius"; text en official """The Arrhenius equation relates the activation energy and the rate constant, k, for many chemical reactions:"""; content_hash "sha256:c770098fb0dcfdb43483e6eefc1f0281e552bfa57138fe29d2e6f6b620df8db0"; }

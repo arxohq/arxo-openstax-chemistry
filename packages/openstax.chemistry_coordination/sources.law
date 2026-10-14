@@ -1,0 +1,94 @@
+// Source model: pinned bytes of one OpenStax section (Chemistry 2e, section 19.2)
+// and the fragments cited by this package's matrix.
+//
+// GENERATED FILE. Written only by /tmp/gen_slice_g_sources.py from the pinned
+// extraction `sources/chemistry-coordination/<section>.txt` (see manifest.json beside it); the
+// fragment texts below are exact line spans of those bytes, so they cannot
+// drift from the pinned publication. Re-running the generator on the same
+// input bytes yields identical output.
+//
+// LICENSE OF THE SOURCE — CC BY-NC-SA 4.0. This OpenStax book is published
+// under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+// International (authoritative `license_name` from the OpenStax CMS book API,
+// `https://openstax.org/apps/cms/api/books/<book>/`, verified 2026-09-28).
+// It has TWO restrictions beyond CC BY: noncommercial use and share-alike.
+// Pinning bytes with attribution is permitted by the license; the restriction
+// is named here and in the package `[metadata]` — DECISION-0196 §2, the
+// physics precedent of 06.09.2026.
+//
+// PROVENANCE. Bytes are a deterministic extraction of the section HTML page
+// container `<div data-type="page" ... data-book-content="true">` (stable
+// `id="page_<uuid>"`), with the fetch_openstax_acid_base_text.py algorithm
+// (script, style, MathML annotation duplicates stripped; in-formula text
+// nodes glued). The LIVE page hash is unstable by construction (site
+// rebuilds), so the pinned hash is over the EXTRACTED section text —
+// `content_hash` of the publication below. `retrieved_at` is a constant, not
+// a build moment (DECISION-0005 §6).
+//
+// EXTRACTION ARTIFACTS. Formulas arrive as MathML markup, not characters:
+// sub/superscripts are indistinguishable (`NH4+` vs `NH₄⁺`), and in-formula
+// fractions glue without separators (`a1−rfor|r|<1`). §13 forbids editing
+// official text-block contents, so bytes are pinned as-is.
+//
+// CITATION UNIT — SECTION FRAGMENT. Locator `section/<n>#<anchor>`; the exact
+// pinned line span is recorded in the comment above each fragment.
+
+language "law.core" version "0.2";
+package openstax.chemistry_coordination version "0.1.0";
+namespace "urn:openstax:clir:chemistry-coordination";
+
+source OPENSTAX_CHEMISTRY_COORDINATION {
+    kind treatise;
+    jurisdiction "none";
+    number "OpenStax Chemistry 2e, section 19.2";
+    label en official "Coordination Chemistry of Transition Metals";
+}
+
+edition OPENSTAX_CHEMISTRY_COORDINATION_SEC of OPENSTAX_CHEMISTRY_COORDINATION {
+    label en official "section 19.2 extraction (19-2-coordination-chemistry-of-transition-metals)";
+    label ru unofficial "Извлечение раздела 19.2 (19-2-coordination-chemistry-of-transition-metals)";
+    language en;
+    officiality official;
+    adopted @2026-09-28;
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+publication OPENSTAX_CHEMISTRY_COORDINATION_TXT of OPENSTAX_CHEMISTRY_COORDINATION_SEC {
+    media_type "text/plain; charset=utf-8";
+    uri "https://openstax.org/books/chemistry-2e/pages/19-2-coordination-chemistry-of-transition-metals";
+    retrieved_at @2026-09-28T00:00:00Z;
+    content_hash "sha256:d33ed2a3f328924c01ca20dfc56c48459ddeb9bad7e6844783807fbf06534dff";
+    local_path "sources/chemistry-coordination/19.2.txt";
+}
+
+// Coordination Chemistry of Transition Metals — pinned chemistry-coordination/19.2.txt lines 9-17
+fragment F_TRAITS in OPENSTAX_CHEMISTRY_COORDINATION_SEC {
+    kind section;
+    locator "section/19.2#coordination-traits";
+    text en official """List the defining traits of coordination compounds
+
+Describe the structures of complexes containing monodentate and polydentate ligands
+
+Use standard nomenclature rules to name coordination compounds
+
+Explain and provide examples of geometric and optical isomerism
+
+Identify several natural and technological occurrences of coordination compounds""";
+    content_hash "sha256:03af15ff88173da26d5da62607dc6762bd814e90f242ad55bf3be6465e3d0675";
+}
+
+// Coordination Chemistry of Transition Metals — pinned chemistry-coordination/19.2.txt lines 33-33
+fragment F_SPHERE in OPENSTAX_CHEMISTRY_COORDINATION_SEC {
+    kind defn;
+    locator "section/19.2#coordination-sphere";
+    text en official """The coordination sphere consists of the central metal ion or atom plus its attached ligands. Brackets in a formula enclose the coordination sphere; species outside the brackets are not part of the coordination sphere. The coordination number of the central metal ion or atom is the number of donor atoms bonded to it. The coordination number for the silver ion in [Ag(NH3)2]+ is two (Figure 19.14). For the copper(II) ion in [CuCl4]2−, the coordination number is four, whereas for the cobalt(II) ion in [Co(H2O)6]2+ the coordination number is six. Each of these ligands is monodentate, from the Greek for “one toothed,” meaning that they connect with the central metal through only one atom. In this case, the number of ligands and the coordination number are equal.""";
+    content_hash "sha256:09037f18c37fb411e0135426bce3f5d8b8f63c0f431cc60ba0e85fbb7c487188";
+}
+
+// Coordination Chemistry of Transition Metals — pinned chemistry-coordination/19.2.txt lines 38-38
+fragment F_COORD_NUMBERS in OPENSTAX_CHEMISTRY_COORDINATION_SEC {
+    kind paragraph;
+    locator "section/19.2#coordination-numbers";
+    text en official """The complexes (a) [Ag(NH3)2]+, (b) [Cu(Cl)4]2−, and (c) [Co(H2O)6]2+ have coordination numbers of two, four, and six, respectively. The geometries of these complexes are the same as we have seen with VSEPR theory for main group elements: linear, tetrahedral, and octahedral.""";
+    content_hash "sha256:7ecd821e175d0ca296b9d3a887f460d4d49b46a068e97f34f923c5831f3afe3e";
+}

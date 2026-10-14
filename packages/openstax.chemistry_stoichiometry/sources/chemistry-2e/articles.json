@@ -1,0 +1,21 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "en.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "3.1": "Formula Mass and the Mole Concept",
+        "3.2": "Determining Empirical and Molecular Formulas",
+        "3.3": "Molarity",
+        "3.4": "Other Units for Solution Concentrations",
+        "4.2": "Classifying Chemical Reactions",
+        "4.3": "Reaction Stoichiometry",
+        "4.4": "Reaction Yields"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

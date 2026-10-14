@@ -1,0 +1,1290 @@
+{
+  "ir": {
+    "artifactHash": "sha256:e18306324e7f82e1ac9d315b578e001223a2da61765448c0af5f5a01e1702ae2",
+    "features": [
+      "core-executable"
+    ],
+    "imports": [],
+    "metadata": {
+      "localSources": {
+        "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_TXT": "sources/chemistry-bonding/7.3.txt"
+      }
+    },
+    "nodes": [
+      {
+        "contentHash": "sha256:bc6697f95c2580e696f7b2e72d740064aa899c24cb60c34b17d89163fbe27e5e",
+        "edition": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+        "fragmentKind": "defn",
+        "id": "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM",
+        "kind": "fragment",
+        "locator": "section/7.3#lewis-symbols",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "texts": [
+          {
+            "contentHash": "sha256:8c7dc1fe1d401b4d4e352a0d649957fca560b145e490291c5a6a16110e365f8a",
+            "language": "en",
+            "status": "official",
+            "text": "We use Lewis symbols to describe valence electron configurations of atoms and monatomic ions. A Lewis symbol consists of an elemental symbol surrounded by one dot for each of its valence electrons:"
+          }
+        ]
+      },
+      {
+        "contentHash": "sha256:e900c1af28e05a315a8e9c9c777391291ee0672e8f58ecb2530a3bd4e56f0d07",
+        "edition": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-bonding#F_OCTET",
+        "kind": "fragment",
+        "locator": "section/7.3#octet-prediction",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "texts": [
+          {
+            "contentHash": "sha256:5358f25d88a9a6e7630b11e8dad2ca3dcbad4ddc1e493a5d6a6dc8fc66b7cabe",
+            "language": "en",
+            "status": "official",
+            "text": "The number of bonds that an atom can form can often be predicted from the number of electrons needed to reach an octet (eight valence electrons); this is especially true of the nonmetals of the second period of the periodic table (C, N, O, and F). For example, each atom of a group 14 element has four electrons in its outermost shell and therefore requires four more electrons to reach an octet. These four electrons can be gained by forming four covalent bonds, as illustrated here for carbon in CCl4 (carbon tetrachloride) and silicon in SiH4 (silane). Because hydrogen only needs two electrons to fill its valence shell, it is an exception to the octet rule. The transition elements and inner transition elements also do not follow the octet rule:"
+          }
+        ]
+      },
+      {
+        "contentHash": "sha256:767f0dbdb5432d9df508257411bcdecd69b3b02d8d077fce8d64eeb3ea68f5cf",
+        "edition": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+        "fragmentKind": "defn",
+        "id": "urn:openstax:clir:chemistry-bonding#F_SINGLE_BOND",
+        "kind": "fragment",
+        "locator": "section/7.3#single-bond",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "texts": [
+          {
+            "contentHash": "sha256:8922f7d44078e8890e06d4ea8723f5afff88ed97df90666f09a1fca151e5ebdf",
+            "language": "en",
+            "status": "official",
+            "text": "A single shared pair of electrons is called a single bond. Each Cl atom interacts with eight valence electrons: the six in the lone pairs and the two in the single bond."
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "calc.lewis_structures valence-count"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "section/7.3#lewis-symbols"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "definition"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "Lewis symbol is the elemental symbol with one dot per valence electron"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "lewis-symbol"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:d4242195ad382891db1657df021f3441028d0e12209df62624935fae2bcb1e4e",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#claim_covered"
+        },
+        "id": "urn:openstax:clir:chemistry-bonding#LewisSymbolCovered",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "lewis symbol definition entry is covered"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка-определение символа Льюиса покрыта"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:cd2e5a101dcfb1dec1c3a403af15c94b02a3d12c9e7bb33a8fb88640ab8d4ce5",
+        "id": "urn:openstax:clir:chemistry-bonding#MatrixRow",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "claimed source-slice entry under test"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "проверяемая строка источникового среза"
+          }
+        ],
+        "name": "MatrixRow",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:b0b015784d96effb6e2e79b4ce9c09707ab052cf439476757c7fd483fbc5e9c6",
+        "id": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "Lewis Symbols and Structures"
+          }
+        ],
+        "number": "OpenStax Chemistry 2e, section 7.3",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "sourceKind": "urn:openstax:clir:chemistry-bonding#treatise"
+      },
+      {
+        "contentHash": "sha256:b55a49f32629db93ec22db54dde1582d89cb1f512df6d63448ff1ee1dbf46630",
+        "id": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+        "kind": "source_edition",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "section 7.3 extraction (7-3-lewis-symbols-and-structures)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "Извлечение раздела 7.3 (7-3-lewis-symbols-and-structures)"
+          }
+        ],
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2026-09-28",
+            "status": "adopted"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "work": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING"
+      },
+      {
+        "contentHash": "sha256:7b3647e909cc47665c4f03433ca750ce11530154bde1d2c267a88cf97288b374",
+        "documentHash": "sha256:957f9c5c29ac735acd385aabbf3baa92b1014a764d1538c4dd3424aa6328f70c",
+        "edition": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+        "id": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_TXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "retrievedAt": "2026-09-28T00:00:00Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_OCTET"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "octet-model"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "model"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "number of bonds predicted from electrons needed to reach an octet"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "section/7.3#octet-prediction"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "calc.lewis_structures octet-check"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:e9e9d155738be264c7a4dc10c832331e2c05485e4557fc3cf53461637698bf29",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#claim_covered"
+        },
+        "id": "urn:openstax:clir:chemistry-bonding#OctetCovered",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "octet model entry is covered"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка-модель октета покрыта"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_OCTET"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "octet-model"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "kind": "comparison",
+              "left": {
+                "kind": "var",
+                "var": "v1"
+              },
+              "op": "ne",
+              "right": {
+                "kind": "value",
+                "type": {
+                  "name": "urn:law:std#Text"
+                },
+                "value": "model"
+              }
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v1"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:e94a2e6da2598d83a5edbe6e5dbcdfc3a86bcc958f568acce4c9218f0f44547d",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "LAYER_MISMATCH"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#matrix_gap"
+        },
+        "id": "urn:openstax:clir:chemistry-bonding#OctetLayerMismatch",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "octet-model entry with a wrong layer is a named gap"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка octet-model с неверным слоем — именованный зазор"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "v1",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_SINGLE_BOND"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "observation"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "calc.lewis_structures bond-order"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "single-bond"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "a single shared pair is a single bond; each Cl sees eight valence electrons"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "value",
+                    "type": {
+                      "name": "urn:law:std#Text"
+                    },
+                    "value": "section/7.3#single-bond"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:216a0527cb6d181ecdb8aa41407769faf514915cf28d89f54ec3fdfbcfaceb42",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#claim_covered"
+        },
+        "id": "urn:openstax:clir:chemistry-bonding#SingleBondCovered",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "single bond observation entry is covered"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка-наблюдение одинарной связи покрыта"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:39cac78584a1ecd291c706617bb7ef016259c4406ecedf6b0b0b51727f29c989",
+        "id": "urn:openstax:clir:chemistry-bonding#claim_covered",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "slice entry is layered and source-anchored"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка среза размечена по слоям и привязана к источнику"
+          }
+        ],
+        "name": "claim_covered",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#claim_covered/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          }
+        ],
+        "relationKind": "derived",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:b26cac3ecfee3e72a7d07fd525bd409b2002bdffae5357b7e58136187ef7a9d2",
+        "id": "urn:openstax:clir:chemistry-bonding#matrix_gap",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "slice entry defect with a named reason"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дефект строки среза с именованной причиной"
+          }
+        ],
+        "name": "matrix_gap",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#matrix_gap/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#matrix_gap/arg/reason",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "причина"
+              }
+            ],
+            "name": "reason",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "derived",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:83beab98b5646c687c3a74e6b16da76ba34e532ac1eacb8550e5d95f21ce93b5",
+        "id": "urn:openstax:clir:chemistry-bonding#row_checker",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "checker linkage as presented"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "предъявленная привязка к проверяющему"
+          }
+        ],
+        "name": "row_checker",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_checker/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_checker/arg/checker",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "проверяющий"
+              }
+            ],
+            "name": "checker",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:8b42c4a33056e97f30fcfe0091f3d741898005ea6b4dc53b13e98ae4f32a93ed",
+        "id": "urn:openstax:clir:chemistry-bonding#row_claims",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "row claims to cover a textbook statement"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "строка заявляет покрытие утверждения учебника"
+          }
+        ],
+        "name": "row_claims",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_claims/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_claims/arg/rule_id",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "идентификатор утверждения учебника"
+              }
+            ],
+            "name": "rule_id",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:21d406aafc7f3af2c41ec7f0479865959ea148222a1bf5339f666a04e8e8cddf",
+        "id": "urn:openstax:clir:chemistry-bonding#row_formula",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "statement text as presented"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "предъявленная формулировка утверждения"
+          }
+        ],
+        "name": "row_formula",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_formula/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_formula/arg/formula",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "формулировка"
+              }
+            ],
+            "name": "formula",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:36372efad0983b7161386c4024840e4eca15409eb659739a622fd54c04a97a9b",
+        "id": "urn:openstax:clir:chemistry-bonding#row_fragment",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "source fragment locator as presented"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "предъявленный локатор фрагмента источника"
+          }
+        ],
+        "name": "row_fragment",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_fragment/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_fragment/arg/fragment_locator",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "фрагмент"
+              }
+            ],
+            "name": "fragment_locator",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-bonding#F_LEWIS_SYM"
+        ],
+        "contentHash": "sha256:91c9aba8c625f4aa93c20cfe34ad2db160bc1cdd65758458bcf8743adab8be8c",
+        "id": "urn:openstax:clir:chemistry-bonding#row_layer",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "observation/definition/model layer as presented"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "предъявленный слой: наблюдение/определение/модель"
+          }
+        ],
+        "name": "row_layer",
+        "package": "urn:openstax:clir:chemistry-bonding",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_layer/arg/r",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "r"
+              }
+            ],
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-bonding#MatrixRow"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-bonding#row_layer/arg/layer",
+            "labels": [
+              {
+                "language": "ru",
+                "status": "unofficial",
+                "text": "слой"
+              }
+            ],
+            "name": "layer",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      }
+    ],
+    "package": {
+      "name": "openstax.chemistry_bonding",
+      "namespace": "urn:openstax:clir:chemistry-bonding",
+      "semanticHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "version": "0.1.0"
+    },
+    "schemaVersion": "law.core.ir/0.7",
+    "semanticHash": "sha256:0e1bf5121cf64401cd3dfb61f647edc200037aa9a1f487368791a0c09111576d",
+    "semanticVersion": "0.2.11",
+    "strata": [],
+    "theoryHash": "sha256:51eb0b9bb3fcd5b79e38ec577b29bf020515d54812991604ddd4fdf03f3d6887"
+  },
+  "case": {
+    "assertions": [
+      {
+        "contentHash": "sha256:a50d9b7e36f3b0613e014b5be8b0530221a620e3f51a34ebb69d30bec5ae3430",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-bonding#f0",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:matrix:m02",
+              "kind": "entity_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "lewis-symbol"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-bonding"
+      },
+      {
+        "contentHash": "sha256:9215b7aa38fbf82fed8a077eae178fbd4e0249a12898b3d1f295c3df24e8cb3d",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-bonding#f1",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:matrix:m02",
+              "kind": "entity_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "Lewis symbol is the elemental symbol with one dot per valence electron"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-bonding"
+      },
+      {
+        "contentHash": "sha256:a7331c6490a3576537e50cf9e535f8ab391b3b8938e0623b37c92ef948811ecf",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-bonding#f2",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:matrix:m02",
+              "kind": "entity_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "definition"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-bonding"
+      },
+      {
+        "contentHash": "sha256:0fb6da946b5085a4c5eb9184096fc72c2bd2dafe953f7901784d2c1dc9d5e654",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-bonding#f3",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:matrix:m02",
+              "kind": "entity_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "calc.lewis_structures valence-count"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-bonding"
+      },
+      {
+        "contentHash": "sha256:f4c13fc0bd6e1228dc22b7344a8c858166876596d9b3151889ac00dba6e4ef08",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-bonding#f4",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:matrix:m02",
+              "kind": "entity_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "section/7.3#lewis-symbols"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-bonding"
+      }
+    ],
+    "context": {},
+    "options": {}
+  },
+  "query": {
+    "kind": "truth",
+    "literal": {
+      "args": [
+        {
+          "id": "urn:openstax:matrix:m02",
+          "kind": "entity_ref"
+        }
+      ],
+      "kind": "literal",
+      "polarity": "positive",
+      "predicate": "urn:openstax:clir:chemistry-bonding#claim_covered"
+    },
+    "queryId": "urn:openstax:clir:chemistry-bonding#test/lewis-symbol%20definition%20entry%20is%20covered/query/0"
+  },
+  "schemaVersion": "law.core.evaluation-request/0.2",
+  "semanticVersion": "0.2.11"
+}

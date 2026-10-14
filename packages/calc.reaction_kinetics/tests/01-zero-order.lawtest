@@ -1,0 +1,76 @@
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+// Порядок 0: c0 = 1/2 моль/л, k = 1/10 (моль/л)/с. Независимые ожидания:
+//   c(3) = 1/2 - 3/10 = 1/5 -> 0.200 (точность 3)
+//   t(c=1/5) = (1/2-1/5)/(1/10) = 3 -> 3.000
+//   t1/2 = (1/2)/(1/5) = 5/2 -> 2.500
+//   t = 5: kt = c0 ровно — истощение; t = 6 — истощение.
+
+test "urn:query:calc-kin-k01-zero-concentration" {
+    given {
+        assert "k01-o": given_order(entity_ref("urn:case:kin:z"), 0) { origin case_input; }
+        assert "k01-c0": given_initial_concentration(entity_ref("urn:case:kin:z"), 1, 2) { origin case_input; }
+        assert "k01-k": given_rate_constant(entity_ref("urn:case:kin:z"), 1, 10) { origin case_input; }
+        assert "k01-t": given_elapsed(entity_ref("urn:case:kin:z"), 3, 1) { origin case_input; }
+        assert "k01-p": given_output_precision(entity_ref("urn:case:kin:z"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:z"), 0.200));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConcentrationRounded);
+}
+
+test "urn:query:calc-kin-k02-zero-time" {
+    given {
+        assert "k02-o": given_order(entity_ref("urn:case:kin:zt"), 0) { origin case_input; }
+        assert "k02-c0": given_initial_concentration(entity_ref("urn:case:kin:zt"), 1, 2) { origin case_input; }
+        assert "k02-k": given_rate_constant(entity_ref("urn:case:kin:zt"), 1, 10) { origin case_input; }
+        assert "k02-q": given_target_concentration(entity_ref("urn:case:kin:zt"), 1, 5) { origin case_input; }
+        assert "k02-p": given_output_precision(entity_ref("urn:case:kin:zt"), 3) { origin case_input; }
+    }
+    evaluate truth(time_value(entity_ref("urn:case:kin:zt"), 3.000));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TimeRounded);
+}
+
+test "urn:query:calc-kin-k03-zero-half-life" {
+    given {
+        assert "k03-o": given_order(entity_ref("urn:case:kin:zh"), 0) { origin case_input; }
+        assert "k03-c0": given_initial_concentration(entity_ref("urn:case:kin:zh"), 1, 2) { origin case_input; }
+        assert "k03-k": given_rate_constant(entity_ref("urn:case:kin:zh"), 1, 10) { origin case_input; }
+        assert "k03-p": given_output_precision(entity_ref("urn:case:kin:zh"), 3) { origin case_input; }
+    }
+    evaluate truth(half_life_value(entity_ref("urn:case:kin:zh"), 2.500));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(HalfLifeRounded);
+}
+
+test "urn:query:calc-kin-k04-zero-depleted-at-boundary" {
+    given {
+        assert "k04-o": given_order(entity_ref("urn:case:kin:zb"), 0) { origin case_input; }
+        assert "k04-c0": given_initial_concentration(entity_ref("urn:case:kin:zb"), 1, 2) { origin case_input; }
+        assert "k04-k": given_rate_constant(entity_ref("urn:case:kin:zb"), 1, 10) { origin case_input; }
+        assert "k04-t": given_elapsed(entity_ref("urn:case:kin:zb"), 5, 1) { origin case_input; }
+        assert "k04-p": given_output_precision(entity_ref("urn:case:kin:zb"), 3) { origin case_input; }
+    }
+    evaluate truth(depleted(entity_ref("urn:case:kin:zb")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(DepletedZeroOrder);
+}
+
+test "urn:query:calc-kin-k05-zero-no-negative-concentration" {
+    given {
+        assert "k05-o": given_order(entity_ref("urn:case:kin:zp"), 0) { origin case_input; }
+        assert "k05-c0": given_initial_concentration(entity_ref("urn:case:kin:zp"), 1, 2) { origin case_input; }
+        assert "k05-k": given_rate_constant(entity_ref("urn:case:kin:zp"), 1, 10) { origin case_input; }
+        assert "k05-t": given_elapsed(entity_ref("urn:case:kin:zp"), 6, 1) { origin case_input; }
+        assert "k05-p": given_output_precision(entity_ref("urn:case:kin:zp"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:zp"), -0.100));
+    expect truth_status == NEITHER;
+}

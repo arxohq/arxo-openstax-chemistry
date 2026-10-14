@@ -1,0 +1,94 @@
+// Растворы по гл. 11 Chemistry 2e: ворота моделей, не определения концентраций.
+//
+// ОСНОВАНИЕ. Авторское изложение (парафраз), не перепечатка: точные ссылки —
+// §11.1 «The Dissolution Process»
+// (https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process,
+// проверено 200 2026-09-26). Определения количества, молярности и разведения —
+// у владельца гл. 3 (`openstax.chemistry_stoichiometry`, фрагменты OS_3_1_MOLE,
+// OS_3_1_MOLAR_MASS, OS_4_3_STOICHIOMETRIC_FACTOR): этот пакет их не
+// дублирует, а ссылается. Лицензия книги — CC BY-NC-SA 4.0 (атрибуция
+// ссылками выше; некоммерческое использование и share-alike учтены пометкой,
+// как у соседа chemistry-acids).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Только применимость моделей к предъявленному делу:
+// растворение как физическое диспергирование (11.1), сохранение количества
+// при разведении, лицензия идеального разбавленного профиля.
+
+language "law.core" version "0.2";
+package openstax.chemistry_solutions version "0.1.1";
+namespace "urn:openstax:clir:chemistry-solutions";
+
+use self::{
+    PIN_DILUTION,
+    PIN_DISSOLUTION,
+};
+
+pub entity Solution {
+    label ru unofficial "раствор, предъявленный делом";
+    label en unofficial "solution presented by the case";
+}
+
+pub relation solution_in_question(s: Solution) kind empirical {
+    label ru unofficial "раствор предъявлен делом как предмет вопроса";
+    label en unofficial "the solution is presented by the case as the subject of the question";
+}
+
+pub relation dilution_presented(s: Solution) kind empirical {
+    label ru unofficial "дело предъявило разведение (начальное и конечное состояния)";
+    label en unofficial "the case presents a dilution (initial and final states)";
+}
+
+pub relation dilute_aqueous_presented(s: Solution) kind empirical {
+    label ru unofficial "дело предъявило разбавленный водный раствор";
+    label en unofficial "the case presents a dilute aqueous solution";
+}
+
+pub relation dissolution_is_physical_dispersal(s: Solution) kind institutional {
+    label ru unofficial "растворение — физическое диспергирование растворённого вещества в растворителе (11.1)";
+    label en unofficial "dissolution is physical dispersal of solute in solvent (11.1)";
+}
+
+pub relation amount_conserved_on_dilution(s: Solution) kind institutional {
+    label ru unofficial "количество растворённого вещества при разведении сохраняется (владелец: гл. 3)";
+    label en unofficial "solute amount is conserved on dilution (owner: ch. 3)";
+}
+
+pub relation ideal_dilute_model_licensed(s: Solution) kind institutional {
+    label ru unofficial "идеальный разбавленный профиль открыт (a = c/c°, γ = 1)";
+    label en unofficial "the ideal dilute profile is licensed (a = c/c°, γ = 1)";
+}
+
+// §11.1: растворение — окружение частиц растворённого вещества растворителем,
+// химическая реакция при этом не предполагается.
+@source(PIN_DISSOLUTION)
+pub rule DissolutionIsPhysicalDispersal(
+    s: Solution,
+) strict {
+    label ru unofficial "растворение — физическое диспергирование (11.1)";
+    label en unofficial "dissolution is physical dispersal (11.1)";
+    when solution_in_question(s);
+    then dissolution_is_physical_dispersal(s);
+}
+
+// Разведение сохраняет количество: определения — у владельца гл. 3
+// (OS_3_1_MOLE, OS_3_1_MOLAR_MASS); здесь — ворота применимости.
+@source(PIN_DILUTION)
+pub rule AmountConservedOnDilution(
+    s: Solution,
+) strict {
+    label ru unofficial "разведение сохраняет количество вещества (гл. 3)";
+    label en unofficial "dilution conserves solute amount (ch. 3)";
+    when solution_in_question(s) and dilution_presented(s);
+    then amount_conserved_on_dilution(s);
+}
+
+// Разбавленный водный раствор — вход идеального профиля активности,
+// который требуют пины chem.ionization_constants.
+pub rule IdealDiluteModelLicensed(
+    s: Solution,
+) strict {
+    label ru unofficial "разбавленный водный раствор: идеальный профиль открыт (11.1)";
+    label en unofficial "dilute aqueous solution: ideal profile licensed (11.1)";
+    when solution_in_question(s) and dilute_aqueous_presented(s);
+    then ideal_dilute_model_licensed(s);
+}

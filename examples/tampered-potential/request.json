@@ -1,0 +1,1053 @@
+{
+  "ir": {
+    "artifactHash": "sha256:040391db76f541415c02aadd288c7ac67b7cf04df79e855670c7623540435cf5",
+    "features": [
+      "core-executable"
+    ],
+    "imports": [],
+    "metadata": {
+      "localSources": {
+        "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3_TEXT": "sources/chemistry-2e/17-3-potentials.txt"
+      }
+    },
+    "nodes": [
+      {
+        "contentHash": "sha256:a93ddc52fe71ec67dd942f6bfd1631106f7005231f4d85b3a5cc308cb2611341",
+        "id": "urn:openstax:clir:chemistry-electro#CopperHalfCell",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "Cu2+/Cu couple"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "пара Cu2+/Cu"
+          }
+        ],
+        "name": "CopperHalfCell",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [],
+        "returnType": {
+          "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+        },
+        "symbolKind": "constant",
+        "value": {
+          "id": "urn:openstax:clir:chemistry-electro#copper",
+          "kind": "entity_ref"
+        },
+        "visibility": "public"
+      },
+      {
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v1"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v2"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v3"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v1"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v2"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v3"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-electro#e_record"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:b89e04d1b6a4c1c128d2d1e9deb91ca0a29a803f4e3eaea0d0cba6a137f0c5ab",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#pin_consistent"
+        },
+        "id": "urn:openstax:clir:chemistry-electro#EConsistent",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "E° adapter record agrees with the pin"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-electro",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          },
+          {
+            "id": "v1",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "v2",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          },
+          {
+            "id": "v3",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          }
+        ]
+      },
+      {
+        "contentHash": "sha256:1e9ab0bcb6116c17682866093612e8bf3dd007cf2afe8f3493c2cd6ef5c813cf",
+        "id": "urn:openstax:clir:chemistry-electro#HalfCell",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "half-cell (reduction couple)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "полуэлемент (восстановительная пара)"
+          }
+        ],
+        "name": "HalfCell",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:b268bc1a95ef6a07cab5dd62e944e8ce6f6b2dd1c9f05526413bfd24fafaeb25",
+        "id": "urn:openstax:clir:chemistry-electro#HydrogenReference",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "standard hydrogen electrode"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "стандартный водородный электрод"
+          }
+        ],
+        "name": "HydrogenReference",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [],
+        "returnType": {
+          "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+        },
+        "symbolKind": "constant",
+        "value": {
+          "id": "urn:openstax:clir:chemistry-electro#she",
+          "kind": "entity_ref"
+        },
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:cedac938df444de876e964264595b886f10c405ab379cb994da51cd8b1adead1",
+        "id": "urn:openstax:clir:chemistry-electro#OPENSTAX_CHEM2E_ELECTRO",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "Chemistry 2e"
+          }
+        ],
+        "number": "OpenStax Chemistry 2e (2019), chapter 17",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "sourceKind": "urn:openstax:clir:chemistry-electro#treatise"
+      },
+      {
+        "contentHash": "sha256:3be3bc5c427fae3b15000a55f4649bb11afd21dd0cc5d438a955c4fe8e8571cd",
+        "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-electro#OS_17_3_CU",
+        "kind": "fragment",
+        "locator": "17.3/table-17-1-cu",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "texts": [
+          {
+            "contentHash": "sha256:dafff4294e44191bfaf48d928285648f8abc99abe45ca088e9e0170fc79a6a55",
+            "language": "en",
+            "status": "official",
+            "text": "Cu2+(aq)+2e−⟶Cu(s)\n+0.34"
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:ced9bca864b4b2ee4173b5ed74f3d234fbb891c5e920d541b71e7796d416f842",
+        "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-electro#OS_17_3_H2",
+        "kind": "fragment",
+        "locator": "17.3/table-17-1-she",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "texts": [
+          {
+            "contentHash": "sha256:76cecba526dfe1c99e5afbf0211f17c6dcf409505b961f0e049df35ba5939392",
+            "language": "en",
+            "status": "official",
+            "text": "2H+(aq)+2e−⟶H2(g)\n0.00"
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:9cafc3a3f73b0ad653af27eded94071537ea2c7660c5b3f45214d91b7f611a48",
+        "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-electro#OS_17_3_TABLE_AT_25",
+        "kind": "fragment",
+        "locator": "17.3/table-17-1-header",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "texts": [
+          {
+            "contentHash": "sha256:35bea052b848ef23e23ac07190f452afa3d4e0dc88292ed606d6425b23c46dba",
+            "language": "en",
+            "status": "official",
+            "text": "Selected Standard Reduction Potentials at 25 °C"
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:8505018a5bbbf34fa46a9e71a25bd2c95c3edce1d957f2ed6ef2381802105315",
+        "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-electro#OS_17_3_ZN",
+        "kind": "fragment",
+        "locator": "17.3/table-17-1-zn",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "texts": [
+          {
+            "contentHash": "sha256:3647db15c5269b409e1101e609b61cf149eb0961af366c530acc5782ccc6d269",
+            "language": "en",
+            "status": "official",
+            "text": "Zn2+(aq)+2e−⟶Zn(s)\n−0.7618"
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:73bb43a06095d15285c45140024f7711e600460fe33402c0983a0eb0af83e876",
+        "id": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "kind": "source_edition",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e §17.3, English edition (CC BY-NC-SA 4.0)"
+          }
+        ],
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "work": "urn:openstax:clir:chemistry-electro#OPENSTAX_CHEM2E_ELECTRO"
+      },
+      {
+        "contentHash": "sha256:f0c6b7d917acaca0e6a587e35f08168d987c72827ffe0680eaf5280b1764a982",
+        "documentHash": "sha256:54c6477b62fe8b08a79a690c618b902cc30ac2d2b8bd8052fafa72af86c254dc",
+        "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+        "id": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "retrievedAt": "2026-09-26T23:31:26Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/17-3-electrode-and-cell-potentials"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_TABLE_AT_25"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v1"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-electro#galvanic_cell_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v2"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v4"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "kind": "comparison",
+              "left": {
+                "kind": "var",
+                "var": "v2"
+              },
+              "op": "gt",
+              "right": {
+                "kind": "var",
+                "var": "v3"
+              }
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v1"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v3"
+                  },
+                  {
+                    "kind": "var",
+                    "var": "v4"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:e79705565887a7dc6b37965d1ddfeb3aa38f38425fdfcb5a52eaae483b4977f0",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            },
+            {
+              "kind": "var",
+              "var": "v1"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#standard_cell_positive"
+        },
+        "id": "urn:openstax:clir:chemistry-electro#StandardCellPositive",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "cathode E° above anode E°: standard emf positive (17.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "E° катода выше E° анода: стандартная ЭДС положительна (17.3)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-electro",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "v1",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "v2",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          },
+          {
+            "id": "v3",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          },
+          {
+            "id": "v4",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:98a86b67414eea0cd796c940eaad5f6306b651a6fdd81541ff99c65339c301c2",
+        "id": "urn:openstax:clir:chemistry-electro#ZincHalfCell",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "Zn2+/Zn couple"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "пара Zn2+/Zn"
+          }
+        ],
+        "name": "ZincHalfCell",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [],
+        "returnType": {
+          "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+        },
+        "symbolKind": "constant",
+        "value": {
+          "id": "urn:openstax:clir:chemistry-electro#zinc",
+          "kind": "entity_ref"
+        },
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_CU"
+        ],
+        "contentHash": "sha256:fd5eb65c42062ce106176eb3daaf4ce352798dd9b1b4fe8d77e322a538639fe0",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#assert-h3eedd8f56831126e8ed7f50fe6f1dc42a327e4fa1a3a618605cbec29ace99330",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:clir:chemistry-electro#CopperHalfCell",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "0.34"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "provenance": [
+          {
+            "attributes": {
+              "factGroup": "PotentialCopper",
+              "visibility": "public"
+            },
+            "relation": "was_derived_from",
+            "target": "urn:openstax:clir:chemistry-electro#PotentialCopper"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_ZN"
+        ],
+        "contentHash": "sha256:4db19d461cbbfb0a055e0172bb9c5c8456ab78e8bb636608c3de4c8feb89af91",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#assert-h591b60f5fff6da6035a056ed7a6299ef137d2fd92c16cb4ada0e15b41eb65c1c",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:clir:chemistry-electro#ZincHalfCell",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "-0.7618"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "provenance": [
+          {
+            "attributes": {
+              "factGroup": "PotentialZinc",
+              "visibility": "public"
+            },
+            "relation": "was_derived_from",
+            "target": "urn:openstax:clir:chemistry-electro#PotentialZinc"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_H2"
+        ],
+        "contentHash": "sha256:8784df667f10bd972cc172f9b89adbcada0942bee7a596303e1a3ebd6801c8ac",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#assert-hc4f51944e395f360b51bba1b2b50f6e793919c75180de09cbeda1907f355d756",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:openstax:clir:chemistry-electro#HydrogenReference",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "0"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#reduction_potential"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "provenance": [
+          {
+            "attributes": {
+              "factGroup": "PotentialHydrogenReference",
+              "visibility": "public"
+            },
+            "relation": "was_derived_from",
+            "target": "urn:openstax:clir:chemistry-electro#PotentialHydrogenReference"
+          }
+        ]
+      },
+      {
+        "contentHash": "sha256:b63316f357858490f87385647a049dd0cd7f4d1416f07176a7095a06f942980b",
+        "id": "urn:openstax:clir:chemistry-electro#e_record",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "E° record with a recordId"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "запись E° с recordId"
+          }
+        ],
+        "name": "e_record",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#e_record/arg/rid",
+            "name": "rid",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#e_record/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#e_record/arg/e",
+            "name": "e",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#e_record/arg/t",
+            "name": "t",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:eb7c1e9c30c4f7ea26fb62b3d4a12c2524564ab212d7eb58b173f6857760e607",
+        "id": "urn:openstax:clir:chemistry-electro#galvanic_cell_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents a galvanic cell (cathode, anode)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило гальванический элемент (катод, анод)"
+          }
+        ],
+        "name": "galvanic_cell_presented",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#galvanic_cell_presented/arg/cathode",
+            "name": "cathode",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#galvanic_cell_presented/arg/anode",
+            "name": "anode",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:67a397ebd802aaa6988eaefb0d48cf8c28717031a04719f7aa551a35f7169088",
+        "id": "urn:openstax:clir:chemistry-electro#pin_consistent",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "adapter record matches the package pin"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "запись адаптера совпадает с пином пакета"
+          }
+        ],
+        "name": "pin_consistent",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#pin_consistent/arg/rid",
+            "name": "rid",
+            "type": {
+              "name": "urn:law:std#Text"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_CU"
+        ],
+        "contentHash": "sha256:52327f5d3d9c08577d9e6c56352ff0d1ac0a2432bf71bb1009cdcb0a740b5353",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#rec-e-cu",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "chelectro/17.1/OS_17_3_CU/cu2-cu"
+            },
+            {
+              "id": "urn:openstax:clir:chemistry-electro#CopperHalfCell",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "0.34"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#e_record"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_H2"
+        ],
+        "contentHash": "sha256:a447e6707aba3f53e8583b71a3444f5adc71b25baf5f031a6c21b4204d949503",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#rec-e-h2",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "chelectro/17.1/OS_17_3_H2/she"
+            },
+            {
+              "id": "urn:openstax:clir:chemistry-electro#HydrogenReference",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "0"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#e_record"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-electro#OS_17_3_ZN"
+        ],
+        "contentHash": "sha256:8879c34db78bf673915f2d20c98729ccb23f3b7ee763178246ba37d16ae468da",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-electro#rec-e-zn",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Text"
+              },
+              "value": "chelectro/17.1/OS_17_3_ZN/zn2-zn"
+            },
+            {
+              "id": "urn:openstax:clir:chemistry-electro#ZincHalfCell",
+              "kind": "const_ref"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "V",
+              "value": "-0.7618"
+            },
+            {
+              "kind": "value",
+              "type": {
+                "name": "urn:law:std#Quantity"
+              },
+              "unit": "K",
+              "value": "298.15"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-electro#e_record"
+        },
+        "origin": "source_asserted",
+        "package": "urn:openstax:clir:chemistry-electro"
+      },
+      {
+        "contentHash": "sha256:0e7b6cbbbc3119570284d6b498440ed9b0cad49809f3b729a432dc6c4bf6e91a",
+        "id": "urn:openstax:clir:chemistry-electro#reduction_potential",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "standard reduction potential at T (Table 17.1)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "стандартный потенциал восстановления при T (таблица 17.1)"
+          }
+        ],
+        "name": "reduction_potential",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#reduction_potential/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#reduction_potential/arg/e",
+            "name": "e",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#reduction_potential/arg/t",
+            "name": "t",
+            "type": {
+              "name": "urn:law:std#Quantity"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:2e340f98e4c7a04672c1dffde9ef89e86fa6f625d40a5751e1d0681ee1db5978",
+        "id": "urn:openstax:clir:chemistry-electro#standard_cell_positive",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the pair standard emf is positive (E°cath > E°an, 17.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "стандартная ЭДС пары положительна (E°кат > E°ан, 17.3)"
+          }
+        ],
+        "name": "standard_cell_positive",
+        "package": "urn:openstax:clir:chemistry-electro",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-electro#standard_cell_positive/arg/cathode",
+            "name": "cathode",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          },
+          {
+            "id": "urn:openstax:clir:chemistry-electro#standard_cell_positive/arg/anode",
+            "name": "anode",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-electro#HalfCell"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      }
+    ],
+    "package": {
+      "name": "openstax.chemistry_electro",
+      "namespace": "urn:openstax:clir:chemistry-electro",
+      "semanticHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "version": "0.1.0"
+    },
+    "schemaVersion": "law.core.ir/0.7",
+    "semanticHash": "sha256:5de2dce8ffba9a785441049d01319efffe345a8b837409f90b793560d4e769e3",
+    "semanticVersion": "0.2.11",
+    "strata": [],
+    "theoryHash": "sha256:45c202a488c1452527d0fd3b44fc715361c0381031cf28747a9b9ef440ffaf15"
+  },
+  "case": {
+    "assertions": [],
+    "context": {
+      "decisionTime": "2026-10-01T12:00:00Z",
+      "knowledgeTime": "2026-10-01T12:00:00Z",
+      "legalTime": "2026-10-01",
+      "timezone": "UTC"
+    },
+    "options": {}
+  },
+  "query": {
+    "kind": "truth",
+    "literal": {
+      "args": [
+        {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "chelectro/17.1/OS_17_3_CU/cu2-cu-tampered"
+        }
+      ],
+      "kind": "literal",
+      "polarity": "positive",
+      "predicate": "urn:openstax:clir:chemistry-electro#pin_consistent"
+    },
+    "queryId": "urn:openstax:clir:chemistry-electro#test/urn%3Aquery%3Aelrec-02-tampered-neither/query/0"
+  },
+  "schemaVersion": "law.core.evaluation-request/0.2",
+  "semanticVersion": "0.2.11"
+}

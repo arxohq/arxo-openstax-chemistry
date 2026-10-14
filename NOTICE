@@ -1,0 +1,36 @@
+# Attribution and licenses
+
+Chemistry 2e by Paul Flowers, Klaus Theopold, Richard Langley and William R. Robinson, PhD; OpenStax, Rice University and content contributors. Published February 14, 2019, Houston, Texas.
+
+Access for free at https://openstax.org/books/chemistry-2e/pages/1-introduction
+
+Textbook content and adaptations are licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/ (full legal code in licenses/CC-BY-NC-SA-4.0.txt). Noncommercial use, attribution and ShareAlike apply. Apache-2.0 does not replace these terms. Official attribution, license and additional publisher notices: https://openstax.org/books/chemistry-2e/pages/preface (checked 2026-10-14). Publisher notices concerning AI reuse and commercial printing remain at that link; this kit is an executable educational interpretation, not a training dataset.
+
+The captured text in packages/openstax.*/sources, excerpts embedded in .law sources, registry/**, dependency IR and examples/*/request.json, and textbook-derived textual adaptations retain CC BY-NC-SA 4.0. Changes: selected source extraction, literal section declarations, executable interpretation, source anchoring and educational documentation. These changes do not reproduce all textbook content. Extracts can lose mathematical formatting; original retained source bytes are not claimed equivalent to a formatted PDF edition.
+
+Original Arxo code, independent tests, technical units/calculation models and original SVG art use Apache-2.0 (LICENSE). No OpenStax logos, publisher book cover or illustrations are used as repository art. This project is independent and does not imply endorsement by OpenStax or Rice University.
+
+## Exact source publications
+
+The table identifies every own publication in the eleven models. Each publication node contains its URI, retrieval time, document hash and edition. sources/**/manifest.json records the extraction and retained source identity, including original raw HTML hashes for newly captured sections. Raw HTML stays outside the delivered tree. Table-only snapshots remain excerpts. Version 0.1.1 provenance additions and original 0.1.0 IR are separately recorded.
+
+| Package | Publication | Original URI | Retrieved | Document SHA-256 |
+|---|---|---|---|---|
+| `openstax.chemistry_acids` | `urn:openstax:clir:chemistry-acids#OS_CHEM2E_14_7_TEXT` | https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations | 2026-09-26T23:29:49Z | `sha256:d045ea698c27b844ad116ee60096cd5c40b3acf638cb99b8a62bc6976266a35b` |
+| `openstax.chemistry_acids` | `urn:openstax:clir:chemistry-acids#OS_CHEM2E_TEXT` | https://openstax.org/books/chemistry-2e/pages/ | 2026-09-06T00:00:00Z | `sha256:9cd690ddec85843d14d55896b354718158ebe80bb58ea4f9a9da9fc315ab6177` |
+| `openstax.chemistry_atomic` | `urn:openstax:clir:chemistry-atomic#OPENSTAX_CHEMISTRY_ATOMIC_TXT` | https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations | 2026-09-28T00:00:00Z | `sha256:9d4ce351cf4417298a6afcd23f38ddf65af500be1b929773d325c250f2dc8945` |
+| `openstax.chemistry_bonding` | `urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_TXT` | https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures | 2026-09-28T00:00:00Z | `sha256:957f9c5c29ac735acd385aabbf3baa92b1014a764d1538c4dd3424aa6328f70c` |
+| `openstax.chemistry_coordination` | `urn:openstax:clir:chemistry-coordination#OPENSTAX_CHEMISTRY_COORDINATION_TXT` | https://openstax.org/books/chemistry-2e/pages/19-2-coordination-chemistry-of-transition-metals | 2026-09-28T00:00:00Z | `sha256:d33ed2a3f328924c01ca20dfc56c48459ddeb9bad7e6844783807fbf06534dff` |
+| `openstax.chemistry_electro` | `urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3_TEXT` | https://openstax.org/books/chemistry-2e/pages/17-3-electrode-and-cell-potentials | 2026-09-26T23:31:26Z | `sha256:54c6477b62fe8b08a79a690c618b902cc30ac2d2b8bd8052fafa72af86c254dc` |
+| `openstax.chemistry_equilibrium` | `urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_TEXT` | https://openstax.org/books/chemistry-2e/pages/ | 2026-09-28T00:00:00Z | `sha256:75960d4de233ceb3bbc081d0d3d5930149c60878f1517916fe08c15ee09a3276` |
+| `openstax.chemistry_gases` | `urn:openstax:clir:chemistry-gases#S_9_2_TEXT` | https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law | 2026-10-14T10:29:02Z | `sha256:8911482700b51081c047882a9c7880050d171c4e3931b2d65cf7e25def737a48` |
+| `openstax.chemistry_gases` | `urn:openstax:clir:chemistry-gases#S_9_3_TEXT` | https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions | 2026-10-14T10:29:03Z | `sha256:43c54e72b072ae4466933599ed74bdd7aee332463b68a7f15029d0498397c489` |
+| `openstax.chemistry_kinetics` | `urn:openstax:clir:chemistry-kinetics#S_12_3_TEXT` | https://openstax.org/books/chemistry-2e/pages/12-3-rate-laws | 2026-10-14T10:36:07Z | `sha256:e3dbf5ff80f1aab2719400708ec69d16e88d7279218aadb97f86d65ae414a8eb` |
+| `openstax.chemistry_kinetics` | `urn:openstax:clir:chemistry-kinetics#S_12_4_TEXT` | https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws | 2026-10-14T10:36:08Z | `sha256:8e2846483c6d27e5364e5bde9cd87d6984bb0e5810d699edce37651e00c158df` |
+| `openstax.chemistry_kinetics` | `urn:openstax:clir:chemistry-kinetics#S_12_5_TEXT` | https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory | 2026-10-14T10:36:08Z | `sha256:cb5ae1ab7022e52b3792963bd76fdad0176b4c0acaee59e08a7645127f0363d2` |
+| `openstax.chemistry_solutions` | `urn:openstax:clir:chemistry-solutions#S_11_1_TEXT` | https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process | 2026-10-14T10:29:03Z | `sha256:9d09a6dcf4e3fd47bbca31d2c7a9041987de42d2620feb8bd74dfa1f810b6a88` |
+| `openstax.chemistry_solutions` | `urn:openstax:clir:chemistry-solutions#S_3_3_TEXT` | https://openstax.org/books/chemistry-2e/pages/3-3-molarity | 2026-09-12T06:20:00Z | `sha256:4c273634589e83929d42268ebfdab67eec357765c3c28ec553203313d695d893` |
+| `openstax.chemistry_stoichiometry` | `urn:openstax:clir:chemistry-stoichiometry#OS_CHEM2E_TEXT` | https://openstax.org/books/chemistry-2e/pages/ | 2026-09-12T06:20:00Z | `sha256:e4125fef2db048a52760768809c962973c5d759f75e55050d9f20782e6a01213` |
+| `openstax.chemistry_thermo` | `urn:openstax:clir:chemistry-thermo#S_16_1_TEXT` | https://openstax.org/books/chemistry-2e/pages/16-1-spontaneity | 2026-10-14T10:29:04Z | `sha256:cf43d7aebe26f3811e837f04778c96bf4f83c3babc5782afbd5f3358fb6c22b8` |
+| `openstax.chemistry_thermo` | `urn:openstax:clir:chemistry-thermo#S_16_4_TEXT` | https://openstax.org/books/chemistry-2e/pages/16-4-free-energy | 2026-10-14T10:29:04Z | `sha256:d0fbf6a665192ad5d9fb4da3fa9add733133013379f65771d05a16bc4ac91e0e` |
+| `openstax.chemistry_thermo` | `urn:openstax:clir:chemistry-thermo#S_5_3_TEXT` | https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy | 2026-10-14T10:29:04Z | `sha256:03e17e2c1bef9b10884a40c06442a3e6f85791a25f5bc94a9cf35249c1a5c5b4` |

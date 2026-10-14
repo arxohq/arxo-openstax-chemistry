@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:613d8bef7ff172fb351fc8fd2055cffb30e28ba7de55db70b7a22dcac226164f",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:47367d3bb1aabe08cc2e22464af30e1e1e5ff246e8a9ece6ee869b4c203cbb63",
+    "name": "openstax.chemistry_gases",
+    "namespace": "urn:openstax:clir:chemistry-gases",
+    "sourceHash": "sha256:9d4cd0f61fd3697874aa148b9026bae7d0e6787def34d7afee02aca4f62f2573",
+    "version": "0.1.1"
+  }
+}

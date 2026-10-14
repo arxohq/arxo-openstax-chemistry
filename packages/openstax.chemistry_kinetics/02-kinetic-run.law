@@ -1,0 +1,353 @@
+// Кинетический прогон: дело → calc.reaction_kinetics → величины.
+//
+// СВЯЗЬ, А НЕ ПЕРЕСЧЁТ. §12.3–12.4 Chemistry 2e (снимок §12.4 —
+// sources/chemistry-2e/en.txt): порядок — входная модель, закрытые решения —
+// только 0/1/2, перенос k по T — только при предъявленной Ea. Правила ниже
+// переводят предъявленное делом в точные пары вычислителя и возвращают
+// итоги обратно в величины; формулы живут в calc.reaction_kinetics.
+//
+// ПОЧЕМУ ПАРЫ, А НЕ ВЕЛИЧИНЫ НА ВХОДЕ. Вычислитель берёт c₀, k, t, цель,
+// Ea, R, T₁/T₂ точными парами числитель/знаменатель (конечные десятичные
+// дроби ими не исчерпываются: 1/3 моль/л — законная концентрация). Ядро не
+// даёт разложения величины на числитель/знаменатель в .law (в std нет
+// такой функции), поэтому дело предъявляет пары явно, а единицы фиксирует
+// контракт отношения: концентрации — моль/л, времена — секунды, k —
+// размерностью порядка (0: (моль/л)/с, 1: 1/с, 2: л/(моль·с)), Ea — Дж/моль,
+// R — Дж/(моль·К), температуры — К. Выход — наоборот величинами:
+// округлённые Decimal-головы пришиваются через with_unit.
+//
+// n = 1 — ТОТ ЖЕ МАТЕМАТИЧЕСКИЙ ОБЪЕКТ, ЧТО СВОБОДНЫЙ РАСПАД ПЕРВОГО
+// ПОРЯДКА (dc/dt = −kc), но мост идёт в calc.reaction_kinetics, а не в
+// calc.first_order_dynamics: у кинетики свои гарды области (c₀ > 0,
+// знаменатели > 0), свои диагнозы (истощение, недостижимость цели,
+// неподдержанный порядок) и свой обратный вопрос. Дублирования формул нет:
+// экспонента считается один раз — в вычислителе.
+
+language "law.core" version "0.2";
+package openstax.chemistry_kinetics version "0.1.1";
+namespace "urn:openstax:clir:chemistry-kinetics";
+
+import calc.reaction_kinetics version "0.1.0";
+import units.si version "0.1.0";
+
+use self::{
+    KineticRun,
+    PIN_ARRHENIUS,
+    PIN_INTEGRATED_RATE,
+};
+
+// --- Прогон и его входы ----------------------------------------------------------
+
+pub entity KineticCalculation {
+    label ru unofficial "кинетический расчёт второго слоя: прогон дела через calc.reaction_kinetics";
+    label en unofficial "second-layer kinetic calculation: the case run through calc.reaction_kinetics";
+}
+
+relation run_calculation(r: KineticRun, c: calc.reaction_kinetics::Calculation) kind empirical {
+    label ru unofficial "расчёт вычислителя, несущий прогон дела";
+    label en unofficial "the engine calculation carrying the case run";
+}
+
+relation run_order(r: KineticRun, n: Integer) kind empirical {
+    label ru unofficial "порядок закона скорости как входная модель: 0, 1 или 2 (из стехиометрии не выводится, §12.3)";
+    label en unofficial "rate-law order as an input model: 0, 1 or 2 (never inferred from stoichiometry, §12.3)";
+}
+
+relation run_initial_concentration(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "начальная концентрация c₀ в моль/л, дробью числитель/знаменатель (§12.4)";
+    label en unofficial "initial concentration c₀ in mol/l, as numerator/denominator (§12.4)";
+}
+
+relation run_rate_constant(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "константа скорости k дробью; размерность зависит от порядка: 0 — (моль/л)/с, 1 — 1/с, 2 — л/(моль·с) (§12.3)";
+    label en unofficial "rate constant k as a fraction; dimensions depend on the order: 0 — (mol/l)/s, 1 — 1/s, 2 — l/(mol·s) (§12.3)";
+}
+
+relation run_elapsed(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "сдвиг времени t ≥ 0 в секундах, дробью (§12.4)";
+    label en unofficial "time shift t ≥ 0 in seconds, as a fraction (§12.4)";
+}
+
+relation run_target_concentration(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "целевая концентрация в моль/л, дробью — для обратного вопроса (§12.4)";
+    label en unofficial "target concentration in mol/l, as a fraction — for the inverse question (§12.4)";
+}
+
+relation run_precision(r: KineticRun, p: Integer) kind empirical {
+    label ru unofficial "объявленная политика округления: знаков после запятой (HALF_UP)";
+    label en unofficial "declared rounding policy: digits after the point (HALF_UP)";
+}
+
+relation run_activation_energy(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "энергия активации Ea в Дж/моль, дробью — лицензия переноса по температуре (§12.6)";
+    label en unofficial "activation energy Ea in J/mol, as a fraction — the temperature-transfer license (§12.6)";
+}
+
+relation run_gas_constant(r: KineticRun, numerator: Integer, denominator: Integer) kind empirical {
+    label ru unofficial "газовая постоянная R в Дж/(моль·К), дробью — значение источника, подаёт дело (§12.6)";
+    label en unofficial "gas constant R in J/(mol·K), as a fraction — the source value, supplied by the case (§12.6)";
+}
+
+relation run_temperature_pair(r: KineticRun, t1_num: Integer, t1_den: Integer, t2_num: Integer, t2_den: Integer) kind empirical {
+    label ru unofficial "пара температур T₁, T₂ в К, дробями — перенос k(T₁) → k(T₂) (§12.6)";
+    label en unofficial "temperature pair T₁, T₂ in K, as fractions — transfer of k(T₁) → k(T₂) (§12.6)";
+}
+
+relation run_no_activation_energy(r: KineticRun) kind empirical {
+    label ru unofficial "дело заявляет: энергии активации у прогона нет — перенос будет отклонён вслух";
+    label en unofficial "the case states: this run has no activation energy — the transfer will be refused aloud";
+}
+
+// --- Мост: входы ---------------------------------------------------------------------
+
+rule RunOrder(r: KineticRun, c: calc.reaction_kinetics::Calculation, n: Integer) strict {
+    label ru unofficial "порядок следует за расчётом как входная модель";
+    label en unofficial "the order travels with the calculation as an input model";
+    when run_calculation(r, c) and run_order(r, n);
+    then calc.reaction_kinetics::given_order(c, n);
+}
+
+rule RunInitialConcentration(r: KineticRun, c: calc.reaction_kinetics::Calculation, an: Integer, ad: Integer) strict {
+    label ru unofficial "начальная концентрация следует за расчётом в моль/л";
+    label en unofficial "the initial concentration travels with the calculation in mol/l";
+    when run_calculation(r, c) and run_initial_concentration(r, an, ad);
+    then calc.reaction_kinetics::given_initial_concentration(c, an, ad);
+}
+
+rule RunRateConstant(r: KineticRun, c: calc.reaction_kinetics::Calculation, kn: Integer, kd: Integer) strict {
+    label ru unofficial "константа скорости следует за расчётом";
+    label en unofficial "the rate constant travels with the calculation";
+    when run_calculation(r, c) and run_rate_constant(r, kn, kd);
+    then calc.reaction_kinetics::given_rate_constant(c, kn, kd);
+}
+
+rule RunElapsed(r: KineticRun, c: calc.reaction_kinetics::Calculation, tn: Integer, td: Integer) strict {
+    label ru unofficial "сдвиг времени следует за расчётом в секундах";
+    label en unofficial "the time shift travels with the calculation in seconds";
+    when run_calculation(r, c) and run_elapsed(r, tn, td);
+    then calc.reaction_kinetics::given_elapsed(c, tn, td);
+}
+
+rule RunTargetConcentration(r: KineticRun, c: calc.reaction_kinetics::Calculation, qn: Integer, qd: Integer) strict {
+    label ru unofficial "целевая концентрация следует за расчётом в моль/л";
+    label en unofficial "the target concentration travels with the calculation in mol/l";
+    when run_calculation(r, c) and run_target_concentration(r, qn, qd);
+    then calc.reaction_kinetics::given_target_concentration(c, qn, qd);
+}
+
+rule RunPrecision(r: KineticRun, c: calc.reaction_kinetics::Calculation, p: Integer) strict {
+    label ru unofficial "объявленная точность следует за расчётом";
+    label en unofficial "the declared precision travels with the calculation";
+    when run_calculation(r, c) and run_precision(r, p);
+    then calc.reaction_kinetics::given_output_precision(c, p);
+}
+
+rule RunActivationEnergy(r: KineticRun, c: calc.reaction_kinetics::Calculation, en: Integer, ed: Integer) strict {
+    label ru unofficial "энергия активации следует за расчётом в Дж/моль";
+    label en unofficial "the activation energy travels with the calculation in J/mol";
+    when run_calculation(r, c) and run_activation_energy(r, en, ed);
+    then calc.reaction_kinetics::given_activation_energy(c, en, ed);
+}
+
+rule RunGasConstant(r: KineticRun, c: calc.reaction_kinetics::Calculation, rn: Integer, rd: Integer) strict {
+    label ru unofficial "газовая постоянная следует за расчётом";
+    label en unofficial "the gas constant travels with the calculation";
+    when run_calculation(r, c) and run_gas_constant(r, rn, rd);
+    then calc.reaction_kinetics::given_gas_constant(c, rn, rd);
+}
+
+rule RunTemperaturePair(r: KineticRun, c: calc.reaction_kinetics::Calculation, a: Integer, b: Integer, d: Integer, e: Integer) strict {
+    label ru unofficial "пара температур следует за расчётом в К";
+    label en unofficial "the temperature pair travels with the calculation in K";
+    when run_calculation(r, c) and run_temperature_pair(r, a, b, d, e);
+    then calc.reaction_kinetics::given_temperature_pair(c, a, b, d, e);
+}
+
+rule RunNoActivationEnergy(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "заявление об отсутствующей Ea следует за расчётом";
+    label en unofficial "the missing-Ea statement travels with the calculation";
+    when run_calculation(r, c) and run_no_activation_energy(r);
+    then calc.reaction_kinetics::activation_energy_missing(c);
+}
+
+// --- Мост: итоги величинами ------------------------------------------------------------
+
+pub relation run_concentration(r: KineticRun, q: Quantity) kind institutional {
+    label ru unofficial "c(t) в моль/л — посчитанная концентрация (§12.4)";
+    label en unofficial "c(t) in mol/l — the computed concentration (§12.4)";
+}
+
+@source(PIN_INTEGRATED_RATE)
+rule RunConcentration(r: KineticRun, c: calc.reaction_kinetics::Calculation, v: Decimal) strict {
+    label ru unofficial "посчитанная концентрация и есть c(t)";
+    label en unofficial "the computed value is the concentration";
+    when run_calculation(r, c) and calc.reaction_kinetics::concentration_value(c, v);
+    then run_concentration(r, with_unit(v, "mol_per_l"));
+}
+
+pub relation run_time_to_target(r: KineticRun, t: Quantity) kind institutional {
+    label ru unofficial "время достижения цели в секундах — обратный вопрос (§12.4)";
+    label en unofficial "target-reaching time in seconds — the inverse question (§12.4)";
+}
+
+@source(PIN_INTEGRATED_RATE)
+rule RunTimeToTarget(r: KineticRun, c: calc.reaction_kinetics::Calculation, v: Decimal) strict {
+    label ru unofficial "посчитанное время и есть время цели";
+    label en unofficial "the computed time is the target time";
+    when run_calculation(r, c) and calc.reaction_kinetics::time_value(c, v);
+    then run_time_to_target(r, with_unit(v, "s"));
+}
+
+pub relation run_half_life(r: KineticRun, t: Quantity) kind institutional {
+    label en unofficial "half-life in seconds (§12.4)";
+    label ru unofficial "время полупревращения в секундах (§12.4)";
+}
+
+@source(PIN_INTEGRATED_RATE)
+rule RunHalfLife(r: KineticRun, c: calc.reaction_kinetics::Calculation, v: Decimal) strict {
+    label ru unofficial "посчитанное полупревращение и есть t½";
+    label en unofficial "the computed half-life is the half-life";
+    when run_calculation(r, c) and calc.reaction_kinetics::half_life_value(c, v);
+    then run_half_life(r, with_unit(v, "s"));
+}
+
+pub relation run_arrhenius_ratio(r: KineticRun, x: Decimal) kind institutional {
+    label ru unofficial "k(T₂)/k(T₁) — безразмерное отношение переноса (§12.6)";
+    label en unofficial "k(T₂)/k(T₁) — the dimensionless transfer ratio (§12.6)";
+}
+
+@source(PIN_ARRHENIUS)
+rule RunArrheniusRatio(r: KineticRun, c: calc.reaction_kinetics::Calculation, v: Decimal) strict {
+    label ru unofficial "посчитанное отношение и есть перенос";
+    label en unofficial "the computed ratio is the transfer";
+    when run_calculation(r, c) and calc.reaction_kinetics::arrhenius_ratio_value(c, v);
+    then run_arrhenius_ratio(r, v);
+}
+
+// --- Мост: диагнозы ----------------------------------------------------------------------
+//
+// Отсутствие данных — молчанием (головы не выводятся); именованные исходы —
+// зеркалами один к одному: недостижимость, истощение, неподдержанная модель
+// и нехватка входа называются вслух.
+
+pub relation run_unsupported_order(r: KineticRun) kind institutional {
+    label ru unofficial "порядок вне {0, 1, 2}: закрытой формы нет (§12.4)";
+    label en unofficial "order outside {0, 1, 2}: no closed form (§12.4)";
+}
+
+rule RunUnsupportedOrder(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неподдержанной модели вычислителя";
+    label en unofficial "mirror of the engine unsupported-model outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::unsupported_order(c);
+    then run_unsupported_order(r);
+}
+
+pub relation run_depleted(r: KineticRun) kind institutional {
+    label ru unofficial "реагент нулевого порядка исчерпан: концентрации нет, а не ноль формулой (§12.4)";
+    label en unofficial "the zero-order reactant is depleted: no concentration, not a formula zero (§12.4)";
+}
+
+rule RunDepleted(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало истощения вычислителя";
+    label en unofficial "mirror of the engine depletion outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::depleted(c);
+    then run_depleted(r);
+}
+
+pub relation run_target_above_initial(r: KineticRun) kind institutional {
+    label ru unofficial "цель выше начальной: спад её не достигнет (§12.4)";
+    label en unofficial "target above the initial level: decay will not reach it (§12.4)";
+}
+
+rule RunTargetAboveInitial(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало недостижимости цели вычислителя";
+    label en unofficial "mirror of the engine target-unreachable outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::target_above_initial(c);
+    then run_target_above_initial(r);
+}
+
+pub relation run_invalid_target(r: KineticRun) kind institutional {
+    label ru unofficial "целевая концентрация вне области формулы (§12.4)";
+    label en unofficial "target concentration outside the formula domain (§12.4)";
+}
+
+rule RunInvalidTarget(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неверной цели вычислителя";
+    label en unofficial "mirror of the engine invalid-target outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::invalid_target(c);
+    then run_invalid_target(r);
+}
+
+pub relation run_level_at_start(r: KineticRun) kind institutional {
+    label ru unofficial "цель совпадает с начальной: достигнута в начальный момент (§12.4)";
+    label en unofficial "target equals the initial level: reached at the start (§12.4)";
+}
+
+rule RunLevelAtStart(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало совпадения цели с началом вычислителя";
+    label en unofficial "mirror of the engine level-at-start outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::level_at_start(c);
+    then run_level_at_start(r);
+}
+
+pub relation run_bad_rate_constant(r: KineticRun) kind institutional {
+    label ru unofficial "константа скорости не задаёт числа: неположительный числитель или знаменатель (§12.3)";
+    label en unofficial "rate constant names no number: nonpositive numerator or denominator (§12.3)";
+}
+
+rule RunNonpositiveRateConstant(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неположительной константы вычислителя";
+    label en unofficial "mirror of the engine nonpositive-constant outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::nonpositive_rate_constant(c);
+    then run_bad_rate_constant(r);
+}
+
+rule RunInvalidRateConstant(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неверной константы вычислителя";
+    label en unofficial "mirror of the engine invalid-constant outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::invalid_rate_constant(c);
+    then run_bad_rate_constant(r);
+}
+
+pub relation run_bad_elapsed(r: KineticRun) kind institutional {
+    label ru unofficial "сдвиг времени не задан: прошлое или неположительный знаменатель (§12.4)";
+    label en unofficial "time shift unnamed: the past or a nonpositive denominator (§12.4)";
+}
+
+rule RunNegativeTime(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало отрицательного сдвига вычислителя";
+    label en unofficial "mirror of the engine negative-time outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::negative_time(c);
+    then run_bad_elapsed(r);
+}
+
+rule RunInvalidElapsedTime(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неверного сдвига вычислителя";
+    label en unofficial "mirror of the engine invalid-elapsed outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::invalid_elapsed_time(c);
+    then run_bad_elapsed(r);
+}
+
+pub relation run_bad_initial_concentration(r: KineticRun) kind institutional {
+    label ru unofficial "начальная концентрация неположительна: c₀ > 0 — гард всех формул (§12.4)";
+    label en unofficial "initial concentration is not positive: c₀ > 0 guards every formula (§12.4)";
+}
+
+rule RunInvalidInitialConcentration(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало неверной начальной концентрации вычислителя";
+    label en unofficial "mirror of the engine invalid-initial-concentration outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::invalid_initial_concentration(c);
+    then run_bad_initial_concentration(r);
+}
+
+pub relation run_transfer_refused(r: KineticRun) kind institutional {
+    label ru unofficial "перенос по температуре отклонён: Ea не предъявлена (§12.6)";
+    label en unofficial "temperature transfer refused: no Ea presented (§12.6)";
+}
+
+rule RunTransferRefused(r: KineticRun, c: calc.reaction_kinetics::Calculation) strict {
+    label ru unofficial "зеркало отказа переноса вычислителя";
+    label en unofficial "mirror of the engine transfer-refused outcome";
+    when run_calculation(r, c) and calc.reaction_kinetics::temperature_transfer_refused(c);
+    then run_transfer_refused(r);
+}

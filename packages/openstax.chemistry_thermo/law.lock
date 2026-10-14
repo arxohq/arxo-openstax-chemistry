@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:293cab0f7f7b190c8dbba5d46f3e11a3ad20e51cbc48057c3a8cecc48ba7416e",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:b00cbd23f9712e289805a5e52503e87d747b37c52d0e7be20405ca3e5ce2fbda",
+    "name": "openstax.chemistry_thermo",
+    "namespace": "urn:openstax:clir:chemistry-thermo",
+    "sourceHash": "sha256:5225a602337ea8999bb45ad708c2fe9f0ae86c9dc896f476924a427859b56460",
+    "version": "0.1.1"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:c38363a1877c4f6aa9f68c4e0bd5e7aa252a1a612af5f4f1e3c8bdbb7c4f8854",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e01-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    },
+    {
+      "contentHash": "sha256:0b236b3b6b7a256a7a0af9589ebba52b6a4611da868241de4efa6a0a58ac5f28",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e01-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    },
+    {
+      "contentHash": "sha256:21d5bafa56d564b2141f6c2e59193689717a5be24f23d3f8ecc82a59513253f4",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e01-2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_temperature_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    },
+    {
+      "contentHash": "sha256:63bbd24ec351bddddc6219c94547d287a6ed216d1959a9211310444751b541e2",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e01-3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

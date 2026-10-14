@@ -1,0 +1,60 @@
+language "law.core" version "0.2";
+package openstax.chemistry_stoichiometry version "0.1.0";
+namespace "urn:openstax:clir:chemistry-stoichiometry";
+
+// Сцены учебного основания. Дел у пакета нет: оба факта приходят из
+// закреплённого абзаца §4.4, поэтому `given` пуст. Редакция учебника
+// датирована (в силе с 14.02.2019), и применимость требует `legal_time`.
+
+// Выход выражается МАССОЙ — прямое допущение §4.4 при предъявленном базисе.
+test "OS-CHEM-STOICH-01-YIELD-MAY-BE-A-MASS" {
+    given {
+        context {
+            decision_time @2026-09-12T12:00:00+05:00;
+            knowledge_time @2026-09-12T12:00:00+05:00;
+            legal_time @2026-09-12;
+            timezone "Asia/Qyzylorda";
+        }
+        assert "s01-1": yield_basis_presented(Mass) { origin case_input; }
+    }
+    evaluate truth(yield_expressed_as(Mass));
+    expect result_kind == PROPOSITION;
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(YieldExpressedAsMass);
+}
+
+// И КОЛИЧЕСТВОМ ВЕЩЕСТВА — тем же абзацем. Различение не декоративное:
+// `calc.stoichiometry` считает выход по количествам, и задача, молча
+// подставившая туда массы, получила бы неверное число при зелёном исполнении.
+test "OS-CHEM-STOICH-02-YIELD-MAY-BE-A-MOLAR-AMOUNT" {
+    given {
+        context {
+            decision_time @2026-09-12T12:00:00+05:00;
+            knowledge_time @2026-09-12T12:00:00+05:00;
+            legal_time @2026-09-12;
+            timezone "Asia/Qyzylorda";
+        }
+        assert "s02-1": yield_basis_presented(MolarAmount) { origin case_input; }
+    }
+    evaluate truth(yield_expressed_as(MolarAmount));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(YieldExpressedAsMolarAmount);
+}
+
+// Без предъявленного базиса (T, состояние, стандартное состояние) лицензия
+// читать выход в данной величине не действует — молчание, не отрицание.
+test "OS-CHEM-STOICH-03-YIELD-NEEDS-BASIS" {
+    given {
+        context {
+            decision_time @2026-09-12T12:00:00+05:00;
+            knowledge_time @2026-09-12T12:00:00+05:00;
+            legal_time @2026-09-12;
+            timezone "Asia/Qyzylorda";
+        }
+    }
+    evaluate truth(yield_expressed_as(Mass));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

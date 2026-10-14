@@ -1,0 +1,49 @@
+{
+  "base": "https://openstax.org/books/chemistry-2e/pages/",
+  "book": "OpenStax Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": {
+    "3.1": {
+      "sha256": "5aefed8f73831b9703a1ccdc1d82c34f2158ae225dc9e282e9194d86cc5eea01",
+      "slug": "3-1-formula-mass-and-the-mole-concept",
+      "title": "Formula Mass and the Mole Concept",
+      "uuid": "daaceb82-341e-496e-a8b9-acd8fa32d9f7"
+    },
+    "3.2": {
+      "sha256": "f19b0dc974ae493fda39cd7193a229cac0aa8c9fb9e3790ef693fe658da9a337",
+      "slug": "3-2-determining-empirical-and-molecular-formulas",
+      "title": "Determining Empirical and Molecular Formulas",
+      "uuid": "a4d0d6e1-b161-4cfd-ab54-23632839d0df"
+    },
+    "3.3": {
+      "sha256": "04dc96847cdd6e5293f621ead7fc55a6f69366aecafbf91b1c1a2abaee496d28",
+      "slug": "3-3-molarity",
+      "title": "Molarity",
+      "uuid": "3ca3a877-a8ba-42f7-a101-7035c0f5daed"
+    },
+    "3.4": {
+      "sha256": "1b815dd5a3b6a8a49b678257a5d51c453054a738409ad0231c9ad4ce79fa6775",
+      "slug": "3-4-other-units-for-solution-concentrations",
+      "title": "Other Units for Solution Concentrations",
+      "uuid": "4fee0e14-2169-4e3b-bb15-def8b056b1a0"
+    },
+    "4.2": {
+      "sha256": "42b806f7c608f4b29daf3cbe34becb1e819075e9b5f1d4d057101b8685e11ece",
+      "slug": "4-2-classifying-chemical-reactions",
+      "title": "Classifying Chemical Reactions",
+      "uuid": "24424d00-3cc4-445d-a830-ad38abcea953"
+    },
+    "4.3": {
+      "sha256": "6a6644478e76b30c9e74c4106d3057dbedf90bc485aafc87bb24a49be5996087",
+      "slug": "4-3-reaction-stoichiometry",
+      "title": "Reaction Stoichiometry",
+      "uuid": "23c22d4a-5468-45b5-a3ee-616ae2549e96"
+    },
+    "4.4": {
+      "sha256": "36d78775301856c1157db8ffdde590534fa84ab1eb695dde5dcfcea3a001018d",
+      "slug": "4-4-reaction-yields",
+      "title": "Reaction Yields",
+      "uuid": "3da1a637-2826-47bf-8b06-e32ffbdfd60a"
+    }
+  }
+}

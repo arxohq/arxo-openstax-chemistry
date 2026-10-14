@@ -1,0 +1,1956 @@
+3.1
+
+Formula Mass and the Mole Concept
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Calculate formula masses for covalent and ionic compounds
+
+Define the amount unit mole and the related quantity Avogadro’s number
+
+Explain the relation between mass, moles, and numbers of atoms or molecules, and perform calculations deriving these quantities from one another
+
+Many argue that modern chemical science began when scientists started exploring the quantitative as well as the qualitative aspects of chemistry. For example, Dalton’s atomic theory was an attempt to explain the results of measurements that allowed him to calculate the relative masses of elements combined in various compounds. Understanding the relationship between the masses of atoms and the chemical formulas of compounds allows us to quantitatively describe the composition of substances.
+
+Formula Mass
+
+An earlier chapter of this text described the development of the atomic mass unit, the concept of average atomic masses, and the use of chemical formulas to represent the elemental makeup of substances. These ideas can be extended to calculate the formula mass of a substance by summing the average atomic masses of all the atoms represented in the substance’s formula.
+
+Formula Mass for Covalent Substances
+
+For covalent substances, the formula represents the numbers and types of atoms composing a single molecule of the substance; therefore, the formula mass may be correctly referred to as a molecular mass. Consider chloroform (CHCl3), a covalent compound once used as a surgical anesthetic and now primarily used in the production of tetrafluoroethylene, the building block for the "anti-stick" polymer, Teflon. The molecular formula of chloroform indicates that a single molecule contains one carbon atom, one hydrogen atom, and three chlorine atoms. The average molecular mass of a chloroform molecule is therefore equal to the sum of the average atomic masses of these atoms. Figure 3.2 outlines the calculations used to derive the molecular mass of chloroform, which is 119.37 amu.
+
+Figure
+3.2
+
+The average mass of a chloroform molecule, CHCl3, is 119.37 amu, which is the sum of the average atomic masses of each of its constituent atoms. The model shows the molecular structure of chloroform.
+
+Likewise, the molecular mass of an aspirin molecule, C9H8O4, is the sum of the atomic masses of nine carbon atoms, eight hydrogen atoms, and four oxygen atoms, which amounts to 180.15 amu (Figure 3.3).
+
+Figure
+3.3
+
+The average mass of an aspirin molecule is 180.15 amu. The model shows the molecular structure of aspirin, C9H8O4.
+
+Example
+3.1
+
+Computing Molecular Mass for a Covalent Compound
+
+Ibuprofen, C13H18O2, is a covalent compound and the active ingredient in several popular nonprescription pain medications, such as Advil and Motrin. What is the molecular mass (amu) for this compound?
+
+Solution
+
+Molecules of this compound are composed of 13 carbon atoms, 18 hydrogen atoms, and 2 oxygen atoms. Following the approach described above, the average molecular mass for this compound is therefore:
+
+Check Your Learning
+
+Acetaminophen, C8H9NO2, is a covalent compound and the active ingredient in several popular nonprescription pain medications, such as Tylenol. What is the molecular mass (amu) for this compound?
+
+Answer:
+
+151.16 amu
+
+Formula Mass for Ionic Compounds
+
+Ionic compounds are composed of discrete cations and anions combined in ratios to yield electrically neutral bulk matter. The formula mass for an ionic compound is calculated in the same way as the formula mass for covalent compounds: by summing the average atomic masses of all the atoms in the compound’s formula. Keep in mind, however, that the formula for an ionic compound does not represent the composition of a discrete molecule, so it may not correctly be referred to as the “molecular mass.”
+
+As an example, consider sodium chloride, NaCl, the chemical name for common table salt. Sodium chloride is an ionic compound composed of sodium cations, Na+, and chloride anions, Cl−, combined in a 1:1 ratio. The formula mass for this compound is computed as 58.44 amu (see Figure 3.4).
+
+Figure
+3.4
+
+Table salt, NaCl, contains an array of sodium and chloride ions combined in a 1:1 ratio. Its formula mass is 58.44 amu.
+
+Note that the average masses of neutral sodium and chlorine atoms were used in this computation, rather than the masses for sodium cations and chlorine anions. This approach is perfectly acceptable when computing the formula mass of an ionic compound. Even though a sodium cation has a slightly smaller mass than a sodium atom (since it is missing an electron), this difference will be offset by the fact that a chloride anion is slightly more massive than a chloride atom (due to the extra electron). Moreover, the mass of an electron is negligibly small with respect to the mass of a typical atom. Even when calculating the mass of an isolated ion, the missing or additional electrons can generally be ignored, since their contribution to the overall mass is negligible, reflected only in the nonsignificant digits that will be lost when the computed mass is properly rounded. The few exceptions to this guideline are very light ions derived from elements with precisely known atomic masses.
+
+Example
+3.2
+
+Computing Formula Mass for an Ionic Compound
+
+Aluminum sulfate, Al2(SO4)3, is an ionic compound that is used in the manufacture of paper and in various water purification processes. What is the formula mass (amu) of this compound?
+
+Solution
+
+The formula for this compound indicates it contains Al3+ and SO42− ions combined in a 2:3 ratio. For purposes of computing a formula mass, it is helpful to rewrite the formula in the simpler format, Al2S3O12. Following the approach outlined above, the formula mass for this compound is calculated as follows:
+
+Check Your Learning
+
+Calcium phosphate, Ca3(PO4)2, is an ionic compound and a common anti-caking agent added to food products. What is the formula mass (amu) of calcium phosphate?
+
+Answer:
+
+310.18 amu
+
+The Mole
+
+The identity of a substance is defined not only by the types of atoms or ions it contains, but by the quantity of each type of atom or ion. For example, water, H2O, and hydrogen peroxide, H2O2, are alike in that their respective molecules are composed of hydrogen and oxygen atoms. However, because a hydrogen peroxide molecule contains two oxygen atoms, as opposed to the water molecule, which has only one, the two substances exhibit very different properties. Today, sophisticated instruments allow the direct measurement of these defining microscopic traits; however, the same traits were originally derived from the measurement of macroscopic properties (the masses and volumes of bulk quantities of matter) using relatively simple tools (balances and volumetric glassware). This experimental approach required the introduction of a new unit for amount of substances, the mole, which remains indispensable in modern chemical science.
+
+The mole is an amount unit similar to familiar units like pair, dozen, gross, etc. It provides a specific measure of the number of atoms or molecules in a sample of matter. One Latin connotation for the word “mole” is “large mass” or “bulk,” which is consistent with its use as the name for this unit. The mole provides a link between an easily measured macroscopic property, bulk mass, and an extremely important fundamental property, number of atoms, molecules, and so forth.
+
+A mole of substance is that amount in which there are 6.02214076 × 1023 discrete entities (atoms or molecules). This large number is a fundamental constant known as Avogadro’s number (NA) or the Avogadro constant in honor of Italian scientist Amedeo Avogadro. This constant is properly reported with an explicit unit of “per mole,” a conveniently rounded version being 6.022 × 1023/mol.
+
+Consistent with its definition as an amount unit, 1 mole of any element contains the same number of atoms as 1 mole of any other element. The masses of 1 mole of different elements, however, are different, since the masses of the individual atoms are drastically different. The molar mass of an element (or compound) is the mass in grams of 1 mole of that substance, a property expressed in units of grams per mole (g/mol) (see Figure 3.5).
+
+Figure
+3.5
+
+Each sample contains 6.022 × 1023 atoms —1.00 mol of atoms. From left to right (top row): 65.4 g zinc, 12.0 g carbon, 24.3 g magnesium, and 63.5 g copper. From left to right (bottom row): 32.1 g sulfur, 28.1 g silicon, 207 g lead, and 118.7 g tin. (credit: modification of work by Mark Ott)
+
+The molar mass of any substance is numerically equivalent to its atomic or formula weight in amu. Per the amu definition, a single 12C atom weighs 12 amu (its atomic mass is 12 amu). A mole of 12C weighs 12 g (its molar mass is 12 g/mol). This relationship holds for all elements, since their atomic masses are measured relative to that of the amu-reference substance, 12C. Extending this principle, the molar mass of a compound in grams is likewise numerically equivalent to its formula mass in amu (Figure 3.6).
+
+Figure
+3.6
+
+Each sample contains 6.02 × 1023 molecules or formula units—1.00 mol of the compound or element. Clock-wise from the upper left: 130.2 g of C8H17OH (1-octanol, formula mass 130.2 amu), 454.4 g of HgI2 (mercury(II) iodide, formula mass 454.4 amu), 32.0 g of CH3OH (methanol, formula mass 32.0 amu) and 256.5 g of S8 (sulfur, formula mass 256.5 amu). (credit: Sahar Atwa)
+
+Element
+Average Atomic Mass (amu)
+Molar Mass (g/mol)
+Atoms/Mole
+
+C
+12.01
+12.01
+6.022 × 1023
+
+H
+1.008
+1.008
+6.022 × 1023
+
+O
+16.00
+16.00
+6.022 × 1023
+
+Na
+22.99
+22.99
+6.022 × 1023
+
+Cl
+35.45
+35.45
+6.022 × 1023
+
+While atomic mass and molar mass are numerically equivalent, keep in mind that they are vastly different in terms of scale, as represented by the vast difference in the magnitudes of their respective units (amu versus g). To appreciate the enormity of the mole, consider a small drop of water weighing about 0.03 g (see Figure 3.7). Although this represents just a tiny fraction of 1 mole of water (~18 g), it contains more water molecules than can be clearly imagined. If the molecules were distributed equally among the roughly seven billion people on earth, each person would receive more than 100 billion molecules.
+
+Figure
+3.7
+
+The number of molecules in a single droplet of water is roughly 100 billion times greater than the number of people on earth. (credit: “tanakawho”/Wikimedia commons)
+
+Link to Learning
+
+The mole is used in chemistry to represent 6.022 × 1023 of something, but it can be difficult to conceptualize such a large number. Watch this video and then complete the “Think” questions that follow. Explore more about the mole by reviewing the information under “Dig Deeper.”
+
+The relationships between formula mass, the mole, and Avogadro’s number can be applied to compute various quantities that describe the composition of substances and compounds, as demonstrated in the next several example problems.
+
+Example
+3.3
+
+Deriving Moles from Grams for an Element
+
+According to nutritional guidelines from the US Department of Agriculture, the estimated average requirement for dietary potassium is 4.7 g. What is the estimated average requirement of potassium in moles?
+
+Solution
+
+The mass of K is provided, and the corresponding amount of K in moles is requested. Referring to the periodic table, the atomic mass of K is 39.10 amu, and so its molar mass is 39.10 g/mol. The given mass of K (4.7 g) is a bit more than one-tenth the molar mass (39.10 g), so a reasonable “ballpark” estimate of the number of moles would be slightly greater than 0.1 mol.
+
+The molar amount of a substance may be calculated by dividing its mass (g) by its molar mass (g/mol):
+
+The factor-label method supports this mathematical approach since the unit “g” cancels and the answer has units of “mol:”
+
+4.7gK(mol K39.10g K)=0.12mol K
+
+The calculated magnitude (0.12 mol K) is consistent with our ballpark expectation, since it is a bit greater than 0.1 mol.
+
+Check Your Learning
+
+Beryllium is a light metal used to fabricate transparent X-ray windows for medical imaging instruments. How many moles of Be are in a thin-foil window weighing 3.24 g?
+
+Answer:
+
+0.360 mol
+
+Example
+3.4
+
+Deriving Grams from Moles for an Element
+
+A liter of air contains 9.2 × 10−4 mol argon. What is the mass of Ar in a liter of air?
+
+Solution
+
+The molar amount of Ar is provided and must be used to derive the corresponding mass in grams. Since the amount of Ar is less than 1 mole, the mass will be less than the mass of 1 mole of Ar, approximately 40 g. The molar amount in question is approximately one-one thousandth (~10−3) of a mole, and so the corresponding mass should be roughly one-one thousandth of the molar mass (~0.04 g):
+
+In this case, logic dictates (and the factor-label method supports) multiplying the provided amount (mol) by the molar mass (g/mol):
+
+9.2×10−4molAr(39.95g ArmolAr)=0.037g Ar
+
+The result is in agreement with our expectations, around 0.04 g Ar.
+
+Check Your Learning
+
+What is the mass of 2.561 mol of gold?
+
+Answer:
+
+504.5 g
+
+Example
+3.5
+
+Deriving Number of Atoms from Mass for an Element
+
+Copper is commonly used to fabricate electrical wire (Figure 3.8). How many copper atoms are in 5.00 g of copper wire?
+
+Figure
+3.8
+
+Copper wire is composed of many, many atoms of Cu. (credit: Emilian Robert Vicol)
+
+Solution
+
+The number of Cu atoms in the wire may be conveniently derived from its mass by a two-step computation: first calculating the molar amount of Cu, and then using Avogadro’s number (NA) to convert this molar amount to number of Cu atoms:
+
+Considering that the provided sample mass (5.00 g) is a little less than one-tenth the mass of 1 mole of Cu (~64 g), a reasonable estimate for the number of atoms in the sample would be on the order of one-tenth NA, or approximately 1022 Cu atoms. Carrying out the two-step computation yields:
+
+5.00gCu(molCu63.55g Cu)(6.022×1023Cu atomsmol Cu)=4.74×1022Cu atoms
+
+The factor-label method yields the desired cancellation of units, and the computed result is on the order of 1022 as expected.
+
+Check Your Learning
+
+A prospector panning for gold in a river collects 15.00 g of pure gold. How many Au atoms are in this quantity of gold?
+
+Answer:
+
+4.585 × 1022 Au atoms
+
+Example
+3.6
+
+Deriving Moles from Grams for a Compound
+
+Our bodies synthesize protein from amino acids. One of these amino acids is glycine, which has the molecular formula C2H5O2N. How many moles of glycine molecules are contained in 28.35 g of glycine?
+
+Solution
+
+Derive the number of moles of a compound from its mass following the same procedure used for an element in Example 3.3:
+
+The molar mass of glycine is required for this calculation, and it is computed in the same fashion as its molecular mass. One mole of glycine, C2H5O2N, contains 2 moles of carbon, 5 moles of hydrogen, 2 moles of oxygen, and 1 mole of nitrogen:
+
+The provided mass of glycine (~28 g) is a bit more than one-third the molar mass (~75 g/mol), so the computed result is expected to be a bit greater than one-third of a mole (~0.33 mol). Dividing the compound’s mass by its molar mass yields:
+
+28.35gglycine(mol glycine75.07g glycine)=0.3776mol glycine
+
+This result is consistent with the rough estimate.
+
+Check Your Learning
+
+How many moles of sucrose, C12H22O11, are in a 25-g sample of sucrose?
+
+Answer:
+
+0.073 mol
+
+Example
+3.7
+
+Deriving Grams from Moles for a Compound
+
+Vitamin C is a covalent compound with the molecular formula C6H8O6. The recommended daily dietary allowance of vitamin C for children aged 4–8 years is 1.42 × 10−4 mol. What is the mass of this allowance in grams?
+
+Solution
+
+As for elements, the mass of a compound can be derived from its molar amount as shown:
+
+The molar mass for this compound is computed to be 176.124 g/mol. The given number of moles is a very small fraction of a mole (~10−4 or one-ten thousandth); therefore, the corresponding mass is expected to be about one-ten thousandth of the molar mass (~0.02 g). Performing the calculation yields:
+
+1.42×10−4molvitamin C(176.124g vitamin Cmolvitamin C)=0.0250g vitamin C
+
+This is consistent with the anticipated result.
+
+Check Your Learning
+
+What is the mass of 0.443 mol of hydrazine, N2H4?
+
+Answer:
+
+14.2 g
+
+Example
+3.8
+
+Deriving the Number of Atoms and Molecules from the Mass of a Compound
+
+A packet of an artificial sweetener contains 40.0 mg of saccharin (C7H5NO3S), which has the structural formula:
+
+Given that saccharin has a molar mass of 183.18 g/mol, how many saccharin molecules are in a 40.0-mg (0.0400-g) sample of saccharin? How many carbon atoms are in the same sample?
+
+Solution
+
+The number of molecules in a given mass of compound is computed by first deriving the number of moles, as demonstrated in Example 3.6, and then multiplying by Avogadro’s number:
+
+Using the provided mass and molar mass for saccharin yields:
+
+0.0400gC7H5NO3S(molC7H5NO3S183.18gC7H5NO3S)(6.022×1023C7H5NO3Smolecules1molC7H5NO3S)=1.31×1020C7H5NO3Smolecules
+
+The compound’s formula shows that each molecule contains seven carbon atoms, and so the number of C atoms in the provided sample is:
+
+1.31×1020C7H5NO3S molecules(7C atoms1C7H5NO3S molecule)=9.17×1020C atoms
+
+Check Your Learning
+
+How many C4H10 molecules are contained in 9.213 g of this compound? How many hydrogen atoms?
+
+Answer:
+
+9.545 × 1022 molecules C4 H10; 9.545 × 1023 atoms H
+
+How Sciences Interconnect
+
+Counting Neurotransmitter Molecules in the Brain
+
+The brain is the control center of the central nervous system (Figure 3.9). It sends and receives signals to and from muscles and other internal organs to monitor and control their functions; it processes stimuli detected by sensory organs to guide interactions with the external world; and it houses the complex physiological processes that give rise to our intellect and emotions. The broad field of neuroscience spans all aspects of the structure and function of the central nervous system, including research on the anatomy and physiology of the brain. Great progress has been made in brain research over the past few decades, and the BRAIN Initiative, a federal initiative announced in 2013, aims to accelerate and capitalize on these advances through the concerted efforts of various industrial, academic, and government agencies (more details available at the BRAIN Initiative website).
+
+Figure
+3.9
+
+(a) A typical human brain weighs about 1.5 kg and occupies a volume of roughly 1.1 L. (b) Information is transmitted in brain tissue and throughout the central nervous system by specialized cells called neurons (micrograph shows cells at 1600× magnification).
+
+Specialized cells called neurons transmit information between different parts of the central nervous system by way of electrical and chemical signals. Chemical signaling occurs at the interface between different neurons when one of the cells releases molecules (called neurotransmitters) that diffuse across the small gap between the cells (called the synapse) and bind to the surface of the other cell. These neurotransmitter molecules are stored in small intracellular structures called vesicles that fuse to the cell membrane and then break open to release their contents when the neuron is appropriately stimulated. This process is called exocytosis (see Figure 3.10). One neurotransmitter that has been very extensively studied is dopamine, C8H11NO2. Dopamine is involved in various neurological processes that impact a wide variety of human behaviors. Dysfunctions in the dopamine systems of the brain underlie serious neurological diseases such as Parkinson’s and schizophrenia.
+
+Figure
+3.10
+
+(a) Chemical signals are transmitted from neurons to other cells by the release of neurotransmitter molecules into the small gaps (synapses) between the cells. (b) Dopamine, C8H11NO2, is a neurotransmitter involved in a number of neurological processes.
+
+One important aspect of the complex processes related to dopamine signaling is the number of neurotransmitter molecules released during exocytosis. Since this number is a central factor in determining neurological response (and subsequent human thought and action), it is important to know how this number changes with certain controlled stimulations, such as the administration of drugs. It is also important to understand the mechanism responsible for any changes in the number of neurotransmitter molecules released—for example, some dysfunction in exocytosis, a change in the number of vesicles in the neuron, or a change in the number of neurotransmitter molecules in each vesicle.
+
+Significant progress has been made recently in directly measuring the number of dopamine molecules stored in individual vesicles and the amount actually released when the vesicle undergoes exocytosis. Using miniaturized probes that can selectively detect dopamine molecules in very small amounts, scientists have determined that the vesicles of a certain type of mouse brain neuron contain an average of 30,000 dopamine molecules per vesicle (about 5×10−20 mol or 50 zmol). Analysis of these neurons from mice subjected to various drug therapies shows significant changes in the average number of dopamine molecules contained in individual vesicles, increasing or decreasing by up to three-fold, depending on the specific drug used. These studies also indicate that not all of the dopamine in a given vesicle is released during exocytosis, suggesting that it may be possible to regulate the fraction released using pharmaceutical therapies.1
+
+3.2
+
+Determining Empirical and Molecular Formulas
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Compute the percent composition of a compound
+
+Determine the empirical formula of a compound
+
+Determine the molecular formula of a compound
+
+The previous section discussed the relationship between the bulk mass of a substance and the number of atoms or molecules it contains (moles). Given the chemical formula of the substance, one may determine the amount of the substance (moles) from its mass, and vice versa. But what if the chemical formula of a substance is unknown? In this section, these same principles will be applied to derive the chemical formulas of unknown substances from experimental mass measurements.
+
+Percent Composition
+
+The elemental makeup of a compound defines its chemical identity, and chemical formulas are the most succinct way of representing this elemental makeup. When a compound’s formula is unknown, measuring the mass of each of its constituent elements is often the first step in the process of determining the formula experimentally. The results of these measurements permit the calculation of the compound’s percent composition, defined as the percentage by mass of each element in the compound. For example, consider a gaseous compound composed solely of carbon and hydrogen. The percent composition of this compound could be represented as follows:
+
+%H=mass Hmass compound×100%
+
+%C=mass Cmass compound×100%
+
+If analysis of a 10.0-g sample of this gas showed it to contain 2.5 g H and 7.5 g C, the percent composition would be calculated to be 25% H and 75% C:
+
+%H=2.5g H10.0g compound×100%=25%
+
+%C=7.5g C10.0g compound×100%=75%
+
+Example
+3.9
+
+Calculation of Percent Composition
+
+Analysis of a 12.04-g sample of a liquid compound composed of carbon, hydrogen, and nitrogen showed it to contain 7.34 g C, 1.85 g H, and 2.85 g N. What is the percent composition of this compound?
+
+Solution
+
+To calculate percent composition, divide the experimentally derived mass of each element by the overall mass of the compound, and then convert to a percentage:
+
+%C=7.34g C12.04g compound×100%=61.0%%H=1.85g H12.04g compound×100%=15.4%%N=2.85g N12.04g compound×100%=23.7%
+
+The analysis results indicate that the compound is 61.0% C, 15.4% H, and 23.7% N by mass.
+
+Check Your Learning
+
+A 24.81-g sample of a gaseous compound containing only carbon, oxygen, and chlorine is determined to contain 3.01 g C, 4.00 g O, and 17.81 g Cl. What is this compound’s percent composition?
+
+Answer:
+
+12.1% C, 16.1% O, 71.79% Cl
+
+Determining Percent Composition from Molecular or Empirical Formulas
+
+Percent composition is also useful for evaluating the relative abundance of a given element in different compounds of known formulas. As one example, consider the common nitrogen-containing fertilizers ammonia (NH3), ammonium nitrate (NH4NO3), and urea (CH4N2O). The element nitrogen is the active ingredient for agricultural purposes, so the mass percentage of nitrogen in the compound is a practical and economic concern for consumers choosing among these fertilizers. For these sorts of applications, the percent composition of a compound is easily derived from its formula mass and the atomic masses of its constituent elements. A molecule of NH3 contains one N atom weighing 14.01 amu and three H atoms weighing a total of (3 × 1.008 amu) = 3.024 amu. The formula mass of ammonia is therefore (14.01 amu + 3.024 amu) = 17.03 amu, and its percent composition is:
+
+%N=14.01amu N17.03amuNH3×100%=82.27%%H=3.024amu H17.03amuNH3×100%=17.76%
+
+This same approach may be taken considering a pair of molecules, a dozen molecules, or a mole of molecules, etc. The latter amount is most convenient and would simply involve the use of molar masses instead of atomic and formula masses, as demonstrated Example 3.10. As long as the molecular or empirical formula of the compound in question is known, the percent composition may be derived from the atomic or molar masses of the compound's elements.
+
+Example
+3.10
+
+Determining Percent Composition from a Molecular Formula
+
+Aspirin is a compound with the molecular formula C9H8O4. What is its percent composition?
+
+Solution
+
+To calculate the percent composition, the masses of C, H, and O in a known mass of C9H8O4 are needed. It is convenient to consider 1 mol of C9H8O4 and use its molar mass (180.159 g/mole, determined from the chemical formula) to calculate the percentages of each of its elements:
+
+%C=9mol C×molar mass Cmolar massC9H8O4×100=9×12.01g/mol180.159g/mol×100=108.09g/mol180.159g/mol×100%C=60.00%C
+
+%H=8mol H×molar mass Hmolar massC9H8O4×100=8×1.008g/mol180.159g/mol×100=8.064g/mol180.159g/mol×100%H=4.476%H
+
+%O=4mol O×molar mass Omolar massC9H8O4×100=4×16.00g/mol180.159g/mol×100=64.00g/mol180.159g/mol×100%O=35.52%
+
+Note that these percentages sum to equal 100.00% when appropriately rounded.
+
+Check Your Learning
+
+To three significant digits, what is the mass percentage of iron in the compound Fe2O3?
+
+Answer:
+
+69.9% Fe
+
+Determination of Empirical Formulas
+
+As previously mentioned, the most common approach to determining a compound’s chemical formula is to first measure the masses of its constituent elements. However, keep in mind that chemical formulas represent the relative numbers, not masses, of atoms in the substance. Therefore, any experimentally derived data involving mass must be used to derive the corresponding numbers of atoms in the compound. This is accomplished using molar masses to convert the mass of each element to a number of moles. These molar amounts are used to compute whole-number ratios that can be used to derive the empirical formula of the substance. Consider a sample of compound determined to contain 1.71 g C and 0.287 g H. The corresponding numbers of atoms (in moles) are:
+
+1.71g C×1mol C12.01g C=0.142mol C0.287g H×1mol H1.008g H=0.284mol H
+
+Thus, this compound may be represented by the formula C0.142H0.284. Per convention, formulas contain whole-number subscripts, which can be achieved by dividing each subscript by the smaller subscript:
+
+C0.1420.142H0.2840.142orCH2
+
+(Recall that subscripts of “1” are not written but rather assumed if no other number is present.)
+
+The empirical formula for this compound is thus CH2. This may or may not be the compound’s molecular formula as well; however, additional information is needed to make that determination (as discussed later in this section).
+
+Consider as another example a sample of compound determined to contain 5.31 g Cl and 8.40 g O. Following the same approach yields a tentative empirical formula of:
+
+Cl0.150O0.525=Cl0.1500.150O0.5250.150=ClO3.5
+
+In this case, dividing by the smallest subscript still leaves us with a decimal subscript in the empirical formula. To convert this into a whole number, multiply each of the subscripts by two, retaining the same atom ratio and yielding Cl2O7 as the final empirical formula.
+
+In summary, empirical formulas are derived from experimentally measured element masses by:
+
+Deriving the number of moles of each element from its mass
+
+Dividing each element’s molar amount by the smallest molar amount to yield subscripts for a tentative empirical formula
+
+Multiplying all coefficients by an integer, if necessary, to ensure that the smallest whole-number ratio of subscripts is obtained
+
+Figure 3.11 outlines this procedure in flow chart fashion for a substance containing elements A and X.
+
+Figure
+3.11
+
+The empirical formula of a compound can be derived from the masses of all elements in the sample.
+
+Example
+3.11
+
+Determining a Compound’s Empirical Formula from the Masses of Its Elements
+
+A sample of the black mineral hematite (Figure 3.12), an oxide of iron found in many iron ores, contains 34.97 g of iron and 15.03 g of oxygen. What is the empirical formula of hematite?
+
+Figure
+3.12
+
+Hematite is an iron oxide that is used in jewelry. (credit: Mauro Cateb)
+
+Solution
+
+This problem provides the mass in grams of each element. Begin by finding the moles of each:
+
+34.97g Fe(mol Fe55.85g)=0.6261mol Fe15.03g O(mol O16.00g)=0.9394mol O
+
+Next, derive the iron-to-oxygen molar ratio by dividing by the lesser number of moles:
+
+0.62610.6261=1.000mol Fe0.93940.6261=1.500mol O
+
+The ratio is 1.000 mol of iron to 1.500 mol of oxygen (Fe1O1.5). Finally, multiply the ratio by two to get the smallest possible whole number subscripts while still maintaining the correct iron-to-oxygen ratio:
+
+2(Fe1O1.5)=Fe2O3
+
+The empirical formula is Fe2O3.
+
+Check Your Learning
+
+What is the empirical formula of a compound if a sample contains 0.130 g of nitrogen and 0.370 g of oxygen?
+
+Answer:
+
+N2O5
+
+Link to Learning
+
+For additional worked examples illustrating the derivation of empirical formulas, watch the brief video clip.
+
+Deriving Empirical Formulas from Percent Composition
+
+Finally, with regard to deriving empirical formulas, consider instances in which a compound’s percent composition is available rather than the absolute masses of the compound’s constituent elements. In such cases, the percent composition can be used to calculate the masses of elements present in any convenient mass of compound; these masses can then be used to derive the empirical formula in the usual fashion.
+
+Example
+3.12
+
+Determining an Empirical Formula from Percent Composition
+
+The bacterial fermentation of grain to produce ethanol forms a gas with a percent composition of 27.29% C and 72.71% O (Figure 3.13). What is the empirical formula for this gas?
+
+Figure
+3.13
+
+An oxide of carbon is removed from these fermentation tanks through the large copper pipes at the top. (credit: “Dual Freq”/Wikimedia Commons)
+
+Solution
+
+Since the scale for percentages is 100, it is most convenient to calculate the mass of elements present in a sample weighing 100 g. The calculation is “most convenient” because, per the definition for percent composition, the mass of a given element in grams is numerically equivalent to the element’s mass percentage. This numerical equivalence results from the definition of the “percentage” unit, whose name is derived from the Latin phrase per centum meaning “by the hundred.” Considering this definition, the mass percentages provided may be more conveniently expressed as fractions:
+
+27.29%C=27.29g C100g compound72.71%O=72.71g O100g compound
+
+The molar amounts of carbon and oxygen in a 100-g sample are calculated by dividing each element’s mass by its molar mass:
+
+27.29g C(mol C12.01g)=2.272mol C72.71g O(mol O16.00g)=4.544mol O
+
+Coefficients for the tentative empirical formula are derived by dividing each molar amount by the lesser of the two:
+
+2.272mol C2.272=14.544mol O2.272=2
+
+Since the resulting ratio is one carbon to two oxygen atoms, the empirical formula is CO2.
+
+Check Your Learning
+
+What is the empirical formula of a compound containing 40.0% C, 6.71% H, and 53.28% O?
+
+Answer:
+
+CH2O
+
+Derivation of Molecular Formulas
+
+Recall that empirical formulas are symbols representing the relative numbers of a compound’s elements. Determining the absolute numbers of atoms that compose a single molecule of a covalent compound requires knowledge of both its empirical formula and its molecular mass or molar mass. These quantities may be determined experimentally by various measurement techniques. Molecular mass, for example, is often derived from the mass spectrum of the compound (see discussion of this technique in the previous chapter on atoms and molecules). Molar mass can be measured by a number of experimental methods, many of which will be introduced in later chapters of this text.
+
+Molecular formulas are derived by comparing the compound’s molecular or molar mass to its empirical formula mass. As the name suggests, an empirical formula mass is the sum of the average atomic masses of all the atoms represented in an empirical formula. If the molecular (or molar) mass of the substance is known, it may be divided by the empirical formula mass to yield the number of empirical formula units per molecule (n):
+
+molecular or molar mass(amu orgmol)empirical formula mass(amu orgmol)=nformula units/molecule
+
+The molecular formula is then obtained by multiplying each subscript in the empirical formula by n, as shown by the generic empirical formula AxBy:
+
+(AxBy)n=AnxBny
+
+For example, consider a covalent compound whose empirical formula is determined to be CH2O. The empirical formula mass for this compound is approximately 30 amu (the sum of 12 amu for one C atom, 2 amu for two H atoms, and 16 amu for one O atom). If the compound’s molecular mass is determined to be 180 amu, this indicates that molecules of this compound contain six times the number of atoms represented in the empirical formula:
+
+180amu/molecule30amuformula unit=6formula units/molecule
+
+Molecules of this compound are then represented by molecular formulas whose subscripts are six times greater than those in the empirical formula:
+
+(CH2O)6=C6H12O6
+
+Note that this same approach may be used when the molar mass (g/mol) instead of the molecular mass (amu) is used. In this case, one mole of empirical formula units and molecules is considered, as opposed to single units and molecules.
+
+Example
+3.13
+
+Determination of the Molecular Formula for Nicotine
+
+Nicotine, an alkaloid in the nightshade family of plants that is mainly responsible for the addictive nature of cigarettes, contains 74.02% C, 8.710% H, and 17.27% N. If 40.57 g of nicotine contains 0.2500 mol nicotine, what is the molecular formula?
+
+Solution
+
+Determining the molecular formula from the provided data will require comparison of the compound’s empirical formula mass to its molar mass. As the first step, use the percent composition to derive the compound’s empirical formula. Assuming a convenient, a 100-g sample of nicotine yields the following molar amounts of its elements:
+
+(74.02g C)(1mol C12.01g C)=6.163mol C(8.710g H)(1mol H1.008g H)=8.641mol H(17.27g N)(1mol N14.01g N)=1.233mol N
+
+Next, calculate the molar ratios of these elements relative to the least abundant element, N.
+
+6.163molC/1.233molN=5
+
+8.641molH/1.233molN=7
+
+1.233molN/1.233molN=1
+
+1.2331.233=1.000mol N6.1631.233=4.998mol C8.6241.233=6.994mol H
+
+The C-to-N and H-to-N molar ratios are adequately close to whole numbers, and so the empirical formula is C5H7N. The empirical formula mass for this compound is therefore 81.13 amu/formula unit, or 81.13 g/mol formula unit.
+
+Calculate the molar mass for nicotine from the given mass and molar amount of compound:
+
+40.57g nicotine0.2500mol nicotine=162.3gmol
+
+Comparing the molar mass and empirical formula mass indicates that each nicotine molecule contains two formula units:
+
+162.3g/mol81.13gformula unit=2formula units/molecule
+
+Finally, derive the molecular formula for nicotine from the empirical formula by multiplying each subscript by two:
+
+(C5H7N)2=C10H14N2
+
+Check Your Learning
+
+What is the molecular formula of a compound with a percent composition of 49.47% C, 5.201% H, 28.84% N, and 16.48% O, and a molecular mass of 194.2 amu?
+
+Answer:
+
+C8H10N4O2
+
+3.3
+
+Molarity
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Describe the fundamental properties of solutions
+
+Calculate solution concentrations using molarity
+
+Perform dilution calculations using the dilution equation
+
+Preceding sections of this chapter focused on the composition of substances: samples of matter that contain only one type of element or compound. However, mixtures—samples of matter containing two or more substances physically combined—are more commonly encountered in nature than are pure substances. Similar to a pure substance, the relative composition of a mixture plays an important role in determining its properties. The relative amount of oxygen in a planet’s atmosphere determines its ability to sustain aerobic life. The relative amounts of iron, carbon, nickel, and other elements in steel (a mixture known as an “alloy”) determine its physical strength and resistance to corrosion. The relative amount of the active ingredient in a medicine determines its effectiveness in achieving the desired pharmacological effect. The relative amount of sugar in a beverage determines its sweetness (see Figure 3.14). This section will describe one of the most common ways in which the relative compositions of mixtures may be quantified.
+
+Figure
+3.14
+
+Sugar is one of many components in the complex mixture known as coffee. The amount of sugar in a given amount of coffee is an important determinant of the beverage’s sweetness. (credit: Jane Whitney)
+
+Solutions
+
+Solutions have previously been defined as homogeneous mixtures, meaning that the composition of the mixture (and therefore its properties) is uniform throughout its entire volume. Solutions occur frequently in nature and have also been implemented in many forms of manmade technology. A more thorough treatment of solution properties is provided in the chapter on solutions and colloids, but provided here is an introduction to some of the basic properties of solutions.
+
+The relative amount of a given solution component is known as its concentration. Often, though not always, a solution contains one component with a concentration that is significantly greater than that of all other components. This component is called the solvent and may be viewed as the medium in which the other components are dispersed, or dissolved. Solutions in which water is the solvent are, of course, very common on our planet. A solution in which water is the solvent is called an aqueous solution.
+
+A solute is a component of a solution that is typically present at a much lower concentration than the solvent. Solute concentrations are often described with qualitative terms such as dilute (of relatively low concentration) and concentrated (of relatively high concentration).
+
+Concentrations may be quantitatively assessed using a wide variety of measurement units, each convenient for particular applications. Molarity (M) is a useful concentration unit for many applications in chemistry. Molarity is defined as the number of moles of solute in exactly 1 liter (1 L) of the solution:
+
+M=mol soluteL solution
+
+Example
+3.14
+
+Calculating Molar Concentrations
+
+A 355-mL soft drink sample contains 0.133 mol of sucrose (table sugar). What is the molar concentration of sucrose in the beverage?
+
+Solution
+
+Since the molar amount of solute and the volume of solution are both given, the molarity can be calculated using the definition of molarity. Per this definition, the solution volume must be converted from mL to L:
+
+M=mol soluteL solution=0.133mol355mL×1L1000mL=0.375M
+
+Check Your Learning
+
+A teaspoon of table sugar contains about 0.01 mol sucrose. What is the molarity of sucrose if a teaspoon of sugar has been dissolved in a cup of tea with a volume of 200 mL?
+
+Answer:
+
+0.05 M
+
+Example
+3.15
+
+Deriving Moles and Volumes from Molar Concentrations
+
+How much sugar (mol) is contained in a modest sip (~10 mL) of the soft drink from Example 3.14?
+
+Solution
+
+Rearrange the definition of molarity to isolate the quantity sought, moles of sugar, then substitute the value for molarity derived in Example 3.14, 0.375 M:
+
+M=mol soluteL solutionmol solute=M×L solutionmol solute=0.375mol sugarL×(10mL×1L1000mL)=0.004mol sugar
+
+Check Your Learning
+
+What volume (mL) of the sweetened tea described in Example 3.14 contains the same amount of sugar (mol) as 10 mL of the soft drink in this example?
+
+Answer:
+
+80 mL
+
+Example
+3.16
+
+Calculating Molar Concentrations from the Mass of Solute
+
+Distilled white vinegar (Figure 3.15) is a solution of acetic acid, CH3CO2H, in water. A 0.500-L vinegar solution contains 25.2 g of acetic acid. What is the concentration of the acetic acid solution in units of molarity?
+
+Figure
+3.15
+
+Distilled white vinegar is a solution of acetic acid in water.
+
+Solution
+
+As in previous examples, the definition of molarity is the primary equation used to calculate the quantity sought. Since the mass of solute is provided instead of its molar amount, use the solute’s molar mass to obtain the amount of solute in moles:
+
+M=mol soluteL solution=25.2 gCH3CO2H×1mol CH3CO2H60.052 g CH3CO2H0.500 L solution=0.839M
+
+M=mol soluteL solution=0.839MM=0.839mol solute1.00L solution
+
+Check Your Learning
+
+Calculate the molarity of 6.52 g of CoCl2 (128.9 g/mol) dissolved in an aqueous solution with a total volume of 75.0 mL.
+
+Answer:
+
+0.674 M
+
+Example
+3.17
+
+Determining the Mass of Solute in a Given Volume of Solution
+
+How many grams of NaCl are contained in 0.250 L of a 5.30-M solution?
+
+Solution
+
+The volume and molarity of the solution are specified, so the amount (mol) of solute is easily computed as demonstrated in Example 3.15:
+
+M=mol soluteL solutionmol solute=M×L solutionmol solute=5.30mol NaClL×0.250L=1.325mol NaCl
+
+Finally, this molar amount is used to derive the mass of NaCl:
+
+1.325 mol NaCl×58.44g NaClmol NaCl=77.4g NaCl
+
+Check Your Learning
+
+How many grams of CaCl2 (110.98 g/mol) are contained in 250.0 mL of a 0.200-M solution of calcium chloride?
+
+Answer:
+
+5.55 g CaCl2
+
+When performing calculations stepwise, as in Example 3.17, it is important to refrain from rounding any intermediate calculation results, which can lead to rounding errors in the final result. In Example 3.17, the molar amount of NaCl computed in the first step, 1.325 mol, would be properly rounded to 1.32 mol if it were to be reported; however, although the last digit (5) is not significant, it must be retained as a guard digit in the intermediate calculation. If the guard digit had not been retained, the final calculation for the mass of NaCl would have been 77.1 g, a difference of 0.3 g.
+
+In addition to retaining a guard digit for intermediate calculations, rounding errors may also be avoided by performing computations in a single step (see Example 3.18). This eliminates intermediate steps so that only the final result is rounded.
+
+Example
+3.18
+
+Determining the Volume of Solution Containing a Given Mass of Solute
+
+In Example 3.16, the concentration of acetic acid in white vinegar was determined to be 0.839 M. What volume of vinegar contains 75.6 g of acetic acid?
+
+Solution
+
+First, use the molar mass to calculate moles of acetic acid from the given mass:
+
+g solute×mol soluteg solute=mol solute
+
+Then, use the molarity of the solution to calculate the volume of solution containing this molar amount of solute:
+
+mol solute×L solutionmol solute=L solution
+
+Combining these two steps into one yields:
+
+g solute×mol soluteg solute×L solutionmol solute=L solution
+
+75.6gCH3CO2H(molCH3CO2H60.05g)(L solution0.839molCH3CO2H)=1.50L solution
+
+Check Your Learning
+
+What volume of a 1.50-M KBr solution contains 66.0 g KBr?
+
+Answer:
+
+0.370 L
+
+Dilution of Solutions
+
+Dilution is the process whereby the concentration of a solution is lessened by the addition of solvent. For example, a glass of iced tea becomes increasingly diluted as the ice melts. The water from the melting ice increases the volume of the solvent (water) and the overall volume of the solution (iced tea), thereby reducing the relative concentrations of the solutes that give the beverage its taste (Figure 3.16).
+
+Figure
+3.16
+
+Both solutions contain the same mass of copper nitrate. The solution on the right is more dilute because the copper nitrate is dissolved in more solvent. (credit: Mark Ott)
+
+Dilution is also a common means of preparing solutions of a desired concentration. By adding solvent to a measured portion of a more concentrated stock solution, a solution of lesser concentration may be prepared. For example, commercial pesticides are typically sold as solutions in which the active ingredients are far more concentrated than is appropriate for their application. Before they can be used on crops, the pesticides must be diluted. This is also a very common practice for the preparation of a number of common laboratory reagents.
+
+A simple mathematical relationship can be used to relate the volumes and concentrations of a solution before and after the dilution process. According to the definition of molarity, the number of moles of solute in a solution (n) is equal to the product of the solution’s molarity (M) and its volume in liters (L):
+
+n=ML
+
+Expressions like these may be written for a solution before and after it is diluted:
+
+n1=M1L1
+
+n2=M2L2
+
+where the subscripts “1” and “2” refer to the solution before and after the dilution, respectively. Since the dilution process does not change the amount of solute in the solution, n1 = n2. Thus, these two equations may be set equal to one another:
+
+M1L1=M2L2
+
+This relation is commonly referred to as the dilution equation. Although this equation uses molarity as the unit of concentration and liters as the unit of volume, other units of concentration and volume may be used as long as the units properly cancel per the factor-label method. Reflecting this versatility, the dilution equation is often written in the more general form:
+
+C1V1=C2V2
+
+where C and V are concentration and volume, respectively.
+
+Link to Learning
+
+Use the simulation to explore the relations between solute amount, solution volume, and concentration and to confirm the dilution equation.
+
+Example
+3.19
+
+Determining the Concentration of a Diluted Solution
+
+If 0.850 L of a 5.00-M solution of copper nitrate, Cu(NO3)2, is diluted to a volume of 1.80 L by the addition of water, what is the molarity of the diluted solution?
+
+Solution
+
+The stock concentration, C1, and volume, V1, are provided as well as the volume of the diluted solution, V2. Rearrange the dilution equation to isolate the unknown property, the concentration of the diluted solution, C2:
+
+C1V1=C2V2C2=C1V1V2
+
+Since the stock solution is being diluted by more than two-fold (volume is increased from 0.85 L to 1.80 L), the diluted solution’s concentration is expected to be less than one-half 5 M. This ballpark estimate will be compared to the calculated result to check for any gross errors in computation (for example, such as an improper substitution of the given quantities). Substituting the given values for the terms on the right side of this equation yields:
+
+C2=0.850L×5.00molL1.80 L=2.36M
+
+This result compares well to our ballpark estimate (it’s a bit less than one-half the stock concentration, 5 M).
+
+Check Your Learning
+
+What is the concentration of the solution that results from diluting 25.0 mL of a 2.04-M solution of CH3OH to 500.0 mL?
+
+Answer:
+
+0.102 M CH3OH
+
+Example
+3.20
+
+Volume of a Diluted Solution
+
+What volume of 0.12 M HBr can be prepared from 11 mL (0.011 L) of 0.45 M HBr?
+
+Solution
+
+Provided are the volume and concentration of a stock solution, V1 and C1, and the concentration of the resultant diluted solution, C2. Find the volume of the diluted solution, V2 by rearranging the dilution equation to isolate V2:
+
+C1V1=C2V2V2=C1V1C2
+
+Since the diluted concentration (0.12 M) is slightly more than one-fourth the original concentration (0.45 M), the volume of the diluted solution is expected to be roughly four times the original volume, or around 44 mL. Substituting the given values and solving for the unknown volume yields:
+
+V2=(0.45M)(0.011L)(0.12M)V2=0.041L
+
+The volume of the 0.12-M solution is 0.041 L (41 mL). The result is reasonable and compares well with the rough estimate.
+
+Check Your Learning
+
+A laboratory experiment calls for 0.125 M HNO3. What volume of 0.125 M HNO3 can be prepared from 0.250 L of 1.88 M HNO3?
+
+Answer:
+
+3.76 L
+
+Example
+3.21
+
+Volume of a Concentrated Solution Needed for Dilution
+
+What volume of 1.59 M KOH is required to prepare 5.00 L of 0.100 M KOH?
+
+Solution
+
+Given are the concentration of a stock solution, C1, and the volume and concentration of the resultant diluted solution, V2 and C2. Find the volume of the stock solution, V1 by rearranging the dilution equation to isolate V1:
+
+C1V1=C2V2V1=C2V2C1
+
+Since the concentration of the diluted solution 0.100 M is roughly one-sixteenth that of the stock solution (1.59 M), the volume of the stock solution is expected to be about one-sixteenth that of the diluted solution, or around 0.3 liters. Substituting the given values and solving for the unknown volume yields:
+
+V1=(0.100M)(5.00L)1.59MV1=0.314L
+
+Thus, 0.314 L of the 1.59-M solution is needed to prepare the desired solution. This result is consistent with the rough estimate.
+
+Check Your Learning
+
+What volume of a 0.575-M solution of glucose, C6H12O6, can be prepared from 50.00 mL of a 3.00-M glucose solution?
+
+Answer:
+
+0.261 L
+
+3.4
+
+Other Units for Solution Concentrations
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Define the concentration units of mass percentage, volume percentage, mass-volume percentage, parts-per-million (ppm), and parts-per-billion (ppb)
+
+Perform computations relating a solution’s concentration and its components’ volumes and/or masses using these units
+
+The previous section introduced molarity, a very useful measurement unit for evaluating the concentration of solutions. However, molarity is only one measure of concentration. This section will describe some other units of concentration that are commonly used in various applications, either for convenience or by convention.
+
+Mass Percentage
+
+Earlier in this chapter, percent composition was introduced as a measure of the relative amount of a given element in a compound. Percentages are also commonly used to express the composition of mixtures, including solutions. The mass percentage of a solution component is defined as the ratio of the component’s mass to the solution’s mass, expressed as a percentage:
+
+mass percentage=mass of componentmass of solution×100%
+
+Mass percentage is also referred to by similar names such as percent mass, percent weight, weight/weight percent, and other variations on this theme. The most common symbol for mass percentage is simply the percent sign, %, although more detailed symbols are often used including %mass, %weight, and (w/w)%. Use of these more detailed symbols can prevent confusion of mass percentages with other types of percentages, such as volume percentages (to be discussed later in this section).
+
+Mass percentages are popular concentration units for consumer products. The label of a typical liquid bleach bottle (Figure 3.17) cites the concentration of its active ingredient, sodium hypochlorite (NaOCl), as being 7.4%. A 100.0-g sample of bleach would therefore contain 7.4 g of NaOCl.
+
+Figure
+3.17
+
+Liquid bleach is an aqueous solution of sodium hypochlorite (NaOCl). This brand has a concentration of 7.4% NaOCl by mass.
+
+Example
+3.22
+
+Calculation of Percent by Mass
+
+A 5.0-g sample of spinal fluid contains 3.75 mg (0.00375 g) of glucose. What is the percent by mass of glucose in spinal fluid?
+
+Solution
+
+The spinal fluid sample contains roughly 4 mg of glucose in 5000 mg of fluid, so the mass fraction of glucose should be a bit less than one part in 1000, or about 0.1%. Substituting the given masses into the equation defining mass percentage yields:
+
+%glucose=3.75mg glucose×1g1000mg5.0g spinal fluid=0.075%
+
+The computed mass percentage agrees with our rough estimate (it’s a bit less than 0.1%).
+
+Note that while any mass unit may be used to compute a mass percentage (mg, g, kg, oz, and so on), the same unit must be used for both the solute and the solution so that the mass units cancel, yielding a dimensionless ratio. In this case, the solute mass unit in the numerator was converted from mg to g to match the units in the denominator. Alternatively, the spinal fluid mass unit in the denominator could have been converted from g to mg instead. As long as identical mass units are used for both solute and solution, the computed mass percentage will be correct.
+
+Check Your Learning
+
+A bottle of a tile cleanser contains 135 g of HCl and 775 g of water. What is the percent by mass of HCl in this cleanser?
+
+Answer:
+
+14.8%
+
+Example
+3.23
+
+Calculations using Mass Percentage
+
+“Concentrated” hydrochloric acid is an aqueous solution of 37.2% HCl that is commonly used as a laboratory reagent. The density of this solution is 1.19 g/mL. What mass of HCl is contained in 0.500 L of this solution?
+
+Solution
+
+The HCl concentration is near 40%, so a 100-g portion of this solution would contain about 40 g of HCl. Since the solution density isn’t greatly different from that of water (1 g/mL), a reasonable estimate of the HCl mass in 500 g (0.5 L) of the solution is about five times greater than that in a 100 g portion, or 5 × 40 = 200 g. In order to derive the mass of solute in a solution from its mass percentage, the mass of the solution must be known. Using the solution density given, convert the solution’s volume to mass, and then use the given mass percentage to calculate the solute mass. This mathematical approach is outlined in this flowchart:
+
+For proper unit cancellation, the 0.500-L volume is converted into 500 mL, and the mass percentage is expressed as a ratio, 37.2 g HCl/g solution:
+
+500 mL solution(1.19g solutionmL solution)(37.2g HCl100g solution)=221g HCl
+
+This mass of HCl is consistent with our rough estimate of approximately 200 g.
+
+Check Your Learning
+
+What volume of concentrated HCl solution contains 125 g of HCl?
+
+Answer:
+
+282 mL
+
+Volume Percentage
+
+Liquid volumes over a wide range of magnitudes are conveniently measured using common and relatively inexpensive laboratory equipment. The concentration of a solution formed by dissolving a liquid solute in a liquid solvent is therefore often expressed as a volume percentage, %vol or (v/v)%:
+
+volume percentage=volume solutevolume solution×100%
+
+Example
+3.24
+
+Calculations using Volume Percentage
+
+Rubbing alcohol (isopropanol) is usually sold as a 70%vol aqueous solution. If the density of isopropyl alcohol is 0.785 g/mL, how many grams of isopropyl alcohol are present in a 355 mL bottle of rubbing alcohol?
+
+Solution
+
+Per the definition of volume percentage, the isopropanol volume is 70% of the total solution volume. Multiplying the isopropanol volume by its density yields the requested mass:
+
+(355mL solution)(70mL isopropyl alcohol100mL solution)(0.785g isopropyl alcohol1mL isopropyl alcohol)=195g isopropyl alchol
+
+Check Your Learning
+
+Wine is approximately 12% ethanol (CH3CH2OH) by volume. Ethanol has a molar mass of 46.06 g/mol and a density 0.789 g/mL. How many moles of ethanol are present in a 750-mL bottle of wine?
+
+Answer:
+
+1.5 mol ethanol
+
+Mass-Volume Percentage
+
+“Mixed” percentage units, derived from the mass of solute and the volume of solution, are popular for certain biochemical and medical applications. A mass-volume percent is a ratio of a solute’s mass to the solution’s volume expressed as a percentage. The specific units used for solute mass and solution volume may vary, depending on the solution. For example, physiological saline solution, used to prepare intravenous fluids, has a concentration of 0.9% mass/volume (m/v), indicating that the composition is 0.9 g of solute per 100 mL of solution. The concentration of glucose in blood (commonly referred to as “blood sugar”) is also typically expressed in terms of a mass-volume ratio. Though not expressed explicitly as a percentage, its concentration is usually given in milligrams of glucose per deciliter (100 mL) of blood (Figure 3.18).
+
+Figure
+3.18
+
+“Mixed” mass-volume units are commonly encountered in medical settings. (a) The NaCl concentration of physiological saline is 0.9% (m/v). (b) This device measures glucose levels in a sample of blood. The normal range for glucose concentration in blood (fasting) is around 70–100 mg/dL. (credit a: modification of work by “The National Guard”/Flickr; credit b: modification of work by Biswarup Ganguly)
+
+Parts per Million and Parts per Billion
+
+Very low solute concentrations are often expressed using appropriately small units such as parts per million (ppm) or parts per billion (ppb). Like percentage (“part per hundred”) units, ppm and ppb may be defined in terms of masses, volumes, or mixed mass-volume units. There are also ppm and ppb units defined with respect to numbers of atoms and molecules.
+
+The mass-based definitions of ppm and ppb are given here:
+
+ppm=mass solutemass solution×106ppmppb=mass solutemass solution×109ppb
+
+Both ppm and ppb are convenient units for reporting the concentrations of pollutants and other trace contaminants in water. Concentrations of these contaminants are typically very low in treated and natural waters, and their levels cannot exceed relatively low concentration thresholds without causing adverse effects on health and wildlife. For example, the EPA has identified the maximum safe level of fluoride ion in tap water to be 4 ppm. Inline water filters are designed to reduce the concentration of fluoride and several other trace-level contaminants in tap water (Figure 3.19).
+
+Figure
+3.19
+
+(a) In some areas, trace-level concentrations of contaminants can render unfiltered tap water unsafe for drinking and cooking. (b) Inline water filters reduce the concentration of solutes in tap water. (credit a: modification of work by Jenn Durfey; credit b: modification of work by “vastateparkstaff”/Wikimedia commons)
+
+Example
+3.25
+
+Calculation of Parts per Million and Parts per Billion Concentrations
+
+According to the EPA, when the concentration of lead in tap water reaches 15 ppb, certain remedial actions must be taken. What is this concentration in ppm? At this concentration, what mass of lead (μg) would be contained in a typical glass of water (300 mL)?
+
+Solution
+
+The definitions of the ppm and ppb units may be used to convert the given concentration from ppb to ppm. Comparing these two unit definitions shows that ppm is 1000 times greater than ppb (1 ppm = 103 ppb). Thus:
+
+15ppb×1ppm103ppb=0.015ppm
+
+The definition of the ppb unit may be used to calculate the requested mass if the mass of the solution is provided. Since the volume of solution (300 mL) is given, its density must be used to derive the corresponding mass. Assume the density of tap water to be roughly the same as that of pure water (~1.00 g/mL), since the concentrations of any dissolved substances should not be very large. Rearranging the equation defining the ppb unit and substituting the given quantities yields:
+
+ppb=mass solutemass solution×109ppbmass solute=ppb×mass solution109ppbmass solute=15ppb×300mL×1.00gmL109ppb=4.5×10−6g
+
+Finally, convert this mass to the requested unit of micrograms:
+
+4.5×10−6g×1μg10−6g=4.5μg
+
+Check Your Learning
+
+A 50.0-g sample of industrial wastewater was determined to contain 0.48 mg of mercury. Express the mercury concentration of the wastewater in ppm and ppb units.
+
+Answer:
+
+9.6 ppm, 9600 ppb
+
+4.2
+
+Classifying Chemical Reactions
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Define three common types of chemical reactions (precipitation, acid-base, and oxidation-reduction)
+
+Classify chemical reactions as one of these three types given appropriate descriptions or chemical equations
+
+Identify common acids and bases
+
+Predict the solubility of common inorganic compounds by using solubility rules
+
+Compute the oxidation states for elements in compounds
+
+Humans interact with one another in various and complex ways, and we classify these interactions according to common patterns of behavior. When two humans exchange information, we say they are communicating. When they exchange blows with their fists or feet, we say they are fighting. Faced with a wide range of varied interactions between chemical substances, scientists have likewise found it convenient (or even necessary) to classify chemical interactions by identifying common patterns of reactivity. This module will provide an introduction to three of the most prevalent types of chemical reactions: precipitation, acid-base, and oxidation-reduction.
+
+Precipitation Reactions and Solubility Rules
+
+A precipitation reaction is one in which dissolved substances react to form one (or more) solid products. Many reactions of this type involve the exchange of ions between ionic compounds in aqueous solution and are sometimes referred to as double displacement, double replacement, or metathesis reactions. These reactions are common in nature and are responsible for the formation of coral reefs in ocean waters and kidney stones in animals. They are used widely in industry for production of a number of commodity and specialty chemicals. Precipitation reactions also play a central role in many chemical analysis techniques, including spot tests used to identify metal ions and gravimetric methods for determining the composition of matter (see the last module of this chapter).
+
+The extent to which a substance may be dissolved in water, or any solvent, is quantitatively expressed as its solubility, defined as the maximum concentration of a substance that can be achieved under specified conditions. Substances with relatively large solubilities are said to be soluble. A substance will precipitate when solution conditions are such that its concentration exceeds its solubility. Substances with relatively low solubilities are said to be insoluble, and these are the substances that readily precipitate from solution. More information on these important concepts is provided in a later chapter on solutions. For purposes of predicting the identities of solids formed by precipitation reactions, one may simply refer to patterns of solubility that have been observed for many ionic compounds (Table 4.1).
+
+Soluble Ionic Compounds
+contain these ions
+exceptions
+
+NH4+
+
+group I cations:
+
+Li+
+
+Na+
+
+K+
+
+Rb+
+
+Cs+
+
+none
+
+Cl-
+
+Br-
+
+I-
+
+compounds with Ag+, Hg22+, and Pb2+
+
+F-
+compounds with group 2 metal cations, Pb2+, and Fe3+
+
+C2H3O2-
+
+HCO3-
+
+NO3-
+
+ClO3-
+
+none
+
+SO42-
+compounds with Ag+, Ba2+, Ca2+, Hg22+, Pb2+ and Sr2+
+
+Insoluble Ionic Compounds
+contain these ions
+exceptions
+
+CO32-
+
+CrO42-
+
+PO43-
+
+S2-
+
+compounds with group 1 cations and NH4+
+
+OH-
+compounds with group 1 cations and Ba2+
+
+Table
+4.1
+
+A vivid example of precipitation is observed when solutions of potassium iodide and lead nitrate are mixed, resulting in the formation of solid lead iodide:
+
+2KI(aq)+Pb(NO3)2(aq)⟶PbI2(s)+2KNO3(aq)
+
+This observation is consistent with the solubility guidelines: The only insoluble compound among all those involved is lead iodide, one of the exceptions to the general solubility of iodide salts.
+
+The net ionic equation representing this reaction is:
+
+Pb2+(aq)+2I−(aq)⟶PbI2(s)
+
+Lead iodide is a bright yellow solid that was formerly used as an artist’s pigment known as iodine yellow (Figure 4.4). The properties of pure PbI2 crystals make them useful for fabrication of X-ray and gamma ray detectors.
+
+Figure
+4.4
+
+A precipitate of PbI2 forms when solutions containing Pb2+ and I− are mixed. (credit: Der Kreole/Wikimedia Commons)
+
+The solubility guidelines in Table 4.1 may be used to predict whether a precipitation reaction will occur when solutions of soluble ionic compounds are mixed together. One merely needs to identify all the ions present in the solution and then consider if possible cation/anion pairing could result in an insoluble compound. For example, mixing solutions of silver nitrate and sodium chloride will yield a solution containing Ag+, NO3−, Na+, and Cl− ions. Aside from the two ionic compounds originally present in the solutions, AgNO3 and NaCl, two additional ionic compounds may be derived from this collection of ions: NaNO3 and AgCl. The solubility guidelines indicate all nitrate salts are soluble but that AgCl is one of insoluble. A precipitation reaction, therefore, is predicted to occur, as described by the following equations:
+
+NaCl(aq)+AgNO3(aq)⟶AgCl(s)+NaNO3(aq)(molecular)Ag+(aq)+Cl−(aq)⟶AgCl(s)(net ionic)
+
+Example
+4.3
+
+Predicting Precipitation Reactions
+
+Predict the result of mixing reasonably concentrated solutions of the following ionic compounds. If precipitation is expected, write a balanced net ionic equation for the reaction.
+
+(a) potassium sulfate and barium nitrate
+
+(b) lithium chloride and silver acetate
+
+(c) lead (II) nitrate and ammonium carbonate
+
+Solution
+(a) The two possible products for this combination are KNO3 and BaSO4. The solubility guidelines indicate BaSO4 is insoluble, and so a precipitation reaction is expected. The net ionic equation for this reaction, derived in the manner detailed in the previous module, is
+Ba2+(aq)+SO42−(aq)⟶BaSO4(s)
+
+(b) The two possible products for this combination are LiC2H3O2 and AgCl. The solubility guidelines indicate AgCl is insoluble, and so a precipitation reaction is expected. The net ionic equation for this reaction, derived in the manner detailed in the previous module, is
+
+Ag+(aq)+Cl−(aq)⟶AgCl(s)
+
+(c) The two possible products for this combination are PbCO3 and NH4NO3. The solubility guidelines indicate PbCO3 is insoluble, and so a precipitation reaction is expected. The net ionic equation for this reaction, derived in the manner detailed in the previous module, is
+
+Pb2+(aq)+CO32−(aq)⟶PbCO3(s)
+
+Check Your Learning
+
+Which solution could be used to precipitate the barium ion, Ba2+, in a water sample: sodium chloride, sodium hydroxide, or sodium sulfate? What is the formula for the expected precipitate?
+
+Answer:
+
+sodium sulfate, BaSO4
+
+Acid-Base Reactions
+
+An acid-base reaction is one in which a hydrogen ion, H+, is transferred from one chemical species to another. Such reactions are of central importance to numerous natural and technological processes, ranging from the chemical transformations that take place within cells and the lakes and oceans, to the industrial-scale production of fertilizers, pharmaceuticals, and other substances essential to society. The subject of acid-base chemistry, therefore, is worthy of thorough discussion, and a full chapter is devoted to this topic later in the text.
+
+For purposes of this brief introduction, we will consider only the more common types of acid-base reactions that take place in aqueous solutions. In this context, an acid is a substance that will dissolve in water to yield hydronium ions, H3O+. As an example, consider the equation shown here:
+
+HCl(aq)+H2O(l)⟶Cl−(aq)+H3O+(aq)
+
+The process represented by this equation confirms that hydrogen chloride is an acid. When dissolved in water, H3O+ ions are produced by a chemical reaction in which H+ ions are transferred from HCl molecules to H2O molecules (Figure 4.5).
+
+Figure
+4.5
+
+When hydrogen chloride gas dissolves in water, (a) it reacts as an acid, transferring protons to water molecules to yield (b) hydronium ions (and solvated chloride ions).
+
+The nature of HCl is such that its reaction with water as just described is essentially 100% efficient: Virtually every HCl molecule that dissolves in water will undergo this reaction. Acids that completely react in this fashion are called strong acids, and HCl is one among just a handful of common acid compounds that are classified as strong (Table 4.2). A far greater number of compounds behave as weak acids and only partially react with water, leaving a large majority of dissolved molecules in their original form and generating a relatively small amount of hydronium ions. Weak acids are commonly encountered in nature, being the substances partly responsible for the tangy taste of citrus fruits, the stinging sensation of insect bites, and the unpleasant smells associated with body odor. A familiar example of a weak acid is acetic acid, the main ingredient in food vinegars:
+
+CH3CO2H(aq)+H2O(l)⇌CH3CO2−(aq)+H3O+(aq)
+
+When dissolved in water under typical conditions, only about 1% of acetic acid molecules are present in the ionized form, CH3CO2− (Figure 4.6). (The use of a double-arrow in the equation above denotes the partial reaction aspect of this process, a concept addressed fully in the chapters on chemical equilibrium.)
+
+Figure
+4.6
+
+(a) Fruits such as oranges, lemons, and grapefruit contain the weak acid citric acid. (b) Vinegars contain the weak acid acetic acid. (credit a: modification of work by Scott Bauer; credit b: modification of work by Brücke-Osteuropa/Wikimedia Commons)
+
+Common Strong Acids
+
+Compound Formula
+Name in Aqueous Solution
+
+HBr
+hydrobromic acid
+
+HCl
+hydrochloric acid
+
+HI
+hydroiodic acid
+
+HNO3
+nitric acid
+
+HClO4
+perchloric acid
+
+H2SO4
+sulfuric acid
+
+Table
+4.2
+
+A base is a substance that will dissolve in water to yield hydroxide ions, OH−. The most common bases are ionic compounds composed of alkali or alkaline earth metal cations (groups 1 and 2) combined with the hydroxide ion—for example, NaOH and Ca(OH)2. Unlike the acid compounds discussed previously, these compounds do not react chemically with water; instead they dissolve and dissociate, releasing hydroxide ions directly into the solution. For example, KOH and Ba(OH)2 dissolve in water and dissociate completely to produce cations (K+ and Ba2+, respectively) and hydroxide ions, OH−. These bases, along with other hydroxides that completely dissociate in water, are considered strong bases.
+
+Consider as an example the dissolution of lye (sodium hydroxide) in water:
+
+NaOH(s)⟶Na+(aq)+OH−(aq)
+
+This equation confirms that sodium hydroxide is a base. When dissolved in water, NaOH dissociates to yield Na+ and OH− ions. This is also true for any other ionic compound containing hydroxide ions. Since the dissociation process is essentially complete when ionic compounds dissolve in water under typical conditions, NaOH and other ionic hydroxides are all classified as strong bases.
+
+Unlike ionic hydroxides, some compounds produce hydroxide ions when dissolved by chemically reacting with water molecules. In all cases, these compounds react only partially and so are classified as weak bases. These types of compounds are also abundant in nature and important commodities in various technologies. For example, global production of the weak base ammonia is typically well over 100 million metric tons annually, being widely used as an agricultural fertilizer, a raw material for chemical synthesis of other compounds, and an active ingredient in household cleaners (Figure 4.7). When dissolved in water, ammonia reacts partially to yield hydroxide ions, as shown here:
+
+NH3(aq)+H2O(l)⇌NH4+(aq)+OH−(aq)
+
+This is, by definition, an acid-base reaction, in this case involving the transfer of H+ ions from water molecules to ammonia molecules. Under typical conditions, only about 1% of the dissolved ammonia is present as NH4+ ions.
+
+Figure
+4.7
+
+Ammonia is a weak base used in a variety of applications. (a) Pure ammonia is commonly applied as an agricultural fertilizer. (b) Dilute solutions of ammonia are effective household cleansers. (credit a: modification of work by National Resources Conservation Service; credit b: modification of work by pat00139)
+
+A neutralization reaction is a specific type of acid-base reaction in which the reactants are an acid and a base (but not water), and the products are often a salt and water
+
+acid+base⟶salt+water
+
+To illustrate a neutralization reaction, consider what happens when a typical antacid such as milk of magnesia (an aqueous suspension of solid Mg(OH)2) is ingested to ease symptoms associated with excess stomach acid (HCl):
+
+Mg(OH)2(s)+2HCl(aq)⟶MgCl2(aq)+2H2O(l).
+
+Note that in addition to water, this reaction produces a salt, magnesium chloride.
+
+Example
+4.4
+
+Writing Equations for Acid-Base Reactions
+
+Write balanced chemical equations for the acid-base reactions described here:
+
+(a) the weak acid hydrogen hypochlorite reacts with water
+
+(b) a solution of barium hydroxide is neutralized with a solution of nitric acid
+
+Solution
+
+(a) The two reactants are provided, HOCl and H2O. Since the substance is reported to be an acid, its reaction with water will involve the transfer of H+ from HOCl to H2O to generate hydronium ions, H3O+ and hypochlorite ions, OCl−.
+
+HOCl(aq)+H2O(l)⇌OCl−(aq)+H3O+(aq)
+
+A double-arrow is appropriate in this equation because it indicates the HOCl is a weak acid that has not reacted completely.
+
+(b) The two reactants are provided, Ba(OH)2 and HNO3. Since this is a neutralization reaction, the two products will be water and a salt composed of the cation of the ionic hydroxide (Ba2+) and the anion generated when the acid transfers its hydrogen ion (NO3−).
+
+Ba(OH)2(aq)+2HNO3(aq)⟶Ba(NO3)2(aq)+2H2O(l)
+
+Check Your Learning
+
+Write the net ionic equation representing the neutralization of any strong acid with an ionic hydroxide. (Hint: Consider the ions produced when a strong acid is dissolved in water.)
+
+Answer:
+
+H3O+(aq)+OH−(aq)⟶2H2O(l)
+
+Chemistry in Everyday Life
+
+Stomach Antacids
+
+Our stomachs contain a solution of roughly 0.03 M HCl, which helps us digest the food we eat. The burning sensation associated with heartburn is a result of the acid of the stomach leaking through the muscular valve at the top of the stomach into the lower reaches of the esophagus. The lining of the esophagus is not protected from the corrosive effects of stomach acid the way the lining of the stomach is, and the results can be very painful. When we have heartburn, it feels better if we reduce the excess acid in the esophagus by taking an antacid. As you may have guessed, antacids are bases. One of the most common antacids is calcium carbonate, CaCO3. The reaction,
+
+CaCO3(s)+2HCl(aq)⇌CaCl2(aq)+H2O(l)+CO2(g)
+
+not only neutralizes stomach acid, it also produces CO2(g), which may result in a satisfying belch.
+
+Milk of Magnesia is a suspension of the sparingly soluble base magnesium hydroxide, Mg(OH)2. It works according to the reaction:
+
+Mg(OH)2(s)⇌Mg2+(aq)+2OH−(aq)
+
+The hydroxide ions generated in this equilibrium then go on to react with the hydronium ions from the stomach acid, so that:
+
+H3O++OH−⇌2H2O(l)
+
+This reaction does not produce carbon dioxide, but magnesium-containing antacids can have a laxative effect. Several antacids have aluminum hydroxide, Al(OH)3, as an active ingredient. The aluminum hydroxide tends to cause constipation, and some antacids use aluminum hydroxide in concert with magnesium hydroxide to balance the side effects of the two substances.
+
+Chemistry in Everyday Life
+
+Culinary Aspects of Chemistry
+
+Examples of acid-base chemistry are abundant in the culinary world. One example is the use of baking soda, or sodium bicarbonate in baking. NaHCO3 is a base. When it reacts with an acid such as lemon juice, buttermilk, or sour cream in a batter, bubbles of carbon dioxide gas are formed from decomposition of the resulting carbonic acid, and the batter “rises.” Baking powder is a combination of sodium bicarbonate, and one or more acid salts that react when the two chemicals come in contact with water in the batter.
+
+Many people like to put lemon juice or vinegar, both of which are acids, on cooked fish (Figure 4.8). It turns out that fish have volatile amines (bases) in their systems, which are neutralized by the acids to yield involatile ammonium salts. This reduces the odor of the fish, and also adds a “sour” taste that we seem to enjoy.
+
+Figure
+4.8
+
+A neutralization reaction takes place between citric acid in lemons or acetic acid in vinegar, and the bases in the flesh of fish.
+
+Pickling is a method used to preserve vegetables using a naturally produced acidic environment. The vegetable, such as a cucumber, is placed in a sealed jar submerged in a brine solution. The brine solution favors the growth of beneficial bacteria and suppresses the growth of harmful bacteria. The beneficial bacteria feed on starches in the cucumber and produce lactic acid as a waste product in a process called fermentation. The lactic acid eventually increases the acidity of the brine to a level that kills any harmful bacteria, which require a basic environment. Without the harmful bacteria consuming the cucumbers they are able to last much longer than if they were unprotected. A byproduct of the pickling process changes the flavor of the vegetables with the acid making them taste sour.
+
+Link to Learning
+
+Explore the microscopic view of strong and weak acids and bases.
+
+Oxidation-Reduction Reactions
+
+Earth’s atmosphere contains about 20% molecular oxygen, O2, a chemically reactive gas that plays an essential role in the metabolism of aerobic organisms and in many environmental processes that shape the world. The term oxidation was originally used to describe chemical reactions involving O2, but its meaning has evolved to refer to a broad and important reaction class known as oxidation-reduction (redox) reactions. A few examples of such reactions will be used to develop a clear picture of this classification.
+
+Some redox reactions involve the transfer of electrons between reactant entities to yield ionic products, such as the reaction between sodium and chlorine to yield sodium chloride:
+
+2Na(s)+Cl2(g)⟶2NaCl(s)
+
+It is helpful to view the process with regard to each individual reactant, that is, to represent the fate of each reactant in the form of an equation called a half-reaction:
+
+2Na(s)⟶2Na+(s)+2e−Cl2(g)+2e−⟶2Cl−(s)
+
+These equations show that Na atoms lose electrons while Cl atoms (in the Cl2 molecule) gain electrons, the “s” subscripts for the resulting ions signifying they are present in the form of a solid ionic compound. For redox reactions of this sort, the loss and gain of electrons define the complementary processes that occur:
+
+oxidation=loss of electronsreduction=gain of electrons
+
+In this reaction, then, sodium is oxidized and chlorine undergoes reduction. Viewed from a more active perspective, sodium functions as a reducing agent (reductant), since it provides electrons to (or reduces) chlorine. Likewise, chlorine functions as an oxidizing agent (oxidant), as it effectively removes electrons from (oxidizes) sodium.
+
+reducing agent=species that is oxidizedoxidizing agent=species that is reduced
+
+Some redox processes, however, do not involve the transfer of electrons. Consider, for example, a reaction similar to the one yielding NaCl:
+
+H2(g)+Cl2(g)⟶2HCl(g)
+
+The product of this reaction is a covalent compound, so transfer of electrons in the explicit sense is not involved. To clarify the similarity of this reaction to the previous one and permit an unambiguous definition of redox reactions, a property called oxidation number has been defined. The oxidation number (or oxidation state) of an element in a compound is the charge its atoms would possess if the compound were ionic. The following guidelines are used to assign oxidation numbers to each element in a molecule or ion.
+
+The oxidation number of an atom in an elemental substance is zero.
+
+The oxidation number of a monatomic ion is equal to the ion’s charge.
+
+Oxidation numbers for common nonmetals are usually assigned as follows:
+
+Hydrogen: +1 when combined with nonmetals, −1 when combined with metals
+
+Oxygen: −2 in most compounds, sometimes −1 (so-called peroxides, O22−), very rarely −12 (so-called superoxides, O2−), positive values when combined with F (values vary)
+
+Halogens: −1 for F always, −1 for other halogens except when combined with oxygen or other halogens (positive oxidation numbers in these cases, varying values)
+
+The sum of oxidation numbers for all atoms in a molecule or polyatomic ion equals the charge on the molecule or ion.
+
+Note: The proper convention for reporting charge is to write the number first, followed by the sign (e.g., 2+), while oxidation number is written with the reversed sequence, sign followed by number (e.g., +2). This convention aims to emphasize the distinction between these two related properties.
+
+Example
+4.5
+
+Assigning Oxidation Numbers
+
+Follow the guidelines in this section of the text to assign oxidation numbers to all the elements in the following species:
+
+(a) H2S
+
+(b) SO32−
+
+(c) Na2SO4
+
+Solution
+
+(a) According to guideline 3, the oxidation number for H is +1.
+
+Using this oxidation number and the compound’s formula, guideline 4 may then be used to calculate the oxidation number for sulfur:
+
+charge onH2S=0=(2×+1)+(1×x)x=0−(2×+1)=−2
+
+(b) Guideline 3 suggests the oxidation number for oxygen is −2.
+
+Using this oxidation number and the ion’s formula, guideline 4 may then be used to calculate the oxidation number for sulfur:
+
+charge onSO32−=−2=(3×−2)+(1×x)x=−2−(3×−2)=+4
+
+(c) For ionic compounds, it’s convenient to assign oxidation numbers for the cation and anion separately.
+
+According to guideline 2, the oxidation number for sodium is +1.
+
+Assuming the usual oxidation number for oxygen (−2 per guideline 3), the oxidation number for sulfur is calculated as directed by guideline 4:
+
+charge onSO42−=−2=(4×−2)+(1×x)x=−2−(4×−2)=+6
+
+Check Your Learning
+
+Assign oxidation states to the elements whose atoms are underlined in each of the following compounds or ions:
+
+(a) KNO3
+
+(b) AlH3
+
+(c) N_H4+
+
+(d) H2P_O4−
+
+Answer:
+
+(a) N, +5; (b) Al, +3; (c) N, −3; (d) P, +5
+
+Using the oxidation number concept, an all-inclusive definition of redox reaction has been established. Oxidation-reduction (redox) reactions are those in which one or more elements involved undergo a change in oxidation number. (While the vast majority of redox reactions involve changes in oxidation number for two or more elements, a few interesting exceptions to this rule do exist Example 4.6.) Definitions for the complementary processes of this reaction class are correspondingly revised as shown here:
+
+oxidation=increase in oxidation numberreduction=decrease in oxidation number
+
+Returning to the reactions used to introduce this topic, they may now both be identified as redox processes. In the reaction between sodium and chlorine to yield sodium chloride, sodium is oxidized (its oxidation number increases from 0 in Na to +1 in NaCl) and chlorine is reduced (its oxidation number decreases from 0 in Cl2 to −1 in NaCl). In the reaction between molecular hydrogen and chlorine, hydrogen is oxidized (its oxidation number increases from 0 in H2 to +1 in HCl) and chlorine is reduced (its oxidation number decreases from 0 in Cl2 to −1 in HCl).
+
+Several subclasses of redox reactions are recognized, including combustion reactions in which the reductant (also called a fuel) and oxidant (often, but not necessarily, molecular oxygen) react vigorously and produce significant amounts of heat, and often light, in the form of a flame. Solid rocket-fuel reactions such as the one depicted in Figure 4.1 are combustion processes. A typical propellant reaction in which solid aluminum is oxidized by ammonium perchlorate is represented by this equation:
+
+10Al(s)+6NH4ClO4(s)⟶4Al2O3(s)+2AlCl3(s)+12H2O(g)+3N2(g)
+
+Link to Learning
+
+Watch a brief video showing the test firing of a small-scale, prototype, hybrid rocket engine planned for use in the new Space Launch System being developed by NASA. The first engines firing at 3 s (green flame) use a liquid fuel/oxidant mixture, and the second, more powerful engines firing at 4 s (yellow flame) use a solid mixture.
+
+Single-displacement (replacement) reactions are redox reactions in which an ion in solution is displaced (or replaced) via the oxidation of a metallic element. One common example of this type of reaction is the acid oxidation of certain metals:
+
+Zn(s)+2HCl(aq)⟶ZnCl2(aq)+H2(g)
+
+Metallic elements may also be oxidized by solutions of other metal salts; for example:
+
+Cu(s)+2AgNO3(aq)⟶Cu(NO3)2(aq)+2Ag(s)
+
+This reaction may be observed by placing copper wire in a solution containing a dissolved silver salt. Silver ions in solution are reduced to elemental silver at the surface of the copper wire, and the resulting Cu2+ ions dissolve in the solution to yield a characteristic blue color (Figure 4.9).
+
+Figure
+4.9
+
+(a) A copper wire is shown next to a solution containing silver(I) ions. (b) Displacement of dissolved silver ions by copper ions results in (c) accumulation of gray-colored silver metal on the wire and development of a blue color in the solution, due to dissolved copper ions. (credit: modification of work by Mark Ott)
+
+Example
+4.6
+
+Describing Redox Reactions
+
+Identify which equations represent redox reactions, providing a name for the reaction if appropriate. For those reactions identified as redox, name the oxidant and reductant.
+
+(a) ZnCO3(s)⟶ZnO(s)+CO2(g)
+
+(b) 2Ga(l)+3Br2(l)⟶2GaBr3(s)
+
+(c) 2H2O2(aq)⟶2H2O(l)+O2(g)
+
+(d) BaCl2(aq)+K2SO4(aq)⟶BaSO4(s)+2KCl(aq)
+
+(e) C2H4(g)+3O2(g)⟶2CO2(g)+2H2O(l)
+
+Solution
+
+Redox reactions are identified per definition if one or more elements undergo a change in oxidation number.
+
+(a) This is not a redox reaction, since oxidation numbers remain unchanged for all elements.
+
+(b) This is a redox reaction. Gallium is oxidized, its oxidation number increasing from 0 in Ga(l) to +3 in GaBr3(s). The reducing agent is Ga(l). Bromine is reduced, its oxidation number decreasing from 0 in Br2(l) to −1 in GaBr3(s). The oxidizing agent is Br2(l).
+
+(c) This is a redox reaction. It is a particularly interesting process, as it involves the same element, oxygen, undergoing both oxidation and reduction (a so-called disproportionation reaction). Oxygen is oxidized, its oxidation number increasing from −1 in H2O2(aq) to 0 in O2(g). Oxygen is also reduced, its oxidation number decreasing from −1 in H2O2(aq) to −2 in H2O(l). For disproportionation reactions, the same substance functions as an oxidant and a reductant.
+
+(d) This is not a redox reaction, since oxidation numbers remain unchanged for all elements.
+
+(e) This is a redox reaction (combustion). Carbon is oxidized, its oxidation number increasing from −2 in C2H4(g) to +4 in CO2(g). The reducing agent (fuel) is C2H4(g). Oxygen is reduced, its oxidation number decreasing from 0 in O2(g) to −2 in H2O(l). The oxidizing agent is O2(g).
+
+Check Your Learning
+
+This equation describes the production of tin(II) chloride:
+
+Sn(s)+2HCl(g)⟶SnCl2(s)+H2(g)
+
+Is this a redox reaction? If so, provide a more specific name for the reaction if appropriate, and identify the oxidant and reductant.
+
+Answer:
+
+Yes, a single-replacement reaction. Sn(s)<!-- no-selfclose -->is the reductant, HCl(g) is the oxidant.
+
+Balancing Redox Reactions via the Half-Reaction Method
+
+Redox reactions that take place in aqueous media often involve water, hydronium ions, and hydroxide ions as reactants or products. Although these species are not oxidized or reduced, they do participate in chemical change in other ways (e.g., by providing the elements required to form oxyanions). Equations representing these reactions are sometimes very difficult to balance by inspection, so systematic approaches have been developed to assist in the process. One very useful approach is to use the method of half-reactions, which involves the following steps:
+
+1. Write the two half-reactions representing the redox process.
+
+2. Balance all elements except oxygen and hydrogen.
+
+3. Balance oxygen atoms by adding H2O molecules.
+
+4. Balance hydrogen atoms by adding H+ ions.
+
+5. Balance charge by adding electrons.
+
+6. If necessary, multiply each half-reaction’s coefficients by the smallest possible integers to yield equal numbers of electrons in each.
+
+7. Add the balanced half-reactions together and simplify by removing species that appear on both sides of the equation.
+
+8. For reactions occurring in basic media (excess hydroxide ions), carry out these additional steps:
+
+Add OH− ions to both sides of the equation in numbers equal to the number of H+ ions.
+
+On the side of the equation containing both H+ and OH− ions, combine these ions to yield water molecules.
+
+Simplify the equation by removing any redundant water molecules.
+
+9. Finally, check to see that both the number of atoms and the total charges1 are balanced.
+
+Example
+4.7
+
+Balancing Redox Reactions in Acidic Solution
+
+Write a balanced equation for the reaction between dichromate ion and iron(II) to yield iron(III) and chromium(III) in acidic solution.
+
+Cr2O72−+Fe2+⟶Cr3++Fe3+
+
+Solution
+
+Step 1.
+
+Write the two half-reactions.
+
+Each half-reaction will contain one reactant and one product with one element in common.
+
+Fe2+⟶Fe3+
+
+Cr2O72−⟶Cr3+
+
+Step 2.
+
+Balance all elements except oxygen and hydrogen. The iron half-reaction is already balanced, but the chromium half-reaction shows two Cr atoms on the left and one Cr atom on the right. Changing the coefficient on the right side of the equation to 2 achieves balance with regard to Cr atoms.
+
+Fe2+⟶Fe3+
+
+Cr2O72−⟶2Cr3+
+
+Step 3.
+
+Balance oxygen atoms by adding H2O molecules. The iron half-reaction does not contain O atoms. The chromium half-reaction shows seven O atoms on the left and none on the right, so seven water molecules are added to the right side.
+
+Fe2+⟶Fe3+Cr2O72−⟶2Cr3++7H2O
+
+Step 4.
+
+Balance hydrogen atoms by adding H+ions. The iron half-reaction does not contain H atoms. The chromium half-reaction shows 14 H atoms on the right and none on the left, so 14 hydrogen ions are added to the left side.
+
+Fe2+⟶Fe3+
+
+Cr2O72−+14H+⟶2Cr3++7H2O
+
+Step 5.
+
+Balance charge by adding electrons. The iron half-reaction shows a total charge of 2+ on the left side (1 Fe2+ ion) and 3+ on the right side (1 Fe3+ ion). Adding one electron to the right side brings that side’s total charge to (3+) + (1−) = 2+, and charge balance is achieved.
+
+The chromium half-reaction shows a total charge of (1 × 2−) + (14 × 1+) = 12+ on the left side (1 Cr2O72− ion and 14 H+ ions). The total charge on the right side is (2 × 3+) = 6 + (2 Cr3+ ions). Adding six electrons to the left side will bring that side’s total charge to (12+ + 6−) = 6+, and charge balance is achieved.
+
+Fe2+⟶Fe3++e−
+
+Cr2O72−+14H++6e−⟶2Cr3++7H2O
+
+Step 6.
+
+Multiply the two half-reactions so the number of electrons in one reaction equals the number of electrons in the other reaction. To be consistent with mass conservation, and the idea that redox reactions involve the transfer (not creation or destruction) of electrons, the iron half-reaction’s coefficient must be multiplied by 6.
+
+6Fe2+⟶6Fe3++6e−
+
+Cr2O72−+6e−+14H+⟶2Cr3++7H2O
+
+Step 7.
+
+Add the balanced half-reactions and cancel species that appear on both sides of the equation.
+
+6Fe2++Cr2O72−+6e−+14H+⟶6Fe3++6e−+2Cr3++7H2O
+
+Only the six electrons are redundant species. Removing them from each side of the equation yields the simplified, balanced equation here:
+
+6Fe2++Cr2O72−+14H+⟶6Fe3++2Cr3++7H2O
+
+A final check of atom and charge balance confirms the equation is balanced.
+
+Reactants
+Products
+
+Fe
+6
+6
+
+Cr
+2
+2
+
+O
+7
+7
+
+H
+14
+14
+
+charge
+24+
+24+
+
+Check Your Learning
+
+In basic solution, molecular chlorine, Cl2, reacts with hydroxide ions, OH−, to yield chloride ions, Cl−. and chlorate ions, ClO3−. HINT: This is a disproportionation reaction in which the element chlorine is both oxidized and reduced. Write a balanced equation for this reaction.
+
+Answer:
+
+3Cl2(aq)+6OH−(aq)⟶5Cl−(aq)+ClO3−(aq)+3H2O(l)
+
+4.3
+
+Reaction Stoichiometry
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Explain the concept of stoichiometry as it pertains to chemical reactions
+
+Use balanced chemical equations to derive stoichiometric factors relating amounts of reactants and products
+
+Perform stoichiometric calculations involving mass, moles, and solution molarity
+
+A balanced chemical equation provides a great deal of information in a very succinct format. Chemical formulas provide the identities of the reactants and products involved in the chemical change, allowing classification of the reaction. Coefficients provide the relative numbers of these chemical species, allowing a quantitative assessment of the relationships between the amounts of substances consumed and produced by the reaction. These quantitative relationships are known as the reaction’s stoichiometry, a term derived from the Greek words stoicheion (meaning “element”) and metron (meaning “measure”). In this module, the use of balanced chemical equations for various stoichiometric applications is explored.
+
+The general approach to using stoichiometric relationships is similar in concept to the way people go about many common activities. Food preparation, for example, offers an appropriate comparison. A recipe for making eight pancakes calls for 1 cup pancake mix, 34 cup milk, and one egg. The “equation” representing the preparation of pancakes per this recipe is
+
+1cup mix+34cup milk+1egg⟶8pancakes
+
+If two dozen pancakes are needed for a big family breakfast, the ingredient amounts must be increased proportionally according to the amounts given in the recipe. For example, the number of eggs required to make 24 pancakes is
+
+24pancakes×1egg8pancakes=3eggs
+
+Balanced chemical equations are used in much the same fashion to determine the amount of one reactant required to react with a given amount of another reactant, or to yield a given amount of product, and so forth. The coefficients in the balanced equation are used to derive stoichiometric factors that permit computation of the desired quantity. To illustrate this idea, consider the production of ammonia by reaction of hydrogen and nitrogen:
+
+N2(g)+3H2(g)⟶2NH3(g)
+
+This equation shows ammonia molecules are produced from hydrogen molecules in a 2:3 ratio, and stoichiometric factors may be derived using any amount (number) unit:
+
+2NH3molecules3H2moleculesor2 dozNH3molecules3 dozH2moleculesor2 molNH3molecules3 molH2molecules
+
+These stoichiometric factors can be used to compute the number of ammonia molecules produced from a given number of hydrogen molecules, or the number of hydrogen molecules required to produce a given number of ammonia molecules. Similar factors may be derived for any pair of substances in any chemical equation.
+
+Example
+4.8
+
+Moles of Reactant Required in a Reaction
+
+How many moles of I2 are required to react with 0.429 mol of Al according to the following equation (see Figure 4.10)?
+
+2Al+3I2⟶2AlI3
+
+Figure
+4.10
+
+Aluminum and iodine react to produce aluminum iodide. The heat of the reaction vaporizes some of the solid iodine as a purple vapor. (credit: modification of work by Mark Ott)
+
+Solution
+
+Referring to the balanced chemical equation, the stoichiometric factor relating the two substances of interest is 3 molI22 mol Al. The molar amount of iodine is derived by multiplying the provided molar amount of aluminum by this factor:
+
+mol I2=0.429mol Al×3 molI22mol Al=0.644 molI2
+
+Check Your Learning
+
+How many moles of Ca(OH)2 are required to react with 1.36 mol of H3PO4 to produce Ca3(PO4)2 according to the equation 3Ca(OH)2+2H3PO4⟶Ca3(PO4)2+6H2O?
+
+Answer:
+
+2.04 mol
+
+Example
+4.9
+
+Number of Product Molecules Generated by a Reaction
+
+How many carbon dioxide molecules are produced when 0.75 mol of propane is combusted according to this equation?
+
+C3H8+5O2⟶3CO2+4H2O
+
+Solution
+
+The approach here is the same as for Example 4.8, though the absolute number of molecules is requested, not the number of moles of molecules. This will simply require use of the moles-to-numbers conversion factor, Avogadro’s number.
+
+The balanced equation shows that carbon dioxide is produced from propane in a 3:1 ratio:
+
+3 molCO21 molC3H8
+
+Using this stoichiometric factor, the provided molar amount of propane, and Avogadro’s number,
+
+0.75molC3H8×3molCO21molC3H8×6.022×1023CO2moleculesmolCO2=1.4×1024CO2molecules
+
+Check Your Learning
+
+How many NH3 molecules are produced by the reaction of 4.0 mol of Ca(OH)2 according to the following equation:
+
+(NH4)2SO4+Ca(OH)2⟶2NH3+CaSO4+2H2O
+
+Answer:
+
+4.8 × 1024 NH3 molecules
+
+These examples illustrate the ease with which the amounts of substances involved in a chemical reaction of known stoichiometry may be related. Directly measuring numbers of atoms and molecules is, however, not an easy task, and the practical application of stoichiometry requires that we use the more readily measured property of mass.
+
+Example
+4.10
+
+Relating Masses of Reactants and Products
+
+What mass of sodium hydroxide, NaOH, would be required to produce 16 g of the antacid milk of magnesia [magnesium hydroxide, Mg(OH)2] by the following reaction?
+
+MgCl2(aq)+2NaOH(aq)⟶Mg(OH)2(s)+2NaCl(aq)
+
+Solution
+
+The approach used previously in Example 4.8 and Example 4.9 is likewise used here; that is, we must derive an appropriate stoichiometric factor from the balanced chemical equation and use it to relate the amounts of the two substances of interest. In this case, however, masses (not molar amounts) are provided and requested, so additional steps of the sort learned in the previous chapter are required. The calculations required are outlined in this flowchart:
+
+16g Mg(OH)2×1mol Mg(OH)258.3g Mg(OH)2×2mol NaOH1mol Mg(OH)2×40.0 g NaOHmol NaOH=22 g NaOH
+
+Check Your Learning
+
+What mass of gallium oxide, Ga2O3, can be prepared from 29.0 g of gallium metal? The equation for the reaction is 4Ga+3O2⟶2Ga2O3.
+
+Answer:
+
+39.0 g
+
+Example
+4.11
+
+Relating Masses of Reactants
+
+What mass of oxygen gas, O2, from the air is consumed in the combustion of 702 g of octane, C8H18, one of the principal components of gasoline?
+
+2C8H18+25O2⟶16CO2+18H2O
+
+Solution
+
+The approach required here is the same as for the Example 4.10, differing only in that the provided and requested masses are both for reactant species.
+
+702gC8H18×1molC8H18114.23gC8H18×25molO22molC8H18×32.00 gO2molO2=2.46×103gO2
+
+Check Your Learning
+
+What mass of CO is required to react with 25.13 g of Fe2O3 according to the equation Fe2O3+3CO⟶2Fe+3CO2?
+
+Answer:
+
+13.22 g
+
+These examples illustrate just a few instances of reaction stoichiometry calculations. Numerous variations on the beginning and ending computational steps are possible depending upon what particular quantities are provided and sought (volumes, solution concentrations, and so forth). Regardless of the details, all these calculations share a common essential component: the use of stoichiometric factors derived from balanced chemical equations. Figure 4.11 provides a general outline of the various computational steps associated with many reaction stoichiometry calculations.
+
+Figure
+4.11
+
+The flowchart depicts the various computational steps involved in most reaction stoichiometry calculations.
+
+Chemistry in Everyday Life
+
+Airbags
+
+Airbags (Figure 4.12) are a safety feature provided in most automobiles since the 1990s. The effective operation of an airbag requires that it be rapidly inflated with an appropriate amount (volume) of gas when the vehicle is involved in a collision. This requirement is satisfied in many automotive airbag systems through use of explosive chemical reactions, one common choice being the decomposition of sodium azide, NaN3. When sensors in the vehicle detect a collision, an electrical current is passed through a carefully measured amount of NaN3 to initiate its decomposition:
+
+2NaN3(s)⟶3N2(g)+2Na(s)
+
+This reaction is very rapid, generating gaseous nitrogen that can deploy and fully inflate a typical airbag in a fraction of a second (~0.03–0.1 s). Among many engineering considerations, the amount of sodium azide used must be appropriate for generating enough nitrogen gas to fully inflate the air bag and ensure its proper function. For example, a small mass (~100 g) of NaN3 will generate approximately 50 L of N2.
+
+Figure
+4.12
+
+Airbags deploy upon impact to minimize serious injuries to passengers. (credit: Jon Seidman)
+
+4.4
+
+Reaction Yields
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Explain the concepts of theoretical yield and limiting reactants/reagents.
+
+Derive the theoretical yield for a reaction under specified conditions.
+
+Calculate the percent yield for a reaction.
+
+The relative amounts of reactants and products represented in a balanced chemical equation are often referred to as stoichiometric amounts. All the exercises of the preceding module involved stoichiometric amounts of reactants. For example, when calculating the amount of product generated from a given amount of reactant, it was assumed that any other reactants required were available in stoichiometric amounts (or greater). In this module, more realistic situations are considered, in which reactants are not present in stoichiometric amounts.
+
+Limiting Reactant
+
+Consider another food analogy, making grilled cheese sandwiches (Figure 4.13):
+
+1 slice of cheese+2 slices of bread⟶1 sandwich
+
+Stoichiometric amounts of sandwich ingredients for this recipe are bread and cheese slices in a 2:1 ratio. Provided with 28 slices of bread and 11 slices of cheese, one may prepare 11 sandwiches per the provided recipe, using all the provided cheese and having six slices of bread left over. In this scenario, the number of sandwiches prepared has been limited by the number of cheese slices, and the bread slices have been provided in excess.
+
+Figure
+4.13
+
+Sandwich making can illustrate the concepts of limiting and excess reactants.
+
+Consider this concept now with regard to a chemical process, the reaction of hydrogen with chlorine to yield hydrogen chloride:
+
+H2(g)+Cl2(g)⟶2HCl(g)
+
+The balanced equation shows the hydrogen and chlorine react in a 1:1 stoichiometric ratio. If these reactants are provided in any other amounts, one of the reactants will nearly always be entirely consumed, thus limiting the amount of product that may be generated. This substance is the limiting reactant, and the other substance is the excess reactant. Identifying the limiting and excess reactants for a given situation requires computing the molar amounts of each reactant provided and comparing them to the stoichiometric amounts represented in the balanced chemical equation. For example, imagine combining 3 moles of H2 and 2 moles of Cl2. This represents a 3:2 (or 1.5:1) ratio of hydrogen to chlorine present for reaction, which is greater than the stoichiometric ratio of 1:1. Hydrogen, therefore, is present in excess, and chlorine is the limiting reactant. Reaction of all the provided chlorine (2 mol) will consume 2 mol of the 3 mol of hydrogen provided, leaving 1 mol of hydrogen unreacted.
+
+An alternative approach to identifying the limiting reactant involves comparing the amount of product expected for the complete reaction of each reactant. Each reactant amount is used to separately calculate the amount of product that would be formed per the reaction’s stoichiometry. The reactant yielding the lesser amount of product is the limiting reactant. For the example in the previous paragraph, complete reaction of the hydrogen would yield
+
+mol HCl produced=3 molH2×2 mol HCl1 molH2=6 mol HCl
+
+Complete reaction of the provided chlorine would produce
+
+mol HCl produced=2 molCl2×2 mol HCl1 molCl2=4 mol HCl
+
+The chlorine will be completely consumed once 4 moles of HCl have been produced. Since enough hydrogen was provided to yield 6 moles of HCl, there will be unreacted hydrogen remaining once this reaction is complete. Chlorine, therefore, is the limiting reactant and hydrogen is the excess reactant (Figure 4.14).
+
+Figure
+4.14
+
+When H2 and Cl2 are combined in nonstoichiometric amounts, one of these reactants will limit the amount of HCl that can be produced. This illustration shows a reaction in which hydrogen is present in excess and chlorine is the limiting reactant.
+
+Link to Learning
+
+View this interactive simulation illustrating the concepts of limiting and excess reactants.
+
+Example
+4.12
+
+Identifying the Limiting Reactant
+
+Silicon nitride is a very hard, high-temperature-resistant ceramic used as a component of turbine blades in jet engines. It is prepared according to the following equation:
+
+3Si(s)+2N2(g)⟶Si3N4(s)
+
+Which is the limiting reactant when 2.00 g of Si and 1.50 g of N2 react?
+
+Solution
+
+Compute the provided molar amounts of reactants, and then compare these amounts to the balanced equation to identify the limiting reactant.
+
+mol Si=2.00g Si×1 mol Si28.09g Si=0.0712 mol Si
+
+molN2=1.50gN2×1 molN228.02gN2=0.0535 molN2
+
+The provided Si:N2 molar ratio is:
+
+0.0712 mol Si0.0535 molN2=1.33 mol Si1 molN2
+
+The stoichiometric Si:N2 ratio is:
+
+3 mol Si2 molN2=1.5 mol Si1 molN2
+
+Comparing these ratios shows that Si is provided in a less-than-stoichiometric amount, and so is the limiting reactant.
+
+Alternatively, compute the amount of product expected for complete reaction of each of the provided reactants. The 0.0712 moles of silicon would yield
+
+molSi3N4produced=0.0712 mol Si×1molSi3N43 mol Si=0.0237 molSi3N4
+
+while the 0.0535 moles of nitrogen would produce
+
+molSi3N4produced=0.0535 molN2×1 molSi3N42 molN2=0.0268 molSi3N4
+
+Since silicon yields the lesser amount of product, it is the limiting reactant.
+
+Check Your Learning
+
+Which is the limiting reactant when 5.00 g of H2 and 10.0 g of O2 react and form water?
+
+Answer:
+
+O2
+
+Percent Yield
+
+The amount of product that may be produced by a reaction under specified conditions, as calculated per the stoichiometry of an appropriate balanced chemical equation, is called the theoretical yield of the reaction. In practice, the amount of product obtained is called the actual yield, and it is often less than the theoretical yield for a number of reasons. Some reactions are inherently inefficient, being accompanied by side reactions that generate other products. Others are, by nature, incomplete (consider the partial reactions of weak acids and bases discussed earlier in this chapter). Some products are difficult to collect without some loss, and so less than perfect recovery will reduce the actual yield. The extent to which a reaction’s theoretical yield is achieved is commonly expressed as its percent yield:
+
+percent yield=actual yieldtheoretical yield×100%
+
+Actual and theoretical yields may be expressed as masses or molar amounts (or any other appropriate property; e.g., volume, if the product is a gas). As long as both yields are expressed using the same units, these units will cancel when percent yield is calculated.
+
+Example
+4.13
+
+Calculation of Percent Yield
+
+Upon reaction of 1.274 g of copper sulfate with excess zinc metal, 0.392 g copper metal was obtained according to the equation:
+
+CuSO4(aq)+Zn(s)⟶Cu(s)+ZnSO4(aq)
+
+What is the percent yield?
+
+Solution
+
+The provided information identifies copper sulfate as the limiting reactant, and so the theoretical yield is found by the approach illustrated in the previous module, as shown here:
+
+1.274gCuSO4×1molCuSO4159.62gCuSO4×1mol Cu1molCuSO4×63.55g Cu1mol Cu=0.5072 g Cu
+
+Using this theoretical yield and the provided value for actual yield, the percent yield is calculated to be
+
+percent yield=(actual yieldtheoretical yield)×100%
+
+percent yield=(0.392 g Cu0.5072 g Cu)×100=77.3%
+
+Check Your Learning
+What is the percent yield of a reaction that produces 12.5 g of the gas Freon CF2Cl2 from 32.9 g of CCl4 and excess HF?
+CCl4+2HF⟶CF2Cl2+2HCl
+
+Answer:
+
+48.3%
+
+How Sciences Interconnect
+
+Green Chemistry and Atom Economy
+
+The purposeful design of chemical products and processes that minimize the use of environmentally hazardous substances and the generation of waste is known as green chemistry. Green chemistry is a philosophical approach that is being applied to many areas of science and technology, and its practice is summarized by guidelines known as the “Twelve Principles of Green Chemistry” (see details at this website). One of the 12 principles is aimed specifically at maximizing the efficiency of processes for synthesizing chemical products. The atom economy of a process is a measure of this efficiency, defined as the percentage by mass of the final product of a synthesis relative to the masses of all the reactants used:
+
+atom economy=mass of productmass of reactants×100%
+
+Though the definition of atom economy at first glance appears very similar to that for percent yield, be aware that this property represents a difference in the theoretical efficiencies of different chemical processes. The percent yield of a given chemical process, on the other hand, evaluates the efficiency of a process by comparing the yield of product actually obtained to the maximum yield predicted by stoichiometry.
+
+The synthesis of the common nonprescription pain medication, ibuprofen, nicely illustrates the success of a green chemistry approach (Figure 4.15). First marketed in the early 1960s, ibuprofen was produced using a six-step synthesis that required 514 g of reactants to generate each mole (206 g) of ibuprofen, an atom economy of 40%. In the 1990s, an alternative process was developed by the BHC Company (now BASF Corporation) that requires only three steps and has an atom economy of ~80%, nearly twice that of the original process. The BHC process generates significantly less chemical waste; uses less-hazardous and recyclable materials; and provides significant cost-savings to the manufacturer (and, subsequently, the consumer). In recognition of the positive environmental impact of the BHC process, the company received the Environmental Protection Agency’s Greener Synthetic Pathways Award in 1997.
+
+Figure
+4.15
+
+(a) Ibuprofen is a popular nonprescription pain medication commonly sold as 200 mg tablets. (b) The BHC process for synthesizing ibuprofen requires only three steps and exhibits an impressive atom economy. (credit a: modification of work by Derrick Coetzee)

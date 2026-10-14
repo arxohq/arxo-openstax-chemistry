@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:h2o",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-acids#amphiprotic"
+  },
+  "queryId": "urn:openstax:clir:chemistry-acids#test/urn%3Aquery%3Aopenstax-chem-acids-22-book-water-acceptance-disputed-neither/query/0"
+}

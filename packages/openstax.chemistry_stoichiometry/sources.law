@@ -1,0 +1,110 @@
+// ПОРОЖДЕНО corpus/tools/sources/sync/sync_openstax_stoichiometry_fragments.py
+// из закреплённых байтов sources/chemistry-2e/en.txt —
+// руками не правится (инвариант 2 CLAUDE.md); сверка без записи — `--check`.
+//
+// ЛИЦЕНЗИЯ ОГРАНИЧИТЕЛЬНАЯ, И ЭТО НАЗВАНО ЗДЕСЬ. Chemistry 2e — CC BY-NC-SA
+// 4.0: некоммерческое использование и share-alike, не CC BY. Тот же учебник
+// и та же пометка, что у `openstax/chemistry-acids`.
+//
+// ЧТО ЗАКРЕПЛЕНО. Семь разделов (3.1–3.4, 4.2–4.4) одним файлом; фрагментами
+// вырезаны шесть абзацев, несущих УЧЕБНОЕ ОСНОВАНИЕ того, что корпус уже
+// исполняет: моль как единица количества, число Авогадро, молярная масса,
+// стехиометрический множитель, выход в процентах и выбор единицы выхода.
+
+language "law.core" version "0.2";
+package openstax.chemistry_stoichiometry version "0.1.0";
+namespace "urn:openstax:clir:chemistry-stoichiometry";
+
+source OPENSTAX_CHEMISTRY_2E {
+    // `treatise` — учебник, не акт. Юрисдикция `none`: у
+    // естественнонаучного изложения правопорядка нет.
+    kind treatise;
+    jurisdiction "none";
+    number "OpenStax Chemistry 2e (2019), chapters 3 and 4";
+    label en official "Chemistry 2e";
+}
+
+edition OS_CHEM2E_EN of OPENSTAX_CHEMISTRY_2E {
+    label en official "OpenStax Chemistry 2e, English edition (CC BY-NC-SA 4.0)";
+    language en;
+    officiality official;
+    adopted @2019-02-14;
+    in_force [@2019-02-14, infinity);
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+// --- Публикация: семь разделов одним закрепляемым файлом ----------------
+//
+// §194 сверяет фрагмент с байтами ОДНОЙ публикации редакции, поэтому
+// разделы склеены в один файл в порядке книги. Собственные адреса
+// разделов (slug страницы, uuid раздела, отдельный хэш) не теряются:
+// они лежат рядом в `sources/chemistry-2e/manifest.json`.
+//
+// Разделы и их uuid: 3.1 daaceb82-341e-496e-a8b9-acd8fa32d9f7, 3.2 a4d0d6e1-b161-4cfd-ab54-23632839d0df, 3.3 3ca3a877-a8ba-42f7-a101-7035c0f5daed, 3.4 4fee0e14-2169-4e3b-bb15-def8b056b1a0, 4.2 24424d00-3cc4-445d-a830-ad38abcea953, 4.3 23c22d4a-5468-45b5-a3ee-616ae2549e96, 4.4 3da1a637-2826-47bf-8b06-e32ffbdfd60a
+publication OS_CHEM2E_TEXT of OS_CHEM2E_EN {
+    media_type "text/plain; charset=utf-8";
+    uri "https://openstax.org/books/chemistry-2e/pages/";
+    retrieved_at @2026-09-12T06:20:00Z;
+    content_hash "sha256:e4125fef2db048a52760768809c962973c5d759f75e55050d9f20782e6a01213";
+    local_path "sources/chemistry-2e/en.txt";
+}
+
+// --- Фрагменты ----------------------------------------------------------
+//
+// Все `pub` (§24): на них ставит якоря задачник `chem/zadachnik`.
+
+// 3.1: моль — единица КОЛИЧЕСТВА, как пара или дюжина; мера числа частиц
+pub fragment OS_3_1_MOLE in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "3.1/mole";
+    label ru unofficial "3.1: моль — единица КОЛИЧЕСТВА, как пара или дюжина; мера числа частиц";
+    text en official """The mole is an amount unit similar to familiar units like pair, dozen, gross, etc. It provides a specific measure of the number of atoms or molecules in a sample of matter. One Latin connotation for the word “mole” is “large mass” or “bulk,” which is consistent with its use as the name for this unit. The mole provides a link between an easily measured macroscopic property, bulk mass, and an extremely important fundamental property, number of atoms, molecules, and so forth.""";
+    content_hash "sha256:8b8581efd90e6c4d705136c290a64b38666a7a00d425685218d4e4011db9d905";
+}
+
+// 3.1: в моле 6.02214076 × 10²³ частиц — число Авогадро как определение
+pub fragment OS_3_1_AVOGADRO in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "3.1/avogadro";
+    label ru unofficial "3.1: в моле 6.02214076 × 10²³ частиц — число Авогадро как определение";
+    text en official """A mole of substance is that amount in which there are 6.02214076 × 1023 discrete entities (atoms or molecules). This large number is a fundamental constant known as Avogadro’s number (NA) or the Avogadro constant in honor of Italian scientist Amedeo Avogadro. This constant is properly reported with an explicit unit of “per mole,” a conveniently rounded version being 6.022 × 1023/mol.""";
+    content_hash "sha256:7a66aeeea53142d529b733f59737381c791ff071eb25ae60aec2e59e876d7be5";
+}
+
+// 3.1: молярная масса — масса моля; численно равна атомному весу в г/моль
+pub fragment OS_3_1_MOLAR_MASS in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "3.1/molar-mass";
+    label ru unofficial "3.1: молярная масса — масса моля; численно равна атомному весу в г/моль";
+    text en official """Consistent with its definition as an amount unit, 1 mole of any element contains the same number of atoms as 1 mole of any other element. The masses of 1 mole of different elements, however, are different, since the masses of the individual atoms are drastically different. The molar mass of an element (or compound) is the mass in grams of 1 mole of that substance, a property expressed in units of grams per mole (g/mol) (see Figure 3.5).""";
+    content_hash "sha256:1388313cc207716797f76d9a4dfa0020e205e486a54920ad92f5e01932a2c25c";
+}
+
+// 4.3: стехиометрический множитель — отношение коэффициентов уравнения
+pub fragment OS_4_3_STOICHIOMETRIC_FACTOR in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "4.3/stoichiometric-factor";
+    label ru unofficial "4.3: стехиометрический множитель — отношение коэффициентов уравнения";
+    text en official """Referring to the balanced chemical equation, the stoichiometric factor relating the two substances of interest is 3 molI22 mol Al. The molar amount of iodine is derived by multiplying the provided molar amount of aluminum by this factor:""";
+    content_hash "sha256:e07f7f1cb5522e71bca508e07bfd0880eb38ad4fafb2066138d28fe58582446a";
+}
+
+// 4.4: теоретический выход и выход в процентах — определение и формула
+pub fragment OS_4_4_PERCENT_YIELD in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "4.4/percent-yield";
+    label ru unofficial "4.4: теоретический выход и выход в процентах — определение и формула";
+    text en official """The amount of product that may be produced by a reaction under specified conditions, as calculated per the stoichiometry of an appropriate balanced chemical equation, is called the theoretical yield of the reaction. In practice, the amount of product obtained is called the actual yield, and it is often less than the theoretical yield for a number of reasons. Some reactions are inherently inefficient, being accompanied by side reactions that generate other products. Others are, by nature, incomplete (consider the partial reactions of weak acids and bases discussed earlier in this chapter). Some products are difficult to collect without some loss, and so less than perfect recovery will reduce the actual yield. The extent to which a reaction’s theoretical yield is achieved is commonly expressed as its percent yield:
+
+percent yield=actual yieldtheoretical yield×100%""";
+    content_hash "sha256:321f9682617be238adf835b822bdbe4876604a55bf02b742a1588e3d0c3499ed";
+}
+
+// 4.4: выходы выражаются массами ЛИБО количествами вещества — единица ответа выбирается, а не подразумевается
+pub fragment OS_4_4_YIELD_UNITS in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "4.4/yield-units";
+    label ru unofficial "4.4: выходы выражаются массами ЛИБО количествами вещества — единица ответа выбирается, а не подразумевается";
+    text en official """Actual and theoretical yields may be expressed as masses or molar amounts (or any other appropriate property; e.g., volume, if the product is a gas). As long as both yields are expressed using the same units, these units will cancel when percent yield is calculated.""";
+    content_hash "sha256:2adb4b0816a6cf0676c04b02b05ecffd668c29155e2ab5e7ff3d52ccc2539a6c";
+}

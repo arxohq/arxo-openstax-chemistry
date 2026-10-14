@@ -1,0 +1,90 @@
+// Source model: pinned bytes of one OpenStax section (Chemistry 2e, section 6.4)
+// and the fragments cited by this package's matrix.
+//
+// GENERATED FILE. Written only by /tmp/gen_slice_g_sources.py from the pinned
+// extraction `sources/chemistry-atomic/<section>.txt` (see manifest.json beside it); the
+// fragment texts below are exact line spans of those bytes, so they cannot
+// drift from the pinned publication. Re-running the generator on the same
+// input bytes yields identical output.
+//
+// LICENSE OF THE SOURCE — CC BY-NC-SA 4.0. This OpenStax book is published
+// under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+// International (authoritative `license_name` from the OpenStax CMS book API,
+// `https://openstax.org/apps/cms/api/books/<book>/`, verified 2026-09-28).
+// It has TWO restrictions beyond CC BY: noncommercial use and share-alike.
+// Pinning bytes with attribution is permitted by the license; the restriction
+// is named here and in the package `[metadata]` — DECISION-0196 §2, the
+// physics precedent of 06.09.2026.
+//
+// PROVENANCE. Bytes are a deterministic extraction of the section HTML page
+// container `<div data-type="page" ... data-book-content="true">` (stable
+// `id="page_<uuid>"`), with the fetch_openstax_acid_base_text.py algorithm
+// (script, style, MathML annotation duplicates stripped; in-formula text
+// nodes glued). The LIVE page hash is unstable by construction (site
+// rebuilds), so the pinned hash is over the EXTRACTED section text —
+// `content_hash` of the publication below. `retrieved_at` is a constant, not
+// a build moment (DECISION-0005 §6).
+//
+// EXTRACTION ARTIFACTS. Formulas arrive as MathML markup, not characters:
+// sub/superscripts are indistinguishable (`NH4+` vs `NH₄⁺`), and in-formula
+// fractions glue without separators (`a1−rfor|r|<1`). §13 forbids editing
+// official text-block contents, so bytes are pinned as-is.
+//
+// CITATION UNIT — SECTION FRAGMENT. Locator `section/<n>#<anchor>`; the exact
+// pinned line span is recorded in the comment above each fragment.
+
+language "law.core" version "0.2";
+package openstax.chemistry_atomic version "0.1.0";
+namespace "urn:openstax:clir:chemistry-atomic";
+
+source OPENSTAX_CHEMISTRY_ATOMIC {
+    kind treatise;
+    jurisdiction "none";
+    number "OpenStax Chemistry 2e, section 6.4";
+    label en official "Electronic Structure of Atoms (Electron Configurations)";
+}
+
+edition OPENSTAX_CHEMISTRY_ATOMIC_SEC of OPENSTAX_CHEMISTRY_ATOMIC {
+    label en official "section 6.4 extraction (6-4-electronic-structure-of-atoms-electron-configurations)";
+    label ru unofficial "Извлечение раздела 6.4 (6-4-electronic-structure-of-atoms-electron-configurations)";
+    language en;
+    officiality official;
+    adopted @2026-09-28;
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+publication OPENSTAX_CHEMISTRY_ATOMIC_TXT of OPENSTAX_CHEMISTRY_ATOMIC_SEC {
+    media_type "text/plain; charset=utf-8";
+    uri "https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations";
+    retrieved_at @2026-09-28T00:00:00Z;
+    content_hash "sha256:9d4ce351cf4417298a6afcd23f38ddf65af500be1b929773d325c250f2dc8945";
+    local_path "sources/chemistry-atomic/6.4.txt";
+}
+
+// Electronic Structure of Atoms (Electron Configurations) — pinned chemistry-atomic/6.4.txt lines 15-15
+fragment F_CONFIG_DEF in OPENSTAX_CHEMISTRY_ATOMIC_SEC {
+    kind defn;
+    locator "section/6.4#electron-configuration";
+    text en official """Having introduced the basics of atomic structure and quantum mechanics, we can use our understanding of quantum numbers to determine how atomic orbitals relate to one another. This allows us to determine which orbitals are occupied by electrons in each atom. The specific arrangement of electrons in orbitals of an atom determines many of the chemical properties of that atom.""";
+    content_hash "sha256:373287c5a097c3814f813639b22d23d610eacb66f652e29c333f4356f15e3e77";
+}
+
+// Electronic Structure of Atoms (Electron Configurations) — pinned chemistry-atomic/6.4.txt lines 43-45
+fragment F_AUFBAU in OPENSTAX_CHEMISTRY_ATOMIC_SEC {
+    kind paragraph;
+    locator "section/6.4#aufbau-principle";
+    text en official """The Aufbau Principle
+
+To determine the electron configuration for any particular atom, we can “build” the structures in the order of atomic numbers. Beginning with hydrogen, and continuing across the periods of the periodic table, we add one proton at a time to the nucleus and one electron to the proper subshell until we have described the electron configurations of all the elements. This procedure is called the Aufbau principle, from the German word Aufbau (“to build up”). Each added electron occupies the subshell of lowest energy available (in the order shown in Figure 6.24), subject to the limitations imposed by the allowed quantum numbers according to the Pauli exclusion principle. Electrons enter higher-energy subshells only after lower-energy subshells have been filled to capacity. Figure 6.26 illustrates the traditional way to remember the filling order for atomic orbitals. Since the arrangement of the periodic table is based on the electron configurations, Figure 6.27 provides an alternative method for determining the electron configuration. The filling order simply begins at hydrogen and includes each subshell as you proceed in increasing Z order. For example, after filling the 3p block up to Ar, we see the orbital will be 4s (K, Ca), followed by the 3d orbitals.""";
+    content_hash "sha256:65d6f2990b723b9db0bc3a7d1a5361f2fad8c0af0b8725c263fef47b3cffaafc";
+}
+
+// Electronic Structure of Atoms (Electron Configurations) — pinned chemistry-atomic/6.4.txt lines 122-124
+fragment F_EXCEPTION in OPENSTAX_CHEMISTRY_ATOMIC_SEC {
+    kind paragraph;
+    locator "section/6.4#configuration-exceptions";
+    text en official """The periodic table can be a powerful tool in predicting the electron configuration of an element. However, we do find exceptions to the order of filling of orbitals that are shown in Figure 6.26 or Figure 6.27. For instance, the electron configurations (shown in Figure 6.29) of the transition metals chromium (Cr; atomic number 24) and copper (Cu; atomic number 29), among others, are not those we would expect. In general, such exceptions involve subshells with very similar energy, and small effects can lead to changes in the order of filling.
+
+In the case of Cr and Cu, we find that half-filled and completely filled subshells apparently represent conditions of preferred stability. This stability is such that an electron shifts from the 4s into the 3d orbital to gain the extra stability of a half-filled 3d subshell (in Cr) or a filled 3d subshell (in Cu). Other exceptions also occur. For example, niobium (Nb, atomic number 41) is predicted to have the electron configuration [Kr]5s24d3. Experimentally, we observe that its ground-state electron configuration is actually [Kr]5s14d4. We can rationalize this observation by saying that the electron–electron repulsions experienced by pairing the electrons in the 5s orbital are larger than the gap in energy between the 5s and 4d orbitals. There is no simple method to predict the exceptions for atoms where the magnitude of the repulsions between electrons is greater than the small differences in energy between subshells.""";
+    content_hash "sha256:3dbf5c6ad91a4863b47605e9a14fdecc871b87dfcda6749ffc6545fd73152a8a";
+}

@@ -1,0 +1,15 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "19.2.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "19.2": "Coordination Chemistry of Transition Metals"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

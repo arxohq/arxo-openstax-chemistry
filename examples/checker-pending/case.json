@@ -1,0 +1,136 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:aa57b000f3717cd9f84d3840d366310bd5200f3f040e2d5e3a0b3915cf06a499",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-coordination#f0",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m6",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "coord-numbers"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-coordination#row_claims"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-coordination"
+    },
+    {
+      "contentHash": "sha256:716ee50425a5c82eb270434558b0dd7406463897c4a84a07e393e64dd31bdce5",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-coordination#f1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m6",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "[Ag(NH3)2]+, [Cu(Cl)4]2-, [Co(H2O)6]2+ have coordination numbers 2, 4, 6"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-coordination#row_formula"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-coordination"
+    },
+    {
+      "contentHash": "sha256:cce9c6de77ed7f8694b93fbafdd4fc3eb14beb1904d76bbaebf60c70b25a008d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-coordination#f2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m6",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "observation"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-coordination#row_layer"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-coordination"
+    },
+    {
+      "contentHash": "sha256:81d8d839bfccfed7ffe7331de5cdbb20a96f5b8cdba23141aade3d8a4de81ded",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-coordination#f3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m6",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "unlinked: no computational checker journaled"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-coordination#row_checker"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-coordination"
+    },
+    {
+      "contentHash": "sha256:7f371dca730f6ccdb93f7bc08f2d0e954bb0318b8c49192d52f8962d764d2d82",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-coordination#f4",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m6",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "section/19.2#coordination-numbers"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-coordination#row_fragment"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-coordination"
+    }
+  ],
+  "context": {},
+  "options": {}
+}
