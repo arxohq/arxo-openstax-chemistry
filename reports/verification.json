@@ -33,9 +33,24 @@
     "publicRegressions": 6,
     "technicalDependencies": "not_measured"
   },
-  "linux": "pending public CI",
-  "published": false,
+  "linux": {
+    "status": "passed",
+    "platform": "ubuntu-24.04 / linux-x64",
+    "node": "20",
+    "python": "3.12",
+    "run": "https://github.com/arxohq/arxo-openstax-chemistry/actions/runs/38552535109",
+    "checkedCommit": "c4c2c2bfb90bcc7b1f1353cc5ced2cad29750854",
+    "checks": "28 reader examples twice; 81 selected native scenarios; all eleven depth measures; six division regressions"
+  },
+  "published": true,
   "releaseVerified": false,
   "corpus": "not_checked",
-  "cleanConsumer": "passed: public-only inputs and npm CLI"
+  "cleanConsumer": "passed: public-only inputs and npm CLI",
+  "anonymousConsumer": {
+    "status": "passed",
+    "channel": "anonymous public HTTPS clone",
+    "exactInventory": "356 files, every SHA-256 matched",
+    "readmeExample": "exact canonical replay passed",
+    "depth": "all eleven reproduced"
+  }
 }

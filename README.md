@@ -181,7 +181,7 @@ The release records **81 passed scenarios** across selected files, 13 compiled o
 
 Source revisions `0.1.1` for gases, solutions, thermo and kinetics add missing publications/source anchors; logical rule bodies and original expectations are preserved. Original `0.1.0` IR is retained under `registry/original`. Electro's missing test-file registration was repaired in its manifest; its model version remains `0.1.0`. [Provenance changes](reports/provenance-changes.json).
 
-[Rebuild selected models](docs/reproduction.md) explains native lowering/linking. CI checks this public consumer and its pinned inputs; it does not scan the full corpus.
+[Public Linux checks](https://github.com/arxohq/arxo-openstax-chemistry/actions/workflows/verify.yml) · [Rebuild selected models](docs/reproduction.md) explains native lowering/linking. CI checks this public consumer and its pinned inputs; it does not scan the full corpus.
 
 ## Licenses
 
