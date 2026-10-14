@@ -1,0 +1,22 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:kin:arr",
+        "kind": "entity_ref"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Decimal"
+        },
+        "value": "1.909157"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-kinetics#run_arrhenius_ratio"
+  },
+  "queryId": "urn:openstax:clir:chemistry-kinetics#test/urn%3Aquery%3Aos-run-10-arrhenius-ratio/query/0"
+}

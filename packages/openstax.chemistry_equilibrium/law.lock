@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:454ebf189c95c0be5bac1828e163cc39aede01d913282a2c1f679fc568c6d5c9",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:f3913590ab5dcb04a668c58a6bdce16324cc5531b697ee7a260cedf5483a8be5",
+    "name": "openstax.chemistry_equilibrium",
+    "namespace": "urn:openstax:clir:chemistry-equilibrium",
+    "sourceHash": "sha256:9319c3b0d246c91a266ae728a76ede14043504ccdf4f2270b64287552dbd5688",
+    "version": "0.1.0"
+  }
+}

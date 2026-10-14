@@ -1,0 +1,18 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Text"
+        },
+        "value": "chelectro/17.1/OS_17_3_CU/cu2-cu-tampered"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-electro#pin_consistent"
+  },
+  "queryId": "urn:openstax:clir:chemistry-electro#test/urn%3Aquery%3Aelrec-02-tampered-neither/query/0"
+}

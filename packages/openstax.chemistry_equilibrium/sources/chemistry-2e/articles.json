@@ -1,0 +1,16 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "en.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "13.2": "Equilibrium Constants",
+        "13.4": "Equilibrium Calculations"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

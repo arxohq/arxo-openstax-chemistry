@@ -1,0 +1,833 @@
+{
+  "format": "arxo.openstax-chemistry-depth/1",
+  "method": "existing boundaries.depth; declared literal OpenStax section headings in pinned extracts; own nodes only",
+  "unit": "OpenStax section snapshot in the captured extract",
+  "limitations": "structural deriving/checking evidence, not full scientific formalization or complete book coverage; table-only excerpts remain named as such",
+  "implementationHashes": {
+    "tools/depth/boundaries.py": "sha256:3fa7d47584a5e536cd698d4bf537b73c6294c284c26cb9b5afe11ec6dfc6ed14",
+    "tools/depth/corpus/tools/lib/act_split.py": "sha256:718fe80c90fb41e96db83fe7669cefcb6a0804af5dd47e694358bee3cb8a1041"
+  },
+  "packages": [
+    {
+      "spec": "openstax.chemistry_acids@0.1.0",
+      "packageHash": "sha256:0031fddd16ecf12aec42caddf539d9b53ddd54c2a27baa8aae4c04738747b3f8",
+      "status": "measured",
+      "denominator": 8,
+      "levels": {
+        "EXECUTABLE": 3,
+        "SOURCE_ONLY": 5
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_acids/sources/chemistry-2e/14-7.txt",
+          "sourceHash": "sha256:d045ea698c27b844ad116ee60096cd5c40b3acf638cb99b8a62bc6976266a35b",
+          "publication": "urn:openstax:clir:chemistry-acids#OS_CHEM2E_14_7_TEXT",
+          "edition": "urn:openstax:clir:chemistry-acids#OS_CHEM2E_14_7",
+          "declaration": "packages/openstax.chemistry_acids/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:2c224b5084610807582f5f2eb852dcda10c3c4b19c409bcef75f74fbe2ac193b",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "14.7",
+              "title": "Acid-Base Titrations",
+              "level": "EXECUTABLE",
+              "deriving": 5,
+              "interpreted": 0,
+              "anchoring": 5,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 7
+        },
+        {
+          "path": "packages/openstax.chemistry_acids/sources/chemistry-2e/en.txt",
+          "sourceHash": "sha256:9cd690ddec85843d14d55896b354718158ebe80bb58ea4f9a9da9fc315ab6177",
+          "publication": "urn:openstax:clir:chemistry-acids#OS_CHEM2E_TEXT",
+          "edition": "urn:openstax:clir:chemistry-acids#OS_CHEM2E_EN",
+          "declaration": "packages/openstax.chemistry_acids/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:2c224b5084610807582f5f2eb852dcda10c3c4b19c409bcef75f74fbe2ac193b",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 7,
+          "units": [
+            {
+              "article": "14.1",
+              "title": "Brønsted-Lowry Acids and Bases",
+              "level": "EXECUTABLE",
+              "deriving": 3,
+              "interpreted": 0,
+              "anchoring": 3,
+              "defeasible": 0
+            },
+            {
+              "article": "14.2",
+              "title": "pH and pOH",
+              "level": "EXECUTABLE",
+              "deriving": 4,
+              "interpreted": 0,
+              "anchoring": 4,
+              "defeasible": 0
+            },
+            {
+              "article": "14.3",
+              "title": "Relative Strengths of Acids and Bases",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "14.4",
+              "title": "Hydrolysis of Salts",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "14.5",
+              "title": "Polyprotic Acids",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "14.6",
+              "title": "Buffers",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "15.2",
+              "title": "Lewis Acids and Bases",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 5
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 8,
+      "ownFragments": 31,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_atomic@0.1.0",
+      "packageHash": "sha256:5881d32d9338a8a298c9b2e6596229c72e420289ac783fed8e2a75d846ec757f",
+      "status": "measured",
+      "denominator": 1,
+      "levels": {
+        "EXECUTABLE": 1
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_atomic/sources/chemistry-atomic/6.4.txt",
+          "sourceHash": "sha256:9d4ce351cf4417298a6afcd23f38ddf65af500be1b929773d325c250f2dc8945",
+          "publication": "urn:openstax:clir:chemistry-atomic#OPENSTAX_CHEMISTRY_ATOMIC_TXT",
+          "edition": "urn:openstax:clir:chemistry-atomic#OPENSTAX_CHEMISTRY_ATOMIC_SEC",
+          "declaration": "packages/openstax.chemistry_atomic/sources/chemistry-atomic/articles.json",
+          "declarationHash": "sha256:6df6a8e23601a12f686ee539acf06ddca3c0cf07e2324163b11427b7ff675e20",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "6.4",
+              "title": "Electronic Structure of Atoms (Electron Configurations)",
+              "level": "EXECUTABLE",
+              "deriving": 4,
+              "interpreted": 0,
+              "anchoring": 12,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 4,
+      "ownFragments": 3,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_bonding@0.1.0",
+      "packageHash": "sha256:14c6689e75652e120ade08bfa561e9e0697569fe1edfc2c42ad4951d8c550b2c",
+      "status": "measured",
+      "denominator": 1,
+      "levels": {
+        "EXECUTABLE": 1
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_bonding/sources/chemistry-bonding/7.3.txt",
+          "sourceHash": "sha256:957f9c5c29ac735acd385aabbf3baa92b1014a764d1538c4dd3424aa6328f70c",
+          "publication": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_TXT",
+          "edition": "urn:openstax:clir:chemistry-bonding#OPENSTAX_CHEMISTRY_BONDING_SEC",
+          "declaration": "packages/openstax.chemistry_bonding/sources/chemistry-bonding/articles.json",
+          "declarationHash": "sha256:b5d79f88a8d8ac6e34eeba1d1345e84d53ed216424ec4ab4d631d5087d2d32a1",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "7.3",
+              "title": "Lewis Symbols and Structures",
+              "level": "EXECUTABLE",
+              "deriving": 4,
+              "interpreted": 0,
+              "anchoring": 12,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 4,
+      "ownFragments": 3,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_coordination@0.1.0",
+      "packageHash": "sha256:39986ca9be062fdbeb93e5ce8674257dac5283701e8e84f1cbe15b325b4790dc",
+      "status": "measured",
+      "denominator": 1,
+      "levels": {
+        "EXECUTABLE": 1
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_coordination/sources/chemistry-coordination/19.2.txt",
+          "sourceHash": "sha256:d33ed2a3f328924c01ca20dfc56c48459ddeb9bad7e6844783807fbf06534dff",
+          "publication": "urn:openstax:clir:chemistry-coordination#OPENSTAX_CHEMISTRY_COORDINATION_TXT",
+          "edition": "urn:openstax:clir:chemistry-coordination#OPENSTAX_CHEMISTRY_COORDINATION_SEC",
+          "declaration": "packages/openstax.chemistry_coordination/sources/chemistry-coordination/articles.json",
+          "declarationHash": "sha256:8e7012502309492b5190accf099726493bd9d50003e0045d6f0402970ed97c55",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "19.2",
+              "title": "Coordination Chemistry of Transition Metals",
+              "level": "EXECUTABLE",
+              "deriving": 7,
+              "interpreted": 0,
+              "anchoring": 16,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 7,
+      "ownFragments": 3,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_electro@0.1.0",
+      "packageHash": "sha256:35229524b0800a5d9746754a4049145349ebc5ea74aff65c94ac3bc231afb9e7",
+      "status": "measured",
+      "denominator": 1,
+      "levels": {
+        "EXECUTABLE": 1
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_electro/sources/chemistry-2e/17-3-potentials.txt",
+          "sourceHash": "sha256:54c6477b62fe8b08a79a690c618b902cc30ac2d2b8bd8052fafa72af86c254dc",
+          "publication": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3_TEXT",
+          "edition": "urn:openstax:clir:chemistry-electro#OS_CHEM2E_17_3",
+          "declaration": "packages/openstax.chemistry_electro/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:de78290fb64ed0fd261ad5629f43cd935ac563ffc704f1ca58acc0e0fb7cc316",
+          "snapshotScope": "curated table excerpt only; not complete section 17.3",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "17.3",
+              "title": "Electrode and Cell Potentials, Table 17.1",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 7,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 2,
+      "ownFragments": 4,
+      "unanchoredRules": [
+        "urn:openstax:clir:chemistry-electro#EConsistent"
+      ],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_equilibrium@0.1.0",
+      "packageHash": "sha256:f3913590ab5dcb04a668c58a6bdce16324cc5531b697ee7a260cedf5483a8be5",
+      "status": "measured",
+      "denominator": 2,
+      "levels": {
+        "EXECUTABLE": 2
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_equilibrium/sources/chemistry-2e/en.txt",
+          "sourceHash": "sha256:75960d4de233ceb3bbc081d0d3d5930149c60878f1517916fe08c15ee09a3276",
+          "publication": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_TEXT",
+          "edition": "urn:openstax:clir:chemistry-equilibrium#OS_CHEM2E_EN",
+          "declaration": "packages/openstax.chemistry_equilibrium/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:9f8cde0b18d447309149c9caeeb9485ee8ef99ac1e2accdb7ce3ae3a8feee558",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 2,
+          "units": [
+            {
+              "article": "13.2",
+              "title": "Equilibrium Constants",
+              "level": "EXECUTABLE",
+              "deriving": 6,
+              "interpreted": 0,
+              "anchoring": 6,
+              "defeasible": 0
+            },
+            {
+              "article": "13.4",
+              "title": "Equilibrium Calculations",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 3,
+      "ownFragments": 4,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_gases@0.1.1",
+      "packageHash": "sha256:47367d3bb1aabe08cc2e22464af30e1e1e5ff246e8a9ece6ee869b4c203cbb63",
+      "status": "measured",
+      "denominator": 2,
+      "levels": {
+        "EXECUTABLE": 2
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_gases/sources/chemistry-2e/9.2.txt",
+          "sourceHash": "sha256:8911482700b51081c047882a9c7880050d171c4e3931b2d65cf7e25def737a48",
+          "publication": "urn:openstax:clir:chemistry-gases#S_9_2_TEXT",
+          "edition": "urn:openstax:clir:chemistry-gases#S_9_2_EN",
+          "declaration": "packages/openstax.chemistry_gases/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:75944841bdb6a43d79996f61235bfa2ca27cf02193ce11d7dd7cf67915625fa5",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "9.2",
+              "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 1
+        },
+        {
+          "path": "packages/openstax.chemistry_gases/sources/chemistry-2e/9.3.txt",
+          "sourceHash": "sha256:43c54e72b072ae4466933599ed74bdd7aee332463b68a7f15029d0498397c489",
+          "publication": "urn:openstax:clir:chemistry-gases#S_9_3_TEXT",
+          "edition": "urn:openstax:clir:chemistry-gases#S_9_3_EN",
+          "declaration": "packages/openstax.chemistry_gases/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:75944841bdb6a43d79996f61235bfa2ca27cf02193ce11d7dd7cf67915625fa5",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "9.3",
+              "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 1
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 2,
+      "ownFragments": 2,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_kinetics@0.1.1",
+      "packageHash": "sha256:6c85b3f1b9195c8b96d64c1abfcd81255b619cc83f9ac30dd838e6a3331d43bb",
+      "status": "measured",
+      "denominator": 3,
+      "levels": {
+        "SOURCE_ONLY": 1,
+        "EXECUTABLE": 2
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/12.3.txt",
+          "sourceHash": "sha256:e3dbf5ff80f1aab2719400708ec69d16e88d7279218aadb97f86d65ae414a8eb",
+          "publication": "urn:openstax:clir:chemistry-kinetics#S_12_3_TEXT",
+          "edition": "urn:openstax:clir:chemistry-kinetics#S_12_3_EN",
+          "declaration": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:318189491c3402fcef75288acbfe43038f01d2fa886435f0cdc2930b82981ad4",
+          "snapshotScope": "captured textbook section",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "12.3",
+              "title": "Rate Laws",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 6
+        },
+        {
+          "path": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/en.txt",
+          "sourceHash": "sha256:8e2846483c6d27e5364e5bde9cd87d6984bb0e5810d699edce37651e00c158df",
+          "publication": "urn:openstax:clir:chemistry-kinetics#S_12_4_TEXT",
+          "edition": "urn:openstax:clir:chemistry-kinetics#S_12_4_EN",
+          "declaration": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:318189491c3402fcef75288acbfe43038f01d2fa886435f0cdc2930b82981ad4",
+          "snapshotScope": "captured textbook section",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "12.4",
+              "title": "Integrated Rate Laws",
+              "level": "EXECUTABLE",
+              "deriving": 4,
+              "interpreted": 0,
+              "anchoring": 4,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 2
+        },
+        {
+          "path": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/12.5.txt",
+          "sourceHash": "sha256:cb5ae1ab7022e52b3792963bd76fdad0176b4c0acaee59e08a7645127f0363d2",
+          "publication": "urn:openstax:clir:chemistry-kinetics#S_12_5_TEXT",
+          "edition": "urn:openstax:clir:chemistry-kinetics#S_12_5_EN",
+          "declaration": "packages/openstax.chemistry_kinetics/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:318189491c3402fcef75288acbfe43038f01d2fa886435f0cdc2930b82981ad4",
+          "snapshotScope": "captured textbook section",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "12.5",
+              "title": "Collision Theory",
+              "level": "EXECUTABLE",
+              "deriving": 2,
+              "interpreted": 0,
+              "anchoring": 2,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 4
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 27,
+      "ownFragments": 3,
+      "unanchoredRules": [
+        "urn:openstax:clir:chemistry-kinetics#RunActivationEnergy",
+        "urn:openstax:clir:chemistry-kinetics#RunDepleted",
+        "urn:openstax:clir:chemistry-kinetics#RunElapsed",
+        "urn:openstax:clir:chemistry-kinetics#RunGasConstant",
+        "urn:openstax:clir:chemistry-kinetics#RunInitialConcentration",
+        "urn:openstax:clir:chemistry-kinetics#RunInvalidElapsedTime",
+        "urn:openstax:clir:chemistry-kinetics#RunInvalidInitialConcentration",
+        "urn:openstax:clir:chemistry-kinetics#RunInvalidRateConstant",
+        "urn:openstax:clir:chemistry-kinetics#RunInvalidTarget",
+        "urn:openstax:clir:chemistry-kinetics#RunLevelAtStart",
+        "urn:openstax:clir:chemistry-kinetics#RunNegativeTime",
+        "urn:openstax:clir:chemistry-kinetics#RunNoActivationEnergy",
+        "urn:openstax:clir:chemistry-kinetics#RunNonpositiveRateConstant",
+        "urn:openstax:clir:chemistry-kinetics#RunOrder",
+        "urn:openstax:clir:chemistry-kinetics#RunPrecision",
+        "urn:openstax:clir:chemistry-kinetics#RunRateConstant",
+        "urn:openstax:clir:chemistry-kinetics#RunTargetAboveInitial",
+        "urn:openstax:clir:chemistry-kinetics#RunTargetConcentration",
+        "urn:openstax:clir:chemistry-kinetics#RunTemperaturePair",
+        "urn:openstax:clir:chemistry-kinetics#RunTransferRefused",
+        "urn:openstax:clir:chemistry-kinetics#RunUnsupportedOrder"
+      ],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_solutions@0.1.1",
+      "packageHash": "sha256:0b198b8a92903ed2e1952e7cd30d07f24d3dc673906936c72bec0f1f783c6e04",
+      "status": "measured",
+      "denominator": 2,
+      "levels": {
+        "EXECUTABLE": 2
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_solutions/sources/chemistry-2e/11.1.txt",
+          "sourceHash": "sha256:9d09a6dcf4e3fd47bbca31d2c7a9041987de42d2620feb8bd74dfa1f810b6a88",
+          "publication": "urn:openstax:clir:chemistry-solutions#S_11_1_TEXT",
+          "edition": "urn:openstax:clir:chemistry-solutions#S_11_1_EN",
+          "declaration": "packages/openstax.chemistry_solutions/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:7e36249e8894f38249dd2b2a43acadda19a1eb82d8dc7f803a94c6d6c189b90e",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "11.1",
+              "title": "The Dissolution Process",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 1
+        },
+        {
+          "path": "packages/openstax.chemistry_solutions/sources/chemistry-2e/3.3.txt",
+          "sourceHash": "sha256:4c273634589e83929d42268ebfdab67eec357765c3c28ec553203313d695d893",
+          "publication": "urn:openstax:clir:chemistry-solutions#S_3_3_TEXT",
+          "edition": "urn:openstax:clir:chemistry-solutions#S_3_3_EN",
+          "declaration": "packages/openstax.chemistry_solutions/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:7e36249e8894f38249dd2b2a43acadda19a1eb82d8dc7f803a94c6d6c189b90e",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "3.3",
+              "title": "Molarity",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 1
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 3,
+      "ownFragments": 2,
+      "unanchoredRules": [
+        "urn:openstax:clir:chemistry-solutions#IdealDiluteModelLicensed"
+      ],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_stoichiometry@0.1.0",
+      "packageHash": "sha256:9784fc51e66c8b0e6b588478787e4e43634d36eb03c05cafa9399ab081c2be53",
+      "status": "measured",
+      "denominator": 7,
+      "levels": {
+        "SOURCE_ONLY": 2,
+        "—": 4,
+        "EXECUTABLE": 1
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_stoichiometry/sources/chemistry-2e/en.txt",
+          "sourceHash": "sha256:e4125fef2db048a52760768809c962973c5d759f75e55050d9f20782e6a01213",
+          "publication": "urn:openstax:clir:chemistry-stoichiometry#OS_CHEM2E_TEXT",
+          "edition": "urn:openstax:clir:chemistry-stoichiometry#OS_CHEM2E_EN",
+          "declaration": "packages/openstax.chemistry_stoichiometry/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:ec25f0df351ae8f96509ade35fceccb7158d4d8ed63569d9a22aeb1f3c2d7a3f",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 7,
+          "units": [
+            {
+              "article": "3.1",
+              "title": "Formula Mass and the Mole Concept",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "3.2",
+              "title": "Determining Empirical and Molecular Formulas",
+              "level": "—",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "3.3",
+              "title": "Molarity",
+              "level": "—",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "3.4",
+              "title": "Other Units for Solution Concentrations",
+              "level": "—",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "4.2",
+              "title": "Classifying Chemical Reactions",
+              "level": "—",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "4.3",
+              "title": "Reaction Stoichiometry",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            },
+            {
+              "article": "4.4",
+              "title": "Reaction Yields",
+              "level": "EXECUTABLE",
+              "deriving": 4,
+              "interpreted": 0,
+              "anchoring": 4,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 0
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 2,
+      "ownFragments": 6,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "openstax.chemistry_thermo@0.1.1",
+      "packageHash": "sha256:b00cbd23f9712e289805a5e52503e87d747b37c52d0e7be20405ca3e5ce2fbda",
+      "status": "measured",
+      "denominator": 3,
+      "levels": {
+        "SOURCE_ONLY": 1,
+        "EXECUTABLE": 2
+      },
+      "documents": [
+        {
+          "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/16.1.txt",
+          "sourceHash": "sha256:cf43d7aebe26f3811e837f04778c96bf4f83c3babc5782afbd5f3358fb6c22b8",
+          "publication": "urn:openstax:clir:chemistry-thermo#S_16_1_TEXT",
+          "edition": "urn:openstax:clir:chemistry-thermo#S_16_1_EN",
+          "declaration": "packages/openstax.chemistry_thermo/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:8c8eb34165907a5e966a4050e0fdb6ce7c081c72583678a47d044f9d75088d71",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "16.1",
+              "title": "Spontaneity",
+              "level": "SOURCE_ONLY",
+              "deriving": 0,
+              "interpreted": 0,
+              "anchoring": 0,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 3
+        },
+        {
+          "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/16.4.txt",
+          "sourceHash": "sha256:d0fbf6a665192ad5d9fb4da3fa9add733133013379f65771d05a16bc4ac91e0e",
+          "publication": "urn:openstax:clir:chemistry-thermo#S_16_4_TEXT",
+          "edition": "urn:openstax:clir:chemistry-thermo#S_16_4_EN",
+          "declaration": "packages/openstax.chemistry_thermo/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:8c8eb34165907a5e966a4050e0fdb6ce7c081c72583678a47d044f9d75088d71",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "16.4",
+              "title": "Free Energy",
+              "level": "EXECUTABLE",
+              "deriving": 2,
+              "interpreted": 0,
+              "anchoring": 2,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 1
+        },
+        {
+          "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/5.3.txt",
+          "sourceHash": "sha256:03e17e2c1bef9b10884a40c06442a3e6f85791a25f5bc94a9cf35249c1a5c5b4",
+          "publication": "urn:openstax:clir:chemistry-thermo#S_5_3_TEXT",
+          "edition": "urn:openstax:clir:chemistry-thermo#S_5_3_EN",
+          "declaration": "packages/openstax.chemistry_thermo/sources/chemistry-2e/articles.json",
+          "declarationHash": "sha256:8c8eb34165907a5e966a4050e0fdb6ce7c081c72583678a47d044f9d75088d71",
+          "snapshotScope": "captured textbook sections",
+          "denominator": 1,
+          "units": [
+            {
+              "article": "5.3",
+              "title": "Enthalpy",
+              "level": "EXECUTABLE",
+              "deriving": 1,
+              "interpreted": 0,
+              "anchoring": 1,
+              "defeasible": 0
+            }
+          ],
+          "unresolvedAnchors": 0,
+          "otherEditionAnchors": 2
+        }
+      ],
+      "unmeasuredPublications": [],
+      "ownRules": 3,
+      "ownFragments": 3,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "units.si@0.1.0",
+      "packageHash": "sha256:66c0e7b54e87269674eb01b97eb54b5d7570427424a5edf2066f7deffc34a601",
+      "status": "not_measured",
+      "denominator": null,
+      "levels": {},
+      "documents": [],
+      "unmeasuredPublications": [],
+      "ownRules": 0,
+      "ownFragments": 0,
+      "unanchoredRules": [],
+      "ownNormTemplates": 0
+    },
+    {
+      "spec": "calc.reaction_kinetics@0.1.0",
+      "packageHash": "sha256:ab56f02febf8bab577d40386c0da19d4e7ba3861ef184bf70044170e8732d76c",
+      "status": "not_measured",
+      "denominator": null,
+      "levels": {},
+      "documents": [],
+      "unmeasuredPublications": [],
+      "ownRules": 56,
+      "ownFragments": 0,
+      "unanchoredRules": [
+        "urn:law:calc:reaction-kinetics#ArrheniusRatio",
+        "urn:law:calc:reaction-kinetics#ArrheniusRatioRounded",
+        "urn:law:calc:reaction-kinetics#CatalystLowersBarrier",
+        "urn:law:calc:reaction-kinetics#CatalystNoAdvantage",
+        "urn:law:calc:reaction-kinetics#CatalystSpeedup",
+        "urn:law:calc:reaction-kinetics#CatalystSpeedupRounded",
+        "urn:law:calc:reaction-kinetics#ConcentrationFirstOrder",
+        "urn:law:calc:reaction-kinetics#ConcentrationRounded",
+        "urn:law:calc:reaction-kinetics#ConcentrationSecondOrder",
+        "urn:law:calc:reaction-kinetics#ConcentrationZeroOrder",
+        "urn:law:calc:reaction-kinetics#ConsecutiveA",
+        "urn:law:calc:reaction-kinetics#ConsecutiveBEqualRates",
+        "urn:law:calc:reaction-kinetics#ConsecutiveBEqualRatesRounded",
+        "urn:law:calc:reaction-kinetics#ConsecutiveBK2Above",
+        "urn:law:calc:reaction-kinetics#ConsecutiveBK2Below",
+        "urn:law:calc:reaction-kinetics#ConsecutiveBRounded",
+        "urn:law:calc:reaction-kinetics#ConsecutiveC",
+        "urn:law:calc:reaction-kinetics#ConsecutiveCRounded",
+        "urn:law:calc:reaction-kinetics#DegenerateEqualRates",
+        "urn:law:calc:reaction-kinetics#DepletedZeroOrder",
+        "urn:law:calc:reaction-kinetics#FitCaveat",
+        "urn:law:calc:reaction-kinetics#FitResidualFirstOrder",
+        "urn:law:calc:reaction-kinetics#FitResidualRounded",
+        "urn:law:calc:reaction-kinetics#HalfLifeFirstOrder",
+        "urn:law:calc:reaction-kinetics#HalfLifeRounded",
+        "urn:law:calc:reaction-kinetics#HalfLifeSecondOrder",
+        "urn:law:calc:reaction-kinetics#HalfLifeZeroOrder",
+        "urn:law:calc:reaction-kinetics#InvalidCatalystEnergy",
+        "urn:law:calc:reaction-kinetics#InvalidCatalystEnergyDenominator",
+        "urn:law:calc:reaction-kinetics#InvalidCatalystTemperature",
+        "urn:law:calc:reaction-kinetics#InvalidElapsedTime",
+        "urn:law:calc:reaction-kinetics#InvalidInitialConcentration",
+        "urn:law:calc:reaction-kinetics#InvalidRateConstant",
+        "urn:law:calc:reaction-kinetics#InvalidTargetFirstOrder",
+        "urn:law:calc:reaction-kinetics#InvalidTargetSecondOrder",
+        "urn:law:calc:reaction-kinetics#KinDerivedK",
+        "urn:law:calc:reaction-kinetics#KinDerivedKRounded",
+        "urn:law:calc:reaction-kinetics#KinFitCaveat",
+        "urn:law:calc:reaction-kinetics#LevelAtStart",
+        "urn:law:calc:reaction-kinetics#NegativeTime",
+        "urn:law:calc:reaction-kinetics#NonpositiveRateConstant",
+        "urn:law:calc:reaction-kinetics#ObservationAboveInitial",
+        "urn:law:calc:reaction-kinetics#ParallelA",
+        "urn:law:calc:reaction-kinetics#ParallelARounded",
+        "urn:law:calc:reaction-kinetics#ParallelBranchB",
+        "urn:law:calc:reaction-kinetics#ParallelBranchBRounded",
+        "urn:law:calc:reaction-kinetics#ParallelBranchC",
+        "urn:law:calc:reaction-kinetics#ParallelBranchCRounded",
+        "urn:law:calc:reaction-kinetics#TargetAboveInitial",
+        "urn:law:calc:reaction-kinetics#TemperatureTransferRefused",
+        "urn:law:calc:reaction-kinetics#TimeFirstOrder",
+        "urn:law:calc:reaction-kinetics#TimeRounded",
+        "urn:law:calc:reaction-kinetics#TimeSecondOrder",
+        "urn:law:calc:reaction-kinetics#TimeZeroOrder",
+        "urn:law:calc:reaction-kinetics#UnsupportedOrderHigh",
+        "urn:law:calc:reaction-kinetics#UnsupportedOrderLow"
+      ],
+      "ownNormTemplates": 0
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "book": "Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": [
+    {
+      "section": "9.2",
+      "slug": "9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law",
+      "url": "https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law",
+      "uuid": "1f39d5df-ef6a-43de-a533-117a5dc92f44",
+      "path": "packages/openstax.chemistry_gases/sources/chemistry-2e/9.2.txt",
+      "size": 25111,
+      "sha256": "sha256:8911482700b51081c047882a9c7880050d171c4e3931b2d65cf7e25def737a48",
+      "retrievedAt": "2026-10-14T10:29:02.844379Z",
+      "rawPageHash": "sha256:7ecf455eca98955f180c1f5697daae7e9f0627b5ef5b9f25786db829110dda09"
+    },
+    {
+      "section": "9.3",
+      "slug": "9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions",
+      "url": "https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions",
+      "uuid": "15f67dd0-8548-4ac0-875f-f5cbf789ee94",
+      "path": "packages/openstax.chemistry_gases/sources/chemistry-2e/9.3.txt",
+      "size": 23001,
+      "sha256": "sha256:43c54e72b072ae4466933599ed74bdd7aee332463b68a7f15029d0498397c489",
+      "retrievedAt": "2026-10-14T10:29:03.605004Z",
+      "rawPageHash": "sha256:08d0024ac4c1606d311c85cc24d4488bf22fe41db0d1c00cc85171f6267dc71e"
+    }
+  ],
+  "extraction": {
+    "implementationHash": "sha256:f1fe6ae6799fa9e558678d02483d79b2e5d03f618d8c426fd19194b3abc1f8ab",
+    "algorithm": "corpus/tools/sources/fetch/fetch_openstax_acid_base_text.py"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:openstax:clir:chemistry-electro#ZincHalfCell",
+        "kind": "const_ref"
+      },
+      {
+        "id": "urn:openstax:clir:chemistry-electro#CopperHalfCell",
+        "kind": "const_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-electro#standard_cell_positive"
+  },
+  "queryId": "urn:openstax:clir:chemistry-electro#test/urn%3Aquery%3Aos-electro-05-reversed/query/0"
+}

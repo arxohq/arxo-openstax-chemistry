@@ -1,0 +1,28 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_kinetics"
+version = "0.1.1"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-kinetics"
+
+[dependencies]
+"units.si" = "0.1.0"
+"calc.reaction_kinetics" = "0.1.0"
+
+# Каталожная метадата (DECISION-0051). НЕ семантика: в CLIR не понижается.
+# Правила — авторский парафраз §12.3/12.4 с точными ссылками; закреплённый
+# снимок §12.4 — sources/chemistry-2e/en.txt (перенесён из дубля
+# chemical-kinetics/, 2026-09-27); лицензия книги — CC BY-NC-SA 4.0
+# (см. шапку 01-kinetics.law).
+[metadata]
+title = "OpenStax Chemistry 2e, гл. 12 (кинетика): порядок как входная модель, закрытые решения 0/1/2, перенос Аррениуса"
+legalStatus = "doctrine"
+
+[[tests]]
+family = "openstax_chemistry_kinetics"
+suites = ["tests/chemistry-kinetics.lawtest", "tests/02-kinetic-run.lawtest"]
+world = ["openstax.chemistry_kinetics", "units.si", "calc.reaction_kinetics"]
+
+[authoring]
+local_imports = "explicit"

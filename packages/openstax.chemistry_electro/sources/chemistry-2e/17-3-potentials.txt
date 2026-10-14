@@ -1,0 +1,15 @@
+SOURCE-SECTION: 17.3 Electrode and Cell Potentials, Table 17.1
+https://openstax.org/books/chemistry-2e/pages/17-3-electrode-and-cell-potentials
+
+Selected Standard Reduction Potentials at 25 °C
+
+Cu2+(aq)+2e−⟶Cu(s)
++0.34
+
+2H+(aq)+2e−⟶H2(g)
+0.00
+
+Zn2+(aq)+2e−⟶Zn(s)
+−0.7618
+
+NOTE. E° values are standard reduction potentials in volts measured against the standard hydrogen electrode (SHE); see surrounding section text.

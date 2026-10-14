@@ -1,0 +1,68 @@
+// `openstax.chemistry_stoichiometry` — учебное основание стехиометрии
+// (уровень 3 химии, каталог наук): закреплённые байты Chemistry 2e, разделы
+// 3.1–3.4 и 4.2–4.4, и шесть фрагментов, на которые ставят якоря соседи.
+//
+// ПОВЕРХНОСТЬ ЗДЕСЬ НАМЕРЕННО ТОНКАЯ, И ЭТО НЕ ПРОПУСК. Работа пакета —
+// ЗАКРЕПИТЬ утверждения учебника, а не пересказать их отношениями. Числа уже
+// принадлежат владельцам: число Авогадро и молярная постоянная — снимку
+// `codata.constants`, атомные веса — таблице `iupac.periodic_table`,
+// арифметика — `calc.stoichiometry`. Объявить их ещё раз здесь значило бы
+// завести второй источник истины, расходящийся с первым молча.
+//
+// ЧТО ВСЁ-ТАКИ ВЫРАЖЕНО. Одно доктринальное различение, которого нет ни у кого
+// из соседей и которое меняет ответ: выход реакции выражается МАССОЙ ЛИБО
+// КОЛИЧЕСТВОМ ВЕЩЕСТВА (§4.4). Вычислитель `calc.stoichiometry` считает выход
+// по количествам, и задача, молча подставившая туда массы, получила бы неверное
+// число при том же зелёном исполнении. Перечень НЕ замкнут: учебник говорит
+// «or any other appropriate property; e.g., volume, if the product is a gas»,
+// и `closure` §70 здесь был бы над-обещанием.
+
+language "law.core" version "0.2";
+package openstax.chemistry_stoichiometry version "0.1.0";
+namespace "urn:openstax:clir:chemistry-stoichiometry";
+
+use self::{
+    OS_4_4_PERCENT_YIELD,
+    OS_4_4_YIELD_UNITS,
+};
+
+pub enum YieldExpression {
+    Mass,
+    MolarAmount;
+    label en official "the property in which actual and theoretical yields are expressed";
+    label ru unofficial "величина, в которой выражают фактический и теоретический выход";
+}
+
+pub relation yield_expressed_as(e: YieldExpression) kind empirical {
+    label en official "the textbook admits expressing yields in this property";
+    label ru unofficial "учебник допускает выражать выход в этой величине";
+}
+
+// Теоретический выход считается «under specified conditions» (§4.4):
+// лицензия читать выход в данной величине действует лишь при предъявленном
+// базисе — температуре, агрегатном состоянии продукта и стандартном
+// состоянии. Числа по-прежнему делегированы: Авогадро и молярная постоянная —
+// `codata.constants`, атомные веса — `iupac.periodic_table`, арифметика —
+// `calc.stoichiometry`.
+pub relation yield_basis_presented(e: YieldExpression) kind empirical {
+    label en unofficial "the case presents the yield basis (T, product state, standard state)";
+    label ru unofficial "дело предъявило базис выхода (T, состояние продукта, стандартное состояние)";
+}
+
+@source(OS_4_4_YIELD_UNITS)
+@source(OS_4_4_PERCENT_YIELD)
+pub rule YieldExpressedAsMass() strict {
+    label en unofficial "yield may be expressed as a mass at the presented basis (4.4)";
+    label ru unofficial "выход выражается массой при предъявленном базисе (4.4)";
+    when yield_basis_presented(Mass);
+    then yield_expressed_as(Mass);
+}
+
+@source(OS_4_4_YIELD_UNITS)
+@source(OS_4_4_PERCENT_YIELD)
+pub rule YieldExpressedAsMolarAmount() strict {
+    label en unofficial "yield may be expressed as a molar amount at the presented basis (4.4)";
+    label ru unofficial "выход выражается количеством вещества при предъявленном базисе (4.4)";
+    when yield_basis_presented(MolarAmount);
+    then yield_expressed_as(MolarAmount);
+}

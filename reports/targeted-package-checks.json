@@ -1,0 +1,136 @@
+{
+  "cli": "0.2.5",
+  "scope": "Explicit listed suites only; not all declared scenarios and not full corpus",
+  "corpus": "not_checked",
+  "releaseVerified": false,
+  "packages": [
+    {
+      "spec": "openstax.chemistry_acids@0.1.0",
+      "suite": "tests/openstax-chemistry-acids.lawtest",
+      "status": "passed",
+      "total": 22,
+      "passed": 22
+    },
+    {
+      "spec": "openstax.chemistry_atomic@0.1.0",
+      "suite": "tests/01-instruction.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_bonding@0.1.0",
+      "suite": "tests/01-instruction.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_coordination@0.1.0",
+      "suite": "tests/01-instruction.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_electro@0.1.0",
+      "suite": "tests/chemistry-electro.lawtest",
+      "status": "passed",
+      "total": 5,
+      "passed": 5
+    },
+    {
+      "spec": "openstax.chemistry_equilibrium@0.1.0",
+      "suite": "tests/chemistry-equilibrium.lawtest",
+      "status": "passed",
+      "total": 6,
+      "passed": 6
+    },
+    {
+      "spec": "openstax.chemistry_gases@0.1.1",
+      "suite": "tests/chemistry-gases.lawtest",
+      "status": "passed",
+      "total": 3,
+      "passed": 3
+    },
+    {
+      "spec": "openstax.chemistry_solutions@0.1.1",
+      "suite": "tests/chemistry-solutions.lawtest",
+      "status": "passed",
+      "total": 4,
+      "passed": 4
+    },
+    {
+      "spec": "openstax.chemistry_stoichiometry@0.1.0",
+      "suite": "tests/openstax-chemistry-stoichiometry.lawtest",
+      "status": "passed",
+      "total": 3,
+      "passed": 3
+    },
+    {
+      "spec": "openstax.chemistry_thermo@0.1.1",
+      "suite": "tests/chemistry-thermo.lawtest",
+      "status": "passed",
+      "total": 6,
+      "passed": 6
+    },
+    {
+      "spec": "units.si@0.1.0",
+      "status": "no_declared_scenarios"
+    },
+    {
+      "spec": "calc.reaction_kinetics@0.1.0",
+      "status": "no_declared_scenarios"
+    },
+    {
+      "spec": "openstax.chemistry_kinetics@0.1.1",
+      "suite": "tests/chemistry-kinetics.lawtest",
+      "status": "passed",
+      "total": 4,
+      "passed": 4
+    },
+    {
+      "spec": "openstax.chemistry_kinetics@0.1.1",
+      "suite": "tests/02-kinetic-run.lawtest",
+      "status": "passed",
+      "total": 11,
+      "passed": 11
+    },
+    {
+      "spec": "openstax.chemistry_electro@0.1.0",
+      "suite": "tests/02-record-adapter.lawtest",
+      "status": "passed",
+      "total": 2,
+      "passed": 2
+    },
+    {
+      "spec": "openstax.chemistry_atomic@0.1.0",
+      "suite": "tests/03-aufbau-model-ok.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_bonding@0.1.0",
+      "suite": "tests/02-lewis-symbol-ok.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_coordination@0.1.0",
+      "suite": "tests/06-checker-pending.lawtest",
+      "status": "passed",
+      "total": 1,
+      "passed": 1
+    },
+    {
+      "spec": "openstax.chemistry_acids@0.1.0",
+      "suite": "tests/openstax-chemistry-titration.lawtest",
+      "status": "passed",
+      "total": 9,
+      "passed": 9
+    }
+  ],
+  "scenarioTotal": 81
+}

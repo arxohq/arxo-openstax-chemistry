@@ -1,0 +1,68 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:cd41a06a1cbe4e563f9cc5f3cc1f93b03ac7afef71ebae9f23a8a27d246606f6",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e05-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#reaction_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    },
+    {
+      "contentHash": "sha256:ac005828d19853babb8c4851baa9a396d981a0b0a50c2eb6a4e19bd92e43c6a3",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e05-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#quotient_below_constant"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    },
+    {
+      "contentHash": "sha256:eec8a23ce0248a12efe96e82eb961d245d299a81d1de6775a63c8bdefa439073",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-equilibrium#e05-2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:eq:haber",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-equilibrium#standard_state_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-equilibrium"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

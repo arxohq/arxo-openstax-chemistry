@@ -1,0 +1,71 @@
+language "law.core" version "0.2";
+package openstax.chemistry_solutions version "0.1.1";
+namespace "urn:openstax:clir:chemistry-solutions";
+
+// Сцены ворот: растворение, сохранение при разведении, идеальный профиль.
+
+test "urn:query:os-sol-01-dissolution" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "s01-q": solution_in_question(entity_ref("urn:case:chem:sol:brine")) { origin case_input; }
+    }
+    evaluate truth(dissolution_is_physical_dispersal(entity_ref("urn:case:chem:sol:brine")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(DissolutionIsPhysicalDispersal);
+}
+
+test "urn:query:os-sol-02-dilution" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "s02-q": solution_in_question(entity_ref("urn:case:chem:sol:stock")) { origin case_input; }
+        assert "s02-1": dilution_presented(entity_ref("urn:case:chem:sol:stock")) { origin case_input; }
+    }
+    evaluate truth(amount_conserved_on_dilution(entity_ref("urn:case:chem:sol:stock")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(AmountConservedOnDilution);
+}
+
+test "urn:query:os-sol-03-ideal-dilute" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "s03-q": solution_in_question(entity_ref("urn:case:chem:sol:hoac")) { origin case_input; }
+        assert "s03-1": dilute_aqueous_presented(entity_ref("urn:case:chem:sol:hoac")) { origin case_input; }
+    }
+    evaluate truth(ideal_dilute_model_licensed(entity_ref("urn:case:chem:sol:hoac")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(IdealDiluteModelLicensed);
+}
+
+// Без предъявленного разведения сохранения нет: молчание.
+test "urn:query:os-sol-04-no-dilution" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "s04-q": solution_in_question(entity_ref("urn:case:chem:sol:brine")) { origin case_input; }
+    }
+    evaluate truth(amount_conserved_on_dilution(entity_ref("urn:case:chem:sol:brine")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

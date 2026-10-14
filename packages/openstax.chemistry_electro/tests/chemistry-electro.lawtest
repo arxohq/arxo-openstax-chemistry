@@ -1,0 +1,78 @@
+language "law.core" version "0.2";
+package openstax.chemistry_electro version "0.1.0";
+namespace "urn:openstax:clir:chemistry-electro";
+
+test "urn:query:os-electro-01-cu" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+    }
+    evaluate truth(reduction_potential(CopperHalfCell, 0.34 V, 298.15 K));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:os-electro-02-zn" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+    }
+    evaluate truth(reduction_potential(ZincHalfCell, -0.7618 V, 298.15 K));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:os-electro-03-she" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+    }
+    evaluate truth(reduction_potential(HydrogenReference, 0.00 V, 298.15 K));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}
+
+// Медь — катод, цинк — анод: стандартная ЭДС положительна.
+test "urn:query:os-electro-04-zn-cu-positive" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e04-1": galvanic_cell_presented(CopperHalfCell, ZincHalfCell) { origin case_input; }
+    }
+    evaluate truth(standard_cell_positive(CopperHalfCell, ZincHalfCell));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(StandardCellPositive);
+}
+
+// Обратная полярность положительной ЭДС не даёт.
+test "urn:query:os-electro-05-reversed" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "e05-1": galvanic_cell_presented(ZincHalfCell, CopperHalfCell) { origin case_input; }
+    }
+    evaluate truth(standard_cell_positive(ZincHalfCell, CopperHalfCell));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

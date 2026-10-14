@@ -1,0 +1,45 @@
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+// Аррениус: Ea = 50000 Дж/моль, R = 8.314, T1 = 300 К, T2 = 310 К.
+// Независимое ожидание (python3): exp(-50000/8.314*(1/310-1/300))
+//   = 1.909156545112441 -> 1.9092 (точность 4).
+// Без Ea перенос отклоняется вслух, отношение не выводится.
+
+test "urn:query:calc-kin-a01-arrhenius-ratio" {
+    given {
+        assert "a01-e": given_activation_energy(entity_ref("urn:case:kin:ar"), 50000, 1) { origin case_input; }
+        assert "a01-r": given_gas_constant(entity_ref("urn:case:kin:ar"), 8314, 1000) { origin case_input; }
+        assert "a01-t": given_temperature_pair(entity_ref("urn:case:kin:ar"), 300, 1, 310, 1) { origin case_input; }
+        assert "a01-p": given_output_precision(entity_ref("urn:case:kin:ar"), 4) { origin case_input; }
+    }
+    evaluate truth(arrhenius_ratio_value(entity_ref("urn:case:kin:ar"), 1.9092));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ArrheniusRatioRounded);
+}
+
+test "urn:query:calc-kin-a02-transfer-refused-without-ea" {
+    given {
+        assert "a02-m": activation_energy_missing(entity_ref("urn:case:kin:noea")) { origin case_input; }
+        assert "a02-t": given_temperature_pair(entity_ref("urn:case:kin:noea"), 300, 1, 310, 1) { origin case_input; }
+        assert "a02-r": given_gas_constant(entity_ref("urn:case:kin:noea"), 8314, 1000) { origin case_input; }
+        assert "a02-p": given_output_precision(entity_ref("urn:case:kin:noea"), 4) { origin case_input; }
+    }
+    evaluate truth(temperature_transfer_refused(entity_ref("urn:case:kin:noea")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TemperatureTransferRefused);
+}
+
+test "urn:query:calc-kin-a03-no-ratio-without-ea" {
+    given {
+        assert "a03-m": activation_energy_missing(entity_ref("urn:case:kin:noea")) { origin case_input; }
+        assert "a03-t": given_temperature_pair(entity_ref("urn:case:kin:noea"), 300, 1, 310, 1) { origin case_input; }
+        assert "a03-r": given_gas_constant(entity_ref("urn:case:kin:noea"), 8314, 1000) { origin case_input; }
+        assert "a03-p": given_output_precision(entity_ref("urn:case:kin:noea"), 4) { origin case_input; }
+    }
+    evaluate truth(arrhenius_ratio_value(entity_ref("urn:case:kin:noea"), 1.9092));
+    expect truth_status == NEITHER;
+}

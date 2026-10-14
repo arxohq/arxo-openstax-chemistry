@@ -1,0 +1,70 @@
+language "law.core" version "0.2";
+package openstax.chemistry_kinetics version "0.1.1";
+namespace "urn:openstax:clir:chemistry-kinetics";
+
+test "urn:query:os-kin-01-first-order" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "k01-q": run_in_question(entity_ref("urn:case:chem:kin:decay")) { origin case_input; }
+        assert "k01-1": rate_order_presented(entity_ref("urn:case:chem:kin:decay"), 1) { origin case_input; }
+    }
+    evaluate truth(closed_form_rate_model_selected(entity_ref("urn:case:chem:kin:decay")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ClosedFormRateModelSelected);
+}
+
+// Порядок 3 вне v1: закрытого решения нет — молчание, не отрицание.
+test "urn:query:os-kin-02-third-order-unsupported" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "k02-q": run_in_question(entity_ref("urn:case:chem:kin:decay")) { origin case_input; }
+        assert "k02-1": rate_order_presented(entity_ref("urn:case:chem:kin:decay"), 3) { origin case_input; }
+    }
+    evaluate truth(closed_form_rate_model_selected(entity_ref("urn:case:chem:kin:decay")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:os-kin-03-arrhenius" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "k03-q": run_in_question(entity_ref("urn:case:chem:kin:decay")) { origin case_input; }
+        assert "k03-1": activation_energy_presented(entity_ref("urn:case:chem:kin:decay")) { origin case_input; }
+    }
+    evaluate truth(arrhenius_transfer_licensed(entity_ref("urn:case:chem:kin:decay")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ArrheniusTransferLicensed);
+}
+
+// Без Ea переноса по температуре нет.
+test "urn:query:os-kin-04-no-ea" {
+    given {
+        context {
+            decision_time @2026-09-27T12:00:00Z;
+            knowledge_time @2026-09-27T12:00:00Z;
+            legal_time @2026-09-27;
+            timezone "UTC";
+        }
+        assert "k04-q": run_in_question(entity_ref("urn:case:chem:kin:decay")) { origin case_input; }
+    }
+    evaluate truth(arrhenius_transfer_licensed(entity_ref("urn:case:chem:kin:decay")));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

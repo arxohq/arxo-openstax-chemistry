@@ -1,0 +1,173 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:b9d44c41a0e78b846e2080bb6715be8a5d7250783e9d2ae2c4d09bef07d47a0d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-kinetics#r10-calc",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:kin:arr",
+            "kind": "entity_ref"
+          },
+          {
+            "id": "urn:case:chem:kin:arr-calc",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-kinetics#run_calculation"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-kinetics"
+    },
+    {
+      "contentHash": "sha256:17f9a41d645bf74bb9d72309186cc69f43ed6ecf45f8d74cab95921b47f02f17",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-kinetics#r10-ea",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:kin:arr",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 50000
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 1
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-kinetics#run_activation_energy"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-kinetics"
+    },
+    {
+      "contentHash": "sha256:e7102c850ff1815e6c9d7dc43d15dd0ff51c14dc2d9d20e393d6705aeacf47b5",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-kinetics#r10-r",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:kin:arr",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 8314
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 1000
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-kinetics#run_gas_constant"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-kinetics"
+    },
+    {
+      "contentHash": "sha256:19d118d6f0c73257c472e8ffeb195c7159790e245dcf23f3e1bac4738966413c",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-kinetics#r10-t",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:kin:arr",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 300
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 1
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 310
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 1
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-kinetics#run_temperature_pair"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-kinetics"
+    },
+    {
+      "contentHash": "sha256:cca331582f1d85c89ef702bdf77ff03767478d30afd5192e40a7ac3e24aad143",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-kinetics#r10-p",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:kin:arr",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Integer"
+            },
+            "value": 6
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-kinetics#run_precision"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-kinetics"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

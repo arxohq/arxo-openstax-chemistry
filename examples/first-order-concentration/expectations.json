@@ -1,0 +1,22 @@
+[
+  {
+    "field": "result_kind",
+    "op": "eq",
+    "value": "PROPOSITION"
+  },
+  {
+    "field": "truth_status",
+    "op": "eq",
+    "value": "TRUE_ONLY"
+  },
+  {
+    "field": "evaluation_status",
+    "op": "eq",
+    "value": "COMPUTED"
+  },
+  {
+    "negated": false,
+    "observation": "applied",
+    "value": "urn:openstax:clir:chemistry-kinetics#RunConcentration"
+  }
+]

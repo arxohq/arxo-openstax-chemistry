@@ -1,0 +1,31 @@
+language "law.core" version "0.2";
+package openstax.chemistry_electro version "0.1.0";
+namespace "urn:openstax:clir:chemistry-electro";
+
+test "urn:query:elrec-01-cu-consistent" {
+    given {
+        context {
+            decision_time @2026-10-01T12:00:00Z;
+            knowledge_time @2026-10-01T12:00:00Z;
+            legal_time @2026-10-01;
+            timezone "UTC";
+        }
+    }
+    evaluate truth(pin_consistent("chelectro/17.1/OS_17_3_CU/cu2-cu"));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+}
+
+test "urn:query:elrec-02-tampered-neither" {
+    given {
+        context {
+            decision_time @2026-10-01T12:00:00Z;
+            knowledge_time @2026-10-01T12:00:00Z;
+            legal_time @2026-10-01;
+            timezone "UTC";
+        }
+    }
+    evaluate truth(pin_consistent("chelectro/17.1/OS_17_3_CU/cu2-cu-tampered"));
+    expect truth_status == NEITHER;
+    expect evaluation_status == COMPUTED;
+}

@@ -1,0 +1,49 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:e20ff24c52f6776b693a6bfb728743134c9cdb8d86a03ca9b15929586de4666a",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-solutions#s02-q",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:sol:stock",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-solutions#solution_in_question"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-solutions"
+    },
+    {
+      "contentHash": "sha256:6583970bcb3b0485a65ea23ee6af499b95030dcca20473b2f43722c0b5897f05",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-solutions#s02-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:sol:stock",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-solutions#dilution_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-solutions"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-27T12:00:00Z",
+    "knowledgeTime": "2026-09-27T12:00:00Z",
+    "legalTime": "2026-09-27",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

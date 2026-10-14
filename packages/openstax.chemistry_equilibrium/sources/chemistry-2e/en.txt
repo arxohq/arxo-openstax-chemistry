@@ -1,0 +1,735 @@
+13.2
+
+Equilibrium Constants
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Derive reaction quotients from chemical equations representing homogeneous and heterogeneous reactions
+
+Calculate values of reaction quotients and equilibrium constants, using concentrations and pressures
+
+Relate the magnitude of an equilibrium constant to properties of the chemical system
+
+The status of a reversible reaction is conveniently assessed by evaluating its reaction quotient (Q). For a reversible reaction described by
+
+mA+nB⇌xC+yD
+
+the reaction quotient is derived directly from the stoichiometry of the balanced equation as
+
+Qc=[C]x[D]y[A]m[B]n
+
+where the subscript c denotes the use of molar concentrations in the expression. If the reactants and products are gaseous, a reaction quotient may be similarly derived using partial pressures:
+
+Qp=PCxPDyPAmPBn
+
+Note that the reaction quotient equations above are a simplification of more rigorous expressions that use relative values for concentrations and pressures rather than absolute values. These relative concentration and pressure values are dimensionless (they have no units); consequently, so are the reaction quotients. For purposes of this introductory text, it will suffice to use the simplified equations and to disregard units when computing Q. In most cases, this will introduce only modest errors in calculations involving reaction quotients.
+
+Example
+13.1
+
+Writing Reaction Quotient Expressions
+
+Write the concentration-based reaction quotient expression for each of the following reactions:
+
+(a) 3O2(g)⇌2O3(g)
+
+(b) N2(g)+3H2(g)⇌2NH3(g)
+
+(c) 4NH3(g)+7O2(g)⇌4NO2(g)+6H2O(g)
+
+Solution
+
+(a) Qc=[O3]2[O2]3
+
+(b) Qc=[NH3]2[N2][H2]3
+
+(c) Qc=[NO2]4[H2O]6[NH3]4[O2]7
+
+Check Your Learning
+
+Write the concentration-based reaction quotient expression for each of the following reactions:
+
+(a) 2SO2(g)+O2(g)⇌2SO3(g)
+
+(b) C4H8(g)⇌2C2H4(g)
+
+(c) 2C4H10(g)+13O2(g)⇌8CO2(g)+10H2O(g)
+
+Answer:
+
+(a) Qc=[SO3]2[SO2]2[O2]; (b) Qc=[C2H4]2[C4H8]; (c) Qc=[CO2]8[H2O]10[C4H10]2[O2]13
+
+Figure
+13.5
+
+Changes in concentrations and Qc for a chemical equilibrium achieved beginning with (a) a mixture of reactants only and (b) products only.
+
+The numerical value of Q varies as a reaction proceeds towards equilibrium; therefore, it can serve as a useful indicator of the reaction’s status. To illustrate this point, consider the oxidation of sulfur dioxide:
+
+2SO2(g)+O2(g)⇌2SO3(g)
+
+Two different experimental scenarios are depicted in Figure 13.5, one in which this reaction is initiated with a mixture of reactants only, SO2 and O2, and another that begins with only product, SO3. For the reaction that begins with a mixture of reactants only, Q is initially equal to zero:
+
+Qc=[SO3]2[SO2]2[O2]=02[SO2]2[O2]=0
+
+As the reaction proceeds toward equilibrium in the forward direction, reactant concentrations decrease (as does the denominator of Qc), product concentration increases (as does the numerator of Qc), and the reaction quotient consequently increases. When equilibrium is achieved, the concentrations of reactants and product remain constant, as does the value of Qc.
+
+If the reaction begins with only product present, the value of Qc is initially undefined (immeasurably large, or infinite):
+
+Qc=[SO3]2[SO2]2[O2]=[SO3]20→∞
+
+In this case, the reaction proceeds toward equilibrium in the reverse direction. The product concentration and the numerator of Qc decrease with time, the reactant concentrations and the denominator of Qc increase, and the reaction quotient consequently decreases until it becomes constant at equilibrium.
+
+The constant value of Q exhibited by a system at equilibrium is called the equilibrium constant, K:
+
+K≡Qat equilibrium
+
+Comparison of the data plots in Figure 13.5 shows that both experimental scenarios resulted in the same value for the equilibrium constant. This is a general observation for all equilibrium systems, known as the law of mass action: At a given temperature, the reaction quotient for a system at equilibrium is constant.
+
+Example
+13.2
+
+Evaluating a Reaction Quotient
+
+Gaseous nitrogen dioxide forms dinitrogen tetroxide according to this equation:
+
+2NO2(g)⇌N2O4(g)
+
+When 0.10 mol NO2 is added to a 1.0-L flask at 25 °C, the concentration changes so that at equilibrium, [NO2] = 0.016 M and [N2O4] = 0.042 M.
+
+(a) What is the value of the reaction quotient before any reaction occurs?
+
+(b) What is the value of the equilibrium constant for the reaction?
+
+Solution
+
+As for all equilibrium calculations in this text, use the simplified equations for Q and K and disregard any concentration or pressure units, as noted previously in this section.
+
+(a) Before any product is formed, [NO2]=0.10mol1.0L=0.10M, and [N2O4] = 0 M. Thus,
+
+Qc=[N2O4][NO2]2=00.102=0
+
+(b) At equilibrium, Kc=Qc=[N2O4][NO2]2=0.0420.0162=1.6×102. The equilibrium constant is 1.6 × 102.
+
+Check Your Learning
+
+For the reaction 2SO2(g)+O2(g)⇌2SO3(g), the concentrations at equilibrium are [SO2] = 0.90 M, [O2] = 0.35 M, and [SO3] = 1.1 M. What is the value of the equilibrium constant, Kc?
+
+Answer:
+
+Kc = 4.3
+
+By its definition, the magnitude of an equilibrium constant explicitly reflects the composition of a reaction mixture at equilibrium, and it may be interpreted with regard to the extent of the forward reaction. A reaction exhibiting a large K will reach equilibrium when most of the reactant has been converted to product, whereas a small K indicates the reaction achieves equilibrium after very little reactant has been converted. It’s important to keep in mind that the magnitude of K does not indicate how rapidly or slowly equilibrium will be reached. Some equilibria are established so quickly as to be nearly instantaneous, and others so slowly that no perceptible change is observed over the course of days, years, or longer.
+
+The equilibrium constant for a reaction can be used to predict the behavior of mixtures containing its reactants and/or products. As demonstrated by the sulfur dioxide oxidation process described above, a chemical reaction will proceed in whatever direction is necessary to achieve equilibrium. Comparing Q to K for an equilibrium system of interest allows prediction of what reaction (forward or reverse), if any, will occur.
+
+To further illustrate this important point, consider the reversible reaction shown below:
+
+CO(g)+H2O(g)⇌CO2(g)+H2(g)Kc=0.640T=800°C
+
+The bar charts in Figure 13.6 represent changes in reactant and product concentrations for three different reaction mixtures. The reaction quotients for mixtures 1 and 3 are initially lesser than the reaction’s equilibrium constant, so each of these mixtures will experience a net forward reaction to achieve equilibrium. The reaction quotient for mixture 2 is initially greater than the equilibrium constant, so this mixture will proceed in the reverse direction until equilibrium is established.
+
+Figure
+13.6
+
+Compositions of three mixtures before (Qc ≠ Kc) and after (Qc = Kc) equilibrium is established for the reaction CO(g)+H2O(g)⇌CO2(g)+H2(g).
+
+Example
+13.3
+
+Predicting the Direction of Reaction
+
+Given here are the starting concentrations of reactants and products for three experiments involving this reaction:
+
+CO(g)+H2O(g)⇌CO2(g)+H2(g)
+
+Kc=0.64
+
+Determine in which direction the reaction proceeds as it goes to equilibrium in each of the three experiments shown.
+
+Reactants/Products
+Experiment 1
+Experiment 2
+Experiment 3
+
+[CO]i
+0.020 M
+0.011 M
+0.0094 M
+
+[H2O]i
+0.020 M
+0.0011 M
+0.0025 M
+
+[CO2]i
+0.0040 M
+0.037 M
+0.0015 M
+
+[H2]i
+0.0040 M
+0.046 M
+0.0076 M
+
+Solution
+
+Experiment 1:
+
+Qc=[CO2][H2][CO][H2O]=(0.0040)(0.0040)(0.020)(0.020)=0.040.
+
+Qc < Kc (0.040 < 0.64)
+
+The reaction will proceed in the forward direction.
+
+Experiment 2:
+
+Qc=[CO2][H2][CO][H2O]=(0.037)(0.046)(0.011)(0.0011)=1.4×102
+
+Qc > Kc (140 > 0.64)
+
+The reaction will proceed in the reverse direction.
+
+Experiment 3:
+
+Qc=[CO2][H2][CO][H2O]=(0.0015)(0.0076)(0.0094)(0.0025)=0.48
+
+Qc < Kc (0.48 < 0.64)
+
+The reaction will proceed in the forward direction.
+
+Check Your Learning
+
+Calculate the reaction quotient and determine the direction in which each of the following reactions will proceed to reach equilibrium.
+
+(a) A 1.00-L flask containing 0.0500 mol of NO(g), 0.0155 mol of Cl2(g), and 0.500 mol of NOCl:
+
+2NO(g)+Cl2(g)⇌2NOCl(g)Kc=4.6×104
+
+(b) A 5.0-L flask containing 17 g of NH3, 14 g of N2, and 12 g of H2:
+
+N2(g)+3H2(g)⇌2NH3(g)Kc=0.060
+
+(c) A 2.00-L flask containing 230 g of SO3(g):
+
+2SO3(g)⇌2SO2(g)+O2(g)Kc=0.230
+
+Answer:
+
+(a) Qc = 6.45 × 103, forward. (b) Qc = 0.23, reverse. (c) Qc = 0, forward.
+
+Homogeneous Equilibria
+
+A homogeneous equilibrium is one in which all reactants and products (and any catalysts, if applicable) are present in the same phase. By this definition, homogeneous equilibria take place in solutions. These solutions are most commonly either liquid or gaseous phases, as shown by the examples below:
+
+C2H2(aq)+2Br2(aq)⇌C2H2Br4(aq)Kc=[C2H2Br4][C2H2][Br2]2I2(aq)+I−(aq)⇌I3−(aq)Kc=[I3−][I2][I−]HF(aq)+H2O(l)⇌H3O+(aq)+F−(aq)Kc=[H3O+][F−][HF]NH3(aq)+H2O(l)⇌NH4+(aq)+OH−(aq)Kc=[NH4+][OH−][NH3]
+
+These examples all involve aqueous solutions, those in which water functions as the solvent. In the last two examples, water also functions as a reactant, but its concentration is not included in the reaction quotient. The reason for this omission is related to the more rigorous form of the Q (or K) expression mentioned previously in this chapter, in which relative concentrations for liquids and solids are equal to 1 and needn’t be included. Consequently, reaction quotients include concentration or pressure terms only for gaseous and solute species.
+
+The equilibria below all involve gas-phase solutions:
+
+C2H6(g)⇌C2H4(g)+H2(g)Kc=[C2H4][H2][C2H6]3O2(g)⇌2O3(g)Kc=[O3]2[O2]3N2(g)+3H2(g)⇌2NH3(g)Kc=[NH3]2[N2][H2]3C3H8(g)+5O2(g)⇌3CO2(g)+4H2O(g)Kc=[CO2]3[H2O]4[C3H8][O2]5
+
+For gas-phase solutions, the equilibrium constant may be expressed in terms of either the molar concentrations (Kc) or partial pressures (Kp) of the reactants and products. A relation between these two K values may be simply derived from the ideal gas equation and the definition of molarity:
+
+PV=nRT
+
+P=(nV)RT
+
+=MRT
+
+where P is partial pressure, V is volume, n is molar amount, R is the gas constant, T is temperature, and M is molar concentration.
+
+For the gas-phase reaction aA+bB⇌cC+dD:
+
+KP=(PC)c(PD)d(PA)a(PB)b
+
+=([C]×RT)c([D]×RT)d([A]×RT)a([B]×RT)b
+
+=[C]c[D]d[A]a[B]b×(RT)c+d(RT)a+b
+
+=Kc(RT)(c+d)−(a+b)
+
+=Kc(RT)Δn
+
+And so, the relationship between Kc and KP is
+
+KP=Kc(RT)Δn
+
+where Δn is the difference in the molar amounts of product and reactant gases, in this case:
+
+Δn=(c+d)−(a+b)
+
+Example
+13.4
+
+Calculation of KP
+
+Write the equations relating Kc to KP for each of the following reactions:
+
+(a) C2H6(g)⇌C2H4(g)+H2(g)
+
+(b) CO(g)+H2O(g)⇌CO2(g)+H2(g)
+
+(c) N2(g)+3H2(g)⇌2NH3(g)
+
+(d) Kc is equal to 0.28 for the following reaction at 900 °C:
+
+CS2(g)+4H2(g)⇌CH4(g)+2H2S(g)
+
+What is KP at this temperature?
+
+Solution
+
+(a) Δn = (2) − (1) = 1
+
+KP = Kc (RT)Δn = Kc (RT)1 = Kc (RT)
+
+(b) Δn = (2) − (2) = 0
+
+KP = Kc (RT)Δn = Kc (RT)0 = Kc
+
+(c) Δn = (2) − (1 + 3) = −2
+
+KP = Kc (RT)Δn = Kc (RT)−2 = Kc(RT)2
+
+(d) KP = Kc (RT)Δn = (0.28)[(0.0821)(1173)]−2 = 3.0 × 10−5
+
+Check Your Learning
+
+Write the equations relating Kc to KP for each of the following reactions:
+
+(a) 2SO2(g)+O2(g)⇌2SO3(g)
+
+(b) N2O4(g)⇌2NO2(g)
+
+(c) C3H8(g)+5O2(g)⇌3CO2(g)+4H2O(g)
+
+(d) At 227 °C, the following reaction has Kc = 0.0952:
+
+CH3OH(g)⇌CO(g)+2H2(g)
+
+What would be the value of KP at this temperature?
+
+Answer:
+
+(a) KP = Kc (RT)−1; (b) KP = Kc (RT); (c) KP = Kc (RT); (d) 160 or 1.6 × 102
+
+Heterogeneous Equilibria
+
+A heterogeneous equilibrium involves reactants and products in two or more different phases, as illustrated by the following examples:
+
+PbCl2(s)⇌Pb2+(aq)+2Cl−(aq)Kc=[Pb2+][Cl−]2CaO(s)+CO2(g)⇌CaCO3(s)Kc=1[CO2]C(s)+2S(g)⇌CS2(g)Kc=[CS2][S]2Br2(l)⇌Br2(g)Kc=[Br2(g)]
+
+Again, note that concentration terms are only included for gaseous and solute species, as discussed previously.
+
+Two of the above examples include terms for gaseous species only in their equilibrium constants, and so Kp expressions may also be written:
+
+CaO(s)+CO2(g)⇌CaCO3(s)KP=1PCO2C(s)+2S(g)⇌CS2(g)KP=PCS2(PS)2
+
+Coupled Equilibria
+
+The equilibrium systems discussed so far have all been relatively simple, involving just single reversible reactions. Many systems, however, involve two or more coupled equilibrium reactions, those which have in common one or more reactant or product species. Since the law of mass action allows for a straightforward derivation of equilibrium constant expressions from balanced chemical equations, the K value for a system involving coupled equilibria can be related to the K values of the individual reactions. Three basic manipulations are involved in this approach, as described below.
+
+1. Changing the direction of a chemical equation essentially swaps the identities of “reactants” and “products,” and so the equilibrium constant for the reversed equation is simply the reciprocal of that for the forward equation.
+
+A⇌BKc=[B][A]B⇌AKc'=[A][B]
+
+Kc'=1Kc
+
+2. Changing the stoichiometric coefficients in an equation by some factor x results in an exponential change in the equilibrium constant by that same factor:
+
+A⇌BKc=[B][A]xA⇌xBKc'=[B]x[A]x
+
+Kc'=Kcx
+
+3. Adding two or more equilibrium equations together yields an overall equation whose equilibrium constant is the mathematical product of the individual reaction’s K values:
+
+A⇌BKc1=[B][A]B⇌CKc2=[C][B]
+
+The net reaction for these coupled equilibria is obtained by summing the two equilibrium equations and canceling any redundancies:
+
+A+B⇌B+CA+B⇌B+CA⇌CKc'=[C][A]
+
+Comparing the equilibrium constant for the net reaction to those for the two coupled equilibrium reactions reveals the following relationship:
+
+Kc1Kc2=[B][A]×[C][B]=[B][C][A][B]=[C][A]=Kc'
+
+Kc'=Kc1Kc2
+
+Example 13.5 demonstrates the use of this strategy in describing coupled equilibrium processes.
+
+Example
+13.5
+
+Equilibrium Constants for Coupled Reactions
+
+A mixture containing nitrogen, hydrogen, and iodine established the following equilibrium at 400 °C:
+
+2NH3(g)+3I2(g)⇌N2(g)+6HI(g)
+
+Use the information below to calculate Kc for this reaction.
+
+N2(g)+3H2(g)⇌2NH3(g)Kc1=0.50at400°CH2(g)+I2(g)⇌2HI(g)Kc2=50at400°C
+
+Solution
+
+The equilibrium equation of interest and its K value may be derived from the equations for the two coupled reactions as follows.
+
+Reverse the first coupled reaction equation:
+
+2NH3(g)⇌N2(g)+3H2(g)Kc1'=1Kc1=10.50=2.0
+
+Multiply the second coupled reaction by 3:
+
+3H2(g)+3I2(g)⇌6HI(g)Kc2'=Kc23=503=1.2×105
+
+Finally, add the two revised equations:
+
+2NH3(g)+3H2(g)+3I2(g)⇌N2(g)+3H2(g)+6HI(g)2NH3(g)+3I2(g)⇌N2(g)+6HI(g)Kc=Kc1'Kc2'=(2.0)(1.2×105)=2.4×105
+
+Check Your Learning
+
+Use the provided information to calculate Kc for the following reaction at 550 °C:
+
+H2(g)+CO2(g)⇌CO(g)+H2O(g)Kc=?CoO(s)+CO(g)⇌Co(s)+CO2(g)Kc1=490CoO(s)+H2(g)⇌Co(s)+H2O(g)Kc1=67
+
+Answer:
+
+Kc = 0.14
+
+13.4
+
+Equilibrium Calculations
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Identify the changes in concentration or pressure that occur for chemical species in equilibrium systems
+
+Calculate equilibrium concentrations or pressures and equilibrium constants, using various algebraic approaches
+
+Having covered the essential concepts of chemical equilibria in the preceding sections of this chapter, this final section will demonstrate the more practical aspect of using these concepts and appropriate mathematical strategies to perform various equilibrium calculations. These types of computations are essential to many areas of science and technology—for example, in the formulation and dosing of pharmaceutical products. After a drug is ingested or injected, it is typically involved in several chemical equilibria that affect its ultimate concentration in the body system of interest. Knowledge of the quantitative aspects of these equilibria is required to compute a dosage amount that will solicit the desired therapeutic effect.
+
+Many of the useful equilibrium calculations that will be demonstrated here require terms representing changes in reactant and product concentrations. These terms are derived from the stoichiometry of the reaction, as illustrated by decomposition of ammonia:
+
+2NH3(g)⇌N2(g)+3H2(g)
+
+As shown earlier in this chapter, this equilibrium may be established within a sealed container that initially contains either NH3 only, or a mixture of any two of the three chemical species involved in the equilibrium. Regardless of its initial composition, a reaction mixture will show the same relationships between changes in the concentrations of the three species involved, as dictated by the reaction stoichiometry (see also the related content on expressing reaction rates in the chapter on kinetics). For example, if the nitrogen concentration increases by an amount x:
+
+Δ[N2]=+x
+
+the corresponding changes in the other species concentrations are
+
+Δ[H2]=Δ[N2](3molH21molN2)=+3x
+
+Δ[NH3]=−Δ[N2](2molNH31molN2)=−2x
+
+where the negative sign indicates a decrease in concentration.
+
+Example
+13.6
+
+Determining Relative Changes in Concentration
+
+Derive the missing terms representing concentration changes for each of the following reactions.
+
+(a) C2H2(g)+2Br2(g)⇌C2H2Br4(g)x__________
+
+(b) I2(aq)+I−(aq)⇌I3−(aq)__________x
+
+(c) C3H8(g)+5O2(g)⇌3CO2(g)+4H2O(g)x_______________
+
+Solution
+
+(a) C2H2(g)+2Br2(g)⇌C2H2Br4(g)x2x−x
+
+(b) I2(aq)+I−(aq)⇌I3−(aq)−x−xx
+
+(c) C3H8(g)+5O2(g)⇌3CO2(g)+4H2O(g)x5x−3x−4x
+
+Check Your Learning
+
+Complete the changes in concentrations for each of the following reactions:
+
+(a) 2SO2(g)+O2(g)⇌2SO3(g)_____x_____
+
+(b) C4H8(g)⇌2C2H4(g)_____−2x
+
+(c) 4NH3(g)+7O2(g)⇌4NO2(g)+6H2O(g)____________________
+
+Answer:
+
+(a) 2x, x, −2x; (b) x, −2x; (c) 4x, 7x, −4x, −6x or −4x, −7x, 4x, 6x
+
+Calculation of an Equilibrium Constant
+
+The equilibrium constant for a reaction is calculated from the equilibrium concentrations (or pressures) of its reactants and products. If these concentrations are known, the calculation simply involves their substitution into the K expression, as was illustrated by Example 13.2. A slightly more challenging example is provided next, in which the reaction stoichiometry is used to derive equilibrium concentrations from the information provided. The basic strategy of this computation is helpful for many types of equilibrium computations and relies on the use of terms for the reactant and product concentrations initially present, for how they change as the reaction proceeds, and for what they are when the system reaches equilibrium. The acronym ICE is commonly used to refer to this mathematical approach, and the concentrations terms are usually gathered in a tabular format called an ICE table.
+
+Example
+13.7
+
+Calculation of an Equilibrium Constant
+
+Iodine molecules react reversibly with iodide ions to produce triiodide ions.
+
+I2(aq)+I−(aq)⇌I3−(aq)
+
+If a solution with the concentrations of I2 and I− both equal to 1.000 × 10−3 M before reaction gives an equilibrium concentration of I2 of 6.61 × 10−4 M, what is the equilibrium constant for the reaction?
+
+Solution
+
+To calculate the equilibrium constants, equilibrium concentrations are needed for all the reactants and products:
+
+KC=[I3–][I2][I−]
+
+Provided are the initial concentrations of the reactants and the equilibrium concentration of the product. Use this information to derive terms for the equilibrium concentrations of the reactants, presenting all the information in an ICE table.
+
+At equilibrium the concentration of I2 is 6.61 × 10−4 M so that
+
+1.000×10−3−x=6.61×10−4
+
+x=1.000×10−3−6.61×10−4
+
+=3.39×10−4M
+
+The ICE table may now be updated with numerical values for all its concentrations:
+
+Finally, substitute the equilibrium concentrations into the K expression and solve:
+
+Kc=[I3−][I2][I−]
+
+=3.39×10−4M(6.61×10−4M)(6.61×10−4M)=776
+
+Check Your Learning
+
+Ethanol and acetic acid react and form water and ethyl acetate, the solvent responsible for the odor of some nail polish removers.
+
+C2H5OH+CH3CO2H⇌CH3CO2C2H5+H2O
+
+When 1 mol each of C2H5OH and CH3CO2H are allowed to react in 1 L of the solvent dioxane, equilibrium is established when 13 mol of each of the reactants remains. Calculate the equilibrium constant for the reaction. (Note: Water is a solute in this reaction.)
+
+Answer:
+
+Kc = 4
+
+Calculation of a Missing Equilibrium Concentration
+
+When the equilibrium constant and all but one equilibrium concentration are provided, the other equilibrium concentration(s) may be calculated. A computation of this sort is illustrated in the next example exercise.
+
+Example
+13.8
+
+Calculation of a Missing Equilibrium Concentration
+Nitrogen oxides are air pollutants produced by the reaction of nitrogen and oxygen at high temperatures. At 2000 °C, the value of the Kc for the reaction, N2(g)+O2(g)⇌2NO(g), is 4.1 × 10−4. Calculate the equilibrium concentration of NO(g) in air at 1 atm pressure and 2000 °C. The equilibrium concentrations of N2 and O2 at this pressure and temperature are 0.036 M and 0.0089 M, respectively.
+
+Solution
+
+Substitute the provided quantities into the equilibrium constant expression and solve for [NO]:
+
+Kc=[NO]2[N2][O2]
+
+[NO]2=Kc[N2][O2]
+
+[NO]=Kc[N2][O2]
+
+=(4.1×10−4)(0.036)(0.0089)
+
+=1.31×10−7
+
+=3.6×10−4
+
+Thus [NO] is 3.6 × 10−4 mol/L at equilibrium under these conditions.
+
+To confirm this result, it may be used along with the provided equilibrium concentrations to calculate a value for K:
+
+Kc=[NO]2[N2][O2]
+
+=(3.6×10−4)2(0.036)(0.0089)
+
+=4.0×10−4
+
+This result is consistent with the provided value for K within nominal uncertainty, differing by just 1 in the least significant digit’s place.
+
+Check Your Learning
+
+The equilibrium constant Kc for the reaction of nitrogen and hydrogen to produce ammonia at a certain temperature is 6.00 × 10−2. Calculate the equilibrium concentration of ammonia if the equilibrium concentrations of nitrogen and hydrogen are 4.26 M and 2.09 M, respectively.
+
+Answer:
+
+1.53 mol/L
+
+Calculation of Equilibrium Concentrations from Initial Concentrations
+
+Perhaps the most challenging type of equilibrium calculation can be one in which equilibrium concentrations are derived from initial concentrations and an equilibrium constant. For these calculations, a four-step approach is typically useful:
+
+Identify the direction in which the reaction will proceed to reach equilibrium.
+
+Develop an ICE table.
+
+Calculate the concentration changes and, subsequently, the equilibrium concentrations.
+
+Confirm the calculated equilibrium concentrations.
+
+The last two example exercises of this chapter demonstrate the application of this strategy.
+
+Example
+13.9
+
+Calculation of Equilibrium Concentrations
+
+Under certain conditions, the equilibrium constant Kc for the decomposition of PCl5(g) into PCl3(g) and Cl2(g) is 0.0211. What are the equilibrium concentrations of PCl5, PCl3, and Cl2 in a mixture that initially contained only PCl5 at a concentration of 1.00 M?
+
+Solution
+
+Use the stepwise process described earlier.
+
+Step 1.
+
+Determine the direction the reaction proceeds.
+
+The balanced equation for the decomposition of PCl5 is
+
+PCl5(g)⇌PCl3(g)+Cl2(g)
+
+Because only the reactant is present initially Qc = 0 and the reaction will proceed to the right.
+
+Step 2.
+
+Develop an ICE table.
+
+Step 3.
+
+Solve for the change and the equilibrium concentrations.
+
+Substituting the equilibrium concentrations into the equilibrium constant equation gives
+
+Kc=[PCl3][Cl2][PCl5]=0.0211
+
+=(x)(x)(1.00−x)
+
+0.0211=(x)(x)(1.00−x)
+
+0.0211(1.00−x)=x2
+
+x2+0.0211x−0.0211=0
+
+Appendix B shows an equation of the form ax2 + bx + c = 0 can be rearranged to solve for x:
+
+x=−b±b2−4ac2a
+
+In this case, a = 1, b = 0.0211, and c = −0.0211. Substituting the appropriate values for a, b, and c yields:
+
+x=−0.0211±(0.0211)2−4(1)(−0.0211)2(1)
+
+=−0.0211±(4.45×10−4)+(8.44×10−2)2
+
+=−0.0211±0.2912
+
+The two roots of the quadratic are, therefore,
+
+x=−0.0211+0.2912=0.135
+
+and
+
+x=−0.0211−0.2912=−0.156
+
+For this scenario, only the positive root is physically meaningful (concentrations are either zero or positive), and so x = 0.135 M.
+
+The equilibrium concentrations are
+
+[PCl5]=1.00−0.135=0.87M
+
+[PCl3]=x=0.135M
+
+[Cl2]=x=0.135M
+
+Step 4.
+
+Confirm the calculated equilibrium concentrations.
+
+Substitution into the expression for Kc (to check the calculation) gives
+
+Kc=[PCl3][Cl2][PCl5]=(0.135)(0.135)0.87=0.021
+
+The equilibrium constant calculated from the equilibrium concentrations is equal to the value of Kc given in the problem (when rounded to the proper number of significant figures).
+
+Check Your Learning
+
+Acetic acid, CH3CO2H, reacts with ethanol, C2H5OH, to form water and ethyl acetate, CH3CO2C2H5.
+
+CH3CO2H+C2H5OH⇌CH3CO2C2H5+H2O
+
+The equilibrium constant for this reaction with dioxane as a solvent is 4.0. What are the equilibrium concentrations for a mixture that is initially 0.15 M in CH3CO2H, 0.15 M in C2H5OH, 0.40 M in CH3CO2C2H5, and 0.40 M in H2O?
+
+Answer:
+
+[CH3CO2H] = 0.18 M, [C2H5OH] = 0.18 M, [CH3CO2C2H5] = 0.37 M, [H2O] = 0.37 M
+
+Check Your Learning
+
+A 1.00-L flask is filled with 1.00 mole of H2 and 2.00 moles of I2. The value of the equilibrium constant for the reaction of hydrogen and iodine reacting to form hydrogen iodide is 50.5 under the given conditions. What are the equilibrium concentrations of H2, I2, and HI in moles/L?
+
+H2(g)+I2(g)⇌2HI(g)
+
+Answer:
+
+[H2] = 0.06 M, [I2] = 1.06 M, [HI] = 1.88 M
+
+Example
+13.10
+
+Calculation of Equilibrium Concentrations Using an Algebra-Simplifying Assumption
+
+What are the concentrations at equilibrium of a 0.15 M solution of HCN?
+
+HCN(aq)⇌H+(aq)+CN−(aq)Kc=4.9×10−10
+
+Solution
+
+Using “x” to represent the concentration of each product at equilibrium gives this ICE table.
+
+Substitute the equilibrium concentration terms into the Kc expression
+
+Kc=(x)(x)0.15−x
+
+rearrange to the quadratic form and solve for x
+
+x2+4.9×10−10x−7.35×10−11=0
+
+x=8.56×10−6M(3 sig. figs.)=8.6×10−6M(2 sig. figs.)
+
+Thus [H+] = [CN–] = x = 8.6 × 10–6 M and [HCN] = 0.15 – x = 0.15 M.
+
+Note in this case that the change in concentration is significantly less than the initial concentration (a consequence of the small K), and so the initial concentration experiences a negligible change:
+
+ifx≪0.15M,then(0.15–x)≈0.15
+
+This approximation allows for a more expedient mathematical approach to the calculation that avoids the need to solve for the roots of a quadratic equation:
+
+Kc=(x)(x)0.15−x≈x20.15
+
+4.9×10−10=x20.15
+
+x2=(0.15)(4.9×10−10)=7.4×10−11
+
+x=7.4×10−11=8.6×10−6M
+
+The value of x calculated is, indeed, much less than the initial concentration
+
+8.6×10−6≪0.15
+
+and so the approximation was justified. If this simplified approach were to yield a value for x that did not justify the approximation, the calculation would need to be repeated without making the approximation.
+
+Check Your Learning
+
+What are the equilibrium concentrations in a 0.25 M NH3 solution?
+
+NH3(aq)+H2O(l)⇌NH4+(aq)+OH−(aq)Kc=1.8×10−5
+
+Answer:
+
+[OH−]=[NH4+]=0.0021M; [NH3] = 0.25 M

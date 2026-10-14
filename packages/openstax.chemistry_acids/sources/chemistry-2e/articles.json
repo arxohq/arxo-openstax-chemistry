@@ -1,0 +1,31 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "14-7.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "14.7": "Acid-Base Titrations"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    },
+    {
+      "document": "en.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "14.1": "Brønsted-Lowry Acids and Bases",
+        "14.2": "pH and pOH",
+        "14.3": "Relative Strengths of Acids and Bases",
+        "14.4": "Hydrolysis of Salts",
+        "14.5": "Polyprotic Acids",
+        "14.6": "Buffers",
+        "15.2": "Lewis Acids and Bases"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

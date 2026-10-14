@@ -1,0 +1,279 @@
+3.3
+
+Molarity
+
+Learning Objectives
+
+By the end of this section, you will be able to:
+
+Describe the fundamental properties of solutions
+
+Calculate solution concentrations using molarity
+
+Perform dilution calculations using the dilution equation
+
+Preceding sections of this chapter focused on the composition of substances: samples of matter that contain only one type of element or compound. However, mixtures—samples of matter containing two or more substances physically combined—are more commonly encountered in nature than are pure substances. Similar to a pure substance, the relative composition of a mixture plays an important role in determining its properties. The relative amount of oxygen in a planet’s atmosphere determines its ability to sustain aerobic life. The relative amounts of iron, carbon, nickel, and other elements in steel (a mixture known as an “alloy”) determine its physical strength and resistance to corrosion. The relative amount of the active ingredient in a medicine determines its effectiveness in achieving the desired pharmacological effect. The relative amount of sugar in a beverage determines its sweetness (see Figure 3.14). This section will describe one of the most common ways in which the relative compositions of mixtures may be quantified.
+
+Figure
+3.14
+
+Sugar is one of many components in the complex mixture known as coffee. The amount of sugar in a given amount of coffee is an important determinant of the beverage’s sweetness. (credit: Jane Whitney)
+
+Solutions
+
+Solutions have previously been defined as homogeneous mixtures, meaning that the composition of the mixture (and therefore its properties) is uniform throughout its entire volume. Solutions occur frequently in nature and have also been implemented in many forms of manmade technology. A more thorough treatment of solution properties is provided in the chapter on solutions and colloids, but provided here is an introduction to some of the basic properties of solutions.
+
+The relative amount of a given solution component is known as its concentration. Often, though not always, a solution contains one component with a concentration that is significantly greater than that of all other components. This component is called the solvent and may be viewed as the medium in which the other components are dispersed, or dissolved. Solutions in which water is the solvent are, of course, very common on our planet. A solution in which water is the solvent is called an aqueous solution.
+
+A solute is a component of a solution that is typically present at a much lower concentration than the solvent. Solute concentrations are often described with qualitative terms such as dilute (of relatively low concentration) and concentrated (of relatively high concentration).
+
+Concentrations may be quantitatively assessed using a wide variety of measurement units, each convenient for particular applications. Molarity (M) is a useful concentration unit for many applications in chemistry. Molarity is defined as the number of moles of solute in exactly 1 liter (1 L) of the solution:
+
+M=mol soluteL solution
+
+Example
+3.14
+
+Calculating Molar Concentrations
+
+A 355-mL soft drink sample contains 0.133 mol of sucrose (table sugar). What is the molar concentration of sucrose in the beverage?
+
+Solution
+
+Since the molar amount of solute and the volume of solution are both given, the molarity can be calculated using the definition of molarity. Per this definition, the solution volume must be converted from mL to L:
+
+M=mol soluteL solution=0.133mol355mL×1L1000mL=0.375M
+
+Check Your Learning
+
+A teaspoon of table sugar contains about 0.01 mol sucrose. What is the molarity of sucrose if a teaspoon of sugar has been dissolved in a cup of tea with a volume of 200 mL?
+
+Answer:
+
+0.05 M
+
+Example
+3.15
+
+Deriving Moles and Volumes from Molar Concentrations
+
+How much sugar (mol) is contained in a modest sip (~10 mL) of the soft drink from Example 3.14?
+
+Solution
+
+Rearrange the definition of molarity to isolate the quantity sought, moles of sugar, then substitute the value for molarity derived in Example 3.14, 0.375 M:
+
+M=mol soluteL solutionmol solute=M×L solutionmol solute=0.375mol sugarL×(10mL×1L1000mL)=0.004mol sugar
+
+Check Your Learning
+
+What volume (mL) of the sweetened tea described in Example 3.14 contains the same amount of sugar (mol) as 10 mL of the soft drink in this example?
+
+Answer:
+
+80 mL
+
+Example
+3.16
+
+Calculating Molar Concentrations from the Mass of Solute
+
+Distilled white vinegar (Figure 3.15) is a solution of acetic acid, CH3CO2H, in water. A 0.500-L vinegar solution contains 25.2 g of acetic acid. What is the concentration of the acetic acid solution in units of molarity?
+
+Figure
+3.15
+
+Distilled white vinegar is a solution of acetic acid in water.
+
+Solution
+
+As in previous examples, the definition of molarity is the primary equation used to calculate the quantity sought. Since the mass of solute is provided instead of its molar amount, use the solute’s molar mass to obtain the amount of solute in moles:
+
+M=mol soluteL solution=25.2 gCH3CO2H×1mol CH3CO2H60.052 g CH3CO2H0.500 L solution=0.839M
+
+M=mol soluteL solution=0.839MM=0.839mol solute1.00L solution
+
+Check Your Learning
+
+Calculate the molarity of 6.52 g of CoCl2 (128.9 g/mol) dissolved in an aqueous solution with a total volume of 75.0 mL.
+
+Answer:
+
+0.674 M
+
+Example
+3.17
+
+Determining the Mass of Solute in a Given Volume of Solution
+
+How many grams of NaCl are contained in 0.250 L of a 5.30-M solution?
+
+Solution
+
+The volume and molarity of the solution are specified, so the amount (mol) of solute is easily computed as demonstrated in Example 3.15:
+
+M=mol soluteL solutionmol solute=M×L solutionmol solute=5.30mol NaClL×0.250L=1.325mol NaCl
+
+Finally, this molar amount is used to derive the mass of NaCl:
+
+1.325 mol NaCl×58.44g NaClmol NaCl=77.4g NaCl
+
+Check Your Learning
+
+How many grams of CaCl2 (110.98 g/mol) are contained in 250.0 mL of a 0.200-M solution of calcium chloride?
+
+Answer:
+
+5.55 g CaCl2
+
+When performing calculations stepwise, as in Example 3.17, it is important to refrain from rounding any intermediate calculation results, which can lead to rounding errors in the final result. In Example 3.17, the molar amount of NaCl computed in the first step, 1.325 mol, would be properly rounded to 1.32 mol if it were to be reported; however, although the last digit (5) is not significant, it must be retained as a guard digit in the intermediate calculation. If the guard digit had not been retained, the final calculation for the mass of NaCl would have been 77.1 g, a difference of 0.3 g.
+
+In addition to retaining a guard digit for intermediate calculations, rounding errors may also be avoided by performing computations in a single step (see Example 3.18). This eliminates intermediate steps so that only the final result is rounded.
+
+Example
+3.18
+
+Determining the Volume of Solution Containing a Given Mass of Solute
+
+In Example 3.16, the concentration of acetic acid in white vinegar was determined to be 0.839 M. What volume of vinegar contains 75.6 g of acetic acid?
+
+Solution
+
+First, use the molar mass to calculate moles of acetic acid from the given mass:
+
+g solute×mol soluteg solute=mol solute
+
+Then, use the molarity of the solution to calculate the volume of solution containing this molar amount of solute:
+
+mol solute×L solutionmol solute=L solution
+
+Combining these two steps into one yields:
+
+g solute×mol soluteg solute×L solutionmol solute=L solution
+
+75.6gCH3CO2H(molCH3CO2H60.05g)(L solution0.839molCH3CO2H)=1.50L solution
+
+Check Your Learning
+
+What volume of a 1.50-M KBr solution contains 66.0 g KBr?
+
+Answer:
+
+0.370 L
+
+Dilution of Solutions
+
+Dilution is the process whereby the concentration of a solution is lessened by the addition of solvent. For example, a glass of iced tea becomes increasingly diluted as the ice melts. The water from the melting ice increases the volume of the solvent (water) and the overall volume of the solution (iced tea), thereby reducing the relative concentrations of the solutes that give the beverage its taste (Figure 3.16).
+
+Figure
+3.16
+
+Both solutions contain the same mass of copper nitrate. The solution on the right is more dilute because the copper nitrate is dissolved in more solvent. (credit: Mark Ott)
+
+Dilution is also a common means of preparing solutions of a desired concentration. By adding solvent to a measured portion of a more concentrated stock solution, a solution of lesser concentration may be prepared. For example, commercial pesticides are typically sold as solutions in which the active ingredients are far more concentrated than is appropriate for their application. Before they can be used on crops, the pesticides must be diluted. This is also a very common practice for the preparation of a number of common laboratory reagents.
+
+A simple mathematical relationship can be used to relate the volumes and concentrations of a solution before and after the dilution process. According to the definition of molarity, the number of moles of solute in a solution (n) is equal to the product of the solution’s molarity (M) and its volume in liters (L):
+
+n=ML
+
+Expressions like these may be written for a solution before and after it is diluted:
+
+n1=M1L1
+
+n2=M2L2
+
+where the subscripts “1” and “2” refer to the solution before and after the dilution, respectively. Since the dilution process does not change the amount of solute in the solution, n1 = n2. Thus, these two equations may be set equal to one another:
+
+M1L1=M2L2
+
+This relation is commonly referred to as the dilution equation. Although this equation uses molarity as the unit of concentration and liters as the unit of volume, other units of concentration and volume may be used as long as the units properly cancel per the factor-label method. Reflecting this versatility, the dilution equation is often written in the more general form:
+
+C1V1=C2V2
+
+where C and V are concentration and volume, respectively.
+
+Link to Learning
+
+Use the simulation to explore the relations between solute amount, solution volume, and concentration and to confirm the dilution equation.
+
+Example
+3.19
+
+Determining the Concentration of a Diluted Solution
+
+If 0.850 L of a 5.00-M solution of copper nitrate, Cu(NO3)2, is diluted to a volume of 1.80 L by the addition of water, what is the molarity of the diluted solution?
+
+Solution
+
+The stock concentration, C1, and volume, V1, are provided as well as the volume of the diluted solution, V2. Rearrange the dilution equation to isolate the unknown property, the concentration of the diluted solution, C2:
+
+C1V1=C2V2C2=C1V1V2
+
+Since the stock solution is being diluted by more than two-fold (volume is increased from 0.85 L to 1.80 L), the diluted solution’s concentration is expected to be less than one-half 5 M. This ballpark estimate will be compared to the calculated result to check for any gross errors in computation (for example, such as an improper substitution of the given quantities). Substituting the given values for the terms on the right side of this equation yields:
+
+C2=0.850L×5.00molL1.80 L=2.36M
+
+This result compares well to our ballpark estimate (it’s a bit less than one-half the stock concentration, 5 M).
+
+Check Your Learning
+
+What is the concentration of the solution that results from diluting 25.0 mL of a 2.04-M solution of CH3OH to 500.0 mL?
+
+Answer:
+
+0.102 M CH3OH
+
+Example
+3.20
+
+Volume of a Diluted Solution
+
+What volume of 0.12 M HBr can be prepared from 11 mL (0.011 L) of 0.45 M HBr?
+
+Solution
+
+Provided are the volume and concentration of a stock solution, V1 and C1, and the concentration of the resultant diluted solution, C2. Find the volume of the diluted solution, V2 by rearranging the dilution equation to isolate V2:
+
+C1V1=C2V2V2=C1V1C2
+
+Since the diluted concentration (0.12 M) is slightly more than one-fourth the original concentration (0.45 M), the volume of the diluted solution is expected to be roughly four times the original volume, or around 44 mL. Substituting the given values and solving for the unknown volume yields:
+
+V2=(0.45M)(0.011L)(0.12M)V2=0.041L
+
+The volume of the 0.12-M solution is 0.041 L (41 mL). The result is reasonable and compares well with the rough estimate.
+
+Check Your Learning
+
+A laboratory experiment calls for 0.125 M HNO3. What volume of 0.125 M HNO3 can be prepared from 0.250 L of 1.88 M HNO3?
+
+Answer:
+
+3.76 L
+
+Example
+3.21
+
+Volume of a Concentrated Solution Needed for Dilution
+
+What volume of 1.59 M KOH is required to prepare 5.00 L of 0.100 M KOH?
+
+Solution
+
+Given are the concentration of a stock solution, C1, and the volume and concentration of the resultant diluted solution, V2 and C2. Find the volume of the stock solution, V1 by rearranging the dilution equation to isolate V1:
+
+C1V1=C2V2V1=C2V2C1
+
+Since the concentration of the diluted solution 0.100 M is roughly one-sixteenth that of the stock solution (1.59 M), the volume of the stock solution is expected to be about one-sixteenth that of the diluted solution, or around 0.3 liters. Substituting the given values and solving for the unknown volume yields:
+
+V1=(0.100M)(5.00L)1.59MV1=0.314L
+
+Thus, 0.314 L of the 1.59-M solution is needed to prepare the desired solution. This result is consistent with the rough estimate.
+
+Check Your Learning
+
+What volume of a 0.575-M solution of glucose, C6H12O6, can be prepared from 50.00 mL of a 3.00-M glucose solution?
+
+Answer:
+
+0.261 L
+

@@ -1,0 +1,19 @@
+language "law.core" version "0.2";
+package openstax.chemistry_coordination version "0.1.0";
+namespace "urn:openstax:clir:chemistry-coordination";
+
+// B23.09: неразмеченная строка (без слоя) покрытием не является —
+// именованный зазор слоя, а не покрытие.
+test "unlabelled row yields a layer gap, not coverage" {
+ given {
+  assert "f0": row_claims(entity_ref("urn:openstax:matrix:m1"), "coord-sphere") { origin case_input; }
+  assert "f1": row_formula(entity_ref("urn:openstax:matrix:m1"), "coordination sphere is the central metal plus attached ligands; brackets enclose it") { origin case_input; }
+  assert "f2": row_layer(entity_ref("urn:openstax:matrix:m1"), "none (unlabelled)") { origin case_input; }
+  assert "f3": row_checker(entity_ref("urn:openstax:matrix:m1"), "unlinked: no computational checker journaled") { origin case_input; }
+  assert "f4": row_fragment(entity_ref("urn:openstax:matrix:m1"), "section/19.2#coordination-sphere") { origin case_input; }
+ }
+ evaluate truth(matrix_gap(entity_ref("urn:openstax:matrix:m1"), "LAYER_MISMATCH"));
+ expect truth_status == TRUE_ONLY;
+ expect evaluation_status == COMPUTED;
+ expect applied(SphereLayerMismatch);
+}

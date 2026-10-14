@@ -1,0 +1,35 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "16.1.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "16.1": "Spontaneity"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    },
+    {
+      "document": "16.4.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "16.4": "Free Energy"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    },
+    {
+      "document": "5.3.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "5.3": "Enthalpy"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

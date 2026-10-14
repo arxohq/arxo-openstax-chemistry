@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:thermo:sys",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-thermo#spontaneous_forward"
+  },
+  "queryId": "urn:openstax:clir:chemistry-thermo#test/urn%3Aquery%3Aos-thermo-04-no-sign/query/0"
+}

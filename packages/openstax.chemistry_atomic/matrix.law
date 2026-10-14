@@ -1,0 +1,112 @@
+language "law.core" version "0.2";
+package openstax.chemistry_atomic version "0.1.0";
+namespace "urn:openstax:clir:chemistry-atomic";
+
+// Источниковый срез B23.09: три строки §6.4 (конфигурация — определение, Aufbau — модель, исключения Cr/Cu — наблюдение) с привязкой к `calc.atomic_structure`. Наблюдение, определение и учебная
+// модель размечены отдельно (B23.09); каждая строка привязана к точному
+// фрагменту и к вычислительному соседу `calc.atomic_structure`.
+// Литералы правил — сам срез; тесты предъявляют верные/неверные строки.
+
+use self::{
+    F_AUFBAU,
+    F_CONFIG_DEF,
+    F_EXCEPTION,
+};
+
+@source(F_CONFIG_DEF)
+pub entity MatrixRow {
+    label en official "claimed source-slice entry under test";
+    label ru unofficial "проверяемая строка источникового среза";
+}
+
+@source(F_CONFIG_DEF)
+pub relation row_claims(r: MatrixRow { label ru unofficial "r"; }, rule_id: Text { label ru unofficial "идентификатор утверждения учебника"; }) kind empirical {
+    label en official "row claims to cover a textbook statement";
+    label ru unofficial "строка заявляет покрытие утверждения учебника";
+}
+
+@source(F_CONFIG_DEF)
+pub relation row_formula(r: MatrixRow { label ru unofficial "r"; }, formula: Text { label ru unofficial "формулировка"; }) kind empirical {
+    label en official "statement text as presented";
+    label ru unofficial "предъявленная формулировка утверждения";
+}
+
+@source(F_CONFIG_DEF)
+pub relation row_layer(r: MatrixRow { label ru unofficial "r"; }, layer: Text { label ru unofficial "слой"; }) kind empirical {
+    label en official "observation/definition/model layer as presented";
+    label ru unofficial "предъявленный слой: наблюдение/определение/модель";
+}
+
+@source(F_CONFIG_DEF)
+pub relation row_checker(r: MatrixRow { label ru unofficial "r"; }, checker: Text { label ru unofficial "проверяющий"; }) kind empirical {
+    label en official "checker linkage as presented";
+    label ru unofficial "предъявленная привязка к проверяющему";
+}
+
+@source(F_CONFIG_DEF)
+pub relation row_fragment(r: MatrixRow { label ru unofficial "r"; }, fragment_locator: Text { label ru unofficial "фрагмент"; }) kind empirical {
+    label en official "source fragment locator as presented";
+    label ru unofficial "предъявленный локатор фрагмента источника";
+}
+
+@source(F_CONFIG_DEF)
+pub relation claim_covered(r: MatrixRow { label ru unofficial "r"; }) kind derived {
+    label en official "slice entry is layered and source-anchored";
+    label ru unofficial "строка среза размечена по слоям и привязана к источнику";
+}
+
+@source(F_CONFIG_DEF)
+pub relation matrix_gap(r: MatrixRow { label ru unofficial "r"; }, reason: Text { label ru unofficial "причина"; }) kind derived {
+    label en official "slice entry defect with a named reason";
+    label ru unofficial "дефект строки среза с именованной причиной";
+}
+
+// B23.09 acceptance: неразмеченная строка (без слоя) покрытием не является.
+
+
+@source(F_CONFIG_DEF)
+rule ConfigCovered(r: MatrixRow) strict {
+    label en official "configuration definition entry is covered";
+    label ru unofficial "строка-определение конфигурации покрыта";
+    when row_claims(r, "config-def")
+        and row_formula(r, "electron configuration is the arrangement of electrons in orbitals; it determines chemical properties")
+        and row_layer(r, "definition")
+        and row_checker(r, "calc.atomic_structure config")
+        and row_fragment(r, "section/6.4#electron-configuration");
+    then claim_covered(r);
+}
+
+
+@source(F_AUFBAU)
+rule AufbauCovered(r: MatrixRow) strict {
+    label en official "aufbau model entry is covered";
+    label ru unofficial "строка-модель Aufbau покрыта";
+    when row_claims(r, "aufbau-model")
+        and row_formula(r, "build configurations in order of atomic number following the orbital energy order")
+        and row_layer(r, "model")
+        and row_checker(r, "calc.atomic_structure config")
+        and row_fragment(r, "section/6.4#aufbau-principle");
+    then claim_covered(r);
+}
+
+
+@source(F_EXCEPTION)
+rule ExceptionCovered(r: MatrixRow) strict {
+    label en official "exception observation entry is covered";
+    label ru unofficial "строка-наблюдение исключений покрыта";
+    when row_claims(r, "exception-obs")
+        and row_formula(r, "Cr and Cu show half-filled/filled 3d stability exceptions shifting one 4s electron to 3d")
+        and row_layer(r, "observation")
+        and row_checker(r, "calc.atomic_structure config")
+        and row_fragment(r, "section/6.4#configuration-exceptions");
+    then claim_covered(r);
+}
+
+
+@source(F_AUFBAU)
+rule AufbauLayerMismatch(r: MatrixRow, v: Text) strict {
+    label en official "aufbau-model entry with a wrong layer is a named gap";
+    label ru unofficial "строка aufbau-model с неверным слоем — именованный зазор";
+    when row_claims(r, "aufbau-model") and row_layer(r, v) and v != "model";
+    then matrix_gap(r, "LAYER_MISMATCH");
+}

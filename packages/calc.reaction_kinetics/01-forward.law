@@ -1,0 +1,203 @@
+// Прямой вопрос: c(t) для n = 0, 1, 2; истощение; отказы области.
+//
+// РАЗМЕРНОСТЬ k ЗАВИСИТ ОТ n И НАЗВАНА ЗДЕСЬ: n = 0 — (моль/л)/с,
+// n = 1 — 1/с, n = 2 — л/(моль·с). Числа голые (единицы — в именах,
+// приём `calc.first_order_dynamics` §259.1); перевод Quantity → число —
+// дело потребителя. Порядок — входная модель (`given_order`), а не вывод:
+// стехиометрических входов в пакете нет, и выводить порядок не из чего.
+//
+// ОБЛАСТЬ НАЗВАНА ГАРДОМ: k > 0, t ≥ 0, c₀ > 0, знаменатели > 0. Вне
+// области правило не срабатывает, а рядом встаёт именованный диагноз —
+// вопрос не остаётся немым там, где причина называема.
+
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+use self::{
+    Calculation,
+};
+
+// --- Вход --------------------------------------------------------------------
+
+pub relation given_order(c: Calculation, n: Integer) kind empirical {
+    label ru unofficial "порядок закона скорости −dc/dt = k·c^n как входная модель: 0, 1 или 2 (из стехиометрии не выводится)";
+    label en unofficial "rate-law order −dc/dt = k·c^n as an input model: 0, 1 or 2 (never inferred from stoichiometry)";
+}
+
+pub relation given_initial_concentration(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "начальная концентрация c₀ в моль/л, дробью числитель/знаменатель";
+    label en unofficial "initial concentration c₀ in mol/l, as numerator/denominator";
+}
+
+pub relation given_rate_constant(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "константа скорости k при T₁, дробью; размерность зависит от порядка (см. модуль)";
+    label en unofficial "rate constant k at T₁, as a fraction; dimensions depend on the order (see module)";
+}
+
+pub relation given_elapsed(c: Calculation, numerator: Integer, denominator: Integer) kind empirical {
+    key(c);
+    label ru unofficial "сдвиг времени t ≥ 0 в секундах, дробью числитель/знаменатель";
+    label en unofficial "time shift t ≥ 0 in seconds, as numerator/denominator";
+}
+
+pub relation given_output_precision(c: Calculation, digits: Integer) kind empirical {
+    key(c);
+    label ru unofficial "объявленная политика округления: знаков после запятой для округлённых голов (режим HALF_UP зафиксирован пакетом)";
+    label en unofficial "declared rounding policy: digits after the point for the rounded heads (HALF_UP fixed by this package)";
+}
+
+// --- Диагнозы области --------------------------------------------------------
+
+pub relation unsupported_order(c: Calculation) kind institutional {
+    label ru unofficial "предъявленный порядок вне {0, 1, 2}: закрытой формы нет, подгонки нет";
+    label en unofficial "presented order outside {0, 1, 2}: no closed form, no fitting";
+}
+
+rule UnsupportedOrderHigh(c: Calculation, n: Integer) strict {
+    label ru unofficial "порядок выше второго — вне контракта";
+    label en unofficial "order above two is outside the contract";
+    when given_order(c, n) and n > 2;
+    then unsupported_order(c);
+}
+
+rule UnsupportedOrderLow(c: Calculation, n: Integer) strict {
+    label ru unofficial "отрицательный порядок — вне контракта";
+    label en unofficial "a negative order is outside the contract";
+    when given_order(c, n) and n < 0;
+    then unsupported_order(c);
+}
+
+pub relation nonpositive_rate_constant(c: Calculation) kind institutional {
+    label ru unofficial "константа скорости неположительна: k > 0 — гард всех формул";
+    label en unofficial "rate constant is not positive: k > 0 guards every formula";
+}
+
+rule NonpositiveRateConstant(c: Calculation, kn: Integer, kd: Integer) strict {
+    label ru unofficial "неположительный числитель k при положительном знаменателе — именованный отказ";
+    label en unofficial "a nonpositive k numerator with a positive denominator is a named refusal";
+    when given_rate_constant(c, kn, kd) and kd > 0 and kn <= 0;
+    then nonpositive_rate_constant(c);
+}
+
+pub relation invalid_rate_constant(c: Calculation) kind institutional {
+    label ru unofficial "знаменатель k неположителен: константа не задаёт числа";
+    label en unofficial "k denominator is not positive: the constant names no number";
+}
+
+rule InvalidRateConstant(c: Calculation, kn: Integer, kd: Integer) strict {
+    label ru unofficial "неположительный знаменатель k — вне области";
+    label en unofficial "a nonpositive k denominator is outside the domain";
+    when given_rate_constant(c, kn, kd) and kd <= 0;
+    then invalid_rate_constant(c);
+}
+
+pub relation negative_time(c: Calculation) kind institutional {
+    label ru unofficial "дело спрашивает о прошлом: отрицательный сдвиг вне контракта";
+    label en unofficial "the case asks about the past: a negative shift is outside the contract";
+}
+
+rule NegativeTime(c: Calculation, tn: Integer, td: Integer) strict {
+    label ru unofficial "отрицательный сдвиг не получает концентрации, а не считается назад молча";
+    label en unofficial "a negative shift gets no concentration, not a silent backward computation";
+    when given_elapsed(c, tn, td) and td > 0 and tn < 0;
+    then negative_time(c);
+}
+
+pub relation invalid_elapsed_time(c: Calculation) kind institutional {
+    label ru unofficial "знаменатель сдвига времени неположителен: момент не задан";
+    label en unofficial "time-shift denominator is not positive: the moment is unnamed";
+}
+
+rule InvalidElapsedTime(c: Calculation, tn: Integer, td: Integer) strict {
+    label ru unofficial "неположительный знаменатель времени — вне области";
+    label en unofficial "a nonpositive time denominator is outside the domain";
+    when given_elapsed(c, tn, td) and td <= 0;
+    then invalid_elapsed_time(c);
+}
+
+pub relation invalid_initial_concentration(c: Calculation) kind institutional {
+    label ru unofficial "начальная концентрация неположительна: c₀ > 0 — гард всех формул";
+    label en unofficial "initial concentration is not positive: c₀ > 0 guards every formula";
+}
+
+rule InvalidInitialConcentration(c: Calculation, an: Integer, ad: Integer) strict {
+    label ru unofficial "неположительная начальная концентрация — вне области";
+    label en unofficial "a nonpositive initial concentration is outside the domain";
+    when given_initial_concentration(c, an, ad) and ad > 0 and an <= 0;
+    then invalid_initial_concentration(c);
+}
+
+// --- Прямой вопрос: единые головы --------------------------------------------
+
+pub relation concentration_bounds(c: Calculation, x: Bounds) kind institutional {
+    label ru unofficial "неокруглённые границы c(t) в моль/л: точные порядки wrapped через bounds::exact";
+    label en unofficial "unrounded c(t) bounds in mol/l: exact orders wrapped via bounds::exact";
+}
+
+pub relation concentration_value(c: Calculation, x: Decimal) kind institutional {
+    label ru unofficial "c(t), округлённая до объявленной точности, — терминальная голова";
+    label en unofficial "c(t) rounded to the declared precision — a terminal head";
+}
+
+pub relation depleted(c: Calculation) kind institutional {
+    label ru unofficial "реагент нулевого порядка исчерпан к указанному моменту: концентрации нет, а не ноль формулой";
+    label en unofficial "the zero-order reactant is exhausted by the stated moment: no concentration, not a formula zero";
+}
+
+// n = 0: c = c₀ − kt; строго ниже истощения. Ровно на границе — `depleted`.
+rule ConcentrationZeroOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "нулевой порядок: линейный спад точной дробью, пока реагент не исчерпан";
+    label en unofficial "zero order: exact-fraction linear decay while the reactant lasts";
+    when given_order(c, 0)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0
+        and kn * tn * ad < an * kd * td;
+    then concentration_bounds(c, bounds::exact((an * kd * td - kn * tn * ad) / (ad * kd * td), 1));
+}
+
+rule DepletedZeroOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "нулевой порядок на границе и за ней: kt ≥ c₀ — истощение, а не отрицательная концентрация";
+    label en unofficial "zero order at and past the boundary: kt ≥ c₀ means depletion, not a negative concentration";
+    when given_order(c, 0)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0
+        and kn * tn * ad >= an * kd * td;
+    then depleted(c);
+}
+
+// n = 1: c = c₀·exp(−kt). Показатель собирается целыми, затем exp_bounds.
+rule ConcentrationFirstOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "первый порядок: экспонента безразмерного показателя сертифицированными границами";
+    label en unofficial "first order: certified-bounds exponential of the dimensionless exponent";
+    when given_order(c, 1)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0;
+    then concentration_bounds(c,
+        bounds::mul(bounds::exact(an / ad, 1),
+            math::exp((0 - kn * tn) / (kd * td), "p16/0.1")));
+}
+
+// n = 2: c = c₀/(1 + c₀kt) — точная дробь одним делением.
+rule ConcentrationSecondOrder(c: Calculation, an: Integer, ad: Integer, kn: Integer, kd: Integer, tn: Integer, td: Integer) strict {
+    label ru unofficial "второй порядок: гипербола точной дробью, знаменатель строго положителен гардами";
+    label en unofficial "second order: exact-fraction hyperbola with a guard-positive denominator";
+    when given_order(c, 2)
+        and given_initial_concentration(c, an, ad) and ad > 0 and an > 0
+        and given_rate_constant(c, kn, kd) and kd > 0 and kn > 0
+        and given_elapsed(c, tn, td) and td > 0 and tn >= 0;
+    then concentration_bounds(c,
+        bounds::exact((an * kd * td) / (ad * kd * td + an * kn * tn), 1));
+}
+
+rule ConcentrationRounded(c: Calculation, x: Bounds, p: Integer) strict {
+    label ru unofficial "округление c(t) удаётся, лишь когда оба конца легли в одну ячейку, иначе голова не выводится";
+    label en unofficial "rounding c(t) succeeds only when both ends fall in one cell; otherwise this head stays underived";
+    when concentration_bounds(c, x) and given_output_precision(c, p);
+    then concentration_value(c, bounds::round(x, p, "HALF_UP"));
+}

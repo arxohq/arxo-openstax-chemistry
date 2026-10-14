@@ -1,0 +1,136 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:9ad287e54166e4f5f12858f769f7b43849a6b99d2ceca25052d237f910c67b97",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f0",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "octet-model"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_claims"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:9c1a1872860ec6d4b6db79e958c032c861548704c7550dc3e80c76baca3fda05",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "number of bonds predicted from electrons needed to reach an octet"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_formula"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:2dd956d3c12782d07c7431a512f9a1e63639bc9e2cbff3fb6637103cc6dc4997",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f2",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "model"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_layer"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:974294168a97a02ee344823e509d94d7c767e8263aa5e433ae9f319ccabbc863",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f3",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "calc.lewis_structures octet-check"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_checker"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    },
+    {
+      "contentHash": "sha256:df515bd0f58e7d6482927aeade727049387c9ac6aede012bca7236d3d891ad24",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-bonding#f4",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:matrix:m03",
+            "kind": "entity_ref"
+          },
+          {
+            "kind": "value",
+            "type": {
+              "name": "urn:law:std#Text"
+            },
+            "value": "section/7.3#octet-prediction"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-bonding#row_fragment"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-bonding"
+    }
+  ],
+  "context": {},
+  "options": {}
+}

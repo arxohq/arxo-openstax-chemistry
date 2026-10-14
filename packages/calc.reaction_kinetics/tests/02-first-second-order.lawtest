@@ -1,0 +1,95 @@
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+// Порядок 1: c0 = 10 моль/л, k = 1/2 1/с. Независимые ожидания (python3):
+//   c(2) = 10*e^-1 = 3.6787944117144233 -> 3.679 (точность 3)
+//   t(c=5) = ln2/0.5 = 1.3862943611198906 -> 1.386
+//   t1/2 = ln2/0.5 = 1.3862943611198906 -> 1.386
+
+test "urn:query:calc-kin-f01-first-concentration" {
+    given {
+        assert "f01-o": given_order(entity_ref("urn:case:kin:f"), 1) { origin case_input; }
+        assert "f01-c0": given_initial_concentration(entity_ref("urn:case:kin:f"), 10, 1) { origin case_input; }
+        assert "f01-k": given_rate_constant(entity_ref("urn:case:kin:f"), 1, 2) { origin case_input; }
+        assert "f01-t": given_elapsed(entity_ref("urn:case:kin:f"), 2, 1) { origin case_input; }
+        assert "f01-p": given_output_precision(entity_ref("urn:case:kin:f"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:f"), 3.679));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConcentrationRounded);
+}
+
+test "urn:query:calc-kin-f02-first-time" {
+    given {
+        assert "f02-o": given_order(entity_ref("urn:case:kin:ft"), 1) { origin case_input; }
+        assert "f02-c0": given_initial_concentration(entity_ref("urn:case:kin:ft"), 10, 1) { origin case_input; }
+        assert "f02-k": given_rate_constant(entity_ref("urn:case:kin:ft"), 1, 2) { origin case_input; }
+        assert "f02-q": given_target_concentration(entity_ref("urn:case:kin:ft"), 5, 1) { origin case_input; }
+        assert "f02-p": given_output_precision(entity_ref("urn:case:kin:ft"), 3) { origin case_input; }
+    }
+    evaluate truth(time_value(entity_ref("urn:case:kin:ft"), 1.386));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TimeRounded);
+}
+
+test "urn:query:calc-kin-f03-first-half-life" {
+    given {
+        assert "f03-o": given_order(entity_ref("urn:case:kin:fh"), 1) { origin case_input; }
+        assert "f03-c0": given_initial_concentration(entity_ref("urn:case:kin:fh"), 10, 1) { origin case_input; }
+        assert "f03-k": given_rate_constant(entity_ref("urn:case:kin:fh"), 1, 2) { origin case_input; }
+        assert "f03-p": given_output_precision(entity_ref("urn:case:kin:fh"), 3) { origin case_input; }
+    }
+    evaluate truth(half_life_value(entity_ref("urn:case:kin:fh"), 1.386));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(HalfLifeRounded);
+}
+
+// Порядок 2: c0 = 2 моль/л, k = 1/4 л/(моль·с). Независимые ожидания:
+//   c(2) = 2/(1+2*1/4*2) = 1 -> 1.000
+//   t(c=1) = (1/1-1/2)/(1/4) = 2 -> 2.000
+//   t1/2 = 1/(1/4*2) = 2 -> 2.000
+
+test "urn:query:calc-kin-s01-second-concentration" {
+    given {
+        assert "s01-o": given_order(entity_ref("urn:case:kin:s"), 2) { origin case_input; }
+        assert "s01-c0": given_initial_concentration(entity_ref("urn:case:kin:s"), 2, 1) { origin case_input; }
+        assert "s01-k": given_rate_constant(entity_ref("urn:case:kin:s"), 1, 4) { origin case_input; }
+        assert "s01-t": given_elapsed(entity_ref("urn:case:kin:s"), 2, 1) { origin case_input; }
+        assert "s01-p": given_output_precision(entity_ref("urn:case:kin:s"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:s"), 1.000));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(ConcentrationRounded);
+}
+
+test "urn:query:calc-kin-s02-second-time" {
+    given {
+        assert "s02-o": given_order(entity_ref("urn:case:kin:st"), 2) { origin case_input; }
+        assert "s02-c0": given_initial_concentration(entity_ref("urn:case:kin:st"), 2, 1) { origin case_input; }
+        assert "s02-k": given_rate_constant(entity_ref("urn:case:kin:st"), 1, 4) { origin case_input; }
+        assert "s02-q": given_target_concentration(entity_ref("urn:case:kin:st"), 1, 1) { origin case_input; }
+        assert "s02-p": given_output_precision(entity_ref("urn:case:kin:st"), 3) { origin case_input; }
+    }
+    evaluate truth(time_value(entity_ref("urn:case:kin:st"), 2.000));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TimeRounded);
+}
+
+test "urn:query:calc-kin-s03-second-half-life" {
+    given {
+        assert "s03-o": given_order(entity_ref("urn:case:kin:sh"), 2) { origin case_input; }
+        assert "s03-c0": given_initial_concentration(entity_ref("urn:case:kin:sh"), 2, 1) { origin case_input; }
+        assert "s03-k": given_rate_constant(entity_ref("urn:case:kin:sh"), 1, 4) { origin case_input; }
+        assert "s03-p": given_output_precision(entity_ref("urn:case:kin:sh"), 3) { origin case_input; }
+    }
+    evaluate truth(half_life_value(entity_ref("urn:case:kin:sh"), 2.000));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(HalfLifeRounded);
+}

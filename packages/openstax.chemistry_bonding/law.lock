@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:d44f022363686b39c1c8f65c9e621b4b54caab193706ac639e1c113e05a0939c",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:14c6689e75652e120ade08bfa561e9e0697569fe1edfc2c42ad4951d8c550b2c",
+    "name": "openstax.chemistry_bonding",
+    "namespace": "urn:openstax:clir:chemistry-bonding",
+    "sourceHash": "sha256:bf6b9c8224436f095fc5439c5f3df4cc55ae9f2f3a8ea45ef74bad9009a92721",
+    "version": "0.1.0"
+  }
+}

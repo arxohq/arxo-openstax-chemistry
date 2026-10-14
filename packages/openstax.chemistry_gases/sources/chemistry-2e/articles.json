@@ -1,0 +1,25 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "9.2.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "9.2": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    },
+    {
+      "document": "9.3.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "9.3": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

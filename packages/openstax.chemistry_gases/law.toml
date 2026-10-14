@@ -1,0 +1,22 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_gases"
+version = "0.1.1"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-gases"
+
+# Каталожная метадата (DECISION-0051). НЕ семантика: в CLIR не понижается.
+# Своих закреплённых байтов нет (авторский парафраз §9.2–9.3 с точными
+# ссылками); лицензия книги — CC BY-NC-SA 4.0 (см. шапку 01-gases.law).
+[metadata]
+title = "OpenStax Chemistry 2e, гл. 9 (газы): ворота модели идеального газа и связи со стехиометрией"
+legalStatus = "doctrine"
+
+[[tests]]
+family = "openstax_chemistry_gases"
+suites = ["tests/chemistry-gases.lawtest"]
+world = ["openstax.chemistry_gases"]
+
+[authoring]
+local_imports = "explicit"

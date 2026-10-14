@@ -1,0 +1,117 @@
+language "law.core" version "0.2";
+package calc.reaction_kinetics version "0.1.0";
+namespace "urn:law:calc:reaction-kinetics";
+
+// Границы области: порядок вне {0,1,2}, k ≤ 0, t < 0, цель выше начальной.
+// Каждый отказ именован; вычислений вне области нет.
+
+// Порядок 3: закрытой формы нет, подгонки нет.
+test "urn:query:calc-kin-e01-unsupported-order" {
+    given {
+        assert "e01-o": given_order(entity_ref("urn:case:kin:bad"), 3) { origin case_input; }
+        assert "e01-c0": given_initial_concentration(entity_ref("urn:case:kin:bad"), 1, 2) { origin case_input; }
+        assert "e01-k": given_rate_constant(entity_ref("urn:case:kin:bad"), 1, 10) { origin case_input; }
+        assert "e01-t": given_elapsed(entity_ref("urn:case:kin:bad"), 3, 1) { origin case_input; }
+        assert "e01-p": given_output_precision(entity_ref("urn:case:kin:bad"), 3) { origin case_input; }
+    }
+    evaluate truth(unsupported_order(entity_ref("urn:case:kin:bad")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(UnsupportedOrderHigh);
+}
+
+test "urn:query:calc-kin-e02-no-concentration-for-order-3" {
+    given {
+        assert "e02-o": given_order(entity_ref("urn:case:kin:bad"), 3) { origin case_input; }
+        assert "e02-c0": given_initial_concentration(entity_ref("urn:case:kin:bad"), 1, 2) { origin case_input; }
+        assert "e02-k": given_rate_constant(entity_ref("urn:case:kin:bad"), 1, 10) { origin case_input; }
+        assert "e02-t": given_elapsed(entity_ref("urn:case:kin:bad"), 3, 1) { origin case_input; }
+        assert "e02-p": given_output_precision(entity_ref("urn:case:kin:bad"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:bad"), 0.200));
+    expect truth_status == NEITHER;
+}
+
+// k = 0: именованный отказ, концентрации нет.
+test "urn:query:calc-kin-e03-nonpositive-rate" {
+    given {
+        assert "e03-o": given_order(entity_ref("urn:case:kin:zero"), 1) { origin case_input; }
+        assert "e03-c0": given_initial_concentration(entity_ref("urn:case:kin:zero"), 10, 1) { origin case_input; }
+        assert "e03-k": given_rate_constant(entity_ref("urn:case:kin:zero"), 0, 1) { origin case_input; }
+        assert "e03-t": given_elapsed(entity_ref("urn:case:kin:zero"), 2, 1) { origin case_input; }
+        assert "e03-p": given_output_precision(entity_ref("urn:case:kin:zero"), 3) { origin case_input; }
+    }
+    evaluate truth(nonpositive_rate_constant(entity_ref("urn:case:kin:zero")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(NonpositiveRateConstant);
+}
+
+test "urn:query:calc-kin-e04-no-concentration-for-zero-k" {
+    given {
+        assert "e04-o": given_order(entity_ref("urn:case:kin:zero"), 1) { origin case_input; }
+        assert "e04-c0": given_initial_concentration(entity_ref("urn:case:kin:zero"), 10, 1) { origin case_input; }
+        assert "e04-k": given_rate_constant(entity_ref("urn:case:kin:zero"), 0, 1) { origin case_input; }
+        assert "e04-t": given_elapsed(entity_ref("urn:case:kin:zero"), 2, 1) { origin case_input; }
+        assert "e04-p": given_output_precision(entity_ref("urn:case:kin:zero"), 3) { origin case_input; }
+    }
+    evaluate truth(concentration_value(entity_ref("urn:case:kin:zero"), 10.000));
+    expect truth_status == NEITHER;
+}
+
+// t < 0: вопрос о прошлом отклонён, состояния нет.
+test "urn:query:calc-kin-e05-negative-time" {
+    given {
+        assert "e05-o": given_order(entity_ref("urn:case:kin:past"), 1) { origin case_input; }
+        assert "e05-c0": given_initial_concentration(entity_ref("urn:case:kin:past"), 10, 1) { origin case_input; }
+        assert "e05-k": given_rate_constant(entity_ref("urn:case:kin:past"), 1, 2) { origin case_input; }
+        assert "e05-t": given_elapsed(entity_ref("urn:case:kin:past"), -1, 1) { origin case_input; }
+        assert "e05-p": given_output_precision(entity_ref("urn:case:kin:past"), 3) { origin case_input; }
+    }
+    evaluate truth(negative_time(entity_ref("urn:case:kin:past")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(NegativeTime);
+}
+
+// Цель выше начальной при порядке 0: спад её не достигнет.
+test "urn:query:calc-kin-e06-target-above-initial" {
+    given {
+        assert "e06-o": given_order(entity_ref("urn:case:kin:high"), 0) { origin case_input; }
+        assert "e06-c0": given_initial_concentration(entity_ref("urn:case:kin:high"), 1, 2) { origin case_input; }
+        assert "e06-k": given_rate_constant(entity_ref("urn:case:kin:high"), 1, 10) { origin case_input; }
+        assert "e06-q": given_target_concentration(entity_ref("urn:case:kin:high"), 1, 1) { origin case_input; }
+        assert "e06-p": given_output_precision(entity_ref("urn:case:kin:high"), 3) { origin case_input; }
+    }
+    evaluate truth(target_above_initial(entity_ref("urn:case:kin:high")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(TargetAboveInitial);
+}
+
+test "urn:query:calc-kin-e07-no-time-for-high-target" {
+    given {
+        assert "e07-o": given_order(entity_ref("urn:case:kin:high"), 0) { origin case_input; }
+        assert "e07-c0": given_initial_concentration(entity_ref("urn:case:kin:high"), 1, 2) { origin case_input; }
+        assert "e07-k": given_rate_constant(entity_ref("urn:case:kin:high"), 1, 10) { origin case_input; }
+        assert "e07-q": given_target_concentration(entity_ref("urn:case:kin:high"), 1, 1) { origin case_input; }
+        assert "e07-p": given_output_precision(entity_ref("urn:case:kin:high"), 3) { origin case_input; }
+    }
+    evaluate truth(time_value(entity_ref("urn:case:kin:high"), 1.000));
+    expect truth_status == NEITHER;
+}
+
+// Цель равна начальной: достигнута в начале.
+test "urn:query:calc-kin-e08-level-at-start" {
+    given {
+        assert "e08-o": given_order(entity_ref("urn:case:kin:now"), 1) { origin case_input; }
+        assert "e08-c0": given_initial_concentration(entity_ref("urn:case:kin:now"), 10, 1) { origin case_input; }
+        assert "e08-k": given_rate_constant(entity_ref("urn:case:kin:now"), 1, 2) { origin case_input; }
+        assert "e08-q": given_target_concentration(entity_ref("urn:case:kin:now"), 10, 1) { origin case_input; }
+        assert "e08-p": given_output_precision(entity_ref("urn:case:kin:now"), 3) { origin case_input; }
+    }
+    evaluate truth(level_at_start(entity_ref("urn:case:kin:now")));
+    expect truth_status == TRUE_ONLY;
+    expect evaluation_status == COMPUTED;
+    expect applied(LevelAtStart);
+}

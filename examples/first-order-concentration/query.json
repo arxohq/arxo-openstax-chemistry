@@ -1,0 +1,23 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:kin:run1",
+        "kind": "entity_ref"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Quantity"
+        },
+        "unit": "mol_per_l",
+        "value": "0.367879"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-kinetics#run_concentration"
+  },
+  "queryId": "urn:openstax:clir:chemistry-kinetics#test/urn%3Aquery%3Aos-run-01-first-order-concentration/query/0"
+}

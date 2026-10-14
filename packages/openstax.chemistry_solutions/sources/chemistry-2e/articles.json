@@ -1,0 +1,25 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "11.1.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "11.1": "The Dissolution Process"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    },
+    {
+      "document": "3.3.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "3.3": "Molarity"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

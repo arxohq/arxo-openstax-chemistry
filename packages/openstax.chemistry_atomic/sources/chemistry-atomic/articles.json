@@ -1,0 +1,15 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "6.4.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "6.4": "Electronic Structure of Atoms (Electron Configurations)"
+      },
+      "snapshotScope": "captured textbook sections",
+      "edition": "Chemistry 2e; exact publication hash",
+      "origin": "literal publisher section headings in pinned extraction"
+    }
+  ]
+}

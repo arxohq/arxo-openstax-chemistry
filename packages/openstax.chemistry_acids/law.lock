@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:b62934f77051a18418903ce341934e00d6d6baa51aff8162136f4da5e94cd7e0",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:0031fddd16ecf12aec42caddf539d9b53ddd54c2a27baa8aae4c04738747b3f8",
+    "name": "openstax.chemistry_acids",
+    "namespace": "urn:openstax:clir:chemistry-acids",
+    "sourceHash": "sha256:79845ca344fc7f6848f0255697bfd7b7746022c301d8b63003aee29f2b68de42",
+    "version": "0.1.0"
+  }
+}

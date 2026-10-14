@@ -1,0 +1,42 @@
+// Адаптер таблицы E° к контракту записи (этап 2): recordId у каждого пина,
+// числа НЕ меняются (0.34 V, -0.7618 V, 0.00 V при 298.15 K).
+
+language "law.core" version "0.2";
+package openstax.chemistry_electro version "0.1.0";
+namespace "urn:openstax:clir:chemistry-electro";
+
+use self::{
+    CopperHalfCell,
+    HalfCell,
+    HydrogenReference,
+    OS_17_3_CU,
+    OS_17_3_H2,
+    OS_17_3_ZN,
+    ZincHalfCell,
+    reduction_potential,
+};
+
+pub relation e_record(rid: Text, s: HalfCell, e: Quantity, t: Quantity) kind empirical {
+    label ru unofficial "запись E° с recordId";
+    label en unofficial "E° record with a recordId";
+}
+
+pub relation pin_consistent(rid: Text) kind institutional {
+    label ru unofficial "запись адаптера совпадает с пином пакета";
+    label en unofficial "adapter record matches the package pin";
+}
+
+rule EConsistent(rid: Text, s: HalfCell, e: Quantity, t: Quantity) strict {
+    label en unofficial "E° adapter record agrees with the pin";
+    when e_record(rid, s, e, t) and reduction_potential(s, e, t);
+    then pin_consistent(rid);
+}
+
+@source(OS_17_3_CU)
+assert "rec-e-cu": e_record("chelectro/17.1/OS_17_3_CU/cu2-cu", CopperHalfCell, 0.34 V, 298.15 K) { }
+
+@source(OS_17_3_ZN)
+assert "rec-e-zn": e_record("chelectro/17.1/OS_17_3_ZN/zn2-zn", ZincHalfCell, -0.7618 V, 298.15 K) { }
+
+@source(OS_17_3_H2)
+assert "rec-e-h2": e_record("chelectro/17.1/OS_17_3_H2/she", HydrogenReference, 0.00 V, 298.15 K) { }

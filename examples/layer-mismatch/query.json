@@ -1,0 +1,22 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:openstax:matrix:m5",
+        "kind": "entity_ref"
+      },
+      {
+        "kind": "value",
+        "type": {
+          "name": "urn:law:std#Text"
+        },
+        "value": "LAYER_MISMATCH"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-atomic#matrix_gap"
+  },
+  "queryId": "urn:openstax:clir:chemistry-atomic#test/aufbau-model%20entry%20with%20a%20wrong%20layer%20is%20a%20layer%20mismatch/query/0"
+}

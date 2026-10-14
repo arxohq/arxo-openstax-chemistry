@@ -1,0 +1,76 @@
+// Законы скорости и Аррениус по гл. 12 Chemistry 2e.
+//
+// ОСНОВАНИЕ. Авторское изложение (парафраз), не перепечатка: точные ссылки —
+// §12.3 «Rate Laws»
+// (https://openstax.org/books/chemistry-2e/pages/12-3-rate-laws,
+// проверено 200 2026-09-26) и §12.4 «Integrated Rate Laws»
+// (https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws,
+// проверено 200 2026-09-26). Лицензия книги — CC BY-NC-SA 4.0 (см. шапку
+// пакета chemistry-solutions о пометке).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Порядок — входная модель дела (из стехиометрии не
+// выводится); закрытые решения v1 — только порядки 0/1/2; перенос k по T —
+// только при предъявленной Ea (Аррениус). Параметры из данных не оцениваются.
+
+language "law.core" version "0.2";
+package openstax.chemistry_kinetics version "0.1.1";
+namespace "urn:openstax:clir:chemistry-kinetics";
+
+use self::{
+    PIN_ARRHENIUS,
+    PIN_INTEGRATED_RATE,
+};
+
+pub entity KineticRun {
+    label ru unofficial "кинетический расчёт, предъявленный делом";
+    label en unofficial "kinetic calculation presented by the case";
+}
+
+pub relation run_in_question(r: KineticRun) kind empirical {
+    label ru unofficial "расчёт предъявлен делом как предмет вопроса";
+    label en unofficial "the run is presented by the case as the subject of the question";
+}
+
+pub relation rate_order_presented(r: KineticRun, n: Integer) kind empirical {
+    label ru unofficial "дело предъявило порядок реакции как входную модель";
+    label en unofficial "the case presents the reaction order as an input model";
+}
+
+pub relation activation_energy_presented(r: KineticRun) kind empirical {
+    label ru unofficial "дело предъявило энергию активации";
+    label en unofficial "the case presents the activation energy";
+}
+
+pub relation closed_form_rate_model_selected(r: KineticRun) kind institutional {
+    label ru unofficial "закрытое решение закона скорости выбрано (порядок 0/1/2, 12.4)";
+    label en unofficial "closed-form rate solution selected (orders 0/1/2, 12.4)";
+}
+
+pub relation arrhenius_transfer_licensed(r: KineticRun) kind institutional {
+    label ru unofficial "перенос k по температуре открыт (Аррениус, Ea предъявлена)";
+    label en unofficial "temperature transfer of k licensed (Arrhenius, Ea presented)";
+}
+
+// §12.3–12.4: вид закрытого решения задаёт предъявленный порядок;
+// v1 поддерживает 0, 1 и 2 — иной порядок остаётся без модели.
+@source(PIN_INTEGRATED_RATE)
+pub rule ClosedFormRateModelSelected(
+    r: KineticRun,
+    n: Integer,
+) strict {
+    label ru unofficial "порядок 0/1/2: закрытое решение выбрано (12.4)";
+    label en unofficial "order 0/1/2: closed-form solution selected (12.4)";
+    when run_in_question(r) and rate_order_presented(r, n) and (n >= 0) and (n <= 2);
+    then closed_form_rate_model_selected(r);
+}
+
+// Перенос k(T2)/k(T1) — только при заданной Ea; без неё переноса нет.
+@source(PIN_ARRHENIUS)
+pub rule ArrheniusTransferLicensed(
+    r: KineticRun,
+) strict {
+    label ru unofficial "Ea предъявлена: перенос по температуре открыт (Аррениус)";
+    label en unofficial "Ea presented: temperature transfer licensed (Arrhenius)";
+    when run_in_question(r) and activation_energy_presented(r);
+    then arrhenius_transfer_licensed(r);
+}

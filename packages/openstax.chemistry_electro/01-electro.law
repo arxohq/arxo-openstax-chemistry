@@ -1,0 +1,88 @@
+// Гальванический элемент Zn/Cu по гл. 17 Chemistry 2e.
+//
+// ОСНОВАНИЕ. Пины E° — строки таблицы 17.1 (см. sources.law); остальное —
+// авторское изложение (парафраз) §17.2 «Galvanic Cells»
+// (https://openstax.org/books/chemistry-2e/pages/17-2-galvanic-cells,
+// проверено 200 2026-09-26) и §17.3 (URL в sources.law). Лицензия книги —
+// CC BY-NC-SA 4.0 (см. шапку пакета chemistry-solutions о пометке).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Три потенциала восстановления при 25 °C
+// относительно SHE и знак стандартной ЭДС пары (E°кат > E°ан).
+// Число электронов, Q и нернстовская поправка — дело P7 и вход
+// calc.electrochemistry; таблица потенциалов НЕ приписывается NIST.
+
+language "law.core" version "0.2";
+package openstax.chemistry_electro version "0.1.0";
+namespace "urn:openstax:clir:chemistry-electro";
+
+use self::{
+    OS_17_3_CU,
+    OS_17_3_H2,
+    OS_17_3_TABLE_AT_25,
+    OS_17_3_ZN,
+};
+
+pub entity HalfCell {
+    label ru unofficial "полуэлемент (восстановительная пара)";
+    label en unofficial "half-cell (reduction couple)";
+}
+
+pub relation reduction_potential(s: HalfCell, e: Quantity, t: Quantity) kind institutional {
+    label ru unofficial "стандартный потенциал восстановления при T (таблица 17.1)";
+    label en unofficial "standard reduction potential at T (Table 17.1)";
+}
+
+pub relation galvanic_cell_presented(cathode: HalfCell, anode: HalfCell) kind empirical {
+    label ru unofficial "дело предъявило гальванический элемент (катод, анод)";
+    label en unofficial "the case presents a galvanic cell (cathode, anode)";
+}
+
+pub relation standard_cell_positive(cathode: HalfCell, anode: HalfCell) kind institutional {
+    label ru unofficial "стандартная ЭДС пары положительна (E°кат > E°ан, 17.3)";
+    label en unofficial "the pair standard emf is positive (E°cath > E°an, 17.3)";
+}
+
+pub const CopperHalfCell: HalfCell = entity_ref("urn:openstax:clir:chemistry-electro#copper") {
+    label ru unofficial "пара Cu2+/Cu"; label en unofficial "Cu2+/Cu couple";
+}
+
+pub const ZincHalfCell: HalfCell = entity_ref("urn:openstax:clir:chemistry-electro#zinc") {
+    label ru unofficial "пара Zn2+/Zn"; label en unofficial "Zn2+/Zn couple";
+}
+
+pub const HydrogenReference: HalfCell = entity_ref("urn:openstax:clir:chemistry-electro#she") {
+    label ru unofficial "стандартный водородный электрод"; label en unofficial "standard hydrogen electrode";
+}
+
+// --- Пины таблицы 17.1 (значения книги, 25 °C, опора SHE) ---------------
+
+@source(OS_17_3_CU)
+pub facts PotentialCopper {
+    assert reduction_potential(CopperHalfCell, 0.34 V, 298.15 K);
+}
+
+@source(OS_17_3_ZN)
+pub facts PotentialZinc {
+    assert reduction_potential(ZincHalfCell, -0.7618 V, 298.15 K);
+}
+
+@source(OS_17_3_H2)
+pub facts PotentialHydrogenReference {
+    assert reduction_potential(HydrogenReference, 0.00 V, 298.15 K);
+}
+
+// --- Знак ЭДС -------------------------------------------------------------
+
+@source(OS_17_3_TABLE_AT_25)
+pub rule StandardCellPositive(
+    cath: HalfCell,
+    an: HalfCell,
+    ecat: Quantity,
+    ean: Quantity,
+    t: Quantity,
+) strict {
+    label ru unofficial "E° катода выше E° анода: стандартная ЭДС положительна (17.3)";
+    label en unofficial "cathode E° above anode E°: standard emf positive (17.3)";
+    when galvanic_cell_presented(cath, an) and reduction_potential(cath, ecat, t) and reduction_potential(an, ean, t) and (ecat > ean);
+    then standard_cell_positive(cath, an);
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:case:chem:eq:haber",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-equilibrium#shifts_toward_products"
+  },
+  "queryId": "urn:openstax:clir:chemistry-equilibrium#test/urn%3Aquery%3Aos-eq-05-no-temperature/query/0"
+}

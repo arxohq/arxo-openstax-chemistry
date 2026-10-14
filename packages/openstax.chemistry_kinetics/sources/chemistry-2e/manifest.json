@@ -1,0 +1,37 @@
+{
+  "book": "Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": [
+    {
+      "section": "12.3",
+      "slug": "12-3-rate-laws",
+      "url": "https://openstax.org/books/chemistry-2e/pages/12-3-rate-laws",
+      "uuid": "eac21754-bb36-49fa-9fa1-6ea0c734ee22",
+      "path": "12.3.txt",
+      "size": 12181,
+      "sha256": "sha256:e3dbf5ff80f1aab2719400708ec69d16e88d7279218aadb97f86d65ae414a8eb",
+      "retrievedAt": "2026-10-14T10:36:07Z"
+    },
+    {
+      "section": "12.4",
+      "slug": "12-4-integrated-rate-laws",
+      "url": "https://openstax.org/books/chemistry-2e/pages/12-4-integrated-rate-laws",
+      "uuid": "75b26e56-10ff-4bef-b887-3caa982b223a",
+      "path": "en.txt",
+      "size": 16563,
+      "sha256": "sha256:8e2846483c6d27e5364e5bde9cd87d6984bb0e5810d699edce37651e00c158df",
+      "retrievedAt": "2026-10-14T10:36:08Z"
+    },
+    {
+      "section": "12.5",
+      "slug": "12-5-collision-theory",
+      "url": "https://openstax.org/books/chemistry-2e/pages/12-5-collision-theory",
+      "uuid": "c63c9485-0971-4fce-a831-9d1b2ace526a",
+      "path": "12.5.txt",
+      "size": 10726,
+      "sha256": "sha256:cb5ae1ab7022e52b3792963bd76fdad0176b4c0acaee59e08a7645127f0363d2",
+      "retrievedAt": "2026-10-14T10:36:08Z"
+    }
+  ],
+  "extractorHash": "sha256:f1fe6ae6799fa9e558678d02483d79b2e5d03f618d8c426fd19194b3abc1f8ab"
+}

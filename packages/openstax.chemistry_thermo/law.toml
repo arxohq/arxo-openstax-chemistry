@@ -1,0 +1,22 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_thermo"
+version = "0.1.1"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-thermo"
+
+# Каталожная метадата (DECISION-0051). НЕ семантика: в CLIR не понижается.
+# Своих закреплённых байтов нет (авторский парафраз §5.3/16.1/16.4 с точными
+# ссылками); лицензия книги — CC BY-NC-SA 4.0 (см. шапку 01-thermo.law).
+[metadata]
+title = "OpenStax Chemistry 2e, гл. 5 и 16 (термохимия и свободная энергия): закон Гесса и знак ΔG"
+legalStatus = "doctrine"
+
+[[tests]]
+family = "openstax_chemistry_thermo"
+suites = ["tests/chemistry-thermo.lawtest"]
+world = ["openstax.chemistry_thermo"]
+
+[authoring]
+local_imports = "explicit"

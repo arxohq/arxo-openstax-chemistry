@@ -1,0 +1,49 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+[package]
+name = "openstax.chemistry_bonding"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-bonding"
+
+# Каталожная метадата (DECISION-0051; docs/PACKAGE-METADATA.ru.md). НЕ семантика:
+# в CLIR не понижается, в semantic hash §209 не входит.
+[metadata]
+act = "chemistry-bonding"
+title = "OpenStax Chemistry 2e, §7.3: символы и структуры Льюиса — наблюдение, определение и модель отдельно"
+primarySource = "OPENSTAX_CHEMISTRY_BONDING"
+# jurisdiction: у естественнонаучного изложения правопорядка нет — та же
+# форма, что у `chem.rules`.
+jurisdiction = "none"
+instrument = "treatise"
+# sourceFidelity: закреплено воспроизводимое извлечение текста раздела из
+# HTML страницы книги, а не байты официального PDF-издания.
+sourceFidelity = "pinned_unofficial_copy"
+
+# Невыводимые поля: их не сверяет никто, поэтому причина выбора записана.
+#
+# issuer: у учебника есть издатель, и он же держатель лицензии.
+issuer = "OpenStax, Rice University"
+legalStatus = "doctrine"
+# verifiedAgainstSource: текст каждого фрагмента — точный срез закреплённых
+# байтов, вырезанный генератором `/tmp/gen_slice_g_sources.py` (§194 LDC-E5202).
+verifiedAgainstSource = true
+# ЛИЦЕНЗИЯ ОГРАНИЧИТЕЛЬНАЯ. Chemistry 2e — CC BY-NC-SA 4.0: некоммерческое
+# использование и share-alike, не CC BY (поле license_name книжного API
+# OpenStax, сверено 2026-09-28). Решение закреплять такие байты с явной
+# пометкой — владелец 06.09.2026; та же строка в шапке sources.law.
+
+# Сценарии пакета: единственный источник фактов, вопросов и ожиданий.
+[[tests]]
+family = "openstax_chemistry_bonding"
+suites = [
+  "tests/01-instruction.lawtest",
+  "tests/02-lewis-symbol-ok.lawtest",
+  "tests/03-octet-model-ok.lawtest",
+  "tests/04-single-bond-ok.lawtest",
+  "tests/05-layer-mismatch.lawtest",
+]
+world = ["openstax.chemistry_bonding"]
+
+[authoring]
+local_imports = "explicit"

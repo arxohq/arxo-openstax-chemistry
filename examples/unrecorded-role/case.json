@@ -1,0 +1,30 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:6e64139827bc8cd771b201877cc83d45d2503f0a584c9eb07383db6d58e0179d",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-acids#k18-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:case:chem:h2o",
+            "kind": "entity_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-acids#accepts_proton"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-acids"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-06T12:00:00Z",
+    "knowledgeTime": "2026-09-06T12:00:00Z",
+    "legalTime": "2026-09-06",
+    "timezone": "UTC"
+  },
+  "options": {}
+}

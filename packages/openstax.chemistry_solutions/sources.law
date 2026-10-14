@@ -1,0 +1,18 @@
+// Source pin added for this consumer revision. Original reasoning bodies
+// and authored fixture expectations remain unchanged. Text excerpts retain
+// CC BY-NC-SA 4.0; extracted mathematical notation is not silently repaired.
+language "law.core" version "0.2";
+package openstax.chemistry_solutions version "0.1.1";
+namespace "urn:openstax:clir:chemistry-solutions";
+
+source S_3_3_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 3.3"; label en official "OpenStax Chemistry 2e section 3.3"; }
+edition S_3_3_EN of S_3_3_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_3_3_TEXT of S_3_3_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/3-3-molarity"; retrieved_at @2026-09-12T06:20:00Z; content_hash "sha256:4c273634589e83929d42268ebfdab67eec357765c3c28ec553203313d695d893"; local_path "sources/chemistry-2e/3.3.txt"; }
+
+source S_11_1_WORK { kind treatise; jurisdiction "none"; number "Chemistry 2e section 11.1"; label en official "OpenStax Chemistry 2e section 11.1"; }
+edition S_11_1_EN of S_11_1_WORK { language en; officiality official; adopted @2019-02-14; in_force [@2019-02-14, infinity); materialization_status PINNED_UNOFFICIAL_COPY; }
+publication S_11_1_TEXT of S_11_1_EN { media_type "text/plain; charset=utf-8"; uri "https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process"; retrieved_at @2026-10-14T10:29:03Z; content_hash "sha256:9d09a6dcf4e3fd47bbca31d2c7a9041987de42d2620feb8bd74dfa1f810b6a88"; local_path "sources/chemistry-2e/11.1.txt"; }
+
+pub fragment PIN_DISSOLUTION in S_11_1_EN { kind paragraph; locator "section/11.1#dissolution"; text en official """An earlier chapter of this text introduced solutions, defined as homogeneous mixtures of two or more substances. Often, one component of a solution is present at a significantly greater concentration, in which case it is called the solvent. The other components of the solution present in relatively lesser concentrations are called solutes. Sugar is a covalent solid composed of sucrose molecules, C12H22O11. When this compound dissolves in water, its molecules become uniformly distributed among the molecules of water:"""; content_hash "sha256:fdea78abb6f5e730762d40241a02cd1b1038d33713ecb44960a09beaab4c7e8e"; }
+
+pub fragment PIN_DILUTION in S_3_3_EN { kind paragraph; locator "section/3.3#dilution"; text en official """where the subscripts “1” and “2” refer to the solution before and after the dilution, respectively. Since the dilution process does not change the amount of solute in the solution, n1 = n2. Thus, these two equations may be set equal to one another:"""; content_hash "sha256:24cfbb528df60e8cb33f28c0f0da4d399a76697c57532ae53ba8ef332ad0c2c6"; }

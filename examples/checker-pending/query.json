@@ -1,0 +1,15 @@
+{
+  "kind": "truth",
+  "literal": {
+    "args": [
+      {
+        "id": "urn:openstax:matrix:m6",
+        "kind": "entity_ref"
+      }
+    ],
+    "kind": "literal",
+    "polarity": "positive",
+    "predicate": "urn:openstax:clir:chemistry-coordination#checker_pending"
+  },
+  "queryId": "urn:openstax:clir:chemistry-coordination#test/coord-numbers%20entry%20is%20source-anchored%20but%20checker-pending/query/0"
+}

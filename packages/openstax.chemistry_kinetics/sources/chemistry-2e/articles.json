@@ -1,0 +1,32 @@
+{
+  "format": "law.source-divisions/0.1",
+  "editions": [
+    {
+      "document": "12.3.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "12.3": "Rate Laws"
+      },
+      "snapshotScope": "captured textbook section",
+      "edition": "Chemistry 2e; exact publication hash"
+    },
+    {
+      "document": "en.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "12.4": "Integrated Rate Laws"
+      },
+      "snapshotScope": "captured textbook section",
+      "edition": "Chemistry 2e; exact publication hash"
+    },
+    {
+      "document": "12.5.txt",
+      "unit": "openstax_section",
+      "sectionHeadings": {
+        "12.5": "Collision Theory"
+      },
+      "snapshotScope": "captured textbook section",
+      "edition": "Chemistry 2e; exact publication hash"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Манифест §10 — маркер корня пакета (DECISION-0033). Нормативны заголовки §22
+# в самих .law; манифест обязан с ними совпадать (LDC-E1109, lawc check).
+#
+# ПАКЕТ рода «С» (docs/sciences/README.ru.md): учебное основание стехиометрии.
+# `sources.law` порождён генератором
+# `corpus/tools/sources/sync/sync_openstax_stoichiometry_fragments.py`
+# из байтов, снятых фетчером `fetch_openstax_stoichiometry_text.py`.
+[package]
+name = "openstax.chemistry_stoichiometry"
+version = "0.1.0"
+language = "0.2"
+namespace = "urn:openstax:clir:chemistry-stoichiometry"
+
+# ЛИЦЕНЗИЯ ОГРАНИЧИТЕЛЬНАЯ. Chemistry 2e — CC BY-NC-SA 4.0: некоммерческое
+# использование и share-alike, не CC BY. Машиночитаемого поля лицензии в схеме
+# манифеста нет (зазор назван в docs/sciences/natural/CHEMISTRY.ru.md), поэтому пометка
+# живёт комментарием здесь, в шапке sources.law и в шапке фетчера — как у
+# соседа `openstax/chemistry-acids`.
+[metadata]
+act = "openstax-chemistry-stoichiometry"
+title = "OpenStax Chemistry 2e, разделы стехиометрии (3.1–3.4, 4.2–4.4): моль как единица количества, число Авогадро, молярная масса, стехиометрический множитель, выход реакции"
+primarySource = "OPENSTAX_CHEMISTRY_2E"
+jurisdiction = "none"
+instrument = "doctrine"
+sourceFidelity = "pinned_unofficial_copy"
+issuer = "OpenStax, Rice University"
+legalStatus = "doctrine"
+# verifiedAgainstSource: каждый фрагмент вырезан генератором из закреплённых
+# байтов со сверкой ОБЕИХ границ дословно и сверяется §194 на каждой сборке.
+verifiedAgainstSource = true
+
+# Сценарии пакета: единственный источник фактов, вопросов и ожиданий.
+[[tests]]
+family = "openstax_chemistry_stoichiometry"
+suites = ["tests/openstax-chemistry-stoichiometry.lawtest"]
+world = ["openstax.chemistry_stoichiometry"]
+
+[authoring]
+local_imports = "explicit"

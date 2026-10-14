@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:8e0b6c1c021893f91dd59d0ae7b1c22c3c4e05d8a7ee825fe076e6283bbbd26d",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:5881d32d9338a8a298c9b2e6596229c72e420289ac783fed8e2a75d846ec757f",
+    "name": "openstax.chemistry_atomic",
+    "namespace": "urn:openstax:clir:chemistry-atomic",
+    "sourceHash": "sha256:560fd669b186280365e348267b628a4933a0afad6ac7d890ad4bf2490daf7419",
+    "version": "0.1.0"
+  }
+}

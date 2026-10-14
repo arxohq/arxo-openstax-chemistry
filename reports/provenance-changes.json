@@ -1,0 +1,64 @@
+[
+  {
+    "name": "openstax.chemistry_gases",
+    "originalVersion": "0.1.0",
+    "version": "0.1.1",
+    "reason": "pin missing sources and rule anchors; no reasoning body/expectation change",
+    "sourceSections": [
+      "9.2",
+      "9.3"
+    ],
+    "anchoredRules": [
+      "IdealGasModelLicensed",
+      "AmountLinksToGasVolume"
+    ],
+    "unanchoredModelAssumptions": []
+  },
+  {
+    "name": "openstax.chemistry_solutions",
+    "originalVersion": "0.1.0",
+    "version": "0.1.1",
+    "reason": "pin missing sources and rule anchors; no reasoning body/expectation change",
+    "sourceSections": [
+      "3.3",
+      "11.1"
+    ],
+    "anchoredRules": [
+      "DissolutionIsPhysicalDispersal",
+      "AmountConservedOnDilution"
+    ],
+    "unanchoredModelAssumptions": [
+      "IdealDiluteModelLicensed"
+    ]
+  },
+  {
+    "name": "openstax.chemistry_thermo",
+    "originalVersion": "0.1.0",
+    "version": "0.1.1",
+    "reason": "pin missing sources and rule anchors; no reasoning body/expectation change",
+    "sourceSections": [
+      "5.3",
+      "16.1",
+      "16.4"
+    ],
+    "anchoredRules": [
+      "HessPathIndependent",
+      "SpontaneousForward",
+      "NonspontaneousForward"
+    ],
+    "unanchoredModelAssumptions": []
+  },
+  {
+    "name": "openstax.chemistry_kinetics",
+    "originalVersion": "0.1.0",
+    "version": "0.1.1",
+    "reason": "retained 12.4 bytes lacked model publication; add source publications and source anchors, capture 12.3/12.5; no rule body change",
+    "sourceSections": [
+      "12.3",
+      "12.4",
+      "12.5"
+    ],
+    "live12_4EqualsOriginal": true,
+    "unanchoredModelAssumptions": []
+  }
+]

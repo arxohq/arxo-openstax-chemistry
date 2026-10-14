@@ -1,0 +1,43 @@
+{
+  "book": "Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": [
+    {
+      "section": "5.3",
+      "slug": "5-3-enthalpy",
+      "url": "https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy",
+      "uuid": "f0da1d6f-9177-44cb-aa2a-4928116abfee",
+      "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/5.3.txt",
+      "size": 33075,
+      "sha256": "sha256:03e17e2c1bef9b10884a40c06442a3e6f85791a25f5bc94a9cf35249c1a5c5b4",
+      "retrievedAt": "2026-10-14T10:29:04.111453Z",
+      "rawPageHash": "sha256:a7072cc6e6f1b78972f45598c3fb4fcbcf763f443dfaeb9cab73880fee511932"
+    },
+    {
+      "section": "16.1",
+      "slug": "16-1-spontaneity",
+      "url": "https://openstax.org/books/chemistry-2e/pages/16-1-spontaneity",
+      "uuid": "2ede4220-1cbf-413c-a0b2-fe8139651991",
+      "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/16.1.txt",
+      "size": 8074,
+      "sha256": "sha256:cf43d7aebe26f3811e837f04778c96bf4f83c3babc5782afbd5f3358fb6c22b8",
+      "retrievedAt": "2026-10-14T10:29:04.352815Z",
+      "rawPageHash": "sha256:953cafcfcca3624403d62582b1d319e269d9c0c1b368758c0bd1c92bfb2b3687"
+    },
+    {
+      "section": "16.4",
+      "slug": "16-4-free-energy",
+      "url": "https://openstax.org/books/chemistry-2e/pages/16-4-free-energy",
+      "uuid": "b1b4bf7c-8c27-4637-9fde-10b0ad5e9ad6",
+      "path": "packages/openstax.chemistry_thermo/sources/chemistry-2e/16.4.txt",
+      "size": 22662,
+      "sha256": "sha256:d0fbf6a665192ad5d9fb4da3fa9add733133013379f65771d05a16bc4ac91e0e",
+      "retrievedAt": "2026-10-14T10:29:04.358290Z",
+      "rawPageHash": "sha256:611b9878c0f62bc96a77b0362b1eace61b12eea8fdd06644a62ab704dc2abfa9"
+    }
+  ],
+  "extraction": {
+    "implementationHash": "sha256:f1fe6ae6799fa9e558678d02483d79b2e5d03f618d8c426fd19194b3abc1f8ab",
+    "algorithm": "corpus/tools/sources/fetch/fetch_openstax_acid_base_text.py"
+  }
+}

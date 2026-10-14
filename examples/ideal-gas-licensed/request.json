@@ -1,0 +1,586 @@
+{
+  "ir": {
+    "artifactHash": "sha256:f79072f0a70a7c1bca33598eb1daeef12e0f6c450cd9c5ef6b636b8ab73fb9bc",
+    "features": [
+      "core-executable"
+    ],
+    "imports": [],
+    "metadata": {
+      "localSources": {
+        "urn:openstax:clir:chemistry-gases#S_9_2_TEXT": "sources/chemistry-2e/9.2.txt",
+        "urn:openstax:clir:chemistry-gases#S_9_3_TEXT": "sources/chemistry-2e/9.3.txt"
+      }
+    },
+    "nodes": [
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-gases#PIN_GAS_STOICHIOMETRY"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-gases#gas_sample_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-gases#dry_sample_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:4054a091d26f9cb276f7f239a87a6a97033ea44c6dceae4842947a5700a105bd",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-gases#amount_links_to_gas_volume"
+        },
+        "id": "urn:openstax:clir:chemistry-gases#AmountLinksToGasVolume",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "dry sample: amount links to stoichiometry (9.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "сухой образец: количество связано со стехиометрией (9.3)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-gases",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:4d02cb855eb70c3e11ddaced0949910af9d189327293ce4c9ed9be6c20ec5f06",
+        "id": "urn:openstax:clir:chemistry-gases#GasSample",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "gas sample presented by the case"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "образец газа, предъявленный делом"
+          }
+        ],
+        "name": "GasSample",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-gases#PIN_IDEAL_GAS"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-gases#gas_sample_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-gases#absolute_temperature_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:f6ee5cf4de17e1da40867cb66864f0657a4c0bd70d1a2b453a659c33d79b80cb",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-gases#ideal_gas_model_licensed"
+        },
+        "id": "urn:openstax:clir:chemistry-gases#IdealGasModelLicensed",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "sample with absolute T: ideal gas model licensed (9.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "образец с абсолютной T: модель идеального газа открыта (9.2)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-gases",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:67027cf063c0d8a1e5550d56b37643cfd12fdab5ca2889c4921ccc2b83943bb8",
+        "edition": "urn:openstax:clir:chemistry-gases#S_9_3_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-gases#PIN_GAS_STOICHIOMETRY",
+        "kind": "fragment",
+        "locator": "section/9.3#gas_stoichiometry",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "texts": [
+          {
+            "contentHash": "sha256:5767da7fa3d80a79c0dd6584642caef25ba192bc61f9327fe5b21fbfac039129",
+            "language": "en",
+            "status": "official",
+            "text": "As described in an earlier chapter of this text, we can turn to chemical stoichiometry for answers to many of the questions that ask “How much?” The essential property involved in such use of stoichiometry is the amount of substance, typically measured in moles (n). For gases, molar amount can be derived from convenient experimental measurements of pressure, temperature, and volume. Therefore, these measurements are useful in assessing the stoichiometry of pure gases, gas mixtures, and chemical reactions involving gases. This section will not introduce any new material or ideas, but will provide examples of applications and ways to integrate concepts already discussed."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:e0780fe05f367e8690254c2e1b0daa8707e36ad678f3807ac7f6e71c0923a5c8",
+        "edition": "urn:openstax:clir:chemistry-gases#S_9_2_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-gases#PIN_IDEAL_GAS",
+        "kind": "fragment",
+        "locator": "section/9.2#ideal_gas",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "texts": [
+          {
+            "contentHash": "sha256:651ffa9a904d68e7b614daf73f77237cfe2afeaf5c5533fbcde410068a75264b",
+            "language": "en",
+            "status": "official",
+            "text": "Gases whose properties of P, V, and T are accurately described by the ideal gas law (or the other gas laws) are said to exhibit ideal behavior or to approximate the traits of an ideal gas. An ideal gas is a hypothetical construct that may be used along with kinetic molecular theory to effectively explain the gas laws as will be described in a later module of this chapter. Although all the calculations presented in this module assume ideal behavior, this assumption is only reasonable for gases under conditions of relatively low pressure and high temperature. In the final module of this chapter, a modified gas law will be introduced that accounts for the non-ideal behavior observed for many gases at relatively high pressures and low temperatures."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:f0b17c8193c685d0c6c7b3ba71d5649febfd5c6b96dc900b74b2fbd64b88179c",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_2_EN",
+        "kind": "source_edition",
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "work": "urn:openstax:clir:chemistry-gases#S_9_2_WORK"
+      },
+      {
+        "contentHash": "sha256:1c3951023c7a973cf206b0d3b4619bf7a90eadb548242b3c50181337d642a18e",
+        "documentHash": "sha256:8911482700b51081c047882a9c7880050d171c4e3931b2d65cf7e25def737a48",
+        "edition": "urn:openstax:clir:chemistry-gases#S_9_2_EN",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_2_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "retrievedAt": "2026-10-14T10:29:02Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
+      },
+      {
+        "contentHash": "sha256:aa2dbc72aaf5324f9d54e7c8ec7b2c442746cb37088c1a56093fb2e98aa6c747",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_2_WORK",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e section 9.2"
+          }
+        ],
+        "number": "Chemistry 2e section 9.2",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "sourceKind": "urn:openstax:clir:chemistry-gases#treatise"
+      },
+      {
+        "contentHash": "sha256:fe2b19a8cabeeb26361da94c97a420b1aec09d9f4d766c771c4292d31def2ed9",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_3_EN",
+        "kind": "source_edition",
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "work": "urn:openstax:clir:chemistry-gases#S_9_3_WORK"
+      },
+      {
+        "contentHash": "sha256:74edf7d32b11c3fb7b9d73e5c549ee0781bde1e48eed619bdd9a1659c768a04f",
+        "documentHash": "sha256:43c54e72b072ae4466933599ed74bdd7aee332463b68a7f15029d0498397c489",
+        "edition": "urn:openstax:clir:chemistry-gases#S_9_3_EN",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_3_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "retrievedAt": "2026-10-14T10:29:03Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"
+      },
+      {
+        "contentHash": "sha256:c271d1d8f4a3a23aab2ff6fca47b051b0f50ace9a27be5f3d5481303b3c4332a",
+        "id": "urn:openstax:clir:chemistry-gases#S_9_3_WORK",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e section 9.3"
+          }
+        ],
+        "number": "Chemistry 2e section 9.3",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "sourceKind": "urn:openstax:clir:chemistry-gases#treatise"
+      },
+      {
+        "contentHash": "sha256:a1012345c2d977f7260c5cbe66f79e5d3f6c4d028e9af672bbce1ec699a9dd11",
+        "id": "urn:openstax:clir:chemistry-gases#absolute_temperature_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the sample absolute temperature"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило абсолютную температуру образца"
+          }
+        ],
+        "name": "absolute_temperature_presented",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-gases#absolute_temperature_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:796a1eb0efaae08387d264cd2582a6dac234dec668e982e1b0a2367595149cd6",
+        "id": "urn:openstax:clir:chemistry-gases#amount_links_to_gas_volume",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "gaseous product amount links to stoichiometry (9.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "количество газообразного продукта связано со стехиометрией (9.3)"
+          }
+        ],
+        "name": "amount_links_to_gas_volume",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-gases#amount_links_to_gas_volume/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:498f164accf6f020120ed53c8b1ed3e5ca176385b0aa8bc26b6cfcb6eecc8c8d",
+        "id": "urn:openstax:clir:chemistry-gases#dry_sample_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents a dry gas (no vapor correction)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило сухой газ (без поправки на пары воды)"
+          }
+        ],
+        "name": "dry_sample_presented",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-gases#dry_sample_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:245441cf1738adad0f88e41f9198f5956056b98feeba7f7967bc7a54628c5d36",
+        "id": "urn:openstax:clir:chemistry-gases#gas_sample_in_question",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the gas sample is presented by the case as the subject of the question"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "образец газа предъявлен делом как предмет вопроса"
+          }
+        ],
+        "name": "gas_sample_in_question",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-gases#gas_sample_in_question/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:74c28c7eb128c2d91954c69b28e1f7e2245411d1a8b302e0b9907d6251ab7bcc",
+        "id": "urn:openstax:clir:chemistry-gases#ideal_gas_model_licensed",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the ideal gas model is licensed (pV = nRT, 9.2)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "модель идеального газа открыта (pV = nRT, 9.2)"
+          }
+        ],
+        "name": "ideal_gas_model_licensed",
+        "package": "urn:openstax:clir:chemistry-gases",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-gases#ideal_gas_model_licensed/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-gases#GasSample"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      }
+    ],
+    "package": {
+      "name": "openstax.chemistry_gases",
+      "namespace": "urn:openstax:clir:chemistry-gases",
+      "semanticHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "version": "0.1.1"
+    },
+    "schemaVersion": "law.core.ir/0.7",
+    "semanticHash": "sha256:eb257873645779b1dec14993f33070fcc5267a27b906da90f6a3128339a57e55",
+    "semanticVersion": "0.2.11",
+    "strata": [],
+    "theoryHash": "sha256:efe73649a28874d4eebf00208e118d7e9c647e1cbe479953de4c948b0b289ee8"
+  },
+  "case": {
+    "assertions": [
+      {
+        "contentHash": "sha256:5c42434cd6ad17e0b81b193d3a4d10d7a0b790efa9e217f182a7f33e3ca69563",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-gases#g01-q",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:gas:co2",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-gases#gas_sample_in_question"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-gases"
+      },
+      {
+        "contentHash": "sha256:be38702751c090c2a9867fc36aa6d25bf858756a2849c90fb56e8c784717b1c0",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-gases#g01-1",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:gas:co2",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-gases#absolute_temperature_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-gases"
+      }
+    ],
+    "context": {
+      "decisionTime": "2026-09-27T12:00:00Z",
+      "knowledgeTime": "2026-09-27T12:00:00Z",
+      "legalTime": "2026-09-27",
+      "timezone": "UTC"
+    },
+    "options": {}
+  },
+  "query": {
+    "kind": "truth",
+    "literal": {
+      "args": [
+        {
+          "id": "urn:case:chem:gas:co2",
+          "kind": "entity_ref"
+        }
+      ],
+      "kind": "literal",
+      "polarity": "positive",
+      "predicate": "urn:openstax:clir:chemistry-gases#ideal_gas_model_licensed"
+    },
+    "queryId": "urn:openstax:clir:chemistry-gases#test/urn%3Aquery%3Aos-gas-01-ideal/query/0"
+  },
+  "schemaVersion": "law.core.evaluation-request/0.2",
+  "semanticVersion": "0.2.11"
+}

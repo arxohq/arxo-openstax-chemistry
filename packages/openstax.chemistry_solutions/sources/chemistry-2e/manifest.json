@@ -1,0 +1,32 @@
+{
+  "book": "Chemistry 2e",
+  "license": "CC BY-NC-SA 4.0",
+  "sections": [
+    {
+      "section": "3.3",
+      "url": "https://openstax.org/books/chemistry-2e/pages/3-3-molarity",
+      "slug": "3-3-molarity",
+      "uuid": "3ca3a877-a8ba-42f7-a101-7035c0f5daed",
+      "retrievedAt": "2026-09-12T06:20:00Z",
+      "sha256": "sha256:4c273634589e83929d42268ebfdab67eec357765c3c28ec553203313d695d893",
+      "size": 13456,
+      "origin": "exact section span from retained stoichiometry publication",
+      "path": "packages/openstax.chemistry_solutions/sources/chemistry-2e/3.3.txt"
+    },
+    {
+      "section": "11.1",
+      "slug": "11-1-the-dissolution-process",
+      "url": "https://openstax.org/books/chemistry-2e/pages/11-1-the-dissolution-process",
+      "uuid": "c6004026-5f7c-4474-81ca-2b52ef029d8b",
+      "path": "packages/openstax.chemistry_solutions/sources/chemistry-2e/11.1.txt",
+      "size": 10717,
+      "sha256": "sha256:9d09a6dcf4e3fd47bbca31d2c7a9041987de42d2620feb8bd74dfa1f810b6a88",
+      "retrievedAt": "2026-10-14T10:29:03.101593Z",
+      "rawPageHash": "sha256:624abd0e1c86a9e0e415693c72ff8488c90d2bdd2fcf79e02361687c5148212c"
+    }
+  ],
+  "extraction": {
+    "implementationHash": "sha256:f1fe6ae6799fa9e558678d02483d79b2e5d03f618d8c426fd19194b3abc1f8ab",
+    "algorithm": "corpus/tools/sources/fetch/fetch_openstax_acid_base_text.py"
+  }
+}

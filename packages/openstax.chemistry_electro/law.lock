@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:c42581d2c2052cdd1b7a31f43634835ee588742ee2b65e665884118b74a77fab",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:35229524b0800a5d9746754a4049145349ebc5ea74aff65c94ac3bc231afb9e7",
+    "name": "openstax.chemistry_electro",
+    "namespace": "urn:openstax:clir:chemistry-electro",
+    "sourceHash": "sha256:c07014f9a3014dce9426d540e964532ea4da35553e290fdc016e74474556d3bd",
+    "version": "0.1.0"
+  }
+}

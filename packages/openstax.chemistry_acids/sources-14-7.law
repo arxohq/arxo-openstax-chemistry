@@ -1,0 +1,116 @@
+// Якоря §14.7 «Acid-Base Titrations» и Kb аммиака §14.3.
+//
+// ЧТО ЭТОТ ФАЙЛ ДОБАВЛЯЕТ. Существующие фрагменты пакета НЕ тронуты:
+// у раздела 14.7 в закреплении ничего не было (добор P1), и у него своя
+// редакция OS_CHEM2E_14_7 с собственной датой получения — складывать байты
+// 14.7 в en.txt значило бы переписать content_hash существующей публикации.
+// Файл НЕ порождается генератором en.txt (см. шапку sources.law); его
+// сверка — тот же §194 (LDC-E5202) на каждой сборке плюс --check фетчера
+// `corpus/tools/sources/fetch/fetch_openstax_chem_lab_text.py`.
+//
+// Фрагмент OS_14_3_KB_AMMONIA стоит на СУЩЕСТВУЮЩЕЙ публикации 14.3:
+// предложение «Calculate the hydroxide ion concentration … Kb of
+// 1.76 × 10−5» побайтово совпадает в en.txt (проверено builder 27.09.2026),
+// поэтому новых байтов §14.3 не закрепляется.
+//
+// T КОНСТАНТ. Kb аммиака и Kb ацетата даны примерами главы без явного T
+// в строке; действует конвенция главы (§14.2: шкала при 25 °C, таблицы
+// приложений H/I при 25 °C) — пакет chem.ionization_constants несёт её
+// явным полем temperature_basis, а не молчаливым допущением.
+
+language "law.core" version "0.2";
+package openstax.chemistry_acids version "0.1.0";
+namespace "urn:openstax:clir:chemistry-acids";
+
+edition OS_CHEM2E_14_7 of OPENSTAX_CHEMISTRY_2E {
+    label en official "OpenStax Chemistry 2e §14.7, English edition (CC BY-NC-SA 4.0)";
+    language en;
+    officiality official;
+    adopted @2019-02-14;
+    in_force [@2019-02-14, infinity);
+    materialization_status PINNED_UNOFFICIAL_COPY;
+}
+
+publication OS_CHEM2E_14_7_TEXT of OS_CHEM2E_14_7 {
+    media_type "text/plain; charset=utf-8";
+    uri "https://openstax.org/books/chemistry-2e/pages/14-7-acid-base-titrations";
+    retrieved_at @2026-09-26T23:29:49Z;
+    content_hash "sha256:d045ea698c27b844ad116ee60096cd5c40b3acf638cb99b8a62bc6976266a35b";
+    local_path "sources/chemistry-2e/14-7.txt";
+}
+
+// 14.7: кривая титрования — график свойства раствора от объёма титранта; pH отслеживает ход и конечную точку
+pub fragment OS_14_7_CURVE in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/titration-curves";
+    text en official """A titration curve is a plot of some solution property versus the amount of added titrant. For acid-base titrations, solution pH is a useful property to monitor because it varies predictably with the solution composition and, therefore, may be used to monitor the titration’s progress and detect its end point.""";
+    content_hash "sha256:6971fb95579b3f76491dc0ea16ffe274d002a3e001b9a9c7eb20df172054fb2c";
+}
+
+// 14.7, пример 14.21: сильная кислота + сильное основание — в точке эквивалентности только вода и NaCl, pH = 7.00
+pub fragment OS_14_7_STRONG_EQUIV in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/example-14-21-equivalence";
+    text en official """(c) Titrant volume = 25.00 mL. This titrant addition involves a stoichiometric amount of base (the equivalence point), and so only products of the neutralization reaction are in solution (water and NaCl). Neither the cation nor the anion of this salt undergo acid-base ionization; the only process generating hydronium ions is the autoprotolysis of water. The solution is neutral, having a pH = 7.00.""";
+    content_hash "sha256:321cfc753dd84b18c97a67906b4fe8b34a3b5717759c91d2b0cc785c2c9978b5";
+}
+
+// 14.7, пример 14.22: слабая кислота + сильное основание — pH в точке эквивалентности заметно выше 7
+pub fragment OS_14_7_WEAK_EQUIV in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/example-14-22-equivalence";
+    text en official """Note that the pH at the equivalence point of this titration is significantly greater than 7, as expected when titrating a weak acid with a strong base.""";
+    content_hash "sha256:035084b61337a58a745dd5586ce1b236f301f8df03094c81be4aaa26959eb274";
+}
+
+// 14.7, пример 14.22: pH = pKa в половине эквивалентного объёма слабой кислоты
+pub fragment OS_14_7_HALF_EQUIV in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/example-14-22-half-equivalence";
+    text en official """(pH = pKa at the half-equivalence point in a titration of a weak acid)""";
+    content_hash "sha256:712919dc0cf6148c753edc17c41d2a7e8ed82734911b6f917ac682eadcc3b777";
+}
+
+// 14.7, пример 14.22: Kb ацетата из Kw/Ka = 5.6·10⁻¹⁰ (дроби MathML в извлечении сплющены — артефакт §13, числа однозначны)
+pub fragment OS_14_7_KB_ACETATE in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/example-14-22-acetate-kb";
+    text en official """Base ionization of acetate is represented by the equation
+
+CH3CO2−(aq)+H2O(l)⇌CH3CO2H(aq)+OH−(aq)
+
+Kb=[H+][OH−]Ka=KwKa=1.0×10−141.8×10−5=5.6×10−10
+
+Assuming x << 0.0500, the pH may be calculated via the usual ICE approach: Kb=x20.0500M
+
+x=[OH−]=5.3×10−6
+
+pOH=−log(5.3×10−6)=5.28
+
+pH=14.00−5.28=8.72""";
+    content_hash "sha256:fb66655bea8db9ac151733d7a054e83ddaa4721d3f0e113ba979c65b663ffa50";
+}
+
+// 14.7: конечная точка индикатора — оценка объёма по смене окраски, не сама точка эквивалентности
+pub fragment OS_14_7_ENDPOINT in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/indicators-endpoint";
+    text en official """The titration's end point may then be estimated as the volume of titrant that yields a distinct orange-to-yellow color change.""";
+    content_hash "sha256:8a2886dc92ce172d21bf3266d55e166259c41cb3171deea7a0769e9708b9324b";
+}
+
+// 14.7: кислотно-основные индикаторы — слабые органические кислоты или основания
+pub fragment OS_14_7_INDICATOR in OS_CHEM2E_14_7 {
+    kind paragraph;
+    locator "14.7/indicators-definition";
+    text en official """Acid-base indicators are either weak organic acids or weak organic bases.""";
+    content_hash "sha256:32ad5d4d4bad87a63aa72b07e6b4fd7545e5321b3371380b1f20af7a72c03f05";
+}
+
+// 14.3, Check Your Learning: аммиак — слабое основание, Kb = 1.76·10⁻⁵; ответ 7.56·10⁻⁴ M, 2.33 % — в том же абзаце учебника.
+pub fragment OS_14_3_KB_AMMONIA in OS_CHEM2E_EN {
+    kind paragraph;
+    locator "14.3/kb-ammonia";
+    text en official """Calculate the hydroxide ion concentration and the percent ionization of a 0.0325-M solution of ammonia, a weak base with a Kb of 1.76 × 10−5.""";
+    content_hash "sha256:fe5f9a043d800879c5b28b91433f059fbe26c17ac44e7654cf371ce935d4ae42";
+}

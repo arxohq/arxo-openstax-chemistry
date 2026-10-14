@@ -1,0 +1,121 @@
+// Термохимия и свободная энергия по гл. 5 и 16 Chemistry 2e.
+//
+// ОСНОВАНИЕ. Авторское изложение (парафраз), не перепечатка: точные ссылки —
+// §5.3 «Enthalpy»
+// (https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy,
+// проверено 200 2026-09-26), §16.1 «Spontaneity»
+// (https://openstax.org/books/chemistry-2e/pages/16-1-spontaneity,
+// проверено 200 2026-09-26) и §16.4 «Free Energy»
+// (https://openstax.org/books/chemistry-2e/pages/16-4-free-energy,
+// проверено 200 2026-09-26). Лицензия книги — CC BY-NC-SA 4.0 (см. шапку
+// пакета chemistry-solutions о пометке).
+//
+// ЧТО ПАКЕТ УТВЕРЖДАЕТ. Гесс: энтальпия — функция состояния, путь не важен;
+// знак ΔG решает самопроизвольность (ΔG<0 — прямое, ΔG>0 — обратное).
+// Числа ΔfH°/S° — у `nist.webbook_thermo`; арифметику Гесса выполняет
+// calc.reaction_thermodynamics (P6). Знак ΔG скоростью не является.
+
+language "law.core" version "0.2";
+package openstax.chemistry_thermo version "0.1.1";
+namespace "urn:openstax:clir:chemistry-thermo";
+
+use self::{
+    PIN_GIBBS_SIGN,
+    PIN_HESS,
+};
+
+pub entity Reaction {
+    label ru unofficial "реакция, предъявленная делом";
+    label en unofficial "reaction presented by the case";
+}
+
+pub entity ThermoSystem {
+    label ru unofficial "термодинамическая система дела";
+    label en unofficial "thermodynamic system of the case";
+}
+
+pub relation reaction_in_question(r: Reaction) kind empirical {
+    label ru unofficial "реакция предъявлена делом как предмет вопроса";
+    label en unofficial "the reaction is presented by the case as the subject of the question";
+}
+
+pub relation formation_data_complete(r: Reaction) kind empirical {
+    label ru unofficial "дело предъявило полные данные образования всех участников";
+    label en unofficial "the case presents complete formation data for all species";
+}
+
+pub relation system_in_question(s: ThermoSystem) kind empirical {
+    label ru unofficial "система предъявлена делом как предмет вопроса";
+    label en unofficial "the system is presented by the case as the subject of the question";
+}
+
+pub relation negative_gibbs_presented(s: ThermoSystem) kind empirical {
+    label ru unofficial "дело предъявило отрицательную ΔG прямого процесса";
+    label en unofficial "the case presents a negative ΔG of the forward process";
+}
+
+pub relation positive_gibbs_presented(s: ThermoSystem) kind empirical {
+    label ru unofficial "дело предъявило положительную ΔG прямого процесса";
+    label en unofficial "the case presents a positive ΔG of the forward process";
+}
+
+// Знак ΔG решает самопроизвольность при T, p (16.4): без предъявленных
+// температуры, давления и базиса стандартного состояния вывод закрыт.
+pub relation system_temperature_pressure_presented(s: ThermoSystem) kind empirical {
+    label ru unofficial "дело предъявило температуру и давление системы";
+    label en unofficial "the case presents the system temperature and pressure";
+}
+
+pub relation standard_state_presented(s: ThermoSystem) kind empirical {
+    label ru unofficial "дело предъявило стандартное состояние (базис ΔG)";
+    label en unofficial "the case presents the standard state (the ΔG basis)";
+}
+
+pub relation hess_path_independent(r: Reaction) kind institutional {
+    label ru unofficial "энтальпия реакции не зависит от пути: закон Гесса открыт (5.3)";
+    label en unofficial "reaction enthalpy is path-independent: Hess law licensed (5.3)";
+}
+
+pub relation spontaneous_forward(s: ThermoSystem) kind institutional {
+    label ru unofficial "прямой процесс самопроизволен (ΔG < 0, 16.4)";
+    label en unofficial "the forward process is spontaneous (ΔG < 0, 16.4)";
+}
+
+pub relation nonspontaneous_forward(s: ThermoSystem) kind institutional {
+    label ru unofficial "прямой процесс несамопроизволен (ΔG > 0, 16.4)";
+    label en unofficial "the forward process is nonspontaneous (ΔG > 0, 16.4)";
+}
+
+// §5.3: энтальпия — функция состояния; ΔrH° — суммой по участникам
+// (суммы считает вычислитель на данных nist.webbook_thermo).
+@source(PIN_HESS)
+pub rule HessPathIndependent(
+    r: Reaction,
+) strict {
+    label ru unofficial "полные данные образования: закон Гесса открыт (5.3)";
+    label en unofficial "complete formation data: Hess law licensed (5.3)";
+    when reaction_in_question(r) and formation_data_complete(r);
+    then hess_path_independent(r);
+}
+
+// §16.4: знак свободной Гиббса решает самопроизвольность при T, p;
+// о скорости знак ничего не говорит.
+@source(PIN_GIBBS_SIGN)
+pub rule SpontaneousForward(
+    s: ThermoSystem,
+) strict {
+    label ru unofficial "ΔG < 0 при T, p и стандартном состоянии: прямой процесс самопроизволен (16.4)";
+    label en unofficial "ΔG < 0 at stated T, p and standard state: forward process spontaneous (16.4)";
+    when system_in_question(s) and negative_gibbs_presented(s) and system_temperature_pressure_presented(s) and standard_state_presented(s);
+    then spontaneous_forward(s);
+}
+
+@source(PIN_GIBBS_SIGN)
+pub rule NonspontaneousForward(
+    s: ThermoSystem,
+) strict {
+    label ru unofficial "ΔG > 0 при T, p и стандартном состоянии: прямой процесс несамопроизволен (16.4)";
+    label en unofficial "ΔG > 0 at stated T, p and standard state: forward process nonspontaneous (16.4)";
+    when system_in_question(s) and positive_gibbs_presented(s) and system_temperature_pressure_presented(s) and standard_state_presented(s);
+    then nonspontaneous_forward(s);
+}

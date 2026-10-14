@@ -1,0 +1,15 @@
+{
+  "dependencyEdges": [],
+  "languageSemantics": "law.core/0.2.11",
+  "lockVersion": "0.4",
+  "packages": [],
+  "resolutionHash": "sha256:6d93acc91de92d0c39b9dd359e735115918163634ffa1544bc5b13c22005ea3f",
+  "resources": [],
+  "root": {
+    "artifactHash": "sha256:0b198b8a92903ed2e1952e7cd30d07f24d3dc673906936c72bec0f1f783c6e04",
+    "name": "openstax.chemistry_solutions",
+    "namespace": "urn:openstax:clir:chemistry-solutions",
+    "sourceHash": "sha256:bcacbc8eb52cffa0cb7cda2e350bc1ce221beba294bccaaf89bf63f935797430",
+    "version": "0.1.1"
+  }
+}

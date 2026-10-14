@@ -1,0 +1,135 @@
+[
+  {
+    "name": "openstax.chemistry_acids",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-acids",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-acids",
+    "path": "packages/openstax.chemistry_acids",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 14 (§14.7 — титрование) и §15.2: словарь частиц и ролей кислотно-основного равновесия"
+  },
+  {
+    "name": "openstax.chemistry_atomic",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-atomic",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-atomic",
+    "path": "packages/openstax.chemistry_atomic",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, §6.4: электронные конфигурации — наблюдение, определение и модель отдельно"
+  },
+  {
+    "name": "openstax.chemistry_bonding",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-bonding",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-bonding",
+    "path": "packages/openstax.chemistry_bonding",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, §7.3: символы и структуры Льюиса — наблюдение, определение и модель отдельно"
+  },
+  {
+    "name": "openstax.chemistry_coordination",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-coordination",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-coordination",
+    "path": "packages/openstax.chemistry_coordination",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, §19.2: координационные соединения — наблюдение, определение и модель отдельно"
+  },
+  {
+    "name": "openstax.chemistry_electro",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-electro",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-electro",
+    "path": "packages/openstax.chemistry_electro",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 17 (электрохимия): выдержка таблицы 17.1 стандартных потенциалов (Zn/Cu/SHE) и знак стандартной ЭДС"
+  },
+  {
+    "name": "openstax.chemistry_equilibrium",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-equilibrium",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-equilibrium",
+    "path": "packages/openstax.chemistry_equilibrium",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 13 (равновесие): направление сдвига по Q/K и ворота ICE-подхода"
+  },
+  {
+    "name": "openstax.chemistry_gases",
+    "version": "0.1.1",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-gases",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-gases",
+    "path": "packages/openstax.chemistry_gases",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 9 (газы): ворота модели идеального газа и связи со стехиометрией"
+  },
+  {
+    "name": "openstax.chemistry_kinetics",
+    "version": "0.1.1",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-kinetics",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-kinetics",
+    "path": "packages/openstax.chemistry_kinetics",
+    "dependencies": {
+      "units.si": "0.1.0",
+      "calc.reaction_kinetics": "0.1.0"
+    },
+    "title": "OpenStax Chemistry 2e, гл. 12 (кинетика): порядок как входная модель, закрытые решения 0/1/2, перенос Аррениуса"
+  },
+  {
+    "name": "openstax.chemistry_solutions",
+    "version": "0.1.1",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-solutions",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-solutions",
+    "path": "packages/openstax.chemistry_solutions",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 11 (растворы): ворота моделей растворения, разведения и идеального разбавленного профиля"
+  },
+  {
+    "name": "openstax.chemistry_stoichiometry",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-stoichiometry",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-stoichiometry",
+    "path": "packages/openstax.chemistry_stoichiometry",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, разделы стехиометрии (3.1–3.4, 4.2–4.4): моль как единица количества, число Авогадро, молярная масса, стехиометрический множитель, выход реакции"
+  },
+  {
+    "name": "openstax.chemistry_thermo",
+    "version": "0.1.1",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:openstax:clir:chemistry-thermo",
+    "sourcePath": "corpus/laws/org/openstax/chemistry-thermo",
+    "path": "packages/openstax.chemistry_thermo",
+    "dependencies": {},
+    "title": "OpenStax Chemistry 2e, гл. 5 и 16 (термохимия и свободная энергия): закон Гесса и знак ΔG"
+  },
+  {
+    "name": "units.si",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:law:units:si",
+    "sourcePath": "packs/units/si",
+    "path": "packages/units.si",
+    "dependencies": {},
+    "title": "units.si"
+  },
+  {
+    "name": "calc.reaction_kinetics",
+    "version": "0.1.0",
+    "originalVersion": "0.1.0",
+    "namespace": "urn:law:calc:reaction-kinetics",
+    "sourcePath": "packs/primitives/natural-sciences/reaction-kinetics",
+    "path": "packages/calc.reaction_kinetics",
+    "dependencies": {},
+    "title": "calc.reaction_kinetics"
+  }
+]

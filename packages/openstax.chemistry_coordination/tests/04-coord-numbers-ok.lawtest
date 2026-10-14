@@ -1,0 +1,17 @@
+language "law.core" version "0.2";
+package openstax.chemistry_coordination version "0.1.0";
+namespace "urn:openstax:clir:chemistry-coordination";
+
+test "coord-numbers observation entry is covered" {
+ given {
+  assert "f0": row_claims(entity_ref("urn:openstax:matrix:m04"), "coord-numbers") { origin case_input; }
+  assert "f1": row_formula(entity_ref("urn:openstax:matrix:m04"), "[Ag(NH3)2]+, [Cu(Cl)4]2-, [Co(H2O)6]2+ have coordination numbers 2, 4, 6") { origin case_input; }
+  assert "f2": row_layer(entity_ref("urn:openstax:matrix:m04"), "observation") { origin case_input; }
+  assert "f3": row_checker(entity_ref("urn:openstax:matrix:m04"), "unlinked: no computational checker journaled") { origin case_input; }
+  assert "f4": row_fragment(entity_ref("urn:openstax:matrix:m04"), "section/19.2#coordination-numbers") { origin case_input; }
+ }
+ evaluate truth(claim_covered(entity_ref("urn:openstax:matrix:m04")));
+ expect truth_status == TRUE_ONLY;
+ expect evaluation_status == COMPUTED;
+ expect applied(CoordNumbersCovered);
+}

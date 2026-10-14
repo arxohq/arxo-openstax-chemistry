@@ -1,0 +1,1019 @@
+{
+  "ir": {
+    "artifactHash": "sha256:aca65ac0f33e7288854f6b5afb2ab5cd29b4909700437fc62fe1f92a7f216351",
+    "features": [
+      "core-executable"
+    ],
+    "imports": [],
+    "metadata": {
+      "localSources": {
+        "urn:openstax:clir:chemistry-thermo#S_16_1_TEXT": "sources/chemistry-2e/16.1.txt",
+        "urn:openstax:clir:chemistry-thermo#S_16_4_TEXT": "sources/chemistry-2e/16.4.txt",
+        "urn:openstax:clir:chemistry-thermo#S_5_3_TEXT": "sources/chemistry-2e/5.3.txt"
+      }
+    },
+    "nodes": [
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-thermo#PIN_HESS"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#reaction_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#formation_data_complete"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:d255215e0ddbf8171774f0022319506d57fb245a1db2f2a3dde06994fea641e0",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#hess_path_independent"
+        },
+        "id": "urn:openstax:clir:chemistry-thermo#HessPathIndependent",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "complete formation data: Hess law licensed (5.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "полные данные образования: закон Гесса открыт (5.3)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#Reaction"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-thermo#PIN_GIBBS_SIGN"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#standard_state_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#system_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#positive_gibbs_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:11887ce0fb64066d856ad7f66137dbe8dd03788850c8266e353373d48f750aed",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#nonspontaneous_forward"
+        },
+        "id": "urn:openstax:clir:chemistry-thermo#NonspontaneousForward",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "ΔG > 0 at stated T, p and standard state: forward process nonspontaneous (16.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "ΔG > 0 при T, p и стандартном состоянии: прямой процесс несамопроизволен (16.4)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:9c76abe8514ac7c9a59bbfcb6d9cf78733ab25c772c443b66b825de8bc9058a2",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_16_4_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-thermo#PIN_GIBBS_SIGN",
+        "kind": "fragment",
+        "locator": "section/16.4#gibbs_sign",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "texts": [
+          {
+            "contentHash": "sha256:2ae147c699b12e6194bcca8d8cd58600137fff9f284fa32e55e5b9555cf4f9d6",
+            "language": "en",
+            "status": "official",
+            "text": "ΔSuniv > 0\nΔG < 0\nspontaneous\n\nΔSuniv < 0\nΔG > 0\nnonspontaneous\n\nΔSuniv = 0\nΔG = 0\nat equilibrium\n\nTable\n16.3\n\nWhat’s “Free” about ΔG?\n\nIn addition to indicating spontaneity, the free energy change also provides information regarding the amount of useful work (w) that may be accomplished by a spontaneous process. Although a rigorous treatment of this subject is beyond the scope of an introductory chemistry text, a brief discussion is helpful for gaining a better perspective on this important thermodynamic property.\n\nFor this purpose, consider a spontaneous, exothermic process that involves a decrease in entropy. The free energy change, as defined by\n\nΔG=ΔH−TΔS\n\nmay be interpreted as representing the difference between the enthalpy change of the process, ΔH, and the energy lost to the surroundings, TΔS. The difference between the energy produced and the energy lost is the energy available (or “free”) to do useful work by the process, ΔG. If the process somehow could be made to take place under conditions of thermodynamic reversibility, the amount of work that could be done would be maximal:\n\nΔG=wmax\n\nwhere wmax refers to all types of work except expansion (pressure-volume) work.\n\nHowever, as noted previously in this chapter, such conditions are not realistic. In addition, the technologies used to extract work from a spontaneous process (e.g., batteries) are never 100% efficient, and so the work done by these processes is always less than the theoretical maximum. Similar reasoning may be applied to a nonspontaneous process, for which the free energy change represents the minimum amount of work that must be done on the system to carry out the process.\n\nCalculating Free Energy Change\n\nFree energy is a state function, so its value depends only on the conditions of the initial and final states of the system. A convenient and common approach to the calculation of free energy changes for physical and chemical reactions is by use of widely available compilations of standard state thermodynamic data. One method involves the use of standard enthalpies and entropies to compute standard free energy changes, ΔG°, according to the following relation.\n\nΔG°=ΔH°−TΔS°\n\nExample\n16.7\n\nUsing Standard Enthalpy and Entropy Changes to Calculate ΔG°\nUse standard enthalpy and entropy data from Appendix G to calculate the standard free energy change for the vaporization of water at room temperature (298 K). What does the computed value for ΔG° say about the spontaneity of this process?\n\nSolution\n\nThe process of interest is the following:\n\nH2O(l)⟶H2O(g)\n\nThe standard change in free energy may be calculated using the following equation:\n\nΔG°=ΔH°−TΔS°\n\nFrom Appendix G:\n\nSubstance\nΔHf°(kJ/mol)\nS°(J/K·mol)\n\nH2O(l)\n−285.83\n70.0\n\nH2O(g)\n−241.82\n188.8\n\nUsing the appendix data to calculate the standard enthalpy and entropy changes yields:\n\nΔH°=ΔHf°(H2O(g))−ΔHf°(H2O(l))=[−241.82 kJ/mol−(−285.83)]kJ/mol=44.01 kJ\n\nΔS°=1mol×S°(H2O(g))−1mol×S°(H2O(l))=(1 mol)188.8J/mol·K−(1 mol)70.0J/mol K=118.8J/K\n\nΔG°=ΔH°−TΔS°\n\nSubstitution into the standard free energy equation yields:\n\nΔG°=ΔH°−TΔS°=44.01 kJ−(298 K×118.8J/K)×1 kJ1000 J\n\n44.01 kJ−35.4 kJ=8.6 kJ\n\nAt 298 K (25 °C) ΔG°>0, so boiling is nonspontaneous (not spontaneous).\n\nCheck Your Learning\n\nUse standard enthalpy and entropy data from Appendix G to calculate the standard free energy change for the reaction shown here (298 K). What does the computed value for ΔG° say about the spontaneity of this process?\n\nC2H6(g)⟶H2(g)+C2H4(g)\n\nAnswer:\n\nΔG°=102.0 kJ/mol; the reaction is nonspontaneous (not spontaneous) at 25 °C.\n\nThe standard free energy change for a reaction may also be calculated from standard free energy of formation ΔGf° values of the reactants and products involved in the reaction. The standard free energy of formation is the free energy change that accompanies the formation of one mole of a substance from its elements in their standard states. Similar to the standard enthalpy of formation, ΔGf° is by definition zero for elemental substances in their standard states. The approach used to calculate ΔG° for a reaction from ΔGf° values is the same as that demonstrated previously for enthalpy and entropy changes. For the reaction\n\nmA+nB⟶xC+yD,\n\nthe standard free energy change at room temperature may be calculated as\n\nΔG°=∑νΔG°(products)−∑νΔG°(reactants)=[xΔGf°(C)+yΔGf°(D)]−[mΔGf°(A)+nΔGf°(B)].\n\nExample\n16.8\n\nUsing Standard Free Energies of Formation to Calculate ΔG°\n\nConsider the decomposition of yellow mercury(II) oxide.\n\nHgO(s,yellow)⟶Hg(l)+12O2(g)\n\nCalculate the standard free energy change at room temperature, ΔG°, using (a) standard free energies of formation and (b) standard enthalpies of formation and standard entropies. Do the results indicate the reaction to be spontaneous or nonspontaneous under standard conditions?\n\nSolution\n\nThe required data are available in Appendix G and are shown here.\n\nCompound\nΔGf°(kJ/mol)\nΔHf°(kJ/mol)\nS°(J/K·mol)\n\nHgO (s, yellow)\n−58.43\n−90.46\n71.13\n\nHg(l)\n0\n0\n75.9\n\nO2(g)\n0\n0\n205.2\n\n(a) Using free energies of formation:\n\nΔG°=∑νGf°(products)−∑νΔGf°(reactants)\n\n=[1ΔGf°Hg(l)+12ΔGf°O2(g)]−1ΔGf°HgO(s,yellow)\n\n=[1mol(0 kJ/mol)+12mol(0 kJ/mol)]−1 mol(−58.43 kJ/mol)=58.43 kJ/mol\n\n(b) Using enthalpies and entropies of formation:\n\nΔH°=∑νΔHf°(products)−∑νΔHf°(reactants)\n\n=[1ΔHf°Hg(l)+12ΔHf°O2(g)]−1ΔHf°HgO(s,yellow)\n\n=[1 mol(0 kJ/mol)+12mol(0 kJ/mol)]−1 mol(−90.46 kJ/mol)=90.46 kJ/mol\n\nΔS°=∑νΔS°(products)−∑νΔS°(reactants)\n\n=[1ΔS°Hg(l)+12ΔS°O2(g)]−1ΔS°HgO(s,yellow)\n\n=[1 mol(75.9 J/mol K)+12mol(205.2 J/mol K)]−1 mol(71.13 J/mol K)=107.4 J/mol K\n\nΔG°=ΔH°−TΔS°=90.46 kJ−298.15 K×107.4 J/K·mol×1 kJ1000 J\n\nΔG°=(90.46−32.01)kJ/mol=58.45 kJ/mol\n\nBoth ways to calculate the standard free energy change at 25 °C give the same numerical value (to three significant figures), and both predict that the process is nonspontaneous (not spontaneous) at room temperature.\n\nCheck Your Learning\n\nCalculate ΔG° using (a) free energies of formation and (b) enthalpies of formation and entropies (Appendix G). Do the results indicate the reaction to be spontaneous or nonspontaneous at 25 °C?\n\nC2H4(g)⟶H2(g)+C2H2(g)\n\nAnswer:\n\n(a) 140.8 kJ/mol, nonspontaneous\n\n(b) 141.5 kJ/mol, nonspontaneous\n\nFree Energy Changes for Coupled Reactions\n\nThe use of free energies of formation to compute free energy changes for reactions as described above is possible because G is a state function, and the approach is analogous to the use of Hess’ Law in computing enthalpy changes (see the chapter on thermochemistry). Consider the vaporization of water as an example:\n\nH2O(l)→H2O(g)\n\nAn equation representing this process may be derived by adding the formation reactions for the two phases of water (necessarily reversing the reaction for the liquid phase). The free energy change for the sum reaction is the sum of free energy changes for the two added reactions:\n\nH2(g)+12O2(g)→H2O(g)ΔGf°gasH2O(l)→H2(g)+12O2(g)−ΔGf°liquid¯H2O(l)→H2O(g)ΔG°=ΔGf°gas−ΔGf°liquid\n\nThis approach may also be used in cases where a nonspontaneous reaction is enabled by coupling it to a spontaneous reaction. For example, the production of elemental zinc from zinc sulfide is thermodynamically unfavorable, as indicated by a positive value for ΔG°:\n\nZnS(s)→Zn(s)+S(s)ΔG1°=201.3kJ\n\nThe industrial process for production of zinc from sulfidic ores involves coupling this decomposition reaction to the thermodynamically favorable oxidation of sulfur:\n\nS(s)+O2(g)→SO2(g)ΔG2°=−300.1kJ\n\nThe coupled reaction exhibits a negative free energy change and is spontaneous:\n\nZnS(s)+O2(g)→Zn(s)+SO2(g)ΔG°=201.3kJ+−300.1kJ=–98.8kJ\n\nThis process is typically carried out at elevated temperatures, so this result obtained using standard free energy values is just an estimate. The gist of the calculation, however, holds true.\n\nExample\n16.9\n\nCalculating Free Energy Change for a Coupled Reaction\n\nIs a reaction coupling the decomposition of ZnS to the formation of H2S expected to be spontaneous under standard conditions?\n\nSolution\n\nFollowing the approach outlined above and using free energy values from Appendix G:\n\nDecomposition of zinc sulfide:ZnS(s)→Zn(s)+S(s)ΔG1°=201.3kJFormation of hydrogen sulfide:S(s)+H2(g)→H2S(g)ΔG2°=−33.4kJCoupled reaction:ZnS(s)+H2(g)→Zn(s)+H2S(g)ΔG°=201.3kJ+−33.4kJ=167.9kJ\n\nThe coupled reaction exhibits a positive free energy change and is thus nonspontaneous.\n\nCheck Your Learning\n\nWhat is the standard free energy change for the reaction below? Is the reaction expected to be spontaneous under standard conditions?\n\nFeS(s)+O2(g)→Fe(s)+SO2(g)\n\nAnswer:\n\n−199.7 kJ; spontaneous\n\nTemperature Dependence of Spontaneity\n\nAs was previously demonstrated in this chapter’s section on entropy, the spontaneity of a process may depend upon the temperature of the system. Phase transitions, for example, will proceed spontaneously in one direction or the other depending upon the temperature of the substance in question. Likewise, some chemical reactions can also exhibit temperature dependent spontaneities. To illustrate this concept, the equation relating free energy change to the enthalpy and entropy changes for the process is considered:\n\nΔG=ΔH−TΔS\n\nThe spontaneity of a process, as reflected in the arithmetic sign of its free energy change, is then determined by the signs of the enthalpy and entropy changes and, in some cases, the absolute temperature. Since T is the absolute (kelvin) temperature, it can only have positive values. Four possibilities therefore exist with regard to the signs of the enthalpy and entropy changes:\n\nBoth ΔH and ΔS are positive. This condition describes an endothermic process that involves an increase in system entropy. In this case, ΔG will be negative if the magnitude of the TΔS term is greater than ΔH. If the TΔS term is less than ΔH, the free energy change will be positive. Such a process is spontaneous at high temperatures and nonspontaneous at low temperatures.\n\nBoth ΔH and ΔS are negative. This condition describes an exothermic process that involves a decrease in system entropy. In this case, ΔG will be negative if the magnitude of the TΔS term is less than ΔH. If the TΔS term’s magnitude is greater than ΔH, the free energy change will be positive. Such a process is spontaneous at low temperatures and nonspontaneous at high temperatures.\n\nΔH is positive and ΔS is negative. This condition describes an endothermic process that involves a decrease in system entropy. In this case, ΔG will be positive regardless of the temperature. Such a process is nonspontaneous at all temperatures.\n\nΔH is negative and ΔS is positive. This condition describes an exothermic process that involves an increase in system entropy. In this case, ΔG will be negative regardless of the temperature. Such a process is spontaneous at all temperatures.\n\nThese four scenarios are summarized in Figure 16.12.\n\nFigure\n16.12\n\nThere are four possibilities regarding the signs of enthalpy and entropy changes.\n\nExample\n16.10\n\nPredicting the Temperature Dependence of Spontaneity\n\nThe incomplete combustion of carbon is described by the following equation:\n\n2C(s)+O2(g)⟶2CO(g)\n\nHow does the spontaneity of this process depend upon temperature?\n\nSolution\n\nCombustion processes are exothermic (ΔH < 0). This particular reaction involves an increase in entropy due to the accompanying increase in the amount of gaseous species (net gain of one mole of gas, ΔS > 0). The reaction is therefore spontaneous (ΔG < 0) at all temperatures.\n\nCheck Your Learning\n\nPopular chemical hand warmers generate heat by the air-oxidation of iron:\n\n4Fe(s)+3O2(g)⟶2Fe2O3(s)\n\nHow does the spontaneity of this process depend upon temperature?\n\nAnswer:\n\nΔH and ΔS are negative; the reaction is spontaneous at low temperatures.\n\nWhen considering the conclusions drawn regarding the temperature dependence of spontaneity, it is important to keep in mind what the terms “high” and “low” mean. Since these terms are adjectives, the temperatures in question are deemed high or low relative to some reference temperature. A process that is nonspontaneous at one temperature but spontaneous at another will necessarily undergo a change in “spontaneity” (as reflected by its ΔG) as temperature varies. This is clearly illustrated by a graphical presentation of the free energy change equation, in which ΔG is plotted on the y axis versus T on the x axis:\n\nΔG=ΔH−TΔS\n\ny=b+mx\n\nSuch a plot is shown in Figure 16.13. A process whose enthalpy and entropy changes are of the same arithmetic sign will exhibit a temperature-dependent spontaneity as depicted by the two yellow lines in the plot. Each line crosses from one spontaneity domain (positive or negative ΔG) to the other at a temperature that is characteristic of the process in question. This temperature is represented by the x-intercept of the line, that is, the value of T for which ΔG is zero:\n\nΔG=0=ΔH−TΔS\n\nT=ΔHΔS\n\nSo, saying a process is spontaneous at “high” or “low” temperatures means the temperature is above or below, respectively, that temperature at which ΔG for the process is zero. As noted earlier, the condition of ΔG = 0 describes a system at equilibrium.\n\nFigure\n16.13\n\nThese plots show the variation in ΔG with temperature for the four possible combinations of arithmetic sign for ΔH and ΔS.\n\nExample\n16.11\n\nEquilibrium Temperature for a Phase Transition\nAs defined in the chapter on liquids and solids, the boiling point of a liquid is the temperature at which its liquid and gaseous phases are in equilibrium (that is, when vaporization and condensation occur at equal rates). Use the information in Appendix G to estimate the boiling point of water.\n\nSolution\n\nThe process of interest is the following phase change:\n\nH2O(l)⟶H2O(g)\n\nWhen this process is at equilibrium, ΔG = 0, so the following is true:\n\n0=ΔH°−TΔS°orT=ΔH°ΔS°\n\nUsing the standard thermodynamic data from Appendix G,\n\nΔH°=1mol×ΔHf°(H2O(g))−1mol×ΔHf°(H2O(l))=(1 mol)−241.82 kJ/mol−(1 mol)(−286.83 kJ/mol)=44.01 kJ\n\nΔS°=1mol×ΔS°(H2O(g))−1mol×ΔS°(H2O(l))=(1 mol)188.8 J/K·mol−(1 mol)70.0 J/K·mol=118.8 J/K\n\nT=ΔH°ΔS°=44.01×103J118.8J/K=370.5K=97.3°C\n\nThe accepted value for water’s normal boiling point is 373.2 K (100.0 °C), and so this calculation is in reasonable agreement. Note that the values for enthalpy and entropy changes data used were derived from standard data at 298 K (Appendix G). If desired, you could obtain more accurate results by using enthalpy and entropy changes determined at (or at least closer to) the actual boiling point.\n\nCheck Your Learning\n\nUse the information in Appendix G to estimate the boiling point of CS2.\n\nAnswer:\n\n313 K (accepted value 319 K)\n\nFree Energy and Equilibrium\n\nThe free energy change for a process may be viewed as a measure of its driving force. A negative value for ΔG represents a driving force for the process in the forward direction, while a positive value represents a driving force for the process in the reverse direction. When ΔG is zero, the forward and reverse driving forces are equal, and the process occurs in both directions at the same rate (the system is at equilibrium).\n\nIn the chapter on equilibrium the reaction quotient, Q, was introduced as a convenient measure of the status of an equilibrium system. Recall that Q is the numerical value of the mass action expression for the system, and that you may use its value to identify the direction in which a reaction will proceed in order to achieve equilibrium. When Q is lesser than the equilibrium constant, K, the reaction will proceed in the forward direction until equilibrium is reached and Q = K. Conversely, if Q > K, the process will proceed in the reverse direction until equilibrium is achieved.\n\nThe free energy change for a process taking place with reactants and products present under nonstandard conditions (pressures other than 1 bar; concentrations other than 1 M) is related to the standard free energy change according to this equation:\n\nΔG=ΔG°+RTlnQ\n\nR is the gas constant (8.314 J/K mol), T is the kelvin or absolute temperature, and Q is the reaction quotient. For gas phase equilibria, the pressure-based reaction quotient, QP, is used. The concentration-based reaction quotient, QC, is used for condensed phase equilibria. This equation may be used to predict the spontaneity for a process under any given set of conditions as illustrated in Example 16.12.\n\nExample\n16.12\n\nCalculating ΔG under Nonstandard Conditions\n\nWhat is the free energy change for the process shown here under the specified conditions?\n\nT = 25 °C, PN2=0.870 atm, PH2=0.250 atm, and PNH3=12.9 atm\n\n2NH3(g)⟶3H2(g)+N2(g)ΔG°=33.0 kJ/mol\n\nSolution\n\nThe equation relating free energy change to standard free energy change and reaction quotient may be used directly:\n\nΔG=ΔG°+RTlnQ=33.0kJmol+(8.314Jmol K×298 K×ln(0.2503)×0.87012.92)=9680Jmolor 9.68 kJ/mol\n\nSince the computed value for ΔG is positive, the reaction is nonspontaneous under these conditions.\n\nCheck Your Learning\n\nCalculate the free energy change for this same reaction at 875 °C for a mixture containing each gas at a partial pressure of 1.88 atm. Is the reaction spontaneous under these conditions?\n\nAnswer:\n\nΔG = 45.1 kJ/mol; no\n\nFor a system at equilibrium, Q = K and ΔG = 0, and the previous equation may be written as\n\n0=ΔG°+RTlnK(at equilibrium)\n\nΔG°=−RTlnKorK=e−ΔG°RT\n\nThis form of the equation provides a useful link between these two essential thermodynamic properties, and it can be used to derive equilibrium constants from standard free energy changes and vice versa. The relations between standard free energy changes and equilibrium constants are summarized in Table 16.4.\n\nRelations between Standard Free Energy Changes and Equilibrium Constants\n\nK\nΔG°\nComposition of an Equilibrium Mixture\n\n> 1\n< 0\nProducts are more abundant\n\n< 1\n> 0\nReactants are more abundant\n\n= 1\n= 0\nReactants and products are comparably abundant\n\nTable\n16.4\n\nExample\n16.13\n\nCalculating an Equilibrium Constant using Standard Free Energy Change\n\nGiven that the standard free energies of formation of Ag+(aq), Cl−(aq), and AgCl(s) are 77.1 kJ/mol, −131.2 kJ/mol, and −109.8 kJ/mol, respectively, calculate the solubility product, Ksp, for AgCl.\n\nSolution\n\nThe reaction of interest is the following:\n\nAgCl(s)⇌Ag+(aq)+Cl−(aq)Ksp=[Ag+][Cl−]\n\nThe standard free energy change for this reaction is first computed using standard free energies of formation for its reactants and products:\n\nΔG°=[ΔGf°(Ag+(aq))+ΔGf°(Cl−(aq))]−[ΔGf°(AgCl(s))]=[77.1 kJ/mol−131.2 kJ/mol]−[−109.8 kJ/mol]=55.7 kJ/mol\n\nThe equilibrium constant for the reaction may then be derived from its standard free energy change:\n\nKsp=e−ΔG°RT=exp(−ΔG°RT)=exp(−55.7×103J/mol8.314J/mol·K×298.15K)=exp(−22.470)=e−22.470=1.74×10−10\n\nThis result is in reasonable agreement with the value provided in Appendix J.\n\nCheck Your Learning\n\nUse the thermodynamic data provided in Appendix G to calculate the equilibrium constant for the dissociation of dinitrogen tetroxide at 25 °C.\n\n2NO2(g)⇌N2O4(g)\n\nAnswer:\n\nK = 0.32\n\nTo further illustrate the relation between these two essential thermodynamic concepts, consider the observation that reactions spontaneously proceed in a direction that ultimately establishes equilibrium. As may be shown by plotting the free energy versus the extent of the reaction (for example, as reflected in the value of Q), equilibrium is established when the system’s free energy is minimized (Figure 16.14). If a system consists of reactants and products in nonequilibrium amounts (Q ≠ K), the reaction will proceed spontaneously in the direction necessary to establish equilibrium.\n\nFigure\n16.14\n\nThese plots show the free energy versus reaction progress for systems whose standard free energy changes are (a) negative, (b) positive, and (c) zero. Nonequilibrium systems will proceed spontaneously in whatever direction is necessary to minimize free energy and establish equilibrium."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:9cf0df6ee80d7b02d1765034c2c435293e207f6bac21e5c1ca6c39fb0d27ffe1",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_5_3_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-thermo#PIN_HESS",
+        "kind": "fragment",
+        "locator": "section/5.3#hess",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "texts": [
+          {
+            "contentHash": "sha256:57f91e217a4c99ac75cd759fccee381f821f4ea764584e9ad208b4ac9d372a44",
+            "language": "en",
+            "status": "official",
+            "text": "This type of calculation usually involves the use of Hess’s law, which states: If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps. Hess’s law is valid because enthalpy is a state function: Enthalpy changes depend only on where a chemical process starts and ends, but not on the path it takes from start to finish. For example, we can think of the reaction of carbon with oxygen to form carbon dioxide as occurring either directly or by a two-step process. The direct process is written:"
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:0044fe601324afa7be19dce6ed6bb0a298344d6bc8ca475a07af00aaf96349c0",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_16_1_EN",
+        "fragmentKind": "paragraph",
+        "id": "urn:openstax:clir:chemistry-thermo#PIN_SPONTANEITY",
+        "kind": "fragment",
+        "locator": "section/16.1#spontaneity",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "texts": [
+          {
+            "contentHash": "sha256:4e67c695e77f0d8e489467524da2e16602ae0a3e0651ec2fc5410faba17a34a5",
+            "language": "en",
+            "status": "official",
+            "text": "Processes have a natural tendency to occur in one direction under a given set of conditions. Water will naturally flow downhill, but uphill flow requires outside intervention such as the use of a pump. Iron exposed to the earth’s atmosphere will corrode, but rust is not converted to iron without intentional chemical treatment. A spontaneous process is one that occurs naturally under certain conditions. A nonspontaneous process, on the other hand, will not take place unless it is “driven” by the continual input of energy from an external source. A process that is spontaneous in one direction under a particular set of conditions is nonspontaneous in the reverse direction. At room temperature and typical atmospheric pressure, for example, ice will spontaneously melt, but water will not spontaneously freeze."
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:37b4b3f39ad01b6eb386a5273add530a043b46a89e485b99a89e41eb8db45aac",
+        "id": "urn:openstax:clir:chemistry-thermo#Reaction",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "reaction presented by the case"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "реакция, предъявленная делом"
+          }
+        ],
+        "name": "Reaction",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:90b65c83f866ba5cb6e8cacd6ad9ad1467ea376d700e787617048d1cb8accd6b",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_1_EN",
+        "kind": "source_edition",
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "work": "urn:openstax:clir:chemistry-thermo#S_16_1_WORK"
+      },
+      {
+        "contentHash": "sha256:a6df8a76faa3e071704b450a6d0e4c43b119648751be29a30a4cbc5dc846e2ef",
+        "documentHash": "sha256:cf43d7aebe26f3811e837f04778c96bf4f83c3babc5782afbd5f3358fb6c22b8",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_16_1_EN",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_1_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "retrievedAt": "2026-10-14T10:29:04Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/16-1-spontaneity"
+      },
+      {
+        "contentHash": "sha256:bc5469708867fb5eda33615743fdbe8c1e39a5454b59d6dd724609aabfb0d47a",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_1_WORK",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e section 16.1"
+          }
+        ],
+        "number": "Chemistry 2e section 16.1",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "sourceKind": "urn:openstax:clir:chemistry-thermo#treatise"
+      },
+      {
+        "contentHash": "sha256:6b7a84bd74801de7469a5864bdee1aa70ca9f156ab2a10dd251a95a604a61dd3",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_4_EN",
+        "kind": "source_edition",
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "work": "urn:openstax:clir:chemistry-thermo#S_16_4_WORK"
+      },
+      {
+        "contentHash": "sha256:0325b1c6664cbad8828c3399acb8fce7e51ebe5e42870540fd0c0403360986ed",
+        "documentHash": "sha256:d0fbf6a665192ad5d9fb4da3fa9add733133013379f65771d05a16bc4ac91e0e",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_16_4_EN",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_4_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "retrievedAt": "2026-10-14T10:29:04Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/16-4-free-energy"
+      },
+      {
+        "contentHash": "sha256:8d821c0794508e5cd1361d680cbbf9fd8eeeed5e6b53440cefd08b068fa053a0",
+        "id": "urn:openstax:clir:chemistry-thermo#S_16_4_WORK",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e section 16.4"
+          }
+        ],
+        "number": "Chemistry 2e section 16.4",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "sourceKind": "urn:openstax:clir:chemistry-thermo#treatise"
+      },
+      {
+        "contentHash": "sha256:6c3941b677b2e02aa93f3628617ed6f8b93bc6cb97cacb1df71896438817ec21",
+        "id": "urn:openstax:clir:chemistry-thermo#S_5_3_EN",
+        "kind": "source_edition",
+        "language": "en",
+        "lifecycle": [
+          {
+            "extent": "2019-02-14",
+            "status": "adopted"
+          },
+          {
+            "extent": {
+              "axis": "legal_time",
+              "endInclusive": false,
+              "start": "2019-02-14",
+              "startInclusive": true
+            },
+            "status": "in_force"
+          }
+        ],
+        "materializationStatus": "PINNED_UNOFFICIAL_COPY",
+        "officiality": "official",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "work": "urn:openstax:clir:chemistry-thermo#S_5_3_WORK"
+      },
+      {
+        "contentHash": "sha256:9781880757f6247c6bde5f206128bdc19a0d1c43b4277468d2e046547e17c1bf",
+        "documentHash": "sha256:03e17e2c1bef9b10884a40c06442a3e6f85791a25f5bc94a9cf35249c1a5c5b4",
+        "edition": "urn:openstax:clir:chemistry-thermo#S_5_3_EN",
+        "id": "urn:openstax:clir:chemistry-thermo#S_5_3_TEXT",
+        "kind": "publication",
+        "mediaType": "text/plain; charset=utf-8",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "retrievedAt": "2026-10-14T10:29:04Z",
+        "uri": "https://openstax.org/books/chemistry-2e/pages/5-3-enthalpy"
+      },
+      {
+        "contentHash": "sha256:732bfde71e8867559205caf760b130b54b73c6aa1ffc40e544a0d60fbafe1142",
+        "id": "urn:openstax:clir:chemistry-thermo#S_5_3_WORK",
+        "jurisdiction": {
+          "kind": "value",
+          "type": {
+            "name": "urn:law:std#Text"
+          },
+          "value": "none"
+        },
+        "kind": "source_work",
+        "labels": [
+          {
+            "language": "en",
+            "status": "official",
+            "text": "OpenStax Chemistry 2e section 5.3"
+          }
+        ],
+        "number": "Chemistry 2e section 5.3",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "sourceKind": "urn:openstax:clir:chemistry-thermo#treatise"
+      },
+      {
+        "anchors": [
+          "urn:openstax:clir:chemistry-thermo#PIN_GIBBS_SIGN"
+        ],
+        "body": {
+          "items": [
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#negative_gibbs_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#standard_state_presented"
+              },
+              "kind": "status",
+              "status": "established"
+            },
+            {
+              "formula": {
+                "args": [
+                  {
+                    "kind": "var",
+                    "var": "v0"
+                  }
+                ],
+                "kind": "literal",
+                "polarity": "positive",
+                "predicate": "urn:openstax:clir:chemistry-thermo#system_in_question"
+              },
+              "kind": "status",
+              "status": "established"
+            }
+          ],
+          "kind": "and"
+        },
+        "contentHash": "sha256:552681efab4e55295994af7500934deb1521f41f7aa292c89f7fb7ddc43838fc",
+        "head": {
+          "args": [
+            {
+              "kind": "var",
+              "var": "v0"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#spontaneous_forward"
+        },
+        "id": "urn:openstax:clir:chemistry-thermo#SpontaneousForward",
+        "interpretations": [],
+        "kind": "rule",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "ΔG < 0 at stated T, p and standard state: forward process spontaneous (16.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "ΔG < 0 при T, p и стандартном состоянии: прямой процесс самопроизволен (16.4)"
+          }
+        ],
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "scope": {
+          "kind": "boolean",
+          "value": true
+        },
+        "strength": "strict",
+        "variables": [
+          {
+            "id": "v0",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:48b7b8e686b2ef784aedce39c5be6ffca5d260008dcba793e9271055b572f6c1",
+        "id": "urn:openstax:clir:chemistry-thermo#ThermoSystem",
+        "kind": "type_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "thermodynamic system of the case"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "термодинамическая система дела"
+          }
+        ],
+        "name": "ThermoSystem",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "typeKind": "entity",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:a32c326cf80efe13a904a63cf7dbc970c77a7767a364a7a8d88f673f714ed72b",
+        "id": "urn:openstax:clir:chemistry-thermo#formation_data_complete",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents complete formation data for all species"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило полные данные образования всех участников"
+          }
+        ],
+        "name": "formation_data_complete",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#formation_data_complete/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:e09332b74bf76cd3c018c43fce9baf3dbb76602fcefbf6a5f09a8608b5377028",
+        "id": "urn:openstax:clir:chemistry-thermo#hess_path_independent",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "reaction enthalpy is path-independent: Hess law licensed (5.3)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "энтальпия реакции не зависит от пути: закон Гесса открыт (5.3)"
+          }
+        ],
+        "name": "hess_path_independent",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#hess_path_independent/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#Reaction"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:729a20e38a1a646f6fc6c9140454f9142571d13eeafad0e8eab4b65b7819bac8",
+        "id": "urn:openstax:clir:chemistry-thermo#negative_gibbs_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents a negative ΔG of the forward process"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило отрицательную ΔG прямого процесса"
+          }
+        ],
+        "name": "negative_gibbs_presented",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#negative_gibbs_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:27bb05f8b72340cacc05f531d881d34ad554ab9a9c07ad50cc36ce72eef3bc97",
+        "id": "urn:openstax:clir:chemistry-thermo#nonspontaneous_forward",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the forward process is nonspontaneous (ΔG > 0, 16.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "прямой процесс несамопроизволен (ΔG > 0, 16.4)"
+          }
+        ],
+        "name": "nonspontaneous_forward",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#nonspontaneous_forward/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:03262ffad364bcfcfd80b90065d6c6c175f8bbe18ba109a16b991bbb530d8afc",
+        "id": "urn:openstax:clir:chemistry-thermo#positive_gibbs_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents a positive ΔG of the forward process"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило положительную ΔG прямого процесса"
+          }
+        ],
+        "name": "positive_gibbs_presented",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#positive_gibbs_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:2ef2f6ae7884f8a1d359756ede82c078e490fc1969245e2f76e758864ca042c0",
+        "id": "urn:openstax:clir:chemistry-thermo#reaction_in_question",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the reaction is presented by the case as the subject of the question"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "реакция предъявлена делом как предмет вопроса"
+          }
+        ],
+        "name": "reaction_in_question",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#reaction_in_question/arg/r",
+            "name": "r",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#Reaction"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:5dba76d6dc34515a76edf51b89de9daa183f51abd09231754dcc395183cba0d6",
+        "id": "urn:openstax:clir:chemistry-thermo#spontaneous_forward",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the forward process is spontaneous (ΔG < 0, 16.4)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "прямой процесс самопроизволен (ΔG < 0, 16.4)"
+          }
+        ],
+        "name": "spontaneous_forward",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#spontaneous_forward/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "institutional",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:162c463621f29d0d8c929986d5ea442ce2701270267b05d7567480b2ef98f4af",
+        "id": "urn:openstax:clir:chemistry-thermo#standard_state_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the standard state (the ΔG basis)"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило стандартное состояние (базис ΔG)"
+          }
+        ],
+        "name": "standard_state_presented",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#standard_state_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:7874e43fc213e1a00d6673c1efc5a351ae036b7df928e15745fdb7b0f7b239c8",
+        "id": "urn:openstax:clir:chemistry-thermo#system_in_question",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the system is presented by the case as the subject of the question"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "система предъявлена делом как предмет вопроса"
+          }
+        ],
+        "name": "system_in_question",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#system_in_question/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      },
+      {
+        "contentHash": "sha256:f467f2a0ceea69664eb2a4d5260a1663760f1ed246a4b177f5c7f29b87cd16c9",
+        "id": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented",
+        "kind": "symbol_decl",
+        "labels": [
+          {
+            "language": "en",
+            "status": "unofficial",
+            "text": "the case presents the system temperature and pressure"
+          },
+          {
+            "language": "ru",
+            "status": "unofficial",
+            "text": "дело предъявило температуру и давление системы"
+          }
+        ],
+        "name": "system_temperature_pressure_presented",
+        "package": "urn:openstax:clir:chemistry-thermo",
+        "parameters": [
+          {
+            "id": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented/arg/s",
+            "name": "s",
+            "type": {
+              "name": "urn:openstax:clir:chemistry-thermo#ThermoSystem"
+            }
+          }
+        ],
+        "relationKind": "empirical",
+        "symbolKind": "relation",
+        "visibility": "public"
+      }
+    ],
+    "package": {
+      "name": "openstax.chemistry_thermo",
+      "namespace": "urn:openstax:clir:chemistry-thermo",
+      "semanticHash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "version": "0.1.1"
+    },
+    "schemaVersion": "law.core.ir/0.7",
+    "semanticHash": "sha256:0ed597203ecf7057d29719a5a9d2d6e0d9c2c7680cc9c4c08c034d06e77aa910",
+    "semanticVersion": "0.2.11",
+    "strata": [],
+    "theoryHash": "sha256:2bfe5a79fc0e1fb2738e693a527c391f7d1262752f62df164624a8c8d0d41199"
+  },
+  "case": {
+    "assertions": [
+      {
+        "contentHash": "sha256:8c2a1fa1831ccde597d13114dcbdae8e4cd0fc14ba313877a22916504bfe45a4",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-thermo#h02-q",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:thermo:sys",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#system_in_question"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-thermo"
+      },
+      {
+        "contentHash": "sha256:f3801087d92acf8d818b411d253fd1532ee1d0f7421d64d9d61e88aae6fca650",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-thermo#h02-1",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:thermo:sys",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#negative_gibbs_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-thermo"
+      },
+      {
+        "contentHash": "sha256:0b8da181dc9522a1d3613668eeb6d4ee288eddb27b61b112bee39ceb017cd299",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-thermo#h02-2",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:thermo:sys",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#system_temperature_pressure_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-thermo"
+      },
+      {
+        "contentHash": "sha256:a55e6467d72adc1e17bf7be81b3caa61b26b733857c54c20e14f1ca8f98ad172",
+        "evidence": [],
+        "id": "urn:openstax:clir:chemistry-thermo#h02-3",
+        "kind": "assertion",
+        "literal": {
+          "args": [
+            {
+              "id": "urn:case:chem:thermo:sys",
+              "kind": "entity_ref"
+            }
+          ],
+          "kind": "literal",
+          "polarity": "positive",
+          "predicate": "urn:openstax:clir:chemistry-thermo#standard_state_presented"
+        },
+        "origin": "case_input",
+        "package": "urn:openstax:clir:chemistry-thermo"
+      }
+    ],
+    "context": {
+      "decisionTime": "2026-09-27T12:00:00Z",
+      "knowledgeTime": "2026-09-27T12:00:00Z",
+      "legalTime": "2026-09-27",
+      "timezone": "UTC"
+    },
+    "options": {}
+  },
+  "query": {
+    "kind": "truth",
+    "literal": {
+      "args": [
+        {
+          "id": "urn:case:chem:thermo:sys",
+          "kind": "entity_ref"
+        }
+      ],
+      "kind": "literal",
+      "polarity": "positive",
+      "predicate": "urn:openstax:clir:chemistry-thermo#spontaneous_forward"
+    },
+    "queryId": "urn:openstax:clir:chemistry-thermo#test/urn%3Aquery%3Aos-thermo-02-spontaneous/query/0"
+  },
+  "schemaVersion": "law.core.evaluation-request/0.2",
+  "semanticVersion": "0.2.11"
+}

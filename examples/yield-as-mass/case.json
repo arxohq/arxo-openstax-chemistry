@@ -1,0 +1,30 @@
+{
+  "assertions": [
+    {
+      "contentHash": "sha256:ca0a64f9d612195e6e4b6e011814d04c632a089ff468ce9af9740ba36dea7abc",
+      "evidence": [],
+      "id": "urn:openstax:clir:chemistry-stoichiometry#s01-1",
+      "kind": "assertion",
+      "literal": {
+        "args": [
+          {
+            "id": "urn:openstax:clir:chemistry-stoichiometry#Mass",
+            "kind": "const_ref"
+          }
+        ],
+        "kind": "literal",
+        "polarity": "positive",
+        "predicate": "urn:openstax:clir:chemistry-stoichiometry#yield_basis_presented"
+      },
+      "origin": "case_input",
+      "package": "urn:openstax:clir:chemistry-stoichiometry"
+    }
+  ],
+  "context": {
+    "decisionTime": "2026-09-12T12:00:00+05:00",
+    "knowledgeTime": "2026-09-12T12:00:00+05:00",
+    "legalTime": "2026-09-12",
+    "timezone": "Asia/Qyzylorda"
+  },
+  "options": {}
+}

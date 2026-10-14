@@ -1,0 +1,13 @@
+{
+  "book_base": "https://openstax.org/books/chemistry-2e/pages/",
+  "bytes": 19532,
+  "license_page_strings": [
+    "CC BY"
+  ],
+  "locator": "7.3",
+  "sha256": "957f9c5c29ac735acd385aabbf3baa92b1014a764d1538c4dd3424aa6328f70c",
+  "slug": "7-3-lewis-symbols-and-structures",
+  "title": "Lewis Symbols and Structures",
+  "url": "https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures",
+  "uuid": "5b667ac9-afd2-4a51-b96b-9a86d58beef7"
+}
