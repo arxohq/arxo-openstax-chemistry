@@ -9,7 +9,11 @@
       },
       "snapshotScope": "captured textbook sections",
       "edition": "Chemistry 2e; exact publication hash",
-      "origin": "literal publisher section headings in pinned extraction"
+      "origin": "literal publisher section headings in pinned extraction",
+      "scope": [
+        "7.3"
+      ],
+      "scopeNote": "Source-accounting scope is the captured fragment-bearing sections; depth denominator still includes every declared heading in this snapshot. It does not claim whole-section formalization."
     }
   ]
 }

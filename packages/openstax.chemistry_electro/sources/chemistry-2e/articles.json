@@ -9,7 +9,11 @@
       },
       "snapshotScope": "curated table excerpt only; not complete section 17.3",
       "edition": "Chemistry 2e; exact publication hash",
-      "origin": "retained excerpt source-section marker"
+      "origin": "retained excerpt source-section marker",
+      "scope": [
+        "17.3"
+      ],
+      "scopeNote": "Source-accounting scope is the captured fragment-bearing sections; depth denominator still includes every declared heading in this snapshot. It does not claim whole-section formalization."
     }
   ]
 }

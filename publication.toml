@@ -1,7 +1,7 @@
 format = "law.canon-publication/1"
 version = "0.1.0"
 repository = "https://github.com/arxohq/arxo-openstax-chemistry"
-releasedAt = "2026-10-14T10:53:45.752882Z"
+releasedAt = "2026-10-14T10:56:37.736233Z"
 packages = ["openstax.chemistry_acids@0.1.0", "openstax.chemistry_atomic@0.1.0", "openstax.chemistry_bonding@0.1.0", "openstax.chemistry_coordination@0.1.0", "openstax.chemistry_electro@0.1.0", "openstax.chemistry_equilibrium@0.1.0", "openstax.chemistry_gases@0.1.1", "openstax.chemistry_kinetics@0.1.1", "openstax.chemistry_solutions@0.1.1", "openstax.chemistry_stoichiometry@0.1.0", "openstax.chemistry_thermo@0.1.1", "units.si@0.1.0", "calc.reaction_kinetics@0.1.0"]
 files = [
   ".github/workflows/verify.yml",
